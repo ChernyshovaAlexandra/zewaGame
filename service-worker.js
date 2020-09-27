@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/zewaGame/precache-manifest.e7a70c40cd0a1cc37648807c720d5b95.js"
+  "/zewaGame/precache-manifest.3bd84617d5c13af8caa34c3fec5ad283.js"
 );
 
 self.addEventListener('message', (event) => {
