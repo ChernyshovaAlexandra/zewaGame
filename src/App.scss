@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    #root {
+        max-width: 630px;
+        margin: auto;
+        background: linear-gradient(0deg, #0062cc, #0abcce);
+        box-shadow: 5px 5px 150px rgba(#000, .15);
+        border-radius: 2rem;
+        padding: 2rem;
+        min-height: 630px;
+        font-family: 'Montserrat';
+
+        h2 {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+}

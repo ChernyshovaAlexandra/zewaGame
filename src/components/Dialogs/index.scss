@@ -1,0 +1,21 @@
+.dialogs {
+    margin: 2rem 0;
+    background: #fff;
+    padding: 1rem;
+    border-radius: 1rem;
+    .dialog {
+        margin-bottom: 2rem;
+        .roundImg {
+            width: 3rem;
+            height: 3em;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

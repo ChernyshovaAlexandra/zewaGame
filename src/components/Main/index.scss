@@ -1,0 +1,52 @@
+.selectionBtn {
+    -webkit-appearance: none;
+    height: 3rem;
+    background: darkblue;
+    color: #fff;
+    border-radius: 2rem;
+    border: none;
+    outline: none !important;
+    width: 100%;
+    border: 1px solid;
+    overflow: hidden;
+    position: relative;
+    box-shadow: none !important;
+    margin-bottom: 1rem;
+
+    &::after {
+        background: #fff;
+        content: "";
+        height: 155px;
+        left: -75px;
+        opacity: .2;
+        position: absolute;
+        top: -50px;
+        transform: rotate(35deg);
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        width: 2rem;
+        z-index: 50;
+    }
+
+    &:hover {
+        color: #fff;
+        text-decoration: none;
+        outline: none;
+
+        &::after {
+            left: 120%;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+        }
+    }
+
+    span {
+        z-index: 20;
+    }
+
+    &.pink {
+        background: #e83f5d;
+        &:hover{
+            background: rgba(gray, .5);
+        }
+    }
+}
