@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/zewaGame/static/css/main.bc68682c.chunk.css",
-    "main.js": "/zewaGame/static/js/main.31b58537.chunk.js",
-    "main.js.map": "/zewaGame/static/js/main.31b58537.chunk.js.map",
+    "main.css": "/zewaGame/static/css/main.4d244e7a.chunk.css",
+    "main.js": "/zewaGame/static/js/main.e304e270.chunk.js",
+    "main.js.map": "/zewaGame/static/js/main.e304e270.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
     "runtime-main.js.map": "/zewaGame/static/js/runtime-main.d8b6e021.js.map",
-    "static/js/2.34869464.chunk.js": "/zewaGame/static/js/2.34869464.chunk.js",
-    "static/js/2.34869464.chunk.js.map": "/zewaGame/static/js/2.34869464.chunk.js.map",
+    "static/js/2.6da68398.chunk.js": "/zewaGame/static/js/2.6da68398.chunk.js",
+    "static/js/2.6da68398.chunk.js.map": "/zewaGame/static/js/2.6da68398.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.73034f0f71b062641a70db109e6e8b27.js": "/zewaGame/precache-manifest.73034f0f71b062641a70db109e6e8b27.js",
+    "precache-manifest.d823b8d214afb56446f6493d437cf0dd.js": "/zewaGame/precache-manifest.d823b8d214afb56446f6493d437cf0dd.js",
     "service-worker.js": "/zewaGame/service-worker.js",
-    "static/css/main.bc68682c.chunk.css.map": "/zewaGame/static/css/main.bc68682c.chunk.css.map",
-    "static/js/2.34869464.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.34869464.chunk.js.LICENSE.txt",
-    "static/media/2.jpg": "/zewaGame/static/media/2.0c06b1cf.jpg",
-    "static/media/3.jpg": "/zewaGame/static/media/3.b8a23b33.jpg",
-    "static/media/zewa.png": "/zewaGame/static/media/zewa.9854bcea.png"
+    "static/css/main.4d244e7a.chunk.css.map": "/zewaGame/static/css/main.4d244e7a.chunk.css.map",
+    "static/js/2.6da68398.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.6da68398.chunk.js.LICENSE.txt",
+    "static/media/App.scss": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf",
+    "static/media/index.scss": "/zewaGame/static/media/pattern.d65c9003.png",
+    "static/media/logoGame.png": "/zewaGame/static/media/logoGame.3b70e444.png",
+    "static/media/magnit-logo.svg": "/zewaGame/static/media/magnit-logo.a052c0ad.svg",
+    "static/media/zewa.png": "/zewaGame/static/media/zewa.37e618f6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d8b6e021.js",
-    "static/js/2.34869464.chunk.js",
-    "static/css/main.bc68682c.chunk.css",
-    "static/js/main.31b58537.chunk.js"
+    "static/js/2.6da68398.chunk.js",
+    "static/css/main.4d244e7a.chunk.css",
+    "static/js/main.e304e270.chunk.js"
   ]
 }
