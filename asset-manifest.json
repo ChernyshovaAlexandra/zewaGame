@@ -1,17 +1,19 @@
 {
   "files": {
-    "main.css": "/zewaGame/static/css/main.4d244e7a.chunk.css",
-    "main.js": "/zewaGame/static/js/main.e304e270.chunk.js",
-    "main.js.map": "/zewaGame/static/js/main.e304e270.chunk.js.map",
+    "main.css": "/zewaGame/static/css/main.68ac3753.chunk.css",
+    "main.js": "/zewaGame/static/js/main.627f211b.chunk.js",
+    "main.js.map": "/zewaGame/static/js/main.627f211b.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
     "runtime-main.js.map": "/zewaGame/static/js/runtime-main.d8b6e021.js.map",
-    "static/js/2.6da68398.chunk.js": "/zewaGame/static/js/2.6da68398.chunk.js",
-    "static/js/2.6da68398.chunk.js.map": "/zewaGame/static/js/2.6da68398.chunk.js.map",
+    "static/js/2.f27887de.chunk.js": "/zewaGame/static/js/2.f27887de.chunk.js",
+    "static/js/2.f27887de.chunk.js.map": "/zewaGame/static/js/2.f27887de.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.d823b8d214afb56446f6493d437cf0dd.js": "/zewaGame/precache-manifest.d823b8d214afb56446f6493d437cf0dd.js",
+    "precache-manifest.e87f22fd6d410fd1fdb542eaf535897a.js": "/zewaGame/precache-manifest.e87f22fd6d410fd1fdb542eaf535897a.js",
     "service-worker.js": "/zewaGame/service-worker.js",
-    "static/css/main.4d244e7a.chunk.css.map": "/zewaGame/static/css/main.4d244e7a.chunk.css.map",
-    "static/js/2.6da68398.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.6da68398.chunk.js.LICENSE.txt",
+    "static/css/main.68ac3753.chunk.css.map": "/zewaGame/static/css/main.68ac3753.chunk.css.map",
+    "static/js/2.f27887de.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.f27887de.chunk.js.LICENSE.txt",
+    "static/media/2.jpg": "/zewaGame/static/media/2.0c06b1cf.jpg",
+    "static/media/3.jpg": "/zewaGame/static/media/3.b8a23b33.jpg",
     "static/media/App.scss": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/index.scss": "/zewaGame/static/media/pattern.d65c9003.png",
     "static/media/logoGame.png": "/zewaGame/static/media/logoGame.3b70e444.png",
@@ -20,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d8b6e021.js",
-    "static/js/2.6da68398.chunk.js",
-    "static/css/main.4d244e7a.chunk.css",
-    "static/js/main.e304e270.chunk.js"
+    "static/js/2.f27887de.chunk.js",
+    "static/css/main.68ac3753.chunk.css",
+    "static/js/main.627f211b.chunk.js"
   ]
 }
