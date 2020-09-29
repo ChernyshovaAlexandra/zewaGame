@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/zewaGame/static/css/main.805ccdab.chunk.css",
+    "main.css": "/zewaGame/static/css/main.307b4d67.chunk.css",
     "main.js": "/zewaGame/static/js/main.7a911881.chunk.js",
     "main.js.map": "/zewaGame/static/js/main.7a911881.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
@@ -8,9 +8,9 @@
     "static/js/2.4f69c3a4.chunk.js": "/zewaGame/static/js/2.4f69c3a4.chunk.js",
     "static/js/2.4f69c3a4.chunk.js.map": "/zewaGame/static/js/2.4f69c3a4.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.3206c3ff33699319296df6c7e2b06bb1.js": "/zewaGame/precache-manifest.3206c3ff33699319296df6c7e2b06bb1.js",
+    "precache-manifest.27b989a919ec382f23fa08dd4391e03b.js": "/zewaGame/precache-manifest.27b989a919ec382f23fa08dd4391e03b.js",
     "service-worker.js": "/zewaGame/service-worker.js",
-    "static/css/main.805ccdab.chunk.css.map": "/zewaGame/static/css/main.805ccdab.chunk.css.map",
+    "static/css/main.307b4d67.chunk.css.map": "/zewaGame/static/css/main.307b4d67.chunk.css.map",
     "static/js/2.4f69c3a4.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.4f69c3a4.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/index.scss": "/zewaGame/static/media/pattern.d65c9003.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.d8b6e021.js",
     "static/js/2.4f69c3a4.chunk.js",
-    "static/css/main.805ccdab.chunk.css",
+    "static/css/main.307b4d67.chunk.css",
     "static/js/main.7a911881.chunk.js"
   ]
 }
