@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/zewaGame/static/css/main.4662eee9.chunk.css",
-    "main.js": "/zewaGame/static/js/main.ac17c366.chunk.js",
-    "main.js.map": "/zewaGame/static/js/main.ac17c366.chunk.js.map",
+    "main.css": "/zewaGame/static/css/main.1646bff0.chunk.css",
+    "main.js": "/zewaGame/static/js/main.7e552bb3.chunk.js",
+    "main.js.map": "/zewaGame/static/js/main.7e552bb3.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
     "runtime-main.js.map": "/zewaGame/static/js/runtime-main.d8b6e021.js.map",
-    "static/js/2.69d1aab0.chunk.js": "/zewaGame/static/js/2.69d1aab0.chunk.js",
-    "static/js/2.69d1aab0.chunk.js.map": "/zewaGame/static/js/2.69d1aab0.chunk.js.map",
+    "static/js/2.e9f0a4d8.chunk.js": "/zewaGame/static/js/2.e9f0a4d8.chunk.js",
+    "static/js/2.e9f0a4d8.chunk.js.map": "/zewaGame/static/js/2.e9f0a4d8.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.44251ff34c4370b777c725f44316ecc4.js": "/zewaGame/precache-manifest.44251ff34c4370b777c725f44316ecc4.js",
+    "precache-manifest.b54cb82570b14dceaa4e9ae37366f6ac.js": "/zewaGame/precache-manifest.b54cb82570b14dceaa4e9ae37366f6ac.js",
     "service-worker.js": "/zewaGame/service-worker.js",
-    "static/css/main.4662eee9.chunk.css.map": "/zewaGame/static/css/main.4662eee9.chunk.css.map",
-    "static/js/2.69d1aab0.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.69d1aab0.chunk.js.LICENSE.txt",
+    "static/css/main.1646bff0.chunk.css.map": "/zewaGame/static/css/main.1646bff0.chunk.css.map",
+    "static/js/2.e9f0a4d8.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.e9f0a4d8.chunk.js.LICENSE.txt",
     "static/media/2.jpg": "/zewaGame/static/media/2.0c06b1cf.jpg",
     "static/media/3.jpg": "/zewaGame/static/media/3.b8a23b33.jpg",
     "static/media/App.scss": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf",
@@ -27,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.d8b6e021.js",
-    "static/js/2.69d1aab0.chunk.js",
-    "static/css/main.4662eee9.chunk.css",
-    "static/js/main.ac17c366.chunk.js"
+    "static/js/2.e9f0a4d8.chunk.js",
+    "static/css/main.1646bff0.chunk.css",
+    "static/js/main.7e552bb3.chunk.js"
   ]
 }
