@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b04139c43b1d2b20cd5b24b18ece082",
+    "revision": "63c4abf80b9dcafdaeab49749883ff7a",
     "url": "/zewaGame/index.html"
   },
   {
-    "revision": "6a7af4b9b55d8bb41809",
-    "url": "/zewaGame/static/css/main.fb994097.chunk.css"
+    "revision": "5a5dadac9e39bbe324c2",
+    "url": "/zewaGame/static/css/main.ad7e901d.chunk.css"
   },
   {
     "revision": "ad3a2fb88777f726b6b5",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zewaGame/static/js/2.f079d69d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6a7af4b9b55d8bb41809",
+    "revision": "5a5dadac9e39bbe324c2",
     "url": "/zewaGame/static/js/main.e94f6bd5.chunk.js"
   },
   {
@@ -40,8 +40,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf"
   },
   {
-    "revision": "526b4d83fe3cdab019d87f146d4fddfb",
-    "url": "/zewaGame/static/media/Overlay.526b4d83.jpg"
+    "revision": "b2e220470f08c4c8846244d3584ce8d3",
+    "url": "/zewaGame/static/media/Overlay.b2e22047.jpg"
   },
   {
     "revision": "e5445cd1821e7e6650137e39facdbf20",
