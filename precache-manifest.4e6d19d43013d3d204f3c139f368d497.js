@@ -1,23 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1702a4b9d4af4143145c1fccbe7cefe0",
+    "revision": "183d5b74c7e60c3a0e63b64bcda9522e",
     "url": "/zewaGame/index.html"
   },
   {
-    "revision": "92bdbfc7dc692cd6d379",
-    "url": "/zewaGame/static/css/main.6cace08e.chunk.css"
+    "revision": "69751caaefa8f0f5ae94",
+    "url": "/zewaGame/static/css/2.d163c240.chunk.css"
   },
   {
-    "revision": "b712c7a477a9c2438be5",
-    "url": "/zewaGame/static/js/2.caebc4ec.chunk.js"
+    "revision": "06bfe44bd90054f21223",
+    "url": "/zewaGame/static/css/main.1354e191.chunk.css"
   },
   {
-    "revision": "1c9a5c14c094f70c35a5a57a5770d494",
-    "url": "/zewaGame/static/js/2.caebc4ec.chunk.js.LICENSE.txt"
+    "revision": "69751caaefa8f0f5ae94",
+    "url": "/zewaGame/static/js/2.fb9c7a7d.chunk.js"
   },
   {
-    "revision": "92bdbfc7dc692cd6d379",
-    "url": "/zewaGame/static/js/main.b4045053.chunk.js"
+    "revision": "7aeb96c4878d224a55adce546624b684",
+    "url": "/zewaGame/static/js/2.fb9c7a7d.chunk.js.LICENSE.txt"
+  },
+  {
+    "revision": "06bfe44bd90054f21223",
+    "url": "/zewaGame/static/js/main.8d092626.chunk.js"
   },
   {
     "revision": "6f2d931a81d46cf094fa",
@@ -94,6 +98,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d65c900333a4ff5942a5e721403cf44a",
     "url": "/zewaGame/static/media/pattern.d65c9003.png"
+  },
+  {
+    "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
+    "url": "/zewaGame/static/media/slick.b7c9e1e4.woff"
+  },
+  {
+    "revision": "ced611daf7709cc778da928fec876475",
+    "url": "/zewaGame/static/media/slick.ced611da.eot"
+  },
+  {
+    "revision": "d41f55a78e6f49a5512878df1737e58a",
+    "url": "/zewaGame/static/media/slick.d41f55a7.ttf"
+  },
+  {
+    "revision": "f97e3bbf73254b0112091d0192f17aec",
+    "url": "/zewaGame/static/media/slick.f97e3bbf.svg"
   },
   {
     "revision": "37e618f6a5635be860ed9e3bf95b609c",
