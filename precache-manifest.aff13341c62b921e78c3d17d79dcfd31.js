@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04465ffcf7c68520b32883d3d68f7d60",
+    "revision": "1702a4b9d4af4143145c1fccbe7cefe0",
     "url": "/zewaGame/index.html"
   },
   {
-    "revision": "f319ab878c150d45b976",
-    "url": "/zewaGame/static/css/main.e79472bc.chunk.css"
+    "revision": "92bdbfc7dc692cd6d379",
+    "url": "/zewaGame/static/css/main.6cace08e.chunk.css"
   },
   {
-    "revision": "68dbe696b7fe910544df",
-    "url": "/zewaGame/static/js/2.dc7c6cc0.chunk.js"
+    "revision": "b712c7a477a9c2438be5",
+    "url": "/zewaGame/static/js/2.caebc4ec.chunk.js"
   },
   {
     "revision": "1c9a5c14c094f70c35a5a57a5770d494",
-    "url": "/zewaGame/static/js/2.dc7c6cc0.chunk.js.LICENSE.txt"
+    "url": "/zewaGame/static/js/2.caebc4ec.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f319ab878c150d45b976",
-    "url": "/zewaGame/static/js/main.662f801b.chunk.js"
+    "revision": "92bdbfc7dc692cd6d379",
+    "url": "/zewaGame/static/js/main.b4045053.chunk.js"
   },
   {
     "revision": "6f2d931a81d46cf094fa",
