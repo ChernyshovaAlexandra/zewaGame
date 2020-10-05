@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/zewaGame/static/css/main.c9b96bf2.chunk.css",
-    "main.js": "/zewaGame/static/js/main.0f55c58c.chunk.js",
-    "main.js.map": "/zewaGame/static/js/main.0f55c58c.chunk.js.map",
+    "main.js": "/zewaGame/static/js/main.e94f6bd5.chunk.js",
+    "main.js.map": "/zewaGame/static/js/main.e94f6bd5.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
     "runtime-main.js.map": "/zewaGame/static/js/runtime-main.d8b6e021.js.map",
     "static/js/2.f079d69d.chunk.js": "/zewaGame/static/js/2.f079d69d.chunk.js",
     "static/js/2.f079d69d.chunk.js.map": "/zewaGame/static/js/2.f079d69d.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.86706ff3a7a02a8786a659e0a044e436.js": "/zewaGame/precache-manifest.86706ff3a7a02a8786a659e0a044e436.js",
+    "precache-manifest.2e9047286e47ca129bb857fa74b3c6a4.js": "/zewaGame/precache-manifest.2e9047286e47ca129bb857fa74b3c6a4.js",
     "service-worker.js": "/zewaGame/service-worker.js",
     "static/css/main.c9b96bf2.chunk.css.map": "/zewaGame/static/css/main.c9b96bf2.chunk.css.map",
     "static/js/2.f079d69d.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.f079d69d.chunk.js.LICENSE.txt",
@@ -29,6 +29,6 @@
     "static/js/runtime-main.d8b6e021.js",
     "static/js/2.f079d69d.chunk.js",
     "static/css/main.c9b96bf2.chunk.css",
-    "static/js/main.0f55c58c.chunk.js"
+    "static/js/main.e94f6bd5.chunk.js"
   ]
 }
