@@ -1,0 +1,77 @@
+.answerBlock {
+    margin-top: 1rem;
+    max-width: 85%;
+    margin: 1rem auto;
+
+    b {
+        color: #0E2C60;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .submitForm {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+
+        .btn {
+            width: auto;
+            min-width: 15rem;
+        }
+
+        input {
+            height: 3rem;
+            -webkit-appearance: none;
+            border: none;
+            box-shadow: none;
+            border-radius: 10px;
+            width: 20rem;
+            outline: none !important;
+            padding: 0 1rem;
+            cursor: text;
+            display: block;
+            margin-bottom: 1rem;
+
+            &:focus {
+                border: 3px solid #CE0B68;
+
+                &+label::after {
+                    display: none;
+                }
+            }
+
+            &+label {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 20rem;
+                height: 3rem;
+                border-radius: 10px;
+                margin: auto;
+                cursor: text;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    width: 3rem;
+                    height: 3rem;
+                    background: url(./img/pencil.png) no-repeat center;
+                    background-size: 60%;
+                    top: 0;
+                }
+
+
+            }
+        }
+    }
+}
+
+
+.inputArea {
+    .dialogs {
+        max-height: 170px;
+    }
+}

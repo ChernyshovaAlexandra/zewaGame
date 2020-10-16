@@ -1,17 +1,17 @@
 .selectionBtn {
     -webkit-appearance: none;
-    height: 3rem;
-    background: darkblue;
+    min-height: 3rem;
+    background: #CE0B68;
     color: #fff;
     border-radius: 2rem;
     border: none;
     outline: none !important;
     width: 100%;
-    border: 1px solid;
+    margin: 0 0 .5rem;
     overflow: hidden;
     position: relative;
     box-shadow: none !important;
-    margin-bottom: 1rem;
+    display: block;
 
     &::after {
         background: #fff;
@@ -44,9 +44,53 @@
     }
 
     &.pink {
-        background: #e83f5d;
-        &:hover{
-            background: rgba(gray, .5);
+        background: #CE0B68;
+
+        &:hover {
+            background: #B9C4EA;
         }
+    }
+}
+
+.gameContainer {
+
+    .mainBg {
+
+        .nav {
+            @media screen and (max-width:629px) {
+                display: none;
+            }
+        }
+
+        .nav-mob {
+            display: none;
+
+            @media screen and (max-width:629px) {
+                display: flex;
+            }
+        }
+    }
+}
+
+
+
+// iPhone XR
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait)  {
+    .gameContainer, .selectQwest, .menu {
+        padding-top: 4rem !important;
+    }
+}
+
+// iPhone XS
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)  {
+    .gameContainer, .selectQwest, .menu {
+        padding-top: 4rem!important;
+    }
+}
+
+// iPhone XS Max
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)  {
+    .gameContainer, .selectQwest, .menu {
+        padding-top: 4rem!important;
     }
 }

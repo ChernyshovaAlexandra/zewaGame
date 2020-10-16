@@ -1,21 +1,107 @@
-.dialogs {
-    margin: 2rem 0;
-    background: #fff;
-    padding: 1rem;
-    border-radius: 1rem;
-    .dialog {
-        margin-bottom: 2rem;
-        .roundImg {
-            width: 3rem;
-            height: 3em;
-            border-radius: 50%;
-            overflow: hidden;
+.selection {
+    max-width: 90%;
 
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
+    &.row {
+        flex-wrap: wrap !important;
+        max-width: 100%;
+        margin: 1rem auto 0;
+
+        .col-lg-6 {
+            flex: 50%;
+            max-width: 100%;
         }
     }
+}
+
+.dialogs {
+    margin: 2rem 0 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: #000;
+    background: url(../../img/pattern-after-opacity.png) no-repeat center; //linear-gradient(180deg, #fff 0%, #50b0fa57 100%),
+    background-size: cover;
+    // background-blend-mode: screen;
+
+    max-width: 85%;
+    margin: auto;
+    // max-height: 200px;
+    overflow: hidden;
+
+
+
+    .row {
+        flex-wrap: wrap !important;
+    }
+
+
+    .dialog {
+        margin-bottom: 0rem;
+        flex-wrap: nowrap !important;
+        font-family: 'Montserrat', sans-serif;
+
+        p {
+            margin-bottom: 0rem;
+            b {
+                text-transform: capitalize;
+            }
+        }
+
+        .col-md-2 {
+            padding: 0;
+            flex: 10%;
+            max-width: 10%;
+
+            @media screen and (max-width: 425px) {
+                max-width: 20%;
+                flex: 20%;
+            }
+
+            .roundImg {
+                width: 2.3rem;
+                height: 2.3rem;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        .col-md-10 {
+            flex: 90%;
+            max-width: 90%;
+            padding: 0;
+
+            @media screen and (max-width: 425px) {
+                max-width: 80%;
+                flex: 80%;
+            }
+        }
+
+        @media screen and (max-width: 629px) {
+            position: relative;
+        }
+    }
+
+    @media screen and (max-width: 629px) {
+        max-width: 100%;
+        max-height: 250px;
+    }
+}
+
+.col-md-6,
+.col-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.col-md-auto,
+.col-lg-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
 }

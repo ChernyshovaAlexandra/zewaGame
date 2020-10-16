@@ -1,5 +1,7 @@
 .materials {
-    margin: 0rem auto 1rem;
+    margin: -2.1rem auto 1rem;
+    position: relative;
+    z-index: 10;
 
     h2 {
         margin-bottom: 1rem;
@@ -7,33 +9,42 @@
 
     .img-container {
         position: relative;
-        height: 200px;
+        height: 210px;
 
-        img {
-            position: absolute;
-            max-width: 100%;
-            max-height: 200px;
-            width: 60%;
+        @media screen and (max-width: 629px) {
+            height: 200px;
+        }
+
+        a {
             display: block;
-            margin: 0 auto;
-            object-fit: cover;
-            border: 10px solid #fff;
-            border-radius: 5px;
-            box-shadow: 10px 10px 10px rgba(#000, .2);
-            left: 0;
-            right: 0;
 
-            &:nth-child(1) {
-                transform: rotate(-5deg);
+            img {
+                position: absolute;
+                max-width: 100%;
+                width: 65%;
+                display: block;
+                margin: 0 auto;
+                object-fit: cover;
+                border: 10px solid #fff;
+                box-shadow: 10px 10px 10px rgba(#000, .2);
+                left: 0;
+                right: 0;
+                height: 210px;
             }
 
-            &:nth-child(2) {
-                transform: rotate(5deg);
-            }
-
-            &:nth-child(3) {
-                transform: rotate(0deg);
+            @media screen and (max-width: 629px) {
+                img {
+                    width: 100%;
+                    height: auto;
+                    max-height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
             }
         }
+    }
+
+    @media screen and (max-width: 629px) {
+        margin-top: 1rem;
     }
 }
