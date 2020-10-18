@@ -1,28 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.3b32cea3.chunk.css",
-    "main.js": "/static/js/main.b2cc0887.chunk.js",
-    "main.js.map": "/static/js/main.b2cc0887.chunk.js.map",
+    "main.css": "/static/css/main.cc9fbbb8.chunk.css",
+    "main.js": "/static/js/main.226b9ed1.chunk.js",
+    "main.js.map": "/static/js/main.226b9ed1.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
     "runtime-main.js.map": "/static/js/runtime-main.e95b8414.js.map",
     "static/css/2.1c9ef103.chunk.css": "/static/css/2.1c9ef103.chunk.css",
-    "static/js/2.59165d35.chunk.js": "/static/js/2.59165d35.chunk.js",
-    "static/js/2.59165d35.chunk.js.map": "/static/js/2.59165d35.chunk.js.map",
+    "static/js/2.1facadda.chunk.js": "/static/js/2.1facadda.chunk.js",
+    "static/js/2.1facadda.chunk.js.map": "/static/js/2.1facadda.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d4f472703ca986fceaa7615bfbe2d889.js": "/precache-manifest.d4f472703ca986fceaa7615bfbe2d889.js",
+    "precache-manifest.d52b3a8c779507cfd8fcf1f11e3850e7.js": "/precache-manifest.d52b3a8c779507cfd8fcf1f11e3850e7.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
-    "static/css/main.3b32cea3.chunk.css.map": "/static/css/main.3b32cea3.chunk.css.map",
-    "static/js/2.59165d35.chunk.js.LICENSE.txt": "/static/js/2.59165d35.chunk.js.LICENSE.txt",
-    "static/media/2.jpg": "/static/media/2.0c06b1cf.jpg",
-    "static/media/3.jpg": "/static/media/3.b8a23b33.jpg",
+    "static/css/main.cc9fbbb8.chunk.css.map": "/static/css/main.cc9fbbb8.chunk.css.map",
+    "static/js/2.1facadda.chunk.js.LICENSE.txt": "/static/js/2.1facadda.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
     "static/media/image1.png": "/static/media/image1.e5445cd1.png",
     "static/media/image2.png": "/static/media/image2.5b8c60c1.png",
     "static/media/image3.png": "/static/media/image3.04b0eab0.png",
     "static/media/image4.png": "/static/media/image4.160672ea.png",
-    "static/media/image5.png": "/static/media/image5.4409a47e.png",
     "static/media/logoGame.png": "/static/media/logoGame.3b70e444.png",
     "static/media/magnit-logo.svg": "/static/media/magnit-logo.a052c0ad.svg",
     "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
@@ -31,8 +28,8 @@
   "entrypoints": [
     "static/js/runtime-main.e95b8414.js",
     "static/css/2.1c9ef103.chunk.css",
-    "static/js/2.59165d35.chunk.js",
-    "static/css/main.3b32cea3.chunk.css",
-    "static/js/main.b2cc0887.chunk.js"
+    "static/js/2.1facadda.chunk.js",
+    "static/css/main.cc9fbbb8.chunk.css",
+    "static/js/main.226b9ed1.chunk.js"
   ]
 }
