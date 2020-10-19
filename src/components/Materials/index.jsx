@@ -1,13 +1,6 @@
 import React from 'react'
 import './index.scss'
-import img1 from '../../img/1.jpg'
-import img2 from '../../img/2.jpg'
-import img3 from '../../img/3.jpg'
 
-
-const images = [
-    img1
-]
 
 
 export default class Materials extends React.Component {
@@ -15,8 +8,6 @@ export default class Materials extends React.Component {
 
     render() {
         const { image } = this.props
-        // let images = Array.from(image)
-        console.log(this.props)
         return (
             <div className="materials row">
                 <div className="col-lg-12">

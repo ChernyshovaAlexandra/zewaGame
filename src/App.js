@@ -6,7 +6,7 @@ import QuestWinModal from './components/QuestWinModal'
 import LoadingComponent from './components/LoadingComponent'
 import './App.scss'
 import { connect } from 'react-redux'
-import { startGame, showRules, showRes } from './store/actions'
+import { startGame, showRules, showRes, setUserData } from './store/actions'
 import bridge from '@vkontakte/vk-bridge';
 
 class App extends React.Component {
@@ -16,11 +16,11 @@ class App extends React.Component {
 			loaded: false,
 			body_to_send: null
 		}
-
 		this.getUserInfo()
 
 	}
 	getUserInfo = () => {
+
 		bridge.subscribe((e) => {
 
 			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
@@ -33,14 +33,15 @@ class App extends React.Component {
 				})
 				this.login()
 			}
+		
 		})
 		bridge.send("VKWebAppGetUserInfo")
-
 	}
 
 
 
 	login = async () => {
+		const { setUserData } = this.props
 		let th = this
 		if (this.state.body_to_send) {
 			let response = await fetch('https://back.zewaquests.ru/api/login', {
@@ -53,7 +54,8 @@ class App extends React.Component {
 
 			})
 			let jsR = await response.json()
-			
+
+			setUserData(this.state.body_to_send)
 		}
 	}
 	componentDidMount() {
@@ -61,23 +63,22 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3000)
+		}, 30)
 	}
 	render() {
-		const { rules, start, results, selected, questWin } = this.props
+		const { start, selected, questWin } = this.props
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
 				{selected ?
 					<Main /> :
-					start ?
-						<SelectQwest /> :
-						questWin ?
-							<QuestWinModal /> :
+					questWin ?
+						<QuestWinModal /> :
+						start ?
+							<SelectQwest /> :
 							loaded ?
 								<Menu /> :
 								<LoadingComponent />
-					// : <></>
 				}
 			</div>
 		)
@@ -90,7 +91,8 @@ const mapStateToProps = state => {
 		start: state.store.start,
 		results: state.store.results,
 		selected: state.store.selected,
-		questWin: state.store.questWin
+		questWin: state.store.questWin,
+		userData: state.store.userData
 	}
 }
 
@@ -98,7 +100,8 @@ const mapDispatchToProps = dispatch => {
 	return {
 		startGame: () => dispatch(startGame()),
 		showRules: () => dispatch(showRules()),
-		showRes: () => dispatch(showRes())
+		showRes: () => dispatch(showRes()),
+		setUserData: (data) => dispatch(setUserData(data))
 	}
 }
 

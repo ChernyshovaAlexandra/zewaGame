@@ -13,6 +13,13 @@
     box-shadow: none !important;
     display: block;
 
+    @media screen and (max-width: 629px) {
+        font-size: .85rem;
+    }
+    @media screen and (max-width: 330px) {
+        min-height: 2.5rem;
+    }
+
     &::after {
         background: #fff;
         content: "";
@@ -46,7 +53,7 @@
     &.pink {
         background: #CE0B68;
 
-        &:hover {
+        &:active {
             background: #B9C4EA;
         }
     }
@@ -75,22 +82,31 @@
 
 
 // iPhone XR
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait)  {
-    .gameContainer, .selectQwest, .menu {
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
+
+    .gameContainer,
+    .selectQwest,
+    .menu {
         padding-top: 4rem !important;
     }
 }
 
 // iPhone XS
-@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)  {
-    .gameContainer, .selectQwest, .menu {
-        padding-top: 4rem!important;
+@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+
+    .gameContainer,
+    .selectQwest,
+    .menu {
+        padding-top: 4rem !important;
     }
 }
 
 // iPhone XS Max
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait)  {
-    .gameContainer, .selectQwest, .menu {
-        padding-top: 4rem!important;
+@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+
+    .gameContainer,
+    .selectQwest,
+    .menu {
+        padding-top: 4rem !important;
     }
 }

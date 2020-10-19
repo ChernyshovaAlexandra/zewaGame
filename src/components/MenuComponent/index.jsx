@@ -8,6 +8,7 @@ import './index.scss'
 import bridge from '@vkontakte/vk-bridge';
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes } from '../../store/actions'
+import anime from 'animejs/lib/anime.es.js';
 
 class Menu extends React.Component {
     constructor(props) {
@@ -30,21 +31,23 @@ class Menu extends React.Component {
     closeApp = () => {
         bridge.send("VKWebAppClose", { "status": "success", "payload": { "name": "test" } });
     }
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
             loaded: true
         })
     }
+
+
     render() {
-        const { startGame, showRules, showRes, questWin } = this.props
-        if (!this.state.loaded) {return <p>loading</p>}
+        const { showRules, questWin, userData } = this.props
+        if (!this.state.loaded) { return <p>loading</p> }
         return (
             <section className="menu">
                 <div className="row justify-content-center nav">
-                    <div className="col-lg-3">
+                    <div className="col-lg-3 animate__animated animate__fadeIn sec">
                         <img src={Zewa} alt="" />
                     </div>
-                    <div className="col-lg-7">
+                    <div className="col-lg-7 animate__animated animate__fadeIn thrd">
                         <img src={logoGame} alt="" />
                     </div>
                 </div>
@@ -61,8 +64,8 @@ class Menu extends React.Component {
                 </div>
                 <div className="row justify-content-center infoData">
                     <div className="col-lg-9">
-                        <p>
-                    Привет, <span>{this.state.name}</span>. Играй и получай скидки до <span className="special">70%</span><br /> на покупку продукции Zewa в магазинах Магнит.
+                        <p className="ml3">
+                            Привет, <span>{userData.name}</span>. Играй и получай скидки до <span className="special">70%</span><br /> на покупку продукции Zewa в магазинах Магнит.
                     Пройди все квесты и участвуй в розыгрыше подарочного купона Магнит на <span className="special">3000&#160;рублей</span>.
                  </p>
                     </div>
@@ -73,22 +76,18 @@ class Menu extends React.Component {
                     <div className="row justify-content-center navigation">
                         <div className="col-lg-6">
                             <div className="row justify-content-center">
-                                <div className="col-md-auto">
+                                <div className="col-md-auto animate__animated animate__bounceIn first">
                                     <button className="selectionBtn pink" onClick={() => this.props.startGame()}>Начать игру</button>
                                 </div>
                             </div>
+
                             <div className="row justify-content-center">
-                                <div className="col-md-auto">
-                                    <button className="selectionBtn" onClick={() => showRes()}>Рекорды</button>
-                                </div>
-                            </div>
-                            <div className="row justify-content-center">
-                                <div className="col-md-auto">
+                                <div className="col-md-auto animate__animated animate__bounceIn sec">
                                     <button className="selectionBtn" onClick={() => showRules()}>Правила</button>
                                 </div>
                             </div>
-                            <div className="row justify-content-center">
-                                <div className="col-md-auto">
+                            <div className="row justify-content-center animate__bounceIn">
+                                <div className="col-md-auto animate__animated animate__bounceIn thrd">
                                     <button className="selectionBtn" onClick={() => this.closeApp()}>Выход</button>
                                 </div>
                             </div>
@@ -97,7 +96,7 @@ class Menu extends React.Component {
                 }
 
                 <div className="row justify-content-center">
-                    <div className="col-lg-auto magnit">
+                    <div className="col-lg-auto magnit  animate__animated animate__bounceIn  fourth">
                         <img src={magnit} alt="" />
                     </div>
                 </div>
@@ -110,7 +109,8 @@ const mapStateToProps = state => {
         rules: state.store.rules,
         start: state.store.start,
         results: state.store.results,
-        questWin: state.store.questWin
+        questWin: state.store.questWin,
+        userData: state.store.userData
     }
 }
 

@@ -4,7 +4,7 @@ import zewa from '../../img/zewa.png'
 import delo from '../../img/logoGame.png'
 import magnit from '../../img/magnit-wh.png'
 import { connect } from 'react-redux'
-import { startGame, showRules, showSelected, setQuestReady, showWinQModal, getQuest } from '../../store/actions'
+import { startGame, showRules, showSelected, setQuestReady, showWinQModal, getQuest, getQuestList } from '../../store/actions'
 import toiletPaper from '../../img/toilet-p-before.png'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -17,6 +17,7 @@ class SelectQwest extends React.Component {
         this.state = {
             quests: this.props.quests
         }
+        this.props.getQuestList()
     }
 
 
@@ -26,14 +27,14 @@ class SelectQwest extends React.Component {
         this.props.showSelected(true)
     }
     setReady = (index) => {
-        const { quests, showWinQModal, getQuest, showSelected, setQuestReady } = this.props;
+        const { quests, showWinQModal, getQuest, showSelected, setQuestReady, userData } = this.props;
         const questsMass = quests;
 
         if (index === quests.length - 1) {
             showWinQModal(true);
         }
         else {
-            getQuest(0, index+1)
+            getQuest(userData.vk_id, index + 1)
             showSelected(index)
             // questsMass[index].isReady = true
             // questsMass[index].isDone = true
@@ -51,18 +52,20 @@ class SelectQwest extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1
         };
-        const { quests, getQuest } = this.state
+        const { quests } = this.props
+        const remainedQuests = quests.length - (quests.filter(item => item.isActive)).length
+
         return (
             <div className="selectQwest mainBG container">
                 <div className="row justify-content-between nav">
-                    <div className="col-lg-2">
-                        <img src={zewa} />
+                    <div className="col-lg-2   animate__animated animate__fadeIn ">
+                        <img src={zewa} alt="" />
                     </div>
-                    <div className="col-lg-3">
-                        <img src={delo} />
+                    <div className="col-lg-3   animate__animated animate__fadeIn sec">
+                        <img src={delo} alt="" />
                     </div>
-                    <div className="col-lg-3">
-                        <img src={magnit} />
+                    <div className="col-lg-3  animate__animated animate__fadeIn thrd">
+                        <img src={magnit} alt="" />
                     </div>
                 </div>
                 <div className="row justify-content-center nav-mob">
@@ -77,7 +80,7 @@ class SelectQwest extends React.Component {
                     </div>
                 </div>
                 <div className="row justify-content-between descriptionContainer">
-                    <div className="col-lg-5">
+                    <div className="col-lg-5 Header">
                         <h2>Выбери квест </h2>
                         <p className="nav-mob">
                             С каждым пройденным квестом
@@ -88,7 +91,7 @@ class SelectQwest extends React.Component {
                         <div className="explanationBox  ">
                             <div className="row blue align-items-center">
                                 <div className="col-md-3 numeric">
-                                    <p>5</p>
+                                    <p>{remainedQuests}</p>
                                 </div>
                                 <div className="col-md-11">
                                     <p>квестов осталось пройти<br />до розыгрыша подарочного<br />купона на 3000 рублей</p>
@@ -98,7 +101,7 @@ class SelectQwest extends React.Component {
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-lg-auto">
+                    <div className="col-lg-auto" style={{ 'marginTop': '-.8rem' }}>
                         <p>С каждым пройденным квестом<br />
                         твоя скидка увеличивается</p>
 
@@ -106,8 +109,8 @@ class SelectQwest extends React.Component {
                 </div>
 
                 <div className="row justify-content-center quest-content--inner desktop-only">
-                    {this.props.quests.map((item, index) => (
-                        <div className="col-lg-4">
+                    {quests.map((item, index) => (
+                        <div className={"col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" + (index + 1) + "s"} style={{ 'position': 'relative' }} key={index}>
                             {item.isActive && !item.isDone && <div className="sale">
                                 <img src={toiletPaper} alt="" />
                                 <p>{"Скидка " + item.sale + '%'}</p>
@@ -128,8 +131,8 @@ class SelectQwest extends React.Component {
                 </div>
                 <div className="row mob-only">
                     <Slider {...settings}>
-                        {this.props.quests.map((item, index) => (
-                            <div className="col-lg-12">
+                        {quests.map((item, index) => (
+                            <div className="col-lg-12" key={index}>
                                 {item.isActive && !item.isDone && <div className="sale">
                                     <img src={toiletPaper} alt="" />
                                     <p>{"Скидка " + item.sale + '%'}</p>
@@ -159,7 +162,8 @@ const mapStateToProps = state => {
     return {
         selected: state.store.selected,
         quests: state.store.quests,
-        questData: state.store.questData
+        questData: state.store.questData,
+        userData: state.store.userData
     }
 }
 
@@ -171,6 +175,7 @@ const mapDispatchToProps = dispatch => {
         setQuestReady: (quests) => dispatch(setQuestReady(quests)),
         showWinQModal: (quest) => dispatch(showWinQModal(quest)),
         getQuest: (vk_id, quest_id) => dispatch(getQuest(vk_id, quest_id)),
+        getQuestList: () => dispatch(getQuestList())
     }
 }
 

@@ -12,33 +12,31 @@ export default class Dialog extends React.Component {
         this.setAnim()
     }
     init = async () => {
-        
+
         this.showWords()
     }
 
     showWords = () => {
-        var textWrapper = document.querySelector('.ml3');
-        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        var textWrapper = document.getElementsByClassName('ml3');
 
-        anime.timeline({ loop: false })
-            .add({
-                targets: '.ml3 .letter',
-                opacity: [0, 1],
-                easing: "easeInOutQuad",
-                duration: 500,
-                delay: (el, i) => 50 * (i + 1)
-            })
-            .add({
-                targets: '.ml3',
-                opacity: 1,
-                duration: 500,
-                easing: "easeOutExpo",
-                delay: 1
-            });
+        for (let i = 0; i < textWrapper.length; i++) {
+            textWrapper[i].innerHTML = textWrapper[i].textContent.replace(/\S/g, "<span class='letter'>$&</span>")
+
+            anime.timeline({ loop: false })
+                .add({
+                    targets: '.dialog .letter',
+                    opacity: [0, 1],
+                    easing: "easeInOutQuad",
+                    duration: 500,
+                    delay: (el, i) => 30 * (i + 1)
+                })
+        }
     }
 
     componentWillReceiveProps(props) {
-        // this.setAnim()
+        if (props.buttons.length !== 0) {
+            this.setAnim()
+        }
     }
     setAnim = () => {
         this.setState({
@@ -53,24 +51,34 @@ export default class Dialog extends React.Component {
     }
 
     render() {
-        const { data, index, hints } = this.props
-       
+        const { data, hints, buttons } = this.props
+
         return (
             <>
-                {this.state.shown && 
-                <div 
-                className=
-                {hints ? "hint " + "dialog row animate__animated animate__fadeIn animate__delay-" + index * 2 + 's' :
-                 "dialog row animate__animated animate__fadeIn animate__delay-" + index * 2 + 's'} >
-                    <div className="col-md-2">
-                        <div className="roundImg">
-                            <img src={data.avatar} alt="" />
-                        </div>
-                    </div>
-                    <div className="col-md-10">
-                        <p><b>{data.name}: </b><span className='ml3'>{data.message}</span></p>
-                    </div>
-                </ div>}
+                {this.state.shown &&
+                    <div
+                        className=
+                        {hints ? "hint dialog row" : "dialog row"
+                        }>
+                        {data.avatar !== '' &&
+                            <>
+                                <div className="col-md-2 letter">
+                                    <div className="roundImg">
+                                        <img src={data.avatar} alt="" />
+                                    </div>
+                                </div>
+                                <div className="col-md-10 ">
+                                    <p className="letter"><b>{data.name}: </b><span className='ml3'>{data.message}</span></p>
+                                </div>
+                            </>
+                        }
+                        {
+                            data.avatar === '' &&
+                            <div className="control-point ml3">
+                                {data.message}
+                            </div>
+                        }
+                    </ div>}
             </>
         )
     }

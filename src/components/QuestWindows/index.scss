@@ -3,10 +3,18 @@
     max-width: 85%;
     margin: 1rem auto;
 
+    @media screen and (max-width: 330px) {
+        max-width: 100%;
+    }
+
     b {
         color: #0E2C60;
         font-size: 1.2rem;
         margin-bottom: 1rem;
+
+        @media screen and (max-width: 330px) {
+            font-size: 1rem;
+        }
     }
 
     .submitForm {
@@ -34,6 +42,11 @@
             display: block;
             margin-bottom: 1rem;
 
+            @media screen and (max-width: 530px) {
+                font-size: 1rem;
+                width: 100%;
+            }
+
             &:focus {
                 border: 3px solid #CE0B68;
 
@@ -51,6 +64,10 @@
                 border-radius: 10px;
                 margin: auto;
                 cursor: text;
+                @media screen and (max-width: 530px) {
+                    font-size: 1rem;
+                    width: 100%;
+                }
 
                 &::after {
                     content: '';

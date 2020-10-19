@@ -2,7 +2,9 @@
     margin: -2.1rem auto 1rem;
     position: relative;
     z-index: 10;
-
+    @media screen and (max-width: 629px) {
+        margin-bottom: .5rem;
+    }
     h2 {
         margin-bottom: 1rem;
     }
@@ -13,6 +15,9 @@
 
         @media screen and (max-width: 629px) {
             height: 200px;
+        }
+        @media screen and (max-width: 429px) {
+            height: 150px;
         }
 
         a {
@@ -30,6 +35,10 @@
                 left: 0;
                 right: 0;
                 height: 210px;
+                @media screen and (max-width: 429px) {
+                    height: 150px;
+                    border: 8px solid #fff;
+                }
             }
 
             @media screen and (max-width: 629px) {

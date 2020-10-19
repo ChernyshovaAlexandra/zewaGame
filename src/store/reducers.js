@@ -4,17 +4,19 @@ import {
     SHOW_RESULTS,
     SHOW_SELECTED,
     SET_QUEST_READY,
+    SET_QUEST_LIST,
     SHOW_QUEST_WIN_MODAL,
-    GET_QUEST
+    GET_QUEST,
+    SET_USER_DATA
 } from './actionTypes'
 import { combineReducers } from 'redux'
-import image1 from '../img/image1.png'
-import image2 from '../img/image2.png'
-import image3 from '../img/image3.png'
-import image4 from '../img/image4.png'
-import image5 from '../img/image5.png'
+import image1 from '../img/quest1.jpg'
+import image2 from '../img/quest2.jpg'
+import image3 from '../img/quest3.jpg'
+import image4 from '../img/quest4.jpg'
+import image5 from '../img/quest5.jpg'
 
-const defaultState =
+export const defaultState =
 {
     rules: false,
     start: false,
@@ -30,21 +32,21 @@ const defaultState =
         },
         {
             name: 'Название второго<br/>квеста Зева',
-            isActive: false,
+            isActive: true,
             sale: '30',
             img: image2,
-            isReady: false
+            isReady: true
         },
         {
             name: 'Название третьего<br/>квеста Зева',
-            isActive: false,
+            isActive: true,
             sale: '40',
             img: image3,
             isReady: false
         },
         {
             name: 'Название четвертого<br/>квеста Зева',
-            isActive: false,
+            isActive: true,
             sale: '50',
             img: image4,
             isReady: false
@@ -58,7 +60,11 @@ const defaultState =
         }
     ],
     questWin: false,
-    questData: []
+    questData: [],
+    userData: {
+        name: 'user',
+        vk_id: 9801302
+    }
 }
 
 
@@ -79,6 +85,10 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, questWin: action.payload }
         case GET_QUEST:
             return { ...state, questData: action.payload }
+        case SET_QUEST_LIST:
+            return { ...state, quests: action.payload }
+        case SET_USER_DATA:
+            return { ...state, userData: action.payload }
     }
 
     return state

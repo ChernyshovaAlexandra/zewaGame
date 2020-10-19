@@ -91,6 +91,7 @@
             justify-content: center;
             align-items: center;
             line-height: 0;
+
             &.pink {
                 background-color: #CE0B68;
                 color: #fff;
@@ -127,6 +128,7 @@
         background: url(../../img/menuComp.png) no-repeat left bottom;
         background-size: contain;
         z-index: 100;
+        animation: 2s appear linear .3s both;
 
         @media screen and (max-width:629px) {
             display: none;
@@ -140,5 +142,43 @@
         background-size: contain;
         height: 100%;
         width: 11rem;
+        animation: 2.3s appearR linear .3s both;
+
+    }
+}
+
+.first{
+    animation-delay: 0;
+}
+.sec{
+    animation-delay: .5s;
+}
+.thrd{
+    animation-delay: 1s;
+}
+.fourth{
+    animation-delay: 1.5s;
+}
+@keyframes appear {
+    from {
+        left: -30rem;
+        opacity: 0;
+    }
+
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes appearR {
+    from {
+        right: -30rem;
+        opacity: 0;
+    }
+
+    to {
+        right: 0;
+        opacity: 1;
     }
 }

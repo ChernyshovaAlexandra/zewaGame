@@ -14,33 +14,32 @@ import { startGame, showRules, showRes } from '../../store/actions'
 class Main extends React.Component {
     render() {
         const { questData } = this.props
-        console.log(questData.answer)
         return (
             <section className="selectQwest mainBG container">
                 <div className="row justify-content-between nav">
-                    <div className="col-lg-2">
-                        <img src={zewa} />
+                    <div className="col-lg-2  animate__animated animate__fadeIn ">
+                        <img alt="" src={zewa} />
                     </div>
-                    <div className="col-lg-3">
-                        <img src={delo} />
+                    <div className="col-lg-3  animate__animated animate__fadeIn sec">
+                        <img alt="" src={delo} />
                     </div>
-                    <div className="col-lg-3">
-                        <img src={magnit} />
+                    <div className="col-lg-3  animate__animated animate__fadeIn thrd">
+                        <img alt="" src={magnit} />
                     </div>
                 </div>
                 <div className="row justify-content-center nav-mob">
                     <div className="col-lg-5">
-                        <img src={delo} alt="" />
+                        <img alt="" src={delo} />
                     </div>
                     <div className="col-lg-3">
-                        <img src={zewa} alt="" />
+                        <img alt="" src={zewa} />
                     </div>
                     <div className="col-lg-4">
-                        <img src={magnit} alt="" />
+                        <img alt="" src={magnit} />
                     </div>
                 </div>
                 {questData.answer ?
-                    <QuestInput  questData={questData}/> : <QuestSelect questData={questData} />}
+                    <QuestInput questData={questData} /> : <QuestSelect questData={questData} />}
 
             </section>
         )

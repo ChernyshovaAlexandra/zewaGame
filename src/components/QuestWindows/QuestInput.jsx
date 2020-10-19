@@ -1,9 +1,7 @@
 import React from 'react'
-import { TextField } from '@material-ui/core';
 import Materials from '../Materials'
 import Dialogs from '../Dialogs'
 import './index.scss'
-import { checkPropTypes } from 'prop-types';
 import { connect } from 'react-redux'
 import { showWinQModal, showSelected, setNextMessage } from '../../store/actions'
 
@@ -16,9 +14,9 @@ class QuestInput extends React.Component {
         }
     }
     checkAnswer = (e, answer) => {
-        if (this.state.fomVal === this.props.questData.answer) {
-            console.log(1)
-            this.props.setNextMessage(0, this.props.questData.answered_node_id)
+        const { questData, userData, setNextMessage } = this.props
+        if (this.state.fomVal === questData.answer) {
+            setNextMessage(userData.vk_id, questData.answered_node_id)
         }
         else {
             this.setState({
@@ -67,7 +65,8 @@ class QuestInput extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        questWin: state.store.questWin
+        questWin: state.store.questWin,
+        userData: state.store.userData
     }
 }
 

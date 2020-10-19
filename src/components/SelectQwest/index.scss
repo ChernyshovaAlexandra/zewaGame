@@ -10,7 +10,7 @@ $blue: #2BAFEC;
     top: 0;
     background: url(../../img/mainBg.jpg) no-repeat center;
     background-size: cover;
-    
+
     p {
         font-weight: 400;
         margin-bottom: 2rem;
@@ -45,6 +45,7 @@ $blue: #2BAFEC;
 
         h2 {
             text-transform: initial !important;
+            margin-bottom: 0;
         }
 
         .blue {
@@ -217,18 +218,19 @@ $blue: #2BAFEC;
     background: #fff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     padding: 9px;
-    margin-bottom: 1rem;
+    margin-bottom: 1.6rem;
 
     .header {
         h4 {
             font-size: .8rem;
             margin: .5rem 0;
             text-align: center;
+
         }
     }
 
     .imgContainer {
-        height: 6rem;
+        height: 7rem;
 
         img {
             height: 100%;
@@ -241,13 +243,13 @@ $blue: #2BAFEC;
     button.selectionBtn {
         text-decoration: none;
         text-transform: uppercase;
-        padding: .3rem 1rem;
+        padding: .2rem 1rem;
         background-color: #FD0B7E;
         color: #fff;
         margin-bottom: .5rem;
         border-radius: 2rem;
         letter-spacing: 3px;
-        font-size: .85rem;
+        font-size: .8rem;
         font-weight: 900;
         display: flex;
         margin: .5rem auto 0;
@@ -315,6 +317,10 @@ $blue: #2BAFEC;
     @media screen and (max-width: 629px) {
         margin: 2rem 0;
 
+        @media screen and (max-width: 325px) {
+            margin: 2rem 0 1rem;
+        }
+
         .header {
             h4 {
                 position: relative;
@@ -325,11 +331,19 @@ $blue: #2BAFEC;
                     font-size: 1.2rem;
                     margin-bottom: 1rem;
                 }
+
+                @media screen and (max-width: 325px) {
+                    font-size: 1rem;
+                }
             }
         }
 
         button.selectionBtn {
             font-size: 1rem;
+
+            @media screen and (max-width: 325px) {
+                font-size: .8rem;
+            }
         }
 
         .imgContainer {
@@ -344,6 +358,7 @@ $blue: #2BAFEC;
                 position: absolute;
                 top: 0;
                 left: 0;
+                object-position: top;
             }
         }
     }
@@ -352,4 +367,25 @@ $blue: #2BAFEC;
 .slick-dots li button:before {
     font-size: .8rem !important;
     color: #0e2c60 !important;
+}
+
+
+.animate__delay-1s {
+    animation-delay: .5s !important;
+}
+
+.animate__delay-2s {
+    animation-delay: 1s !important;
+}
+
+.animate__delay-3s {
+    animation-delay: 1.5s !important;
+}
+
+.animate__delay-4s {
+    animation-delay: 2s !important;
+}
+
+.animate__delay-5s {
+    animation-delay: 2.5s !important;
 }

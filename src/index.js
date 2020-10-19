@@ -7,7 +7,6 @@ import App from "./App";
 import { Provider } from 'react-redux'
 import { store } from './store/configureStore'
 
-// Init VK  Mini App
 bridge.send("VKWebAppInit");
 
 ReactDOM.render(

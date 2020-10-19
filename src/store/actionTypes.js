@@ -5,4 +5,7 @@ export const SHOW_SELECTED = 'SHOW_SELECTED';
 export const SET_QUEST_READY = 'SET_QUEST_READY';
 export const SHOW_QUEST_WIN_MODAL = 'SHOW_QUEST_WIN_MODAL';
 export const GET_QUEST = 'GET_QUEST';
+export const SET_QUEST_LIST = 'SET_QUEST_LIST';
+export const SET_USER_DATA = 'SET_USER_DATA';
+export const USER_GET_KUPON = 'USER_GET_KUPON'
 // export const SHOW_RULES = 'SHOW_RULES';

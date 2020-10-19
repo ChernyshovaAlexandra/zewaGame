@@ -3,43 +3,19 @@ import { connect } from 'react-redux'
 import { showWinQModal, showSelected, setNextMessage } from '../../store/actions'
 
 
-
-
-const variants = [
-    {
-        name: 'Конец квеста',
-        action: true
-    },
-    {
-        name: 'Вариант 2',
-        action: false
-    },
-    {
-        name: 'Вариант 3',
-        action: false
-    },
-    {
-        name: 'Вариант 4',
-        action: false
-    }
-]
-
 class Selection extends React.Component {
     checkClick = (id) => {
-        const { setNextMessage } = this.props
-        setNextMessage(0, id)
+        const { setNextMessage, userData } = this.props
+        setNextMessage(userData.vk_id, id)
 
     }
     render() {
-        const { buttons } = this.props
-        console.log(buttons)
+        const { buttons, userData } = this.props
         return (
             <div className="selection row">
                 {buttons && buttons.map((item, index) => (
                     <div
-                        className={
-                            buttons.length <= 2 ? "col-lg-12" : "col-lg-6"}
-
+                        className="col-lg-12"
                         key={index}>
                         <button type='button'
                             className="btn selectionBtn pink"
@@ -54,7 +30,8 @@ class Selection extends React.Component {
 }
 const mapStateToProps = state => {
     return {
-        questWin: state.store.questWin
+        questWin: state.store.questWin,
+        userData: state.store.userData
     }
 }
 
