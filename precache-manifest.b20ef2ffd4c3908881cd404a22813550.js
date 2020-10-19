@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b7fb4e8d3c00ffcc590fb12f4a08c735",
+    "revision": "a5481680a6a5c4dfe23963d24e8f7db3",
     "url": "/index.html"
   },
   {
-    "revision": "e4575faa9d269f347a98",
+    "revision": "83fe3ef103d9f774fe0d",
     "url": "/static/css/2.1c9ef103.chunk.css"
   },
   {
-    "revision": "150a073cce7cd824f960",
-    "url": "/static/css/main.ce03ac46.chunk.css"
+    "revision": "8790389f9f3c931b9db7",
+    "url": "/static/css/main.980f0bd0.chunk.css"
   },
   {
-    "revision": "e4575faa9d269f347a98",
-    "url": "/static/js/2.bef54468.chunk.js"
+    "revision": "83fe3ef103d9f774fe0d",
+    "url": "/static/js/2.be6a2e49.chunk.js"
   },
   {
     "revision": "7aeb96c4878d224a55adce546624b684",
-    "url": "/static/js/2.bef54468.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.be6a2e49.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "150a073cce7cd824f960",
-    "url": "/static/js/main.eaeb6f52.chunk.js"
+    "revision": "8790389f9f3c931b9db7",
+    "url": "/static/js/main.b6a27cd9.chunk.js"
   },
   {
     "revision": "dec26090cf87837f80e5",
@@ -38,22 +38,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b2e220470f08c4c8846244d3584ce8d3",
     "url": "/static/media/Overlay.b2e22047.jpg"
-  },
-  {
-    "revision": "e5445cd1821e7e6650137e39facdbf20",
-    "url": "/static/media/image1.e5445cd1.png"
-  },
-  {
-    "revision": "5b8c60c1bea3f35eb2f535b16b598a94",
-    "url": "/static/media/image2.5b8c60c1.png"
-  },
-  {
-    "revision": "04b0eab06af069e8efee867c13520e5b",
-    "url": "/static/media/image3.04b0eab0.png"
-  },
-  {
-    "revision": "160672ea32392a71376376b697ea9eea",
-    "url": "/static/media/image4.160672ea.png"
   },
   {
     "revision": "3b70e444fdba710fa215421785e4df25",
@@ -86,6 +70,26 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d65c900333a4ff5942a5e721403cf44a",
     "url": "/static/media/pattern.d65c9003.png"
+  },
+  {
+    "revision": "932219afe00d6afe894a5fd67112ff2e",
+    "url": "/static/media/quest1.932219af.jpg"
+  },
+  {
+    "revision": "b75cf7466eaba38c51ae99b521cabc1e",
+    "url": "/static/media/quest2.b75cf746.jpg"
+  },
+  {
+    "revision": "15811e98a7e14df8a9fb176d47e20870",
+    "url": "/static/media/quest3.15811e98.jpg"
+  },
+  {
+    "revision": "8b3a97b8ddd838270bec37caa0a9d24e",
+    "url": "/static/media/quest4.8b3a97b8.jpg"
+  },
+  {
+    "revision": "0ddc84090d649b68044cd8a325136051",
+    "url": "/static/media/quest5.0ddc8409.jpg"
   },
   {
     "revision": "b7c9e1e479de3b53f1e4e30ebac2403a",
