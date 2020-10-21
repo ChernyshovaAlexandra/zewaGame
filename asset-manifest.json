@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.d527ad38.chunk.css",
-    "main.js": "/static/js/main.ef72cbe9.chunk.js",
-    "main.js.map": "/static/js/main.ef72cbe9.chunk.js.map",
+    "main.css": "/static/css/main.9baf2290.chunk.css",
+    "main.js": "/static/js/main.807acb48.chunk.js",
+    "main.js.map": "/static/js/main.807acb48.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
     "runtime-main.js.map": "/static/js/runtime-main.e95b8414.js.map",
     "static/css/2.1c9ef103.chunk.css": "/static/css/2.1c9ef103.chunk.css",
-    "static/js/2.0d9c9967.chunk.js": "/static/js/2.0d9c9967.chunk.js",
-    "static/js/2.0d9c9967.chunk.js.map": "/static/js/2.0d9c9967.chunk.js.map",
+    "static/js/2.8c160024.chunk.js": "/static/js/2.8c160024.chunk.js",
+    "static/js/2.8c160024.chunk.js.map": "/static/js/2.8c160024.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.627c47cf61727ef3aac1d47d15daa73b.js": "/precache-manifest.627c47cf61727ef3aac1d47d15daa73b.js",
+    "precache-manifest.96d4c379900e861395479e21cf9174e8.js": "/precache-manifest.96d4c379900e861395479e21cf9174e8.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
-    "static/css/main.d527ad38.chunk.css.map": "/static/css/main.d527ad38.chunk.css.map",
-    "static/js/2.0d9c9967.chunk.js.LICENSE.txt": "/static/js/2.0d9c9967.chunk.js.LICENSE.txt",
-    "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
+    "static/css/main.9baf2290.chunk.css.map": "/static/css/main.9baf2290.chunk.css.map",
+    "static/js/2.8c160024.chunk.js.LICENSE.txt": "/static/js/2.8c160024.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
+    "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/back.png": "/static/media/back.abb44cfb.png",
     "static/media/logoGame.png": "/static/media/logoGame.3b70e444.png",
     "static/media/magnit-logo.svg": "/static/media/magnit-logo.a052c0ad.svg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.e95b8414.js",
     "static/css/2.1c9ef103.chunk.css",
-    "static/js/2.0d9c9967.chunk.js",
-    "static/css/main.d527ad38.chunk.css",
-    "static/js/main.ef72cbe9.chunk.js"
+    "static/js/2.8c160024.chunk.js",
+    "static/css/main.9baf2290.chunk.css",
+    "static/js/main.807acb48.chunk.js"
   ]
 }
