@@ -7,12 +7,16 @@ import {
     SHOW_QUEST_WIN_MODAL,
     SET_QUEST_LIST,
     GET_QUEST,
-    SET_USER_DATA
+    SET_USER_DATA,
+    GET_COMICS
 } from './actionTypes'
 import { defaultState } from './reducers'
 
 
-
+export const getComics = (comics) => ({
+    type: GET_COMICS,
+    payload: comics
+})
 export const setUserData = (data) => ({
     type: SET_USER_DATA,
     payload: data
@@ -29,9 +33,9 @@ export const showRes = () => ({
     type: SHOW_RESULTS,
     payload: true
 })
-export const showSelected = () => ({
+export const showSelected = (action) => ({
     type: SHOW_SELECTED,
-    payload: true
+    payload: action
 })
 export const setQuestReady = (newListOfQuests) => ({
     type: SET_QUEST_READY,
@@ -72,7 +76,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-            // 
+        // let response = await fetch('https://back.zewaquests.ru/api/node/83/click',
             {
                 method: 'POST',
                 headers: {
@@ -84,7 +88,13 @@ export const setNextMessage = (vk_id, quest_id) => {
                 })
             })
         let jsR = await response.json()
-
+        if (jsR.desktop) {
+            console.log('comics', jsR)
+            dispatch({
+                type: GET_COMICS,
+                payload: jsR
+            })
+        }
         if (!jsR.error) {
             dispatch({
                 type: GET_QUEST,

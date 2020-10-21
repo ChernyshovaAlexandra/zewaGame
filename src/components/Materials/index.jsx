@@ -12,7 +12,7 @@ export default class Materials extends React.Component {
             <div className="materials row">
                 <div className="col-lg-12">
                     <div className="row justify-content-center">
-                        <div className="col-md-12 img-container">
+                        <div className="col-md-auto img-container">
                                 <a data-fancybox="gallery" href={image}  >
                                     <img src={image} alt='' className="animate__animated animate__fadeIn animate__delay-" />
                                 </a>

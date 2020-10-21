@@ -5,15 +5,20 @@ import delo from '../../img/logoGame.png'
 import magnit from '../../img/magnit-wh.png'
 import QuestSelect from '../QuestWindows/QuestSelect'
 import QuestInput from '../QuestWindows/QuestInput'
-
+import Comix from '../Comix'
 import { connect } from 'react-redux'
-import { startGame, showRules, showRes } from '../../store/actions'
-
-
+import { startGame, showRules, showRes, showSelected } from '../../store/actions'
+import Back from './back.png'
 
 class Main extends React.Component {
+    handleClick = () => {
+        const { showSelected } = this.props
+        showSelected(false)
+    }
+
+
     render() {
-        const { questData } = this.props
+        const { questData, comics } = this.props
         return (
             <section className="selectQwest mainBG container">
                 <div className="row justify-content-between nav">
@@ -38,8 +43,10 @@ class Main extends React.Component {
                         <img alt="" src={magnit} />
                     </div>
                 </div>
-                {questData.answer ?
+                
+                {comics ? <Comix comics={comics} /> : questData.answer ?
                     <QuestInput questData={questData} /> : <QuestSelect questData={questData} />}
+                <button className="back" onClick={() => { this.handleClick() }}><img src={Back} alt='' />В меню</button>
 
             </section>
         )
@@ -48,6 +55,7 @@ class Main extends React.Component {
 const mapStateToProps = state => {
     return {
         questData: state.store.questData,
+        comics: state.store.comics
     }
 }
 
@@ -55,7 +63,8 @@ const mapDispatchToProps = dispatch => {
     return {
         startGame: () => dispatch(startGame()),
         showRules: () => dispatch(showRules()),
-        showRes: () => dispatch(showRes())
+        showRes: () => dispatch(showRes()),
+        showSelected: (action) => dispatch(showSelected(action))
     }
 }
 

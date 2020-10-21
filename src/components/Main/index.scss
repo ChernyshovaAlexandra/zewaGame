@@ -16,6 +16,7 @@
     @media screen and (max-width: 629px) {
         font-size: .85rem;
     }
+
     @media screen and (max-width: 330px) {
         min-height: 2.5rem;
     }
@@ -89,6 +90,10 @@
     .menu {
         padding-top: 4rem !important;
     }
+
+    .back {
+        top: 7rem !important;
+    }
 }
 
 // iPhone XS
@@ -99,6 +104,10 @@
     .menu {
         padding-top: 4rem !important;
     }
+
+    .back {
+        top: 7rem !important;
+    }
 }
 
 // iPhone XS Max
@@ -108,5 +117,37 @@
     .selectQwest,
     .menu {
         padding-top: 4rem !important;
+    }
+
+    .back {
+        top: 7rem !important;
+    }
+}
+
+.back {
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    background: none;
+    width: 2.5rem;
+    height: auto;
+    position: absolute;
+    left: 3rem;
+    top: 7rem;
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: #24236b;
+    font-size: .55rem;
+    z-index: 99990;
+
+    @media screen and (max-width: 629px) {
+        left: 1rem;
+        top: 6rem;
+    }
+
+    @media screen and (max-width: 376px) {
+        left: .5rem;
+        width: 2rem;
+        font-size: .4rem;
     }
 }

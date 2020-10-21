@@ -7,7 +7,7 @@ export default class Dialogs extends React.Component {
 
     render() {
         const { messages, hints, buttons } = this.props
-        console.log(buttons)
+
         let butL = buttons ? buttons.length : 0
         return (
             <>

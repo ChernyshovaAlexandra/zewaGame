@@ -63,7 +63,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 30)
+		}, 3000)
 	}
 	render() {
 		const { start, selected, questWin } = this.props

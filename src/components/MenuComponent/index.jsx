@@ -65,7 +65,7 @@ class Menu extends React.Component {
                 <div className="row justify-content-center infoData">
                     <div className="col-lg-9">
                         <p className="ml3">
-                            Привет, <span>{userData.name}</span>. Играй и получай скидки до <span className="special">70%</span><br /> на покупку продукции Zewa в магазинах Магнит.
+                            Привет, <span>{userData.name}</span>. Играй и получай скидки до <span className="special">70%</span> на покупку продукции Zewa в магазинах Магнит.
                     Пройди все квесты и участвуй в розыгрыше подарочного купона Магнит на <span className="special">3000&#160;рублей</span>.
                  </p>
                     </div>
@@ -110,7 +110,8 @@ const mapStateToProps = state => {
         start: state.store.start,
         results: state.store.results,
         questWin: state.store.questWin,
-        userData: state.store.userData
+        userData: state.store.userData,
+        comics: state.store.comics
     }
 }
 

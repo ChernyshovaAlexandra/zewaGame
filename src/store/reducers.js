@@ -7,7 +7,8 @@ import {
     SET_QUEST_LIST,
     SHOW_QUEST_WIN_MODAL,
     GET_QUEST,
-    SET_USER_DATA
+    SET_USER_DATA,
+    GET_COMICS
 } from './actionTypes'
 import { combineReducers } from 'redux'
 import image1 from '../img/quest1.jpg'
@@ -89,6 +90,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, quests: action.payload }
         case SET_USER_DATA:
             return { ...state, userData: action.payload }
+        case GET_COMICS:
+            return { ...state, comics: action.payload }
     }
 
     return state

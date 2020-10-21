@@ -2,55 +2,75 @@
     margin: -2.1rem auto 1rem;
     position: relative;
     z-index: 10;
+
     @media screen and (max-width: 629px) {
         margin-bottom: .5rem;
     }
+
     h2 {
         margin-bottom: 1rem;
     }
 
     .img-container {
         position: relative;
-        height: 210px;
 
-        @media screen and (max-width: 629px) {
-            height: 200px;
-        }
-        @media screen and (max-width: 429px) {
-            height: 150px;
-        }
+
 
         a {
             display: block;
+            height: 0;
+            padding-bottom: 68%;
+            width: 300px;
+            margin: auto;
+            max-width: 100%;
+
+            @media screen and (max-width: 429px) {
+                width: 250px;
+            }
+
+            @media screen and (max-width: 372px) {
+                width: 230px;
+
+            }
 
             img {
                 position: absolute;
-                max-width: 100%;
-                width: 65%;
-                display: block;
-                margin: 0 auto;
-                object-fit: cover;
-                border: 10px solid #fff;
-                box-shadow: 10px 10px 10px rgba(#000, .2);
                 left: 0;
                 right: 0;
-                height: 210px;
+                bottom: 0;
+                top: 0;
+                width: auto;
+                height: 100%;
+                display: block;
+                margin: 0 auto;
+                object-fit: contain;
+                border: 10px solid #fff;
+                box-shadow: 10px 10px 10px rgba(#000, .2);
+
                 @media screen and (max-width: 429px) {
-                    height: 150px;
                     border: 8px solid #fff;
                 }
-            }
 
-            @media screen and (max-width: 629px) {
-                img {
-                    width: 100%;
-                    height: auto;
-                    max-height: 100%;
-                    object-fit: cover;
-                    object-position: center;
+                @media screen and (max-width: 372px) {
+                    border: 5px solid #fff;
                 }
             }
         }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 12%;
+            bottom: 1rem;
+            width: 2rem;
+            height: 2rem;
+            background: url(./109859.png) no-repeat center;
+            background-size: contain;
+            user-select: none;
+            user-select: none;
+            pointer-events: none;
+        }
+
     }
 
     @media screen and (max-width: 629px) {

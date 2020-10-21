@@ -7,5 +7,6 @@ export const SHOW_QUEST_WIN_MODAL = 'SHOW_QUEST_WIN_MODAL';
 export const GET_QUEST = 'GET_QUEST';
 export const SET_QUEST_LIST = 'SET_QUEST_LIST';
 export const SET_USER_DATA = 'SET_USER_DATA';
-export const USER_GET_KUPON = 'USER_GET_KUPON'
+export const USER_GET_KUPON = 'USER_GET_KUPON';
+export const GET_COMICS = 'GET_COMICS';
 // export const SHOW_RULES = 'SHOW_RULES';

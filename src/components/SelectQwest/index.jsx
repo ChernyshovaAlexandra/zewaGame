@@ -23,26 +23,18 @@ class SelectQwest extends React.Component {
 
 
 
-    handleClick = () => {
-        this.props.showSelected(true)
-    }
+
     setReady = (index) => {
-        const { quests, showWinQModal, getQuest, showSelected, setQuestReady, userData } = this.props;
+        const { quests, showWinQModal, getQuest, showSelected, userData } = this.props;
         const questsMass = quests;
 
-        if (index === quests.length - 1) {
-            showWinQModal(true);
-        }
-        else {
-            getQuest(userData.vk_id, index + 1)
-            showSelected(index)
-            // questsMass[index].isReady = true
-            // questsMass[index].isDone = true
-            // questsMass[index + 1].isActive = true
-
-
-            // this.setState({ quests: this.props.quests })
-        }
+        // if (index === quests.length - 1) {
+        //     showWinQModal(true);
+        // }
+        // else {
+        getQuest(userData.vk_id, index + 1)
+        showSelected(true)
+        // }
     }
     render() {
         const settings = {
@@ -110,7 +102,8 @@ class SelectQwest extends React.Component {
 
                 <div className="row justify-content-center quest-content--inner desktop-only">
                     {quests.map((item, index) => (
-                        <div className={"col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" + (index + 1) + "s"} style={{ 'position': 'relative' }} key={index}>
+                        <div className={"col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" + (index + 1) + "s"}
+                            style={{ 'position': 'relative' }} key={index}>
                             {item.isActive && !item.isDone && <div className="sale">
                                 <img src={toiletPaper} alt="" />
                                 <p>{"Скидка " + item.sale + '%'}</p>
@@ -171,7 +164,7 @@ const mapDispatchToProps = dispatch => {
     return {
         startGame: () => dispatch(startGame()),
         showRules: () => dispatch(showRules()),
-        showSelected: (index) => dispatch(showSelected(index)),
+        showSelected: (action) => dispatch(showSelected(action)),
         setQuestReady: (quests) => dispatch(setQuestReady(quests)),
         showWinQModal: (quest) => dispatch(showWinQModal(quest)),
         getQuest: (vk_id, quest_id) => dispatch(getQuest(vk_id, quest_id)),

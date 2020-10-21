@@ -7,12 +7,23 @@ import Selection from '../SelectionComponent'
 
 export default class QuestSelect extends React.Component {
     render() {
-        const { questData } = this.props
+        const { questData, comics } = this.props
+        console.log(comics)
         return (
             <>
-                <Materials image={questData.image} />
-                <Dialogs messages={questData.messages} buttons={questData.buttons} />
-                <Selection buttons={questData.buttons} />
+                { questData &&
+                    <>
+                        <Materials image={questData.image} />
+                        <Dialogs messages={questData.messages} buttons={questData.buttons} />
+                        <Selection buttons={questData.buttons} />
+                    </>
+                }
+                { comics &&
+                    <>
+                        <Materials image={comics.desktop[0]} />
+                       
+                    </>
+                }
             </>
         )
     }

@@ -1,0 +1,24 @@
+.comix {
+    width: 418px;
+    height: 420px;
+    margin: auto;
+
+    &.mobile {
+        display: none;
+    }
+
+    @media screen and (max-width: 629px) {
+        width: 100%;
+        height: auto;
+        a{
+            width: 320px;
+        }
+        &.desktop {
+            display: none;
+        }
+
+        &.mobile {
+            display: block;
+        }
+    }
+}
