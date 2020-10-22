@@ -64,7 +64,7 @@ export const getQuest = (vk_id, quest_id) => {
 
         if (!jsR.error) {
             if (jsR.desktop) {
-                console.log('comics', jsR)
+
                 dispatch({
                     type: GET_COMICS,
                     payload: jsR
@@ -106,7 +106,6 @@ export const setNextMessage = (vk_id, quest_id) => {
 
         if (!jsR.error) {
             if (jsR.desktop) {
-                console.log('comics', jsR)
                 dispatch({
                     type: GET_COMICS,
                     payload: jsR

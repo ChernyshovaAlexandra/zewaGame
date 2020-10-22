@@ -9,7 +9,7 @@ import {
 class Selection extends React.Component {
   checkClick = (id) => {
     const { setNextMessage, userData } = this.props;
-    console.log("id", id);
+
     setNextMessage(userData.vk_id, id);
   };
   render() {
