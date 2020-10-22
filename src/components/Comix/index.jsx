@@ -8,7 +8,9 @@ import Selection from "../SelectionComponent";
 export default class Comix extends React.Component {
   componentDidMount() {
     document.getElementsByClassName("slick-next")[0].innerHTML = "Далее";
+    document.getElementsByClassName("slick-next")[1].innerHTML = "Далее";
     document.getElementsByClassName("slick-prev")[0].innerHTML = "Назад";
+    document.getElementsByClassName("slick-prev")[1].innerHTML = "Назад";
   }
   render() {
     let settings = {
