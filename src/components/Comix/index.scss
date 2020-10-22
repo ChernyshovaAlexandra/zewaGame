@@ -1,24 +1,117 @@
 .comix {
-    width: 418px;
-    height: 420px;
-    margin: auto;
+  width: 418px;
+  height: 420px;
+  margin: auto;
+
+  &.mobile {
+    display: none;
+  }
+  .slick-arrow {
+    -webkit-appearance: none;
+    min-height: 3rem;
+    background: #ce0b68;
+    color: #fff;
+    border-radius: 2rem;
+    border: none;
+    outline: none !important;
+    overflow: hidden;
+    box-shadow: none !important;
+    display: block;
+    &.slick-disabled {
+      display: none !important;
+    }
+    @media screen and (max-width: 629px) {
+      font-size: 0.85rem;
+    }
+
+    @media screen and (max-width: 330px) {
+      min-height: 2.5rem;
+    }
+
+    &::after {
+      background: #fff;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: 0.2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 2rem;
+      z-index: 50;
+    }
+
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      outline: none;
+
+      &::after {
+        left: 120%;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+
+    span {
+      z-index: 20;
+    }
+
+    font-size: 1rem;
+    width: auto;
+    min-width: 10rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -5.5rem;
+    top: auto;
+    position: absolute;
+    &::before {
+      display: none;
+    }
+  }
+  .slick-list {
+    overflow: visible;
+    .slick-track {
+      position: relative;
+      width: 418px !important;
+      height: 420px;
+      display: flex;
+      transform: none !important;
+      overflow: visible;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+      .slick-slide {
+        position: absolute;
+        z-index: 80;
+        // transform: rotate(6.2deg);
+        &.slick-active {
+          z-index: 100;
+          transform: none;
+          transform: rotate(6.2deg);
+
+          &:last-child {
+            transform: none;
+            bottom: -5.5rem;
+            top: 420px !important;
+          }
+          
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 629px) {
+    width: 100%;
+    height: auto;
+    a {
+      width: 320px;
+    }
+    &.desktop {
+      display: none;
+    }
 
     &.mobile {
-        display: none;
+      display: block;
     }
-
-    @media screen and (max-width: 629px) {
-        width: 100%;
-        height: auto;
-        a{
-            width: 320px;
-        }
-        &.desktop {
-            display: none;
-        }
-
-        &.mobile {
-            display: block;
-        }
-    }
+  }
 }

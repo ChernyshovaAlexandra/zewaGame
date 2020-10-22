@@ -63,10 +63,23 @@ export const getQuest = (vk_id, quest_id) => {
         let jsR = await response.json()
 
         if (!jsR.error) {
-            dispatch({
-                type: GET_QUEST,
-                payload: jsR
-            })
+            if (jsR.desktop) {
+                console.log('comics', jsR)
+                dispatch({
+                    type: GET_COMICS,
+                    payload: jsR
+                })
+            }
+            else {
+                dispatch({
+                    type: GET_COMICS,
+                    payload: false
+                })
+                dispatch({
+                    type: GET_QUEST,
+                    payload: jsR
+                })
+            }
             // setQuestReady()
         }
     }
@@ -76,7 +89,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-        // let response = await fetch('https://back.zewaquests.ru/api/node/83/click',
+            // let response = await fetch('https://back.zewaquests.ru/api/node/83/click',
             {
                 method: 'POST',
                 headers: {
@@ -88,18 +101,27 @@ export const setNextMessage = (vk_id, quest_id) => {
                 })
             })
         let jsR = await response.json()
-        if (jsR.desktop) {
-            console.log('comics', jsR)
-            dispatch({
-                type: GET_COMICS,
-                payload: jsR
-            })
-        }
+
+
+
         if (!jsR.error) {
-            dispatch({
-                type: GET_QUEST,
-                payload: jsR
-            })
+            if (jsR.desktop) {
+                console.log('comics', jsR)
+                dispatch({
+                    type: GET_COMICS,
+                    payload: jsR
+                })
+            }
+            else {
+                dispatch({
+                    type: GET_COMICS,
+                    payload: false
+                })
+                dispatch({
+                    type: GET_QUEST,
+                    payload: jsR
+                })
+            }
         }
     }
 }
@@ -116,13 +138,12 @@ export const getQuestList = () => {
 
         })
         let jsR = await response.json()
-        console.log(jsR)
         let quests = jsR.map((item, index) => {
             return {
                 name: item.name,
                 isActive: true,
                 // index==2 ? true : false
-                sale: 30 + 10 * index,
+                sale: 20 + 10 * index,
                 // img: defaultState.quests[index].img,
                 img: item.image,
                 isReady: false

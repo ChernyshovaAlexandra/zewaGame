@@ -8,7 +8,7 @@ import Selection from '../SelectionComponent'
 export default class QuestSelect extends React.Component {
     render() {
         const { questData, comics } = this.props
-        console.log(comics)
+
         return (
             <>
                 { questData &&

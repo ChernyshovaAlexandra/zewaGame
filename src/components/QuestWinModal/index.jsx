@@ -37,7 +37,7 @@ class QuestWinModal extends React.Component {
         else {
             bridge.subscribe((e) => {
                 if (e.detail.type === 'VKWebAppAllowMessagesFromGroupResult') {
-                    console.log(e.detail.data)
+
                     if (e.detail.data.result) {
                         getKupon(userData.vk_id)
                         showWinQModal(false)

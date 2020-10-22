@@ -33,7 +33,7 @@ class App extends React.Component {
 				})
 				this.login()
 			}
-		
+
 		})
 		bridge.send("VKWebAppGetUserInfo")
 	}
@@ -70,10 +70,10 @@ class App extends React.Component {
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
-				{selected ?
-					<Main /> :
-					questWin ?
-						<QuestWinModal /> :
+				{questWin ?
+					<QuestWinModal /> :
+					selected ?
+						<Main /> :
 						start ?
 							<SelectQwest /> :
 							loaded ?
