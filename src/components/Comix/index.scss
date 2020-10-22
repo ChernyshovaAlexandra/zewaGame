@@ -17,7 +17,8 @@
     overflow: hidden;
     box-shadow: none !important;
     display: block;
-    &.slick-disabled {
+    &.slick-disabled,
+    &.slick-prev {
       display: none !important;
     }
     @media screen and (max-width: 629px) {
@@ -95,23 +96,26 @@
           top: 0;
           bottom: 0;
         }
+        .selection{
+            margin-top: .5rem;
+        }
         &.slick-active {
           z-index: 100;
           transform: none;
           transform: rotate(6.2deg);
+
           @media screen and (max-width: 629px) {
             transform: none;
           }
 
           &:last-child {
             transform: none;
-            bottom: -5.5rem;
-            top: 420px !important;
+
             @media screen and (max-width: 629px) {
-                bottom: -23.6rem;
-                .row{
-                    margin: 0;
-                }
+              bottom: -23.6rem;
+              .row {
+                margin: 0;
+              }
               .selection {
                 width: 100%;
                 .col-lg-12 {
@@ -121,6 +125,12 @@
                 }
               }
             }
+          }
+        }
+        &:last-child {
+          opacity: 0;
+          &.slick-active {
+            opacity: 1;
           }
         }
       }

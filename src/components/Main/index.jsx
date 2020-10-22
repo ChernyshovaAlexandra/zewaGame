@@ -19,7 +19,7 @@ class Main extends React.Component {
 
     render() {
         const { questData, comics } = this.props
-        console.log(comics)
+
         return (
             <section className="selectQwest mainBG container">
                 <div className="row justify-content-between nav">

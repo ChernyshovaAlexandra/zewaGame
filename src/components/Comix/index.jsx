@@ -21,25 +21,28 @@ export default class Comix extends React.Component {
       slidesToScroll: 1,
     };
     const { comics } = this.props;
-    const desktop = comics.desktop;
+    const last = comics.desktop[comics.desktop.length - 1];
+    const desktop = comics.desktop.slice(0, comics.desktop.length - 1);
     const mobile = comics.mobile;
     const buttons = comics.buttons;
     const final = comics.final;
+    console.log(desktop, last);
 
     return (
       <div className="comixContainer">
         <div className="comix desktop">
           <Slider {...settings} ref={(ref) => (this.slider = ref)}>
             {desktop.map((item, index) => (
-              <a data-fancybox="gallery" href={item} key={index}>
-                <img src={item} alt="" />
-              </a>
+              <img src={item} alt="" key={index} />
             ))}
-            <div className="row desktop">
-              <div className="col-lg-12">
-                <Selection buttons={buttons} final={final} />
+            <>
+              <img src={last} alt=""  />
+              <div className="row desktop">
+                <div className="col-lg-12">
+                  <Selection buttons={buttons} final={final} />
+                </div>
               </div>
-            </div>
+            </>
           </Slider>
         </div>
         <div className="comix mobile">
