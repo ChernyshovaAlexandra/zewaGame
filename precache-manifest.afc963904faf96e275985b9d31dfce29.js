@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "46c5ac83bb6c13c905b70741c04db027",
+    "revision": "d2dccabb59d18aba8c033e855aa50faf",
     "url": "/index.html"
   },
   {
-    "revision": "d0acee72151ed1976474",
+    "revision": "ac062066ad85e85af3c6",
     "url": "/static/css/2.1c9ef103.chunk.css"
   },
   {
-    "revision": "306f536cd4d7d82f39f0",
-    "url": "/static/css/main.9baf2290.chunk.css"
+    "revision": "99be8b6a1f0645dd5889",
+    "url": "/static/css/main.6f633bac.chunk.css"
   },
   {
-    "revision": "d0acee72151ed1976474",
-    "url": "/static/js/2.8c160024.chunk.js"
+    "revision": "ac062066ad85e85af3c6",
+    "url": "/static/js/2.c452a46a.chunk.js"
   },
   {
-    "revision": "7aeb96c4878d224a55adce546624b684",
-    "url": "/static/js/2.8c160024.chunk.js.LICENSE.txt"
+    "revision": "29eb69a08ea4198f7b46e1db8a3d5045",
+    "url": "/static/js/2.c452a46a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "306f536cd4d7d82f39f0",
-    "url": "/static/js/main.807acb48.chunk.js"
+    "revision": "99be8b6a1f0645dd5889",
+    "url": "/static/js/main.193665a9.chunk.js"
   },
   {
     "revision": "dec26090cf87837f80e5",
@@ -52,8 +52,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/logoGame.3b70e444.png"
   },
   {
-    "revision": "a052c0ad3baa90b429557f7976d6ecf9",
-    "url": "/static/media/magnit-logo.a052c0ad.svg"
+    "revision": "f5c96accab9072699cf06c3eced1e1e5",
+    "url": "/static/media/magnit-logo.f5c96acc.svg"
   },
   {
     "revision": "1accaa5d4ebdf68215502b2941376bfa",
