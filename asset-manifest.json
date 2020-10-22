@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.0452aa99.chunk.css",
+    "main.css": "/static/css/main.ddd6bd47.chunk.css",
     "main.js": "/static/js/main.ca09d443.chunk.js",
     "main.js.map": "/static/js/main.ca09d443.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
@@ -9,10 +9,10 @@
     "static/js/2.8c160024.chunk.js": "/static/js/2.8c160024.chunk.js",
     "static/js/2.8c160024.chunk.js.map": "/static/js/2.8c160024.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ed38c9983518a6f44033159c93e60197.js": "/precache-manifest.ed38c9983518a6f44033159c93e60197.js",
+    "precache-manifest.3fc78e15c7a4f5a791ddc7f5a7d09d8a.js": "/precache-manifest.3fc78e15c7a4f5a791ddc7f5a7d09d8a.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
-    "static/css/main.0452aa99.chunk.css.map": "/static/css/main.0452aa99.chunk.css.map",
+    "static/css/main.ddd6bd47.chunk.css.map": "/static/css/main.ddd6bd47.chunk.css.map",
     "static/js/2.8c160024.chunk.js.LICENSE.txt": "/static/js/2.8c160024.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
@@ -31,7 +31,7 @@
     "static/js/runtime-main.e95b8414.js",
     "static/css/2.1c9ef103.chunk.css",
     "static/js/2.8c160024.chunk.js",
-    "static/css/main.0452aa99.chunk.css",
+    "static/css/main.ddd6bd47.chunk.css",
     "static/js/main.ca09d443.chunk.js"
   ]
 }
