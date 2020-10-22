@@ -45,6 +45,7 @@ class SelectQwest extends React.Component {
             slidesToScroll: 1
         };
         const { quests } = this.props
+        console.log(quests)
         const remainedQuests = quests.length - (quests.filter(item => item.isActive)).length
 
         return (
@@ -117,6 +118,8 @@ class SelectQwest extends React.Component {
                                 </div>
                                 {item.isReady ?
                                     <button className="playBtn selectionBtn againBut">Пройти заново</button > :
+                                    item.continue ? 
+                                        <button className="playBtn selectionBtn againBut">Продолжить</button > :
                                     <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
                             </div>
                         </div>)
@@ -139,6 +142,8 @@ class SelectQwest extends React.Component {
                                     </div>
                                     {item.isReady ?
                                         <button className="playBtn selectionBtn againBut">Пройти заново</button > :
+                                        item.continue ? 
+                                        <button className="playBtn selectionBtn againBut">Продолжить</button > :
                                         <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
                                 </div>
                             </div>)

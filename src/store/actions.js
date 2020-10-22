@@ -61,7 +61,7 @@ export const getQuest = (vk_id, quest_id) => {
             })
         })
         let jsR = await response.json()
-
+        console.log(jsR)
         if (!jsR.error) {
             if (jsR.desktop) {
 
@@ -137,6 +137,7 @@ export const getQuestList = () => {
 
         })
         let jsR = await response.json()
+
         let quests = jsR.map((item, index) => {
             return {
                 name: item.name,
@@ -144,6 +145,7 @@ export const getQuestList = () => {
                 // index==2 ? true : false
                 sale: 20 + 10 * index,
                 // img: defaultState.quests[index].img,
+                continue: item.continue ? item.continue : index===2 ? true : false,
                 img: item.image,
                 isReady: false
             }
