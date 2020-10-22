@@ -61,7 +61,7 @@ export const getQuest = (vk_id, quest_id) => {
             })
         })
         let jsR = await response.json()
-        console.log(jsR)
+        
         if (!jsR.error) {
             if (jsR.desktop) {
 
@@ -142,9 +142,7 @@ export const getQuestList = () => {
             return {
                 name: item.name,
                 isActive: true,
-                // index==2 ? true : false
                 sale: 20 + 10 * index,
-                // img: defaultState.quests[index].img,
                 continue: item.continue ? item.continue : index===2 ? true : false,
                 img: item.image,
                 isReady: false
