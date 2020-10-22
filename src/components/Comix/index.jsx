@@ -49,9 +49,7 @@ export default class Comix extends React.Component {
                 <div className="comix mobile">
                     <Slider {...settings} ref={(ref) => (this.slider = ref)}>
                         {mobile.map((item, index) => (
-                            <a data-fancybox="gallery" href={item} key={index}>
-                                <img src={item} alt="" />
-                            </a>
+                            <img src={item} alt="" />
                         ))}
                         <>
                             <img src={last2} alt="" />

@@ -262,6 +262,65 @@
 
 
     }
+
+    // Iphone8+
+    @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
+        .slick-list {
+            .slick-track {
+                width: 84% !important;
+                top: 1rem;
+
+                .slick-slide {
+                    width: 100% !important;
+
+                    img {
+                        outline: 10px solid #fff;
+                    }
+
+                    .selection {
+                        position: relative;
+                        top: auto;
+                        bottom: 7.5rem;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            bottom: -15rem;
+        }
+
+    }
+    // Iphone8
+    @media only screen 
+    and (device-width : 375px) 
+    and (device-height : 667px) 
+    and (-webkit-device-pixel-ratio : 2) {
+        .slick-list {
+            .slick-track {
+                width: 94% !important;
+                top: 1rem;
+
+                .slick-slide {
+                    width: 100% !important;
+
+                    img {
+                        outline: 10px solid #fff;
+                    }
+
+                    .selection {
+                        position: relative;
+                        top: auto;
+                        bottom: 7.5rem;
+                    }
+                }
+            }
+        }
+
+        .slick-arrow {
+            bottom: -10rem;
+        }
+     }
 }
 
 @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
@@ -285,6 +344,7 @@
         }
     }
 }
+
 @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
     .comixContainer+ {
         .back {
@@ -292,6 +352,34 @@
             width: 3.8rem;
             font-size: .7rem;
             top: 9.5rem !important;
+        }
+    }
+}
+
+@media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
+    .comixContainer+ {
+        .back {
+            left: 3.5rem;
+            width: 3.2rem;
+            font-size: .7rem;
+            top: 6.5rem !important;
+
+        }
+    }
+}
+
+// Iphone8
+@media only screen 
+and (device-width : 375px) 
+and (device-height : 667px) 
+and (-webkit-device-pixel-ratio : 2) {
+    .comixContainer+ {
+        .back {
+            left: 2.5rem;
+            width: 3rem;
+            font-size: .7rem;
+            top: 6rem !important;
+
         }
     }
 }
