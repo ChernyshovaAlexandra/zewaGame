@@ -1,10 +1,15 @@
 .selection {
-    max-width: 90%;
+    // max-width: 90%;
 
     &.row {
         flex-wrap: wrap !important;
         max-width: 100%;
         margin: 1rem auto 0;
+        padding: 0;
+
+        .col-lg-12 {
+            padding: 0
+        }
 
         .col-lg-6 {
             flex: 50%;
@@ -60,6 +65,9 @@
             @media screen and (max-width: 429px) {
                 max-height: 120px;
             }
+            @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+                max-height: 105px;
+            }
         }
 
         &.fourAns {
@@ -91,6 +99,12 @@
         &::-webkit-scrollbar-thumb {
             background: #CE0B68;
         }
+
+        @media screen and (max-width: 629px) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
     }
 
 
@@ -103,12 +117,16 @@
         margin: auto;
         max-width: 100%;
         text-align: center;
-        color: #fff;
-        background: #4040408f;
+        color: #CE0B68;
         font-style: italic;
-        font-size: 84%;
+        font-size: 90%;
         margin-top: 1rem;
-        padding: .5rem 2rem;
+
+        font-weight: 600;
+
+        &:first-child {
+            margin-top: 0;
+        }
     }
 
     .dialog {
@@ -167,6 +185,13 @@
         @media screen and (max-width: 629px) {
             position: relative;
         }
+        @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+            font-size: .9rem;
+        }
+         // Iphone 5S
+         @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+            font-size: .7rem;
+         }
     }
 
     @media screen and (max-width: 629px) {

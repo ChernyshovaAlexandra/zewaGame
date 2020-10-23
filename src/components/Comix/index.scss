@@ -108,6 +108,7 @@
 
                 .selection {
                     margin-top: .5rem;
+                    padding: 0;
                 }
 
                 &.slick-active {
@@ -326,11 +327,6 @@
         }
     }
 
-
-    //  bottom: -17rem;
-    // z-index: 500;
-    // max-width: 75%;
-    // width: auto;
 }
 
 @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
@@ -343,7 +339,7 @@
         }
     }
 }
-
+// iPhone XR
 @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
     .comixContainer+ {
         .back {
@@ -354,7 +350,7 @@
         }
     }
 }
-
+// iPhone XS
 @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
     .comixContainer+ {
         .back {
@@ -365,7 +361,7 @@
         }
     }
 }
-
+// iPhone XS Max
 @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
     .comixContainer+ {
         .back {

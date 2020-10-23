@@ -344,6 +344,15 @@ $blue: #2BAFEC;
             @media screen and (max-width: 325px) {
                 font-size: .8rem;
             }
+            // iPhone XS
+            @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+                font-size: 1.1rem;
+                padding: .5rem 2.5rem;
+                margin: 1rem auto;
+            }
+            @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
+                font-size: .7rem;
+            }
         }
 
         .imgContainer {
@@ -359,6 +368,12 @@ $blue: #2BAFEC;
                 top: 0;
                 left: 0;
                 object-position: top;
+            }
+
+            // iPhone XS
+            @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
+                padding-bottom: 67%;
+                margin-bottom: 1rem;
             }
         }
     }
