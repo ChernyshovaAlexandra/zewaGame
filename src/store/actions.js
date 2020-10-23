@@ -143,7 +143,7 @@ export const getQuestList = () => {
                 name: item.name,
                 isActive: true,
                 sale: 20 + 10 * index,
-                continue: item.continue ? item.continue : index===2 ? true : false,
+                continue: item.continue ? item.continue : false,
                 img: item.image,
                 isReady: false
             }
