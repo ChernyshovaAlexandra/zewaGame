@@ -344,14 +344,24 @@ $blue: #2BAFEC;
             @media screen and (max-width: 325px) {
                 font-size: .8rem;
             }
+
+            
+
             // iPhone XS
             @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
                 font-size: 1.1rem;
                 padding: .5rem 2.5rem;
                 margin: 1rem auto;
             }
+
             @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
                 font-size: .7rem;
+            }
+            // iPhone 11 pro  Max
+            @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
+                font-size: 1.1rem;
+                padding: .5rem 2rem;
+                margin-bottom: 1rem;
             }
         }
 
