@@ -64,7 +64,7 @@ export const defaultState =
     questData: [],
     userData: {
         name: 'user',
-        vk_id: 9801302
+        vk_id: ''
     }
 }
 

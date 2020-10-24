@@ -23,6 +23,8 @@ class SelectQwest extends React.Component {
     }
     init = () => {
         const { getQuestList, userData } = this.props
+        console.log(1, userData)
+
         getQuestList(userData.vk_id)
     }
 
@@ -46,6 +48,7 @@ class SelectQwest extends React.Component {
             slidesToScroll: 1
         };
         const { quests, getQuestList, userData } = this.props
+        console.log(2, userData)
         const remainedQuests = quests.length - (quests.filter(item => item.isActive)).length
 
         return (
