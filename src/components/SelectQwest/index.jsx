@@ -17,11 +17,14 @@ class SelectQwest extends React.Component {
         this.state = {
             quests: this.props.quests
         }
-        const { quests, getQuestList, userData } = this.props
-        getQuestList(userData.vk_id)
+
+        this.init()
 
     }
-
+    init = () => {
+        const { getQuestList, userData } = this.props
+        getQuestList(userData.vk_id)
+    }
 
 
 
@@ -114,7 +117,7 @@ class SelectQwest extends React.Component {
                                     <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
                                 </div>
 
-                                <button className={item.continue ? "playBtn selectionBtn againBut" :"playBtn selectionBtn"}
+                                <button className={item.continue ? "playBtn selectionBtn againBut" : "playBtn selectionBtn"}
                                     onClick={() => { this.setReady(index) }}>
                                     {item.continue ? 'Продолжить' : 'Играть'}
                                 </button >

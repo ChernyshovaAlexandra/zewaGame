@@ -127,6 +127,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
 
 export const getQuestList = (vk_id) => {
+    console.log(vk_id)
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/quests', {
             method: 'POST',
