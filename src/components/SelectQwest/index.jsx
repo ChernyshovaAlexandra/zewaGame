@@ -18,7 +18,7 @@ class SelectQwest extends React.Component {
             quests: this.props.quests
         }
 
-        const {getQuestList} = this.props;
+        const {getQuestList, userData} = this.props;
         getQuestList(userData.vk_id)
     }
 
