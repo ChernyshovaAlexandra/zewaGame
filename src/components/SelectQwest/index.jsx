@@ -18,8 +18,8 @@ class SelectQwest extends React.Component {
             quests: this.props.quests
         }
 
-        const { quests, showWinQModal, getQuest, showSelected, userData } = this.props;
-        if (userData.vk_id !== '') { getQuestList(userData.vk_id) } 
+        const {getQuestList} = this.props;
+        getQuestList(userData.vk_id)
     }
 
 
