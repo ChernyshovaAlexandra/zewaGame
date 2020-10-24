@@ -45,7 +45,6 @@ class SelectQwest extends React.Component {
             slidesToScroll: 1
         };
         const { quests } = this.props
-        console.log(quests)
         const remainedQuests = quests.length - (quests.filter(item => item.isActive)).length
 
         return (

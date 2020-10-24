@@ -29,12 +29,11 @@ class Main extends React.Component {
   };
 
   componentDidMount() {
-      
     setTimeout(() => {
       this.setState({
         loaded: true,
       });
-    }, 900);
+    }, 1000);
   }
   render() {
     const { questData, comics } = this.props;
@@ -63,17 +62,7 @@ class Main extends React.Component {
             <img alt="" src={magnit} />
           </div>
         </div>
-        {this.state.loaded ? (
-          <>
-            {comics ? (
-              <Comix comics={comics} />
-            ) : questData.answer ? (
-              <QuestInput questData={questData} />
-            ) : (
-              <QuestSelect questData={questData} />
-            )}
-          </>
-        ) : (
+        {!this.state.loaded && (
           <div className="loadingComp">
             <div className="row justify-content-center">
               <div className="col-lg-auto loadingText">
@@ -96,6 +85,16 @@ class Main extends React.Component {
             </div>
           </div>
         )}
+        <div style={this.state.loaded ? { opacity: "1" } : { opacity: "0" }}>
+          {comics ? (
+            <Comix comics={comics} />
+          ) : questData.answer ? (
+            <QuestInput questData={questData} />
+          ) : (
+            <QuestSelect questData={questData} />
+          )}
+        </div>
+
         <button
           className="back"
           onClick={() => {

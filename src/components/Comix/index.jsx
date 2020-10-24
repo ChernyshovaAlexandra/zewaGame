@@ -27,7 +27,6 @@ export default class Comix extends React.Component {
     const mobile = comics.mobile.slice(0, comics.mobile.length - 1);
     const buttons = comics.buttons;
     const final = comics.final;
-    console.log(desktop, last);
 
     return (
       <div className="comixContainer">
