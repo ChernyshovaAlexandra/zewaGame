@@ -17,7 +17,7 @@ class SelectQwest extends React.Component {
         this.state = {
             quests: this.props.quests
         }
-        this.props.getQuestList()
+        this.props.getQuestList(this.props.userData.vk_id)
     }
 
 
@@ -117,9 +117,9 @@ class SelectQwest extends React.Component {
                                 </div>
                                 {item.isReady ?
                                     <button className="playBtn selectionBtn againBut">Пройти заново</button > :
-                                    item.continue ? 
+                                    item.continue ?
                                         <button className="playBtn selectionBtn againBut">Продолжить</button > :
-                                    <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
+                                        <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
                             </div>
                         </div>)
                     )}
@@ -141,9 +141,9 @@ class SelectQwest extends React.Component {
                                     </div>
                                     {item.isReady ?
                                         <button className="playBtn selectionBtn againBut">Пройти заново</button > :
-                                        item.continue ? 
-                                        <button className="playBtn selectionBtn againBut">Продолжить</button > :
-                                        <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
+                                        item.continue ?
+                                            <button className="playBtn selectionBtn againBut">Продолжить</button > :
+                                            <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
                                 </div>
                             </div>)
                         )}
@@ -172,7 +172,7 @@ const mapDispatchToProps = dispatch => {
         setQuestReady: (quests) => dispatch(setQuestReady(quests)),
         showWinQModal: (quest) => dispatch(showWinQModal(quest)),
         getQuest: (vk_id, quest_id) => dispatch(getQuest(vk_id, quest_id)),
-        getQuestList: () => dispatch(getQuestList())
+        getQuestList: (vk_id) => dispatch(getQuestList(vk_id))
     }
 }
 

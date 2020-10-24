@@ -61,7 +61,7 @@ export const getQuest = (vk_id, quest_id) => {
             })
         })
         let jsR = await response.json()
-        
+
         if (!jsR.error) {
             if (jsR.desktop) {
 
@@ -126,14 +126,17 @@ export const setNextMessage = (vk_id, quest_id) => {
 }
 
 
-export const getQuestList = () => {
+export const getQuestList = (vk_id) => {
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/quests', {
-            method: 'GET',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
-            }
+            },
+            body: JSON.stringify({
+                vk_id: vk_id
+            })
 
         })
         let jsR = await response.json()
