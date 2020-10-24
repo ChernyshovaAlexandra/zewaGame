@@ -1,178 +1,263 @@
 .loader {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    margin: auto;
-    width: 100%;
-    height: 100%;
-    background: url(../../img/Overlay.jpg) no-repeat center;
-    background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  background: url(../../img/Overlay.jpg) no-repeat center;
+  background-size: cover;
 
-    .logoContainer {
-        flex-wrap: nowrap;
-        padding-top: 2.5rem;
+  .logoContainer {
+    flex-wrap: nowrap;
+    padding-top: 2.5rem;
 
-        .logo {
-            img {
-                width: 8rem !important;
-                height: auto !important;
-                margin: auto;
-                display: block;
-            }
-        }
-
-        .logoGame {
-            img {
-                max-width: 100%;
-            }
-        }
-    }
-
-    .loadingText {
-        margin-top: 3rem;
-
-        h2 {
-            font-family: 'Foco';
-            font-style: normal;
-            font-weight: 800;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            letter-spacing: 8px;
-            color: #000000;
-
-            @media screen and (max-width: 630px) {
-                color: #fff;
-                text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
-            }
-        }
-    }
-
-    .rulonContainer {
-        margin-top: 5rem;
-        position: relative;
-        max-width: 80%;
+    .logo {
+      img {
+        width: 8rem !important;
+        height: auto !important;
         margin: auto;
-
-        .rulonBox {
-
-            .rulon {
-                position: absolute;
-                left: 0;
-                width: 5rem;
-                height: 5rem;
-                background: url(../../img/Rulon.png) no-repeat center;
-                background-size: contain;
-                animation: swiping 3s ease-in-out infinite both;
-
-                .roll {
-                    animation: rolling 3s ease-in-out infinite both;
-                    border-radius: 50%;
-                    width: 1.5rem;
-                    height: 1.5rem;
-                    position: absolute;
-                    bottom: 1.1rem;
-                    background: linear-gradient(135deg, #10306B -23.17%, #EDEFFB 69.06%);
-                    border: 1px solid #385893;
-                    left: 1rem;
-                    right: 0;
-                    margin: auto;
-                }
-            }
-        }
-
-        .rollingLine {
-            position: absolute;
-            width: 100%;
-            height: 2.5rem;
-            background: #fff url('../../img/pattern.png') repeat-x center;
-            bottom: -5rem;
-            transform: skewX(35deg);
-            border-radius: 6px;
-            background-size: 29%;
-            background-position: 0% 68%;
-
-            .overlay {
-                background-color: #041139;
-                position: absolute;
-                right: 0;
-                height: 100%;
-                // width: 30%;
-                border-radius: 6px;
-                animation: overlaywing 3s ease-in-out infinite both;
-            }
-        }
-
-        @media screen and (max-width: 465px) {
-            transform: scale(.8);
-            max-width: 100%;
-        }
-
-        @media screen and (max-width: 355px) {
-            transform: scale(.7)
-        }
+        display: block;
+      }
     }
 
-    @media screen and (max-width: 630px) {
-        display: flex;
-        flex-direction: column;
-        // justify-content: flex-end;
-        padding-bottom: 3rem;
-
-        .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            height: 90%;
-
-            .magnit {
-                margin-top: .4.5rem;
-            }
-        }
+    .logoGame {
+      img {
+        max-width: 100%;
+      }
     }
+  }
+
+  .loadingText {
+    margin-top: 3rem;
+
+    h2 {
+      font-family: "Foco";
+      font-style: normal;
+      font-weight: 800;
+      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 8px;
+      color: #000000;
+
+      @media screen and (max-width: 630px) {
+        color: #fff;
+        text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+          -1px -1px 0 black;
+      }
+    }
+  }
+
+  .rulonContainer {
+    margin-top: 5rem;
+    position: relative;
+    max-width: 80%;
+    margin: auto;
+
+    .rulonBox {
+      .rulon {
+        position: absolute;
+        left: 0;
+        width: 5rem;
+        height: 5rem;
+        background: url(../../img/Rulon.png) no-repeat center;
+        background-size: contain;
+        animation: swiping 3s ease-in-out infinite both;
+
+        .roll {
+          animation: rolling 3s ease-in-out infinite both;
+          border-radius: 50%;
+          width: 1.5rem;
+          height: 1.5rem;
+          position: absolute;
+          bottom: 1.1rem;
+          background: linear-gradient(135deg, #10306b -23.17%, #edeffb 69.06%);
+          border: 1px solid #385893;
+          left: 1rem;
+          right: 0;
+          margin: auto;
+        }
+      }
+    }
+
+    .rollingLine {
+      position: absolute;
+      width: 100%;
+      height: 2.5rem;
+      background: #fff url("../../img/pattern.png") repeat-x center;
+      bottom: -5rem;
+      transform: skewX(35deg);
+      border-radius: 6px;
+      background-size: 29%;
+      background-position: 0% 68%;
+
+      .overlay {
+        background-color: #041139;
+        position: absolute;
+        right: 0;
+        height: 100%;
+        // width: 30%;
+        border-radius: 6px;
+        animation: overlaywing 3s ease-in-out infinite both;
+      }
+    }
+
+    @media screen and (max-width: 465px) {
+      transform: scale(0.8);
+      max-width: 100%;
+    }
+
+    @media screen and (max-width: 355px) {
+      transform: scale(0.7);
+    }
+  }
+
+  @media screen and (max-width: 630px) {
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-end;
+    padding-bottom: 3rem;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 90%;
+
+      .magnit {
+        margin-top: 0.4.5rem;
+      }
+    }
+  }
 }
 
 .loading-content-inner {
-    margin-top: 2rem;
-    min-height: 10rem;
+  margin-top: 2rem;
+  min-height: 10rem;
 }
 
 .magnit {
-    img {
-        max-width: 10rem;
-    }
+  img {
+    max-width: 10rem;
+  }
 }
 
 @keyframes rolling {
-    0% {
-        transform: rotate(0);
-    }
+  0% {
+    transform: rotate(0);
+  }
 
-    100% {
-        transform: rotate(360deg);
-
-    }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes swiping {
-    from {
-        left: 0;
-    }
+  from {
+    left: 0;
+  }
 
-    to {
-        left: 90%;
-    }
+  to {
+    left: 90%;
+  }
 }
 
 @keyframes overlaywing {
-    from {
-        width: 93%;
-    }
+  from {
+    width: 93%;
+  }
 
-    to {
-        width: 0;
+  to {
+    width: 0;
+  }
+}
+
+.loadingText {
+  margin-top: 3rem;
+
+  h2 {
+    font-family: "Foco";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 8px;
+    color: #000000;
+
+    @media screen and (max-width: 630px) {
+      color: #fff;
+      text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+        -1px -1px 0 black;
     }
+  }
+}
+
+.rulonContainer {
+  margin-top: 5rem;
+  position: relative;
+  max-width: 80%;
+  margin: auto;
+
+  .rulonBox {
+    .rulon {
+      position: absolute;
+      left: 0;
+      width: 5rem;
+      height: 5rem;
+      background: url(../../img/Rulon.png) no-repeat center;
+      background-size: contain;
+      animation: swiping 3s ease-in-out infinite both;
+
+      .roll {
+        animation: rolling 3s ease-in-out infinite both;
+        border-radius: 50%;
+        width: 1.5rem;
+        height: 1.5rem;
+        position: absolute;
+        bottom: 1.1rem;
+        background: linear-gradient(135deg, #10306b -23.17%, #edeffb 69.06%);
+        border: 1px solid #385893;
+        left: 1rem;
+        right: 0;
+        margin: auto;
+      }
+    }
+  }
+
+  .rollingLine {
+    position: absolute;
+    width: 100%;
+    height: 2.5rem;
+    background: #fff url("../../img/pattern.png") repeat-x center;
+    bottom: -5rem;
+    transform: skewX(35deg);
+    border-radius: 6px;
+    background-size: 29%;
+    background-position: 0% 68%;
+
+    .overlay {
+      background-color: #041139;
+      position: absolute;
+      right: 0;
+      height: 100%;
+      // width: 30%;
+      border-radius: 6px;
+      animation: overlaywing 3s ease-in-out infinite both;
+    }
+  }
+
+  @media screen and (max-width: 465px) {
+    transform: scale(0.8);
+    max-width: 100%;
+  }
+
+  @media screen and (max-width: 355px) {
+    transform: scale(0.7);
+  }
 }

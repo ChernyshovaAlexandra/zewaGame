@@ -1,184 +1,184 @@
 .menu {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  left: 0;
+  top: 0;
+  background: url(../../img/mainBg.jpg) no-repeat center;
+  background-size: cover;
+  padding-top: 3rem;
+
+  @media screen and (max-width: 629px) {
+    padding: 2rem;
+
+    .magnit {
+      display: none;
+    }
+  }
+
+  .nav {
+    max-width: 80%;
     margin: auto;
-    left: 0;
-    top: 0;
-    background: url(../../img/mainBg.jpg) no-repeat center;
-    background-size: cover;
-    padding-top: 3rem;
 
-    @media screen and (max-width:629px) {
-        padding: 2rem;
+    @media screen and (max-width: 629px) {
+      display: none;
+    }
+  }
 
-        .magnit {
-            display: none;
+  .nav-mob {
+    display: none;
+
+    @media screen and (max-width: 629px) {
+      display: flex;
+    }
+  }
+
+  .infoData {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+
+    @media screen and (max-width: 629px) {
+      margin-top: 3rem;
+
+      .col-lg-9 {
+        max-width: 100%;
+        flex: 100%;
+
+        br {
+          display: none;
         }
-
+      }
     }
 
-    .nav {
-        max-width: 80%;
-        margin: auto;
+    p {
+      text-align: center;
 
-        @media screen and (max-width:629px) {
-            display: none;
-        }
+      @media screen and (max-width: 335px) {
+        font-size: 0.9rem;
+      }
+
+      .special {
+        background-color: #ce0b68;
+        border-radius: 1rem;
+        padding: 0 3px;
+      }
     }
+  }
 
-    .nav-mob {
-        display: none;
+  .navigation {
+    margin: 1rem auto 2rem;
 
-        @media screen and (max-width:629px) {
-            display: flex;
-        }
-    }
+    .selectionBtn {
+      -webkit-appearance: none;
+      border: none;
+      box-shadow: none;
+      outline: none;
+      text-decoration: none;
 
-    .infoData {
+      text-transform: uppercase;
+      padding: 1rem 1.5rem;
+      background-color: #fff;
+      color: #000;
+      margin-bottom: 0.5rem;
+      border-radius: 2rem;
+      letter-spacing: 5px;
+      font-size: 1.3rem;
+      font-weight: 900;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      line-height: 0;
+
+      &.pink {
+        background-color: #ce0b68;
         color: #fff;
-        font-size: 1.1rem;
-        margin-top: 2rem;
+      }
 
-        @media screen and (max-width:629px) {
-            margin-top: 3rem;
+      @media screen and (max-width: 629px) {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1rem;
+      }
 
-            .col-lg-9 {
-                max-width: 100%;
-                flex: 100%;
-
-                br {
-                    display: none;
-                }
-            }
-        }
-
-        p {
-            text-align: center;
-
-            @media screen and (max-width:335px) {
-                font-size: .9rem;
-            }
-
-            .special {
-                background-color: #CE0B68;
-                border-radius: 1rem;
-                padding: 0 3px;
-            }
-        }
+      @media screen and (max-width: 335px) {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        padding: 1rem 1.5rem;
+      }
     }
 
-    .navigation {
-        margin: 1rem auto 2rem;
-
-        .selectionBtn {
-            -webkit-appearance: none;
-            border: none;
-            box-shadow: none;
-            outline: none;
-            text-decoration: none;
-
-            text-transform: uppercase;
-            padding: 1rem 1.5rem;
-            background-color: #fff;
-            color: #000;
-            margin-bottom: .5rem;
-            border-radius: 2rem;
-            letter-spacing: 5px;
-            font-size: 1.3rem;
-            font-weight: 900;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            line-height: 0;
-
-            &.pink {
-                background-color: #CE0B68;
-                color: #fff;
-            }
-
-            @media screen and (max-width:629px) {
-                padding: 2rem 1.5rem;
-                margin-bottom: 1rem;
-            }
-
-            @media screen and (max-width:335px) {
-                font-size: 1rem;
-                margin-bottom: .5rem;
-                padding: 1rem 1.5rem;
-            }
-        }
-
-        @media screen and (max-width:629px) {
-            .col-lg-6 {
-                max-width: 100%;
-                flex: 100%;
-            }
-        }
+    @media screen and (max-width: 629px) {
+      .col-lg-6 {
+        max-width: 100%;
+        flex: 100%;
+      }
     }
+  }
 
-    &::after,
-    &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        height: 27rem;
-        width: 9rem;
-        background: url(../../img/menuComp.png) no-repeat left bottom;
-        background-size: contain;
-        z-index: 100;
-        animation: 2s appear linear .3s both;
+  &::after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 27rem;
+    width: 9rem;
+    background: url(../../img/menuComp.png) no-repeat left bottom;
+    background-size: contain;
+    z-index: 100;
+    animation: 2s appear linear 0.3s both;
 
-        @media screen and (max-width:629px) {
-            display: none;
-        }
+    @media screen and (max-width: 629px) {
+      display: none;
     }
+  }
 
-    &::before {
-        left: auto;
-        right: 0;
-        background: url(../../img/menuComp2.png) no-repeat right bottom;
-        background-size: contain;
-        height: 100%;
-        width: 11rem;
-        animation: 2.3s appearR linear .3s both;
-
-    }
+  &::before {
+    left: auto;
+    right: 0;
+    background: url(../../img/menuComp2.png) no-repeat right bottom;
+    background-size: contain;
+    height: 100%;
+    width: 11rem;
+    animation: 2.3s appearR linear 0.3s both;
+  }
 }
-
-.first{
-    animation-delay: 0;
+.animate__fadeInTopLeft  {
+  animation-duration: 0.3s !important;
 }
-.sec{
-    animation-delay: .5s;
+.first {
+  animation-delay: 0 !important;
 }
-.thrd{
-    animation-delay: 1s;
+.sec {
+  animation-delay: 0.2s !important;
 }
-.fourth{
-    animation-delay: 1.5s;
+.thrd {
+  animation-delay: 0.4s !important;
+}
+.fourth {
+  animation-delay: 0.6s !important;
 }
 @keyframes appear {
-    from {
-        left: -30rem;
-        opacity: 0;
-    }
+  from {
+    left: -30rem;
+    opacity: 0;
+  }
 
-    to {
-        left: 0;
-        opacity: 1;
-    }
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 @keyframes appearR {
-    from {
-        right: -30rem;
-        opacity: 0;
-    }
+  from {
+    right: -30rem;
+    opacity: 0;
+  }
 
-    to {
-        right: 0;
-        opacity: 1;
-    }
+  to {
+    right: 0;
+    opacity: 1;
+  }
 }

@@ -342,7 +342,7 @@ $blue: #2BAFEC;
             font-size: 1rem;
 
             @media screen and (max-width: 325px) {
-                font-size: .8rem;
+                font-size: .9rem;
             }
 
             
@@ -355,7 +355,7 @@ $blue: #2BAFEC;
             }
 
             @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-                font-size: .7rem;
+                font-size: .9rem;
             }
             // iPhone 11 pro  Max
             @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) {
@@ -396,21 +396,21 @@ $blue: #2BAFEC;
 
 
 .animate__delay-1s {
-    animation-delay: .5s !important;
+    animation-delay: .2s !important;
 }
 
 .animate__delay-2s {
-    animation-delay: 1s !important;
+    animation-delay:.4s !important;
 }
 
 .animate__delay-3s {
-    animation-delay: 1.5s !important;
+    animation-delay: .6s !important;
 }
 
 .animate__delay-4s {
-    animation-delay: 2s !important;
+    animation-delay: .8s !important;
 }
 
 .animate__delay-5s {
-    animation-delay: 2.5s !important;
+    animation-delay: 1s !important;
 }

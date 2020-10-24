@@ -28,7 +28,7 @@ export default class Dialog extends React.Component {
                     opacity: [0, 1],
                     easing: "easeInOutQuad",
                     duration: 500,
-                    delay: (el, i) => 30 * (i + 1)
+                    delay: (el, i) => 15 * (i + 1)
                 })
         }
     }
