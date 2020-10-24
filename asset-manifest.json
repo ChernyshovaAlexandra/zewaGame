@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.761587df.chunk.css",
-    "main.js": "/static/js/main.69734580.chunk.js",
-    "main.js.map": "/static/js/main.69734580.chunk.js.map",
+    "main.css": "/static/css/main.4932f9c6.chunk.css",
+    "main.js": "/static/js/main.c47f8c24.chunk.js",
+    "main.js.map": "/static/js/main.c47f8c24.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
     "runtime-main.js.map": "/static/js/runtime-main.e95b8414.js.map",
     "static/css/2.1c9ef103.chunk.css": "/static/css/2.1c9ef103.chunk.css",
-    "static/js/2.8c160024.chunk.js": "/static/js/2.8c160024.chunk.js",
-    "static/js/2.8c160024.chunk.js.map": "/static/js/2.8c160024.chunk.js.map",
+    "static/js/2.c452a46a.chunk.js": "/static/js/2.c452a46a.chunk.js",
+    "static/js/2.c452a46a.chunk.js.map": "/static/js/2.c452a46a.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6bed492a7f79b921e1dd1a9849ef79fc.js": "/precache-manifest.6bed492a7f79b921e1dd1a9849ef79fc.js",
+    "precache-manifest.59435b77356a5af01d9a5625d63f3d86.js": "/precache-manifest.59435b77356a5af01d9a5625d63f3d86.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
-    "static/css/main.761587df.chunk.css.map": "/static/css/main.761587df.chunk.css.map",
-    "static/js/2.8c160024.chunk.js.LICENSE.txt": "/static/js/2.8c160024.chunk.js.LICENSE.txt",
+    "static/css/main.4932f9c6.chunk.css.map": "/static/css/main.4932f9c6.chunk.css.map",
+    "static/js/2.c452a46a.chunk.js.LICENSE.txt": "/static/js/2.c452a46a.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/back.png": "/static/media/back.abb44cfb.png",
     "static/media/logoGame.png": "/static/media/logoGame.3b70e444.png",
-    "static/media/magnit-logo.svg": "/static/media/magnit-logo.a052c0ad.svg",
+    "static/media/magnit-logo.svg": "/static/media/magnit-logo.f5c96acc.svg",
     "static/media/quest1.jpg": "/static/media/quest1.932219af.jpg",
     "static/media/quest2.jpg": "/static/media/quest2.b75cf746.jpg",
     "static/media/quest3.jpg": "/static/media/quest3.15811e98.jpg",
@@ -30,8 +30,8 @@
   "entrypoints": [
     "static/js/runtime-main.e95b8414.js",
     "static/css/2.1c9ef103.chunk.css",
-    "static/js/2.8c160024.chunk.js",
-    "static/css/main.761587df.chunk.css",
-    "static/js/main.69734580.chunk.js"
+    "static/js/2.c452a46a.chunk.js",
+    "static/css/main.4932f9c6.chunk.css",
+    "static/js/main.c47f8c24.chunk.js"
   ]
 }
