@@ -20,7 +20,7 @@ import image5 from '../img/quest5.jpg'
 export const defaultState =
 {
     rules: false,
-    start: false,
+    start: true,
     selected: false,
     results: false,
     quests: [
@@ -64,7 +64,7 @@ export const defaultState =
     questData: [],
     userData: {
         name: 'user',
-        vk_id: ''
+        vk_id: 9801302
     }
 }
 

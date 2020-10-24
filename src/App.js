@@ -6,7 +6,7 @@ import QuestWinModal from './components/QuestWinModal'
 import LoadingComponent from './components/LoadingComponent'
 import './App.scss'
 import { connect } from 'react-redux'
-import { startGame, showRules, showRes, setUserData } from './store/actions'
+import { startGame, showRules, showRes, setUserData, getQuestList } from './store/actions'
 import bridge from '@vkontakte/vk-bridge';
 
 class App extends React.Component {
@@ -41,7 +41,7 @@ class App extends React.Component {
 
 
 	login = async () => {
-		const { setUserData } = this.props
+		const { setUserData, getQuestList } = this.props
 		let th = this
 		if (this.state.body_to_send) {
 			let response = await fetch('https://back.zewaquests.ru/api/login', {
@@ -54,8 +54,8 @@ class App extends React.Component {
 
 			})
 			let jsR = await response.json()
-
 			setUserData(this.state.body_to_send)
+			getQuestList(this.state.body_to_send.vk_id)
 		}
 	}
 	componentDidMount() {
@@ -101,7 +101,8 @@ const mapDispatchToProps = dispatch => {
 		startGame: () => dispatch(startGame()),
 		showRules: () => dispatch(showRules()),
 		showRes: () => dispatch(showRes()),
-		setUserData: (data) => dispatch(setUserData(data))
+		setUserData: (data) => dispatch(setUserData(data)),
+		getQuestList: (data) => dispatch(setUserData(data))
 	}
 }
 
