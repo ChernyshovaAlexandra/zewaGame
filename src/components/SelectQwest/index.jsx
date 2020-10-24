@@ -17,7 +17,9 @@ class SelectQwest extends React.Component {
         this.state = {
             quests: this.props.quests
         }
-        this.props.getQuestList(this.props.userData.vk_id)
+        const { quests, getQuestList, userData } = this.props
+        getQuestList(userData.vk_id)
+
     }
 
 
@@ -27,14 +29,10 @@ class SelectQwest extends React.Component {
     setReady = (index) => {
         const { quests, showWinQModal, getQuest, showSelected, userData } = this.props;
         const questsMass = quests;
+        console.log(index)
 
-        // if (index === quests.length - 1) {
-        //     showWinQModal(true);
-        // }
-        // else {
         getQuest(userData.vk_id, index + 1)
         showSelected(true)
-        // }
     }
     render() {
         const settings = {
@@ -44,7 +42,7 @@ class SelectQwest extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1
         };
-        const { quests } = this.props
+        const { quests, getQuestList, userData } = this.props
         const remainedQuests = quests.length - (quests.filter(item => item.isActive)).length
 
         return (
@@ -115,11 +113,11 @@ class SelectQwest extends React.Component {
                                 <div className="header">
                                     <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
                                 </div>
-                                {item.isReady ?
-                                    <button className="playBtn selectionBtn againBut">Пройти заново</button > :
-                                    item.continue ?
-                                        <button className="playBtn selectionBtn againBut">Продолжить</button > :
-                                        <button className="playBtn selectionBtn" onClick={() => { this.setReady(index) }}>Играть</button >}
+
+                                <button className={item.continue ? "playBtn selectionBtn againBut" :"playBtn selectionBtn"}
+                                    onClick={() => { this.setReady(index) }}>
+                                    {item.continue ? 'Продолжить' : 'Играть'}
+                                </button >
                             </div>
                         </div>)
                     )}
