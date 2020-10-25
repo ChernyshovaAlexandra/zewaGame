@@ -8,6 +8,7 @@ import './App.scss'
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes, setUserData, getQuestList } from './store/actions'
 import bridge from '@vkontakte/vk-bridge';
+import { resolve } from 'core-js/fn/promise'
 
 class App extends React.Component {
 	constructor(props) {
@@ -16,12 +17,11 @@ class App extends React.Component {
 			loaded: false,
 			body_to_send: null
 		}
-		this.getUserInfo()
-
+		this.init()
 	}
 	getUserInfo = () => {
-
 		bridge.subscribe((e) => {
+
 
 			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 				this.setState({
@@ -31,33 +31,57 @@ class App extends React.Component {
 						name: e.detail.data.first_name + " " + e.detail.data.last_name
 					}
 				})
-				this.login()
+
+			}
+			else if (!e.detail.data) {
+				this.props.getQuestList()
 			}
 
 		})
+
 		bridge.send("VKWebAppGetUserInfo")
+			.then(data => {
+				this.login()
+			})
+			.catch(error => {
+				console.log(error)
+			});
+
+	}
+
+
+
+	init = async () => {
+		let $this = this;
+
+		let promise = new Promise((resolve) => {
+			resolve($this.getUserInfo())
+		})
+		let res = await promise
+		promise.then(() => {
+			$this.props.getQuestList(this.props.userData.vk_id)
+		})
 	}
 
 
 
 	login = async () => {
-		const { setUserData, getQuestList } = this.props
+		const { setUserData, getQuestList, userData } = this.props
 		let th = this
-		if (this.state.body_to_send) {
-			let response = await fetch('https://back.zewaquests.ru/api/login', {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-					'X-Requested-With': 'XMLHttpRequest'
-				},
-				body: JSON.stringify(th.state.body_to_send)
 
-			})
-			let jsR = await response.json()
-			setUserData(this.state.body_to_send)
-			getQuestList(this.state.body_to_send.vk_id)
-		}
+		let response = await fetch('https://back.zewaquests.ru/api/login', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+				'X-Requested-With': 'XMLHttpRequest'
+			},
+			body: JSON.stringify(th.state.body_to_send)
+		})
+		let jsR = await response.json()
+		setUserData(this.state.body_to_send)
 	}
+
+
 	componentDidMount() {
 		setTimeout(() => {
 			this.setState({
@@ -65,6 +89,8 @@ class App extends React.Component {
 			})
 		}, 3000)
 	}
+
+
 	render() {
 		const { start, selected, questWin } = this.props
 		const { loaded } = this.state
@@ -102,7 +128,7 @@ const mapDispatchToProps = dispatch => {
 		showRules: () => dispatch(showRules()),
 		showRes: () => dispatch(showRes()),
 		setUserData: (data) => dispatch(setUserData(data)),
-		getQuestList: (data) => dispatch(setUserData(data))
+		getQuestList: (data) => dispatch(getQuestList(data))
 	}
 }
 
