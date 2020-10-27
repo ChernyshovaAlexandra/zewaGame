@@ -9,4 +9,5 @@ export const SET_QUEST_LIST = 'SET_QUEST_LIST';
 export const SET_USER_DATA = 'SET_USER_DATA';
 export const USER_GET_KUPON = 'USER_GET_KUPON';
 export const GET_COMICS = 'GET_COMICS';
+export const SET_HINT= 'SET_HINT'
 // export const SHOW_RULES = 'SHOW_RULES';

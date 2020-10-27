@@ -45,7 +45,7 @@ class Main extends React.Component {
             <img alt="" src={zewa} />
           </div>
           <div className="col-lg-3  animate__animated animate__fadeIn sec">
-            <img alt="" src={delo} />
+            {/* <img alt="" src={delo} /> */}
           </div>
           <div className="col-lg-3  animate__animated animate__fadeIn thrd">
             <img alt="" src={magnit} />
@@ -111,6 +111,7 @@ const mapStateToProps = (state) => {
   return {
     questData: state.store.questData,
     comics: state.store.comics,
+    curHint: state.store.curHint,
   };
 };
 

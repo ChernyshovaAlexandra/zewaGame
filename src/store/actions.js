@@ -8,7 +8,8 @@ import {
     SET_QUEST_LIST,
     GET_QUEST,
     SET_USER_DATA,
-    GET_COMICS
+    GET_COMICS,
+    SET_HINT
 } from './actionTypes'
 import { defaultState } from './reducers'
 
@@ -16,6 +17,10 @@ import { defaultState } from './reducers'
 export const getComics = (comics) => ({
     type: GET_COMICS,
     payload: comics
+})
+export const setHint = (hint) =>({
+    type:SET_HINT,
+    payload: hint
 })
 export const setUserData = (data) => ({
     type: SET_USER_DATA,
@@ -88,7 +93,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
     return async dispatch => {
         // let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-           let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
+        let response = await fetch('https://back.zewaquests.ru/api/node/37/click',
             {
                 method: 'POST',
                 headers: {
@@ -139,7 +144,7 @@ export const getQuestList = (vk_id) => {
 
         })
         let jsR = await response.json()
-
+        console.log(jsR)
         let quests = jsR.map((item, index) => {
             return {
                 name: item.name,
@@ -147,7 +152,7 @@ export const getQuestList = (vk_id) => {
                 sale: 20 + 10 * index,
                 continue: item.continue ? item.continue : false,
                 img: item.image,
-                isReady: false
+                isReady: item.isFinished ? item.isFinished : false
             }
         })
 

@@ -8,7 +8,8 @@ import {
     SHOW_QUEST_WIN_MODAL,
     GET_QUEST,
     SET_USER_DATA,
-    GET_COMICS
+    GET_COMICS,
+    SET_HINT
 } from './actionTypes'
 import { combineReducers } from 'redux'
 import image1 from '../img/quest1.jpg'
@@ -60,6 +61,7 @@ export const defaultState =
             isReady: false
         }
     ],
+    curHint: 0,
     questWin: false,
     questData: [],
     userData: {
@@ -92,6 +94,9 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, userData: action.payload }
         case GET_COMICS:
             return { ...state, comics: action.payload }
+        case SET_HINT:
+            return { ...state, curHint: action.payload }
+
     }
 
     return state
