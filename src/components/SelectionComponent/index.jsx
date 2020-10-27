@@ -14,6 +14,7 @@ class Selection extends React.Component {
   };
   render() {
     const { buttons, showWinQModal, final } = this.props;
+    console.log(buttons);
 
     return (
       <div className="selection row">
