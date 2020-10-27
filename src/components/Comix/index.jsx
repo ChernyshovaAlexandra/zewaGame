@@ -65,7 +65,7 @@ export default class Comix extends React.Component {
               <img src={last2} alt="" />
               <div className="row align-items-center justify-content-center">
                 <div className="col-lg-12">
-                  <Selection buttons={buttons} />
+                  <Selection buttons={buttons} final={final}/>
                 </div>
               </div>
             </>
