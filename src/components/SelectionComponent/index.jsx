@@ -13,7 +13,7 @@ class Selection extends React.Component {
     setNextMessage(userData.vk_id, id);
   };
   render() {
-    const { buttons, showWinQModal, final } = this.props;
+    const { buttons, showWinQModal, final, showSelected } = this.props;
     console.log(buttons);
 
     return (
@@ -27,6 +27,7 @@ class Selection extends React.Component {
                 onClick={
                   final
                     ? () => {
+                        showSelected(false);
                         showWinQModal(true);
                       }
                     : () => {
@@ -55,6 +56,7 @@ const mapDispatchToProps = (dispatch) => {
     showSelected: (quest) => dispatch(showSelected(quest)),
     setNextMessage: (vk_id, quest_id) =>
       dispatch(setNextMessage(vk_id, quest_id)),
+    showSelected: (quest) => dispatch(showSelected(quest)),
   };
 };
 

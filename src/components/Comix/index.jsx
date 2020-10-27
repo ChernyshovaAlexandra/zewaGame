@@ -29,7 +29,7 @@ export default class Comix extends React.Component {
       slidesToScroll: 1,
     };
     const { comics } = this.props;
-    console.log(comics);
+    
     const last = comics.desktop[comics.desktop.length - 1];
     const last2 = comics.mobile[comics.mobile.length - 1];
     const desktop = comics.desktop.slice(0, comics.desktop.length - 1);
