@@ -157,7 +157,6 @@ export const getQuestList = (vk_id) => {
         })
         let jsR = await response.json()
 
-        console.log(jsR)
         let quests = jsR.questsList.map((item, index) => {
             return {
                 name: item.name,
