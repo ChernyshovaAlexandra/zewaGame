@@ -54,9 +54,9 @@ export default class Dialog extends React.Component {
   render() {
     const { data, buttons, hintSet } = this.props;
     let { hints } = this.props;
-    if (hints && hints.length > 1) {
-      hints = hints[this.state.curHint];
-    }
+    // if (hints && hints.length > 1) {
+    //   hints = hints[this.state.curHint];
+    // }
     return (
       <>
         {this.state.shown && (

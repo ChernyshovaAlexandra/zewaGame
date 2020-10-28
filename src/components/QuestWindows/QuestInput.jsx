@@ -20,16 +20,17 @@ class QuestInput extends React.Component {
   }
   checkAnswer = (e, answer) => {
     const { questData, userData, setNextMessage, setHint } = this.props;
-    if (this.state.fomVal === questData.answer.toString().toLowerCase()) {
-      setNextMessage(userData.vk_id, questData.answered_node_id);
-    } else {
-      this.setState({
-        hints: true,
-      });
-      setHint(this.state.curHint);
-      this.setState({
-        curHint: this.state.curHint++
-      })
+    if(!this.state.fomVal){
+      document.getElementsByName('answer')[0].setAttribute('placeholder', 'Введите ответ')
+    }
+    if (this.state.fomVal) {
+      if (this.state.fomVal === questData.answer.toString().toLowerCase()) {
+        setNextMessage(userData.vk_id, questData.answered_node_id);
+      } else {
+        this.setState({
+          hints: true,
+        });
+      }
     }
     e.preventDefault();
   };
@@ -40,13 +41,13 @@ class QuestInput extends React.Component {
     });
   };
   render() {
-    const { questData, curHint, setHint } = this.props;
+    const { questData } = this.props;
 
     return (
       <div className="inputArea">
         <Materials image={questData.image} />
         {this.state.hints ? (
-          <Dialogs hints={questData.hints[curHint]} />
+          <Dialogs hints={[questData.hints[0]]} />
         ) : (
           <Dialogs messages={questData.messages} />
         )}
@@ -76,7 +77,7 @@ class QuestInput extends React.Component {
                     className="btn selectionBtn pink"
                     type="submit"
                     style={{ margin: "auto" }}
-                    setHint={this.state.hints ? true : false}
+                    // setHint={this.state.hints ? true : false}
                   >
                     {this.state.hints ? "Попробуй еще раз" : "Готово"}
                   </button>

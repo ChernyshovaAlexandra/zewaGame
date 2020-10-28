@@ -12,8 +12,10 @@ export default class Dialogs extends React.Component {
 
   render() {
     const { messages, hints, buttons } = this.props;
-    let newH = hints !== undefined ? [hints[this.state.curHint]] : [];
-    console.log(hints, newH);
+   
+    if (hints) {
+      console.log(hints[0]);
+    }
     let butL = buttons ? buttons.length : 0;
     return (
       <>
@@ -42,7 +44,7 @@ export default class Dialogs extends React.Component {
                       />
                     ))}
                   {hints &&
-                    newH.map((item, index) => (
+                    hints.map((item, index) => (
                       <Dialog
                         key={index}
                         data={item}
