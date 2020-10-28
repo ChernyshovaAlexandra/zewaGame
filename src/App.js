@@ -43,9 +43,6 @@ class App extends React.Component {
 			.then(data => {
 				this.login()
 			})
-			.catch(error => {
-				console.log(error)
-			});
 
 	}
 

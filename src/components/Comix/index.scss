@@ -1,388 +1,393 @@
 .comix {
-    width: 418px;
-    height: 420px;
-    margin: auto;
+  width: 418px;
+  height: 420px;
+  margin: auto;
 
-    &.mobile {
-        display: none;
-    }
+  &.mobile {
+    display: none;
+  }
 
-    .slick-arrow {
-        -webkit-appearance: none;
-        min-height: 3rem;
-        background: #ce0b68;
-        color: #fff;
-        border-radius: 2rem;
-        border: none;
-        outline: none !important;
-        overflow: hidden;
-        box-shadow: none !important;
-        display: block;
+  .slick-arrow {
+    -webkit-appearance: none;
+    min-height: 3rem;
+    background: #ce0b68;
+    color: #fff;
+    border-radius: 2rem;
+    border: none;
+    outline: none !important;
+    overflow: hidden;
+    box-shadow: none !important;
+    display: block;
 
-        &.slick-disabled,
-        &.slick-prev {
-            display: none !important;
-        }
-
-        @media screen and (max-width: 629px) {
-            font-size: 0.85rem;
-        }
-
-        @media screen and (max-width: 330px) {
-            min-height: 2.5rem;
-        }
-
-        &::after {
-            background: #fff;
-            content: "";
-            height: 155px;
-            left: -75px;
-            opacity: 0.2;
-            position: absolute;
-            top: -50px;
-            transform: rotate(35deg);
-            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-            width: 2rem;
-            z-index: 50;
-        }
-
-        &:hover {
-            color: #fff;
-            text-decoration: none;
-            outline: none;
-
-            &::after {
-                left: 120%;
-                transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
-            }
-        }
-
-        span {
-            z-index: 20;
-        }
-
-        font-size: 1rem;
-        width: auto;
-        min-width: 10rem;
-        margin: 0 auto;
-        left: 0;
-        right: 0;
-        bottom: -5.5rem;
-        top: auto;
-        position: absolute;
-
-        &::before {
-            display: none;
-        }
-    }
-
-    .slick-list {
-        overflow: visible;
-
-        .slick-track {
-            position: relative;
-            width: 418px !important;
-            height: 420px;
-            display: flex;
-            transform: none !important;
-            overflow: visible;
-            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
-            @media screen and (max-width: 629px) {
-                width: 250px !important;
-                margin-top: 0.5rem;
-            }
-
-            .slick-slide {
-                position: absolute;
-                z-index: 80;
-
-                @media screen and (max-width: 629px) {
-                    width: 250px !important;
-                    margin: auto;
-                    left: 0;
-                    right: 0;
-                    top: 0;
-                    bottom: 0;
-                }
-
-                .selection {
-                    margin-top: .5rem;
-                    padding: 0;
-                }
-
-                &.slick-active {
-                    z-index: 100;
-                    transform: none;
-                    transform: rotate(6.2deg);
-
-                    @media screen and (max-width: 629px) {
-                        transform: none;
-                    }
-
-                    &:last-child {
-                        transform: none;
-
-                        @media screen and (max-width: 629px) {
-                            bottom: 0;
-
-                            .row {
-                                margin: 0;
-                            }
-
-                            .selection {
-                                width: 100%;
-
-                                @media screen and (max-width: 629px) {
-                                    // position: relative;
-                                    // top: auto;
-                                    // bottom: 7.5rem;
-                                }
-
-                                .col-lg-12 {
-                                    flex: 100%;
-                                    max-width: 100%;
-                                    padding: 0;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                &:last-child {
-                    opacity: 0;
-
-                    &.slick-active {
-                        opacity: 1;
-                    }
-                }
-            }
-        }
+    &.slick-disabled,
+    &.slick-prev {
+      display: none !important;
     }
 
     @media screen and (max-width: 629px) {
-        width: 100%;
-        height: auto;
-
-        a {
-            width: 320px;
-        }
-
-        &.desktop {
-            display: none;
-        }
-
-        &.mobile {
-            display: block;
-        }
+      font-size: 0.85rem;
     }
 
-    @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-        .slick-list {
-            .slick-track {
-                width: 100% !important;
-                top: 1.5rem;
+    @media screen and (max-width: 330px) {
+      min-height: 2.5rem;
+    }
 
-                .slick-slide {
-                    width: 100% !important;
+    &::after {
+      background: #fff;
+      content: "";
+      height: 155px;
+      left: -75px;
+      opacity: 0.2;
+      position: absolute;
+      top: -50px;
+      transform: rotate(35deg);
+      transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      width: 2rem;
+      z-index: 50;
+    }
 
-                    img {
-                        outline: 10px solid #fff;
-                    }
+    &:hover {
+      color: #fff;
+      text-decoration: none;
+      outline: none;
 
-                    .selection {
-                        position: relative;
-                        top: auto;
-                        bottom: 7.5rem;
-                    }
+      &::after {
+        left: 120%;
+        transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+    }
+
+    span {
+      z-index: 20;
+    }
+
+    font-size: 1rem;
+    width: auto;
+    min-width: 10rem;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: -5.5rem;
+    top: auto;
+    position: absolute;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .slick-list {
+    overflow: visible;
+
+    .slick-track {
+      position: relative;
+      width: 418px !important;
+      height: 420px;
+      display: flex;
+      transform: none !important;
+      overflow: visible;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+      @media screen and (max-width: 629px) {
+        width: 250px !important;
+        margin-top: 0.5rem;
+      }
+
+      .slick-slide {
+        position: absolute;
+        z-index: 80;
+
+        @media screen and (max-width: 629px) {
+          width: 250px !important;
+          margin: auto;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+        }
+
+        .selection {
+          margin-top: 0.5rem;
+          padding: 0;
+        }
+
+        &.slick-active {
+          z-index: 100;
+          transform: none;
+          transform: rotate(6.2deg);
+
+          @media screen and (max-width: 629px) {
+            transform: none;
+          }
+
+          &:last-child {
+            transform: none;
+
+            @media screen and (max-width: 629px) {
+              bottom: 0;
+
+              .row {
+                margin: 0;
+              }
+
+              .selection {
+                width: 100%;
+
+                @media screen and (max-width: 629px) {
+                  // position: relative;
+                  // top: auto;
+                  // bottom: 7.5rem;
                 }
-            }
-        }
 
-        .slick-arrow {
-            bottom: -17.5rem;
-        }
-
-
-    }
-
-    @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
-        .slick-list {
-            .slick-track {
-                width: 100% !important;
-                top: 1.5rem;
-
-                .slick-slide {
-                    width: 100% !important;
-
-                    img {
-                        outline: 10px solid #fff;
-                    }
-
-                    .selection {
-                        position: relative;
-                        top: auto;
-                        bottom: 7.5rem;
-                    }
+                .col-lg-12 {
+                  flex: 100%;
+                  max-width: 100%;
+                  padding: 0;
                 }
+              }
             }
+          }
         }
 
-        .slick-arrow {
-            bottom: -17rem;
-            z-index: 99999999;
-            max-width: 75%;
-            width: auto;
+        &:last-child {
+          opacity: 0;
+
+          &.slick-active {
+            opacity: 1;
+          }
         }
+      }
+    }
+  }
 
+  @media screen and (max-width: 629px) {
+    width: 100%;
+    height: auto;
 
+    a {
+      width: 320px;
     }
 
-    @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-        .slick-list {
-            .slick-track {
-                width: 100% !important;
-                top: 1.5rem;
-
-                .slick-slide {
-                    width: 100% !important;
-
-                    img {
-                        outline: 10px solid #fff;
-                    }
-
-                    .selection {
-                        position: relative;
-                        top: auto;
-                        bottom: 7.5rem;
-                    }
-                }
-            }
-        }
-
-        .slick-arrow {
-            bottom: -17rem;
-            z-index: 500;
-            max-width: 75%;
-            width: auto;
-        }
-
-
+    &.desktop {
+      display: none;
     }
 
-    // Iphone8+
-    @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
-        .slick-list {
-            .slick-track {
-                width: 84% !important;
-                top: 1rem;
+    &.mobile {
+      display: block;
+    }
+  }
 
-                .slick-slide {
-                    width: 100% !important;
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .slick-list {
+      .slick-track {
+        width: 100% !important;
+        top: 1.5rem;
 
-                    img {
-                        outline: 10px solid #fff;
-                    }
+        .slick-slide {
+          width: 100% !important;
 
-                    .selection {
-                        position: relative;
-                        top: auto;
-                        bottom: 7.5rem;
-                    }
-                }
+          img {
+            outline: 10px solid #fff;
+          }
+
+          .selection {
+            position: relative;
+            top: auto;
+            bottom: 7.5rem;
+            &.final {
+              bottom: -1.5rem;
             }
+          }
         }
-
-        .slick-arrow {
-            bottom: -15rem;
-        }
-
+      }
     }
 
-    // Iphone8
-    @media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
-        .slick-list {
-            .slick-track {
-                width: 94% !important;
-                top: 1rem;
+    .slick-arrow {
+      bottom: -17.5rem;
+    }
+  }
 
-                .slick-slide {
-                    width: 100% !important;
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+    .slick-list {
+      .slick-track {
+        width: 100% !important;
+        top: 1.5rem;
 
-                    img {
-                        outline: 10px solid #fff;
-                    }
+        .slick-slide {
+          width: 100% !important;
 
-                    .selection {
-                        position: relative;
-                        top: auto;
-                        bottom: 7.5rem;
-                    }
-                }
+          img {
+            outline: 10px solid #fff;
+          }
+
+          .selection {
+            position: relative;
+            top: auto;
+            bottom: 7.5rem;
+            &.final {
+              bottom: -1.5rem;
             }
+          }
         }
-
-        .slick-arrow {
-            bottom: -10rem;
-        }
+      }
     }
 
+    .slick-arrow {
+      bottom: -17rem;
+      z-index: 99999999;
+      max-width: 75%;
+      width: auto;
+    }
+  }
+
+  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    .slick-list {
+      .slick-track {
+        width: 100% !important;
+        top: 1.5rem;
+
+        .slick-slide {
+          width: 100% !important;
+
+          img {
+            outline: 10px solid #fff;
+          }
+
+          .selection {
+            position: relative;
+            top: auto;
+            bottom: 7.5rem;
+            &.final {
+              bottom: -1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      bottom: -17rem;
+      z-index: 500;
+      max-width: 75%;
+      width: auto;
+    }
+  }
+
+  // Iphone8+
+  @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+    .slick-list {
+      .slick-track {
+        width: 84% !important;
+        top: 1rem;
+
+        .slick-slide {
+          width: 100% !important;
+
+          img {
+            outline: 10px solid #fff;
+          }
+
+          .selection {
+            position: relative;
+            top: auto;
+            bottom: 7.5rem;
+            &.final {
+              bottom: -1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      bottom: -15rem;
+    }
+  }
+
+  // Iphone8
+  @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+    .slick-list {
+      .slick-track {
+        width: 94% !important;
+        top: 1rem;
+
+        .slick-slide {
+          width: 100% !important;
+
+          img {
+            outline: 10px solid #fff;
+          }
+
+          .selection {
+            position: relative;
+            top: auto;
+            bottom: 7.5rem;
+            &.final {
+              bottom: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .slick-arrow {
+      bottom: -10rem;
+    }
+  }
 }
 
-@media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-    .comixContainer+ {
-        .back {
-            left: 2rem;
-            width: 3.8rem;
-            font-size: .7rem;
-            top: 9.5rem !important;
-        }
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .comixContainer + {
+    .back {
+      left: 2rem;
+      width: 3.8rem;
+      font-size: 0.7rem;
+      top: 9.5rem !important;
     }
+  }
 }
 // iPhone XR
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
-    .comixContainer+ {
-        .back {
-            left: 2rem;
-            width: 3.8rem;
-            font-size: .7rem;
-            top: 9.5rem !important;
-        }
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  .comixContainer + {
+    .back {
+      left: 2rem;
+      width: 3.8rem;
+      font-size: 0.7rem;
+      top: 9.5rem !important;
     }
+  }
 }
 // iPhone XS
-@media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-    .comixContainer+ {
-        .back {
-            left: 2rem;
-            width: 3.8rem;
-            font-size: .7rem;
-            top: 9.5rem !important;
-        }
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .comixContainer + {
+    .back {
+      left: 2rem;
+      width: 3.8rem;
+      font-size: 0.7rem;
+      top: 9.5rem !important;
     }
+  }
 }
 // iPhone XS Max
-@media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
-    .comixContainer+ {
-        .back {
-            left: 3.5rem;
-            width: 3.2rem;
-            font-size: .7rem;
-            top: 6.5rem !important;
-
-        }
+@media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+  .comixContainer + {
+    .back {
+      left: 3.5rem;
+      width: 3.2rem;
+      font-size: 0.7rem;
+      top: 6.5rem !important;
     }
+  }
 }
 
 // Iphone8
-@media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
-    .comixContainer+ {
-        .back {
-            left: 2.5rem;
-            width: 3rem;
-            font-size: .7rem;
-            top: 6rem !important;
-
-        }
+@media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+  .comixContainer + {
+    .back {
+      left: 2.5rem;
+      width: 3rem;
+      font-size: 0.7rem;
+      top: 6rem !important;
     }
+  }
 }

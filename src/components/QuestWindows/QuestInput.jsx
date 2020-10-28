@@ -20,11 +20,17 @@ class QuestInput extends React.Component {
   }
   checkAnswer = (e, answer) => {
     const { questData, userData, setNextMessage, setHint } = this.props;
-    if(!this.state.fomVal){
-      document.getElementsByName('answer')[0].setAttribute('placeholder', 'Введите ответ')
+    let realAnswer = questData.answer
+      .toString()
+      .toLowerCase()
+      .replace(/\s/g, "");
+    if (!this.state.formVal) {
+      document
+        .getElementsByName("answer")[0]
+        .setAttribute("placeholder", "Введите ответ");
     }
-    if (this.state.fomVal) {
-      if (this.state.fomVal === questData.answer.toString().toLowerCase()) {
+    if (this.state.formVal) {
+      if (this.state.formVal === realAnswer) {
         setNextMessage(userData.vk_id, questData.answered_node_id);
       } else {
         this.setState({
@@ -36,9 +42,11 @@ class QuestInput extends React.Component {
   };
   onChangeLogin = (e) => {
     e.preventDefault();
+    let answer = e.target.value.toString().toLowerCase().replace(/\s/g, "");
     this.setState({
-      fomVal: e.target.value.toString().toLowerCase(),
+      formVal: answer,
     });
+    console.log(this.state.formVal);
   };
   render() {
     const { questData } = this.props;

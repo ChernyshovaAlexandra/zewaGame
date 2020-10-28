@@ -16,7 +16,7 @@ class Selection extends React.Component {
     const { buttons, showWinQModal, final, showSelected } = this.props;
 
     return (
-      <div className="selection row">
+      <div className={final ? "selection row final" : "selection row"}>
         {buttons &&
           buttons.map((item, index) => (
             <div className="col-lg-12" key={index}>
@@ -54,7 +54,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     showWinQModal: (quest) => dispatch(showWinQModal(quest)),
     showSelected: (quest) => dispatch(showSelected(quest)),
-    setNextMessage: (vk_id, quest_id) => dispatch(setNextMessage(vk_id, quest_id)),
+    setNextMessage: (vk_id, quest_id) =>
+      dispatch(setNextMessage(vk_id, quest_id)),
     setHint: (quest) => dispatch(setHint(quest)),
   };
 };

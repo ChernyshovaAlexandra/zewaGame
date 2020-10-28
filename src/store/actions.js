@@ -92,8 +92,8 @@ export const getQuest = (vk_id, quest_id) => {
 export const setNextMessage = (vk_id, quest_id) => {
 
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-        // let response = await fetch('https://back.zewaquests.ru/api/node/37/click',
+        // let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
+        let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
             {
                 method: 'POST',
                 headers: {
