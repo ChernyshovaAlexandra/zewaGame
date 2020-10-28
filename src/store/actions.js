@@ -93,7 +93,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-        // let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
+            // let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
             {
                 method: 'POST',
                 headers: {
@@ -158,7 +158,7 @@ export const getQuestList = (vk_id) => {
         let jsR = await response.json()
 
         console.log(jsR)
-        let quests = jsR.map((item, index) => {
+        let quests = jsR.questsList.map((item, index) => {
             return {
                 name: item.name,
                 isActive: true,
@@ -168,7 +168,18 @@ export const getQuestList = (vk_id) => {
                 isReady: item.isFinished ? item.isFinished : false
             }
         })
-
+        if (jsR.finished_quests_count) {
+            dispatch({
+                type: SET_QUEST_READY,
+                payload: jsR.finished_quests_count
+            })
+        }
+        if (jsR.discount_amount) {
+            dispatch({
+                type: SET_DISCOUNT,
+                payload: jsR.discount_amount
+            })
+        }
         if (!jsR.error) {
             dispatch({
                 type: SET_QUEST_LIST,
