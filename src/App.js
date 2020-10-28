@@ -33,8 +33,8 @@ class App extends React.Component {
 				})
 
 			}
-			else if (!e.detail.data) {
-				this.props.getQuestList()
+			if (!e.detail.data) {
+				// this.props.getQuestList()
 			}
 
 		})

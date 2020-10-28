@@ -9,7 +9,6 @@ import vk from "../../img/vk-social-network-logo.png";
 import "./index.scss";
 
 class QuestWinModal extends React.Component {
- 
   constructor(props) {
     super(props);
     this.state = {
@@ -46,7 +45,7 @@ class QuestWinModal extends React.Component {
   };
 
   render() {
-    const { quests } = this.props;
+    const { quests, discount, questsReady } = this.props;
     const cur = quests.filter((item) => item.isReady == true);
 
     return (
@@ -77,9 +76,7 @@ class QuestWinModal extends React.Component {
                     </div>
                     <div className="saleWinBox">
                       <p>Скидка</p>
-                      <p className="saleWinAmmount">
-                        {quests[cur.length].sale}%
-                      </p>
+                      <p className="saleWinAmmount">{discount}%</p>
                     </div>
                   </div>
                 </div>
@@ -88,9 +85,8 @@ class QuestWinModal extends React.Component {
             <div className="col-lg-7">
               <div className="winBox">
                 <h4>
-                  Вы успешно разгадали квест. Ваша скидка -{" "}
-                  {quests[cur.length].sale}%! Вы можете увеличить ее, если
-                  пройдете все квесты.
+                  Вы успешно разгадали квест. Ваша скидка - {discount}%! Вы
+                  можете увеличить ее, если пройдете все квесты.
                 </h4>
 
                 <form
@@ -108,9 +104,7 @@ class QuestWinModal extends React.Component {
                     />
                     <label htmlFor="selectionWin">
                       Закончить игру и получить скидку{" "}
-                      <span className="special">
-                        {quests[cur.length].sale}%{" "}
-                      </span>
+                      <span className="special">{discount}% </span>
                       сейчас.
                     </label>
                   </div>
@@ -135,7 +129,7 @@ class QuestWinModal extends React.Component {
                   <p>
                     Пройдено квестов{" "}
                     <span>
-                      {cur.length}/{quests.length}
+                      {questsReady}/{quests.length}
                     </span>
                   </p>
                 </div>
@@ -148,11 +142,20 @@ class QuestWinModal extends React.Component {
           className="row justify-content-center "
           style={{ marginTop: "2rem" }}
         >
-          {/* <div className="col-lg-5">
-                        <button className="selectionBtn"
+          <div className="col-lg-10 mobile">
+            {/* <button className="selectionBtn"
                             onClick={() => { this.share() }}>
-                            Поделиться <img src={vk} alt="" style={{ 'max-height': '1.5rem' }} /></button>
-                    </div> */}
+                            Поделиться <img src={vk} alt="" style={{ 'max-height': '1.5rem' }} /></button> */}
+            <div className="saleWin">
+              <div className="logoB">
+                <img src={magnit} alt="" />
+              </div>
+              <div className="saleWinBox">
+                <p>Скидка</p>
+                <p className="saleWinAmmount">{discount}%</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     );
@@ -164,6 +167,8 @@ const mapStateToProps = (state) => {
     questData: state.store.questData,
     quests: state.store.quests,
     userData: state.store.userData,
+    discount: state.store.discount,
+    questsReady: state.store.questsReady,
   };
 };
 

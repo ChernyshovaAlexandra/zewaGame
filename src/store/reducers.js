@@ -9,7 +9,8 @@ import {
     GET_QUEST,
     SET_USER_DATA,
     GET_COMICS,
-    SET_HINT
+    SET_HINT,
+    SET_DISCOUNT
 } from './actionTypes'
 import { combineReducers } from 'redux'
 import image1 from '../img/quest1.jpg'
@@ -67,7 +68,9 @@ export const defaultState =
     userData: {
         name: 'user',
         vk_id: 9801302
-    }
+    },
+    questsReady: 0,
+    discount: '20'
 }
 
 
@@ -83,7 +86,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_SELECTED:
             return { ...state, selected: action.payload }
         case SET_QUEST_READY:
-            return { ...state, quests: action.payload }
+            return { ...state, questsReady: action.payload }
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:
@@ -96,6 +99,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, comics: action.payload }
         case SET_HINT:
             return { ...state, curHint: action.payload }
+        case SET_DISCOUNT:
+            return { ...state, discount: action.payload }
 
     }
 

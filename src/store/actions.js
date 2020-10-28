@@ -9,7 +9,8 @@ import {
     GET_QUEST,
     SET_USER_DATA,
     GET_COMICS,
-    SET_HINT
+    SET_HINT,
+    SET_DISCOUNT
 } from './actionTypes'
 import { defaultState } from './reducers'
 
@@ -18,8 +19,8 @@ export const getComics = (comics) => ({
     type: GET_COMICS,
     payload: comics
 })
-export const setHint = (hint) =>({
-    type:SET_HINT,
+export const setHint = (hint) => ({
+    type: SET_HINT,
     payload: hint
 })
 export const setUserData = (data) => ({
@@ -66,7 +67,6 @@ export const getQuest = (vk_id, quest_id) => {
             })
         })
         let jsR = await response.json()
-
         if (!jsR.error) {
             if (jsR.desktop) {
 
@@ -115,6 +115,18 @@ export const setNextMessage = (vk_id, quest_id) => {
                     payload: jsR
                 })
             }
+            if (jsR.finished_quests_count) {
+                dispatch({
+                    type: SET_QUEST_READY,
+                    payload: jsR.finished_quests_count
+                })
+            }
+            if (jsR.discount_amount) {
+                dispatch({
+                    type: SET_DISCOUNT,
+                    payload: jsR.discount_amount
+                })
+            }
             else {
                 dispatch({
                     type: GET_COMICS,
@@ -144,6 +156,8 @@ export const getQuestList = (vk_id) => {
 
         })
         let jsR = await response.json()
+
+        console.log(jsR)
         let quests = jsR.map((item, index) => {
             return {
                 name: item.name,

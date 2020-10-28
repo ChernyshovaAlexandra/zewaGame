@@ -85,7 +85,6 @@ class QuestInput extends React.Component {
                     className="btn selectionBtn pink"
                     type="submit"
                     style={{ margin: "auto" }}
-                    // setHint={this.state.hints ? true : false}
                   >
                     {this.state.hints ? "Попробуй еще раз" : "Готово"}
                   </button>

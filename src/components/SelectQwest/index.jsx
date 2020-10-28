@@ -30,16 +30,12 @@ class SelectQwest extends React.Component {
     getQuestList(userData.vk_id);
   };
 
-
-
   setReady = (index) => {
     const { getQuest, showSelected, userData } = this.props;
     getQuest(userData.vk_id, index + 1);
     showSelected(true);
   };
 
-
-  
   render() {
     const settings = {
       dots: true,
@@ -48,9 +44,9 @@ class SelectQwest extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    const { quests, getQuestList, userData } = this.props;
+    const { quests, getQuestList, questsReady } = this.props;
     const remainedQuests =
-      quests.length - quests.filter((item) => item.isActive).length;
+      quests.length - questsReady;
 
     return (
       <div className="selectQwest mainBG container">
@@ -207,6 +203,7 @@ const mapStateToProps = (state) => {
     quests: state.store.quests,
     questData: state.store.questData,
     userData: state.store.userData,
+    questsReady: state.store.questsReady,
   };
 };
 
