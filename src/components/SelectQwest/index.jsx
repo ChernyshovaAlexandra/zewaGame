@@ -17,12 +17,14 @@ import toiletPaper from "../../img/toilet-p-before.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import cancel from "../../img/cancel.png";
 
 class SelectQwest extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       quests: this.props.quests,
+      popup: false,
     };
   }
   setQuests = () => {
@@ -30,12 +32,21 @@ class SelectQwest extends React.Component {
     getQuestList(userData.vk_id);
   };
 
-  setReady = (index) => {
+  setReady = (index, isReady) => {
     const { getQuest, showSelected, userData } = this.props;
-    getQuest(userData.vk_id, index + 1);
+    getQuest(userData.vk_id, index + 1, isReady);
     showSelected(true);
   };
-
+  checkPopup = (index) => {
+    console.log(this.props.quests[index].continue);
+    if (this.props.quests[index].continue) {
+      this.setState({
+        popup: index,
+      });
+    } else {
+      this.setReady(index, false);
+    }
+  };
   render() {
     const settings = {
       dots: true,
@@ -45,9 +56,8 @@ class SelectQwest extends React.Component {
       slidesToScroll: 1,
     };
     const { quests, getQuestList, questsReady } = this.props;
-    const remainedQuests =
-      quests.length - questsReady;
-
+    const remainedQuests = quests.length - questsReady;
+    const { popup } = this.state;
     return (
       <div className="selectQwest mainBG container">
         <div className="row justify-content-between nav">
@@ -138,16 +148,10 @@ class SelectQwest extends React.Component {
                 </div>
 
                 <button
-                  className={
-                    item.continue
-                      ? "playBtn selectionBtn againBut"
-                      : "playBtn selectionBtn"
-                  }
-                  onClick={() => {
-                    this.setReady(index);
-                  }}
+                  className="playBtn selectionBtn"
+                  onClick={() => this.checkPopup(index)}
                 >
-                  {item.continue ? "Продолжить" : "Играть"}
+                  Играть
                 </button>
               </div>
             </div>
@@ -177,21 +181,51 @@ class SelectQwest extends React.Component {
                     <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
                   </div>
                   <button
-                    className={
-                      item.isReady
-                        ? "playBtn selectionBtn againBut againBut"
-                        : "playBtn selectionBtn "
-                    }
-                    onClick={() => {
-                      this.setReady(index);
-                    }}
+                    className="playBtn selectionBtn "
+                    onClick={() => this.checkPopup(index)}
                   >
-                    {item.isReady ? "Продолжить" : "Играть"}
+                    Играть
                   </button>
                 </div>
               </div>
             ))}
           </Slider>
+          {popup && (
+            <div className="modal-popup ">
+              <div className="row justify-content-center align-items-center">
+                <div className="col-lg-9 modal-Popup__content-inner">
+                  <div
+                    className="cancelBut"
+                    onClick={() => this.setState({ popup: false })}
+                  >
+                    <img src={cancel} alt="" />
+                  </div>
+                  <div className="modal-container-popup">
+                    Кажется, вы уже начали проходить этот квест. Хотите
+                    продолжить?
+                    <div className="row justify-content-center buttonsSet">
+                      <div className="col-lg-auto">
+                        <button
+                          className="playBtn selectionBtn againBut"
+                          onClick={() => this.setReady(popup, true)}
+                        >
+                          Продолжить
+                        </button>
+                      </div>
+                      <div className="col-lg-auto">
+                        <button
+                          className="playBtn selectionBtn"
+                          onClick={() => this.setReady(popup, false)}
+                        >
+                          Заново
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -214,7 +248,8 @@ const mapDispatchToProps = (dispatch) => {
     showSelected: (action) => dispatch(showSelected(action)),
     setQuestReady: (quests) => dispatch(setQuestReady(quests)),
     showWinQModal: (quest) => dispatch(showWinQModal(quest)),
-    getQuest: (vk_id, quest_id) => dispatch(getQuest(vk_id, quest_id)),
+    getQuest: (vk_id, quest_id, isReady) =>
+      dispatch(getQuest(vk_id, quest_id, isReady)),
     getQuestList: (vk_id) => dispatch(getQuestList(vk_id)),
   };
 };

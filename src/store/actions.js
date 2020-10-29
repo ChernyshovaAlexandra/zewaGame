@@ -53,7 +53,7 @@ export const showWinQModal = (quest) => ({
     payload: quest
 })
 
-export const getQuest = (vk_id, quest_id) => {
+export const getQuest = (vk_id, quest_id, isReady) => {
 
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/quest/' + (quest_id) + '/start', {
@@ -63,7 +63,8 @@ export const getQuest = (vk_id, quest_id) => {
                 'X-Requested-With': 'XMLHttpRequest'
             },
             body: JSON.stringify({
-                vk_id: vk_id
+                vk_id: vk_id,
+                isContinue: isReady
             })
         })
         let jsR = await response.json()
