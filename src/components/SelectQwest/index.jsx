@@ -32,28 +32,23 @@ class SelectQwest extends React.Component {
     getQuestList(userData.vk_id);
   };
 
-
-
-  
   setReady = (index, isReady) => {
     const { getQuest, showSelected, userData } = this.props;
-    getQuest(userData.vk_id, index + 1, isReady);
+    getQuest(userData.vk_id, index, isReady);
     showSelected(true);
   };
 
-
   checkPopup = (index) => {
-    console.log(this.props.quests[index].continue);
+    console.log(this.props.quests[index]);
     if (this.props.quests[index].continue) {
       this.setState({
-        popup: index,
+        popup: index + 1,
       });
+      console.log(this.state.popup);
     } else {
-      this.setReady(index, false);
+      this.setReady(index + 1, false);
     }
   };
-
-
 
   render() {
     const settings = {
