@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "149c6513ebeb201c32191d6c7b7591dd",
+    "revision": "75bd86b84641deb8c5744c64effbb1d6",
     "url": "/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/css/2.1c9ef103.chunk.css"
   },
   {
-    "revision": "a94f6b411aee44767814",
-    "url": "/static/css/main.bb4dee9e.chunk.css"
+    "revision": "83f6410ede79a20b4d1c",
+    "url": "/static/css/main.64520a3b.chunk.css"
   },
   {
     "revision": "045b0a44856b55e21a3f",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.44b3318a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a94f6b411aee44767814",
+    "revision": "83f6410ede79a20b4d1c",
     "url": "/static/js/main.aff47fed.chunk.js"
   },
   {
@@ -56,12 +56,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/magnit-logo.f5c96acc.svg"
   },
   {
-    "revision": "50857e30d54726890851d792ef9438a3",
-    "url": "/static/media/menuComp.50857e30.png"
+    "revision": "ae67c8f5e0ee993a705281200348d49f",
+    "url": "/static/media/menuComp.ae67c8f5.png"
   },
   {
-    "revision": "8737c0a12c8e381f303ae11cc943c802",
-    "url": "/static/media/menuComp2.8737c0a1.png"
+    "revision": "8a6cef6e581cd718c98b17aa6f511add",
+    "url": "/static/media/menuComp2.8a6cef6e.png"
   },
   {
     "revision": "29c2c30244b20cda680da281c6ddff4a",
