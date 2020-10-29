@@ -41,7 +41,7 @@ class SelectQwest extends React.Component {
     console.log(this.props.quests[index].continue);
     if (this.props.quests[index].continue) {
       this.setState({
-        popup: index,
+        popup: index + 1,
       });
     } else {
       this.setReady(index, false);
