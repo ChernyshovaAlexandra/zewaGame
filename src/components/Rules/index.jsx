@@ -6,6 +6,7 @@ import magnit2 from "../../img/magnit-wh.png";
 import question from "./ant-design_question-circle-outlined.png";
 import { connect } from "react-redux";
 import { showRules } from "../../store/actions";
+import RulesPdf from "./Rules.pdf";
 
 class Rules extends React.Component {
   render() {
@@ -96,7 +97,7 @@ class Rules extends React.Component {
                 </ul>
                 <div className="row justify-content-center">
                   <div className="col-md-auto">
-                    <a className="pinkTxt" href="">
+                    <a className="pinkTxt" href={RulesPdf} target="_blank">
                       Полные правила акции
                     </a>
                   </div>

@@ -49,7 +49,7 @@ class QuestInput extends React.Component {
     console.log(this.state.formVal);
   };
   render() {
-    const { questData } = this.props;
+    const { questData, userData, setNextMessage } = this.props;
 
     return (
       <div className="inputArea">
@@ -68,26 +68,57 @@ class QuestInput extends React.Component {
             </div>
             <div className="row justify-content-center">
               <div className="col-md-12">
-                <form
-                  className="submitForm"
-                  onSubmit={(e) => {
-                    this.checkAnswer(e, this.value);
-                  }}
-                >
-                  <input
-                    type="text"
-                    name="answer"
-                    id="answer"
-                    onChange={(e) => this.onChangeLogin(e)}
-                  />
-                  <label htmlFor="answer"></label>
-                  <button
-                    className="btn selectionBtn pink"
-                    type="submit"
-                    style={{ margin: "auto" }}
-                  >
-                    {this.state.hints ? "Попробуй еще раз" : "Готово"}
-                  </button>
+                <form className="submitForm">
+                  <div className="row justify-content-center">
+                    <div className="col-lg-auto">
+                      <input
+                        type="text"
+                        name="answer"
+                        id="answer"
+                        onChange={(e) => this.onChangeLogin(e)}
+                      />
+                      <label htmlFor="answer"></label>
+                    </div>
+                  </div>
+                  {this.state.hints ? (
+                    <div className="row">
+                      <button
+                        className="btn selectionBtn pink col-lg-6"
+                        type="submit"
+                        style={{ margin: "0 10px" }}
+                        onClick={(e) => {
+                          this.checkAnswer(e, this.value);
+                        }}
+                      >
+                        Попробуй еще раз
+                      </button>
+                      <button
+                        className="btn selectionBtn pink col-lg-6"
+                        type="submit"
+                        style={{ margin: "0 10px", background: "#B9C4EA" }}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setNextMessage(
+                            userData.vk_id,
+                            questData.answered_node_id
+                          );
+                        }}
+                      >
+                        Пропустить
+                      </button>
+                    </div>
+                  ) : (
+                    <button
+                      className="btn selectionBtn pink"
+                      type="submit"
+                      style={{ margin: "auto" }}
+                      onClick={(e) => {
+                        this.checkAnswer(e, this.value);
+                      }}
+                    >
+                      Готово
+                    </button>
+                  )}
                 </form>
               </div>
             </div>

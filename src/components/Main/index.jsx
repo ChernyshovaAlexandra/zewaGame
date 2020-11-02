@@ -52,15 +52,9 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="row justify-content-center nav-mob">
-          <div className="col-lg-3">
-            <img alt="" src={zewa} />
-          </div>
-          <div className="col-lg-5">
-            <img alt="" src={magnit} />
-          </div>
           <div className="col-lg-4">
             <button
-              style={{ display: "block", position: "static", margin: 'auto' }}
+              style={{ display: "block", position: "static", margin: "auto" }}
               className="back pinkTxt"
               onClick={() => {
                 this.handleClick();
@@ -68,6 +62,12 @@ class Main extends React.Component {
             >
               В меню
             </button>
+          </div>
+          <div className="col-lg-3">
+            <img alt="" src={zewa} />
+          </div>
+          <div className="col-lg-5">
+            <img alt="" src={magnit} />
           </div>
         </div>
         {!this.state.loaded && (

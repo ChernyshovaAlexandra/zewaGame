@@ -22,8 +22,6 @@ class App extends React.Component {
 	}
 	getUserInfo = () => {
 		bridge.subscribe((e) => {
-
-
 			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 				this.setState({
 					name: e.detail.data.first_name,
@@ -34,9 +32,7 @@ class App extends React.Component {
 				})
 
 			}
-			if (!e.detail.data) {
-				// this.props.getQuestList()
-			}
+
 
 		})
 

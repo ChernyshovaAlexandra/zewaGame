@@ -12,8 +12,11 @@ export default class Dialogs extends React.Component {
 
   render() {
     const { messages, hints, buttons } = this.props;
-  
+
     let butL = buttons ? buttons.length : 0;
+    if (hints) {
+      butL = 4;
+    }
     return (
       <>
         <div className="dialogs container__inner">
