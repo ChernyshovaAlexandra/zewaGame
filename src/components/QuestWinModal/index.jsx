@@ -328,7 +328,7 @@ class QuestWinModal extends React.Component {
                         />
                         <label htmlFor="selectionWin">
                           Пройти все квесты и получить скидку{" "}
-                          <span className="special">до 70%</span>.
+                          <span className="special">до&nbsp;70%</span>.
                         </label>
                       </div>
                       <div className="col-md-12">
