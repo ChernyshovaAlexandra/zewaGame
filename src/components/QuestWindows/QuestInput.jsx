@@ -90,7 +90,7 @@ class QuestInput extends React.Component {
                           this.checkAnswer(e, this.value);
                         }}
                       >
-                        Попробуй еще раз
+                        попробовать ещё раз
                       </button>
                       <button
                         className="btn selectionBtn pink col-lg-6"
@@ -108,16 +108,32 @@ class QuestInput extends React.Component {
                       </button>
                     </div>
                   ) : (
-                    <button
-                      className="btn selectionBtn pink"
-                      type="submit"
-                      style={{ margin: "auto" }}
-                      onClick={(e) => {
-                        this.checkAnswer(e, this.value);
-                      }}
-                    >
-                      Готово
-                    </button>
+                    <div className="row">
+                      <button
+                        className="btn selectionBtn pink"
+                        type="submit"
+                        style={{ margin: "auto" }}
+                        onClick={(e) => {
+                          this.checkAnswer(e, this.value);
+                        }}
+                      >
+                        Готово
+                      </button>
+                      <button
+                        className="btn selectionBtn pink col-lg-6"
+                        type="submit"
+                        style={{ margin: "0 10px", background: "#B9C4EA" }}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setNextMessage(
+                            userData.vk_id,
+                            questData.answered_node_id
+                          );
+                        }}
+                      >
+                        Пропустить
+                      </button>
+                    </div>
                   )}
                 </form>
               </div>
