@@ -10,7 +10,8 @@ import {
     SET_USER_DATA,
     GET_COMICS,
     SET_HINT,
-    SET_DISCOUNT
+    SET_DISCOUNT,
+    DID_REPOST
 } from './actionTypes'
 import { defaultState } from './reducers'
 
@@ -27,13 +28,13 @@ export const setUserData = (data) => ({
     type: SET_USER_DATA,
     payload: data
 })
-export const startGame = () => ({
+export const startGame = (action) => ({
     type: START_GAME,
-    payload: true
+    payload: action
 })
-export const showRules = () => ({
+export const showRules = (action) => ({
     type: SHOW_RULES,
-    payload: true
+    payload: action
 })
 export const showRes = () => ({
     type: SHOW_RESULTS,
@@ -48,7 +49,7 @@ export const setQuestReady = (newListOfQuests) => ({
     payload: newListOfQuests
 })
 
-export const showWinQModal = (quest) => ({
+export const showWinQModal = (quest) => (console.log(quest), {
     type: SHOW_QUEST_WIN_MODAL,
     payload: quest
 })
@@ -212,7 +213,29 @@ export const getKupon = (vk_id) => {
         }
     }
 }
+export const didRepost = (vk_id) => {
+    return async dispatch => {
+        let response = await fetch('https://back.zewaquests.ru/api/repost',
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest'
+                },
+                body: JSON.stringify({
+                    vk_id: vk_id
+                })
+            })
+        let jsR = await response.json()
 
+        if (!jsR.error) {
+            dispatch({
+                type: DID_REPOST,
+                payload: jsR.success
+            })
+        }
+    }
+}
 
 // POST /api/promocode
 // передать vk_id

@@ -105,6 +105,9 @@
         margin-bottom: 0;
       }
     }
+    @media screen and (max-width: 325px) {
+      max-height: 138px;
+    }
   }
 
   .row {

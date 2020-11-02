@@ -1,182 +1,290 @@
 @font-face {
-    font-family: 'Foco';
-    src: url(./fonts/AcerFoco.ttf)
+  font-family: "Foco";
+  src: url(./fonts/AcerFoco.ttf);
 }
 
 @font-face {
-    font-family: 'Foco Light';
-    src: url(./fonts/AcerFoco_Rg.ttf);
-    font-weight: 800;
+  font-family: "Foco Light";
+  src: url(./fonts/AcerFoco_Rg.ttf);
+  font-weight: 800;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .container {
-    max-width: 100% !important;
+  max-width: 100% !important;
 }
 
 .row {
-    // &.nowrap {
-    flex-wrap: nowrap !important;
-    // }
+  // &.nowrap {
+  flex-wrap: nowrap !important;
+  // }
 
-    .col-md-auto,
-    .col-lg-auto {
-        -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-        width: auto;
-        max-width: 100%;
-    }
+  .col-md-auto,
+  .col-lg-auto {
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
 
-    .col-lg-2,
-    .col-md-2 {
-        -ms-flex: 0 0 16.666667%;
-        flex: 0 0 16.666667%;
-        max-width: 16.666667%;
-    }
+  .col-lg-2,
+  .col-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 16.666667%;
+    max-width: 16.666667%;
+  }
 
-    .col-lg-3,
-    .col-md-3 {
-        -ms-flex: 0 0 25%;
-        flex: 0 0 25%;
-        max-width: 25%;
-    }
+  .col-lg-3,
+  .col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
 
-    .col-lg-4,
-    .col-md-4 {
-        -ms-flex: 0 0 33.333333%;
-        flex: 0 0 33.333333%;
-        max-width: 33.333333%;
-    }
+  .col-lg-4,
+  .col-md-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
 
-    .col-lg-5,
-    .col-md-5 {
-        -ms-flex: 0 0 41.666667%;
-        flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
+  .col-lg-5,
+  .col-md-5 {
+    -ms-flex: 0 0 41.666667%;
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
 
-    .col-lg-6,
-    .col-md-6 {
-        flex: 0 0 41.666667%;
-        max-width: 41.666667%;
-    }
+  .col-lg-6,
+  .col-md-6 {
+    flex: 0 0 41.666667%;
+    max-width: 41.666667%;
+  }
 
-    .col-lg-7,
-    .col-md-7 {
-        flex: 0 0 58.333333%;
-        max-width: 58.333333%;
-    }
+  .col-lg-7,
+  .col-md-7 {
+    flex: 0 0 58.333333%;
+    max-width: 58.333333%;
+  }
 
-    .col-lg-8,
-    .col-md-8 {
-        flex: 0 0 66.666667%;
-        max-width: 66.666667%;
-    }
+  .col-lg-8,
+  .col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
 
-    .col-lg-9,
-    .col-md-9 {
-        flex: 0 0 75%;
-        max-width: 75%;
-    }
+  .col-lg-9,
+  .col-md-9 {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
 
-    .col-lg-10,
-    .col-md-10 {
-        flex: 0 0 83.333333%;
-        max-width: 83.333333%;
-    }
+  .col-lg-10,
+  .col-md-10 {
+    flex: 0 0 83.333333%;
+    max-width: 83.333333%;
+  }
 
-    .col-md-11,
-    .col-lg-11 {
-        -ms-flex: 0 0 91.666667%;
-        flex: 0 0 91.666667%;
-        max-width: 91.666667%;
-    }
+  .col-md-11,
+  .col-lg-11 {
+    -ms-flex: 0 0 91.666667%;
+    flex: 0 0 91.666667%;
+    max-width: 91.666667%;
+  }
 
-    .col-md-12,
-    .col-lg-12 {
-        flex: 0 0 100%;
-        max-width: 100%;
-    }
+  .col-md-12,
+  .col-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    img {
-        max-width: 100%;
+  img {
+    max-width: 100%;
+  }
+
+  #root {
+    margin: auto;
+    border-radius: 2rem;
+    font-family: "Foco";
+    overflow: hidden;
+
+    @media screen and (max-width: 629px) {
+      max-width: 100vw;
+      overflow: hidden;
+      border-radius: 0;
     }
 
-    #root {
-        margin: auto;
-        border-radius: 2rem;
-        font-family: "Foco";
-        overflow: hidden;
+    .gameContainer {
+      max-height: 100%;
+      height: 630px;
+      position: relative;
+      left: 0;
+      top: 0;
+      padding: 2rem;
+      width: 630px;
+      max-width: 100%;
+      border-radius: 2rem;
+      overflow: hidden;
 
-        @media screen and (max-width: 629px) {
-            max-width: 100vw;
-            overflow: hidden;
-            border-radius: 0;
-        }
-
-        .gameContainer {
-            max-height: 100%;
-            height: 630px;
-            position: relative;
-            left: 0;
-            top: 0;
-            padding: 2rem;
-            width: 630px;
-            max-width: 100%;
-            border-radius: 2rem;
-            overflow: hidden;
-
-            @media screen and (max-width: 629px) {
-                max-width: 100vw;
-                width: 100%;
-                height: 100vh;
-                border: none;
-                background-size: cover;
-                border-radius: 0;
-            }
-
-
-
-        }
-
-        nav {
-            flex-wrap: nowrap !important;
-
-        }
-
-        h2 {
-            text-transform: uppercase;
-            font-weight: 600;
-        }
-
-        .delo {
-            color: #ff0099;
-            font-family: monospace;
-            font-size: 2.5rem;
-            text-shadow: 2px 2px #fff;
-        }
-
-        .logo {
+      @media screen and (max-width: 629px) {
+        max-width: 100vw;
+        width: 100%;
+        height: 100vh;
+        border: none;
+        background-size: cover;
+        border-radius: 0;
+        padding: 1rem 1.5rem;
+        .selectQwest {
+          padding-top: 1rem;
+          .nav-mob {
             img {
-                height: 3rem;
-                width: auto;
+              max-height: 2rem;
             }
+          }
         }
-
-
+      }
     }
+
+    nav {
+      flex-wrap: nowrap !important;
+    }
+
+    h2 {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .delo {
+      color: #ff0099;
+      font-family: monospace;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px #fff;
+    }
+
+    .logo {
+      img {
+        height: 3rem;
+        width: auto;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 629px) {
-    .fancybox-toolbar {
-        top: 10rem;
+  .fancybox-toolbar {
+    top: 10rem;
+  }
+}
+.for-rules {
+  margin-top: 2rem;
+  .wh-rules {
+    color: #fff;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+}
+.in-btn {
+  max-width: 25px;
+  max-height: 25px;
+  margin: 0 9px 0 0;
+  object-fit: contain;
+}
+.rulesBox {
+  background: #f8f8f8;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  li {
+    position: relative;
+    list-style: none;
+    padding-left: 3rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      width: 2rem;
+      height: 2rem;
+      background: url(./img/toilet-p-before.png) no-repeat center;
+      background-size: contain;
     }
+  }
+}
+.pinkTxt {
+  color: #ce0b68;
+}
+a {
+  color: inherit;
+  &.pinkTxt {
+    color: #ce0b68;
+    &:hover {
+      color: #ce0b68;
+    }
+  }
+  &:hover {
+    color: inherit;
+  }
+}
+.rulesCont {
+  .nav {
+    img {
+      max-height: 3rem;
+    }
+  }
+  .forBut {
+    margin-top: 1rem;
+  }
+  @media screen and (max-width: 629px) {
+    .col-lg-10 {
+      max-width: 95%;
+      flex: 95% 1;
+    }
+    .col-lg-4 {
+      flex: 100%;
+      max-width: 100%;
+      color: #fff;
+    }
+  }
+  @media screen and (max-height: 900px) {
+    .rulesBox {
+      height: 500px;
+      overflow: auto;
+    }
+  }
+  @media screen and (max-height: 750px) {
+    .rulesBox {
+      height: 450px;
+      overflow: auto;
+    }
+  }
+  @media screen and (max-height: 676px) {
+    .rulesBox {
+      height: 400px;
+      overflow: auto;
+    }
+  }
+  @media screen and (max-height: 625px) {
+    .rulesBox {
+      height: 350px;
+      overflow: auto;
+    }
+  }
+  @media screen and (max-height: 571px) {
+    .rulesBox {
+      height: 310px;
+      overflow: auto;
+    }
+  }
+}
+.buttonSet {
+  margin-top: 1rem;
 }

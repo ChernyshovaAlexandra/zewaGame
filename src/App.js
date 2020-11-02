@@ -4,6 +4,7 @@ import SelectQwest from './components/SelectQwest'
 import Main from './components/Main'
 import QuestWinModal from './components/QuestWinModal'
 import LoadingComponent from './components/LoadingComponent'
+import Rules from './components/Rules'
 import './App.scss'
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes, setUserData, getQuestList } from './store/actions'
@@ -89,19 +90,22 @@ class App extends React.Component {
 
 
 	render() {
-		const { start, selected, questWin } = this.props
+		const { start, selected, questWin, rules } = this.props
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
-				{questWin ?
-					<QuestWinModal /> :
-					selected ?
-						<Main /> :
-						start ?
-							<SelectQwest /> :
-							loaded ?
-								<Menu /> :
-								<LoadingComponent />
+				{
+					rules ?
+						<Rules /> :
+						questWin ?
+							<QuestWinModal /> :
+							selected ?
+								<Main /> :
+								start ?
+									<SelectQwest /> :
+									loaded ?
+										<Menu /> :
+										<LoadingComponent />
 				}
 			</div>
 		)

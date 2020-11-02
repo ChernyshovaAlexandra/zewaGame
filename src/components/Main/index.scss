@@ -60,6 +60,70 @@
   }
 }
 
+// iPhone XR
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+  .gameContainer,
+  .selectQwest,
+  .menu {
+    padding-top: 4rem !important;
+  }
+}
+
+// iPhone XS
+@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .gameContainer,
+  .selectQwest,
+  .menu {
+    padding-top: 4rem !important;
+  }
+}
+
+// iPhone XS Max
+@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+  .gameContainer,
+  .selectQwest,
+  .menu {
+    padding-top: 4rem !important;
+  }
+}
+
+.back {
+  -webkit-appearance: none;
+  border: none;
+  outline: none !important;
+  background: none;
+  width: fit-content;
+  height: auto;
+  position: absolute;
+  left: 1.5rem;
+  top: 5.5rem;
+  font-family: "Montserrat";
+  font-weight: 900;
+  color: #24236b;
+  font-size: 0.7rem;
+  z-index: 99990;
+  background: #ffffff;
+  padding: 5px 10px;
+  text-align: center;
+  border-radius: 15px;
+  cursor: pointer;
+  &.desktop {
+    @media screen and (max-width: 629px) {
+      display: none;
+    }
+  }
+}
+.loadingComp {
+  position: absolute;
+  width: 80%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: fit-content;
+}
+
 .gameContainer {
   .mainBg {
     .nav {
@@ -73,123 +137,16 @@
 
       @media screen and (max-width: 629px) {
         display: flex;
+        align-items: center;
+        .col-lg-4 {
+          .button.back {
+            @media screen and (max-width: 629px) {
+              display: block !important;
+              position: static;
+            }
+          }
+        }
       }
     }
   }
-}
-
-// iPhone XR
-@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
-  .gameContainer,
-  .selectQwest,
-  .menu {
-    padding-top: 4rem !important;
-  }
-
-  .back {
-    top: 7rem !important;
-  }
-}
-
-// iPhone XS
-@media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-  .gameContainer,
-  .selectQwest,
-  .menu {
-    padding-top: 4rem !important;
-  }
-
-  .back {
-    top: 7rem !important;
-  }
-}
-
-// iPhone XS Max
-@media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-  .gameContainer,
-  .selectQwest,
-  .menu {
-    padding-top: 4rem !important;
-  }
-
-  .back {
-    top: 7rem !important;
-  }
-}
-
-.back {
-  -webkit-appearance: none;
-  border: none;
-  outline: none !important;
-  background: none;
-  width: 2.5rem;
-  height: auto;
-  position: absolute;
-  left: 3rem;
-  top: 7rem;
-  font-family: "Montserrat";
-  font-weight: 900;
-  color: #24236b;
-  font-size: 0.55rem;
-  z-index: 99990;
-
-  @media screen and (max-width: 629px) {
-    left: 1rem;
-    top: 6rem;
-  }
-
-  @media screen and (max-width: 376px) {
-    left: 0.5rem;
-    width: 2rem;
-    font-size: 0.4rem;
-  }
-
-  // IPHONE 8
-  @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
-    left: 0.5rem;
-    width: 3rem;
-    font-size: 0.6rem;
-    top: 4.5rem;
-  }
-
-  // IPHONE 8+
-  @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
-    left: 0.5rem;
-    width: 3rem;
-    font-size: 0.6rem;
-    top: 5rem;
-  }
-
-  // iPhone XS
-  @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    left: 1rem;
-    width: 3rem;
-    font-size: 0.6rem;
-    top: 7rem !important;
-  }
-
-  // iPhone XS
-  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
-    left: 1.5rem;
-    width: 2rem;
-    font-size: 0.4rem;
-  }
-
-  // Iphone 5S
-  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
-    left: 2rem;
-    width: 2rem;
-    font-size: 0.4rem;
-    top: 5rem;
-  }
-}
-.loadingComp {
-  position: absolute;
-  width: 80%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-  height: fit-content;
 }

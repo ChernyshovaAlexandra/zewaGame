@@ -1,7 +1,18 @@
 .menu {
   &.win {
+    .btn {
+      padding: 0 3rem;
+      font-size: 1rem;
+      @media screen and(max-width: 629px) {
+        width: 100%;
+      }
+      img {
+        max-height: 1.5rem;
+        margin-left: 0.5rem;
+      }
+    }
     .mainWinPart {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
       .special {
         background-color: #28a7eb;
         border-radius: 1rem;
@@ -28,7 +39,7 @@
         font-size: 1.3rem;
         text-transform: none !important;
         @media screen and (max-width: 629px) {
-          font-size: 1.5rem;
+          // font-size: 1.5rem;
           text-align: center;
           text-shadow: 2px 2px 0 black;
         }
@@ -36,6 +47,7 @@
 
       @media screen and (max-width: 629px) {
         flex-wrap: wrap !important;
+        margin-top: 1rem;
         .col-lg-5,
         .col-lg-7 {
           flex: 100%;
@@ -54,7 +66,12 @@
       padding: 1rem;
       border-radius: 10px;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+      @media screen and (max-width: 629px) {
+        .col-lg-auto {
+          flex: 100%;
+          max-width: 100%;
+        }
+      }
       h4 {
         font-family: "Foco";
         font-style: normal;
@@ -65,7 +82,7 @@
         color: #0e2c60;
         margin-bottom: 1.5rem;
         @media screen and (max-width: 629px) {
-          font-size: 0.85rem;
+          font-size: 0.95rem;
         }
       }
 
@@ -94,12 +111,14 @@
           padding-left: 2rem;
           position: relative;
           display: block;
+          line-height: 1.2;
+          margin-bottom: 1.2rem;
 
           &::before {
             content: "";
             position: absolute;
             left: 5px;
-            top: 8px;
+            top: 5px;
             margin: auto;
             width: 18px;
             height: 18px;
@@ -113,7 +132,7 @@
             content: "";
             position: absolute;
             left: 9.5px;
-            top: 12.5px;
+            top: 9.5px;
             margin: auto;
             width: 9px;
             height: 9px;
@@ -124,7 +143,7 @@
 
         .selectionBtn {
           padding: 0 4rem;
-          margin: 1rem auto 0;
+          margin: 0 auto;
         }
       }
 
@@ -156,6 +175,14 @@
     &.win {
       max-width: 100%;
       padding: 0;
+      padding-top: 1rem;
+      .nav-mob {
+        img {
+          max-height: 2rem;
+          display: block;
+          margin: auto;
+        }
+      }
     }
   }
 }
@@ -214,4 +241,42 @@
       transform: scale(0.7) rotate(12.38deg);
     }
   }
+}
+
+.cancel-repost {
+  margin-top: 0.5rem;
+  text-decoration: underline;
+  text-align: center;
+  cursor: pointer;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.winModalReady {
+  h4 {
+    color: #fff;
+    margin: 1rem 0;
+    @media screen and (max-width: 629px) {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 80%;
+    }
+  }
+  & + .row {
+    .selectionBtn {
+      width: 100%;
+      background: #fff;
+      color: #ec137a;
+      padding: 0 3rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+.MainMenuBtn {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45%;
+  bottom: 0;
+  margin: auto;
 }

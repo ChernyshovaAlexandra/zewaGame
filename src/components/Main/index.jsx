@@ -52,14 +52,22 @@ class Main extends React.Component {
           </div>
         </div>
         <div className="row justify-content-center nav-mob">
-          <div className="col-lg-5">
-            <img alt="" src={delo} />
-          </div>
           <div className="col-lg-3">
             <img alt="" src={zewa} />
           </div>
-          <div className="col-lg-4">
+          <div className="col-lg-5">
             <img alt="" src={magnit} />
+          </div>
+          <div className="col-lg-4">
+            <button
+              style={{ display: "block", position: "static", margin: 'auto' }}
+              className="back pinkTxt"
+              onClick={() => {
+                this.handleClick();
+              }}
+            >
+              В меню
+            </button>
           </div>
         </div>
         {!this.state.loaded && (
@@ -96,12 +104,12 @@ class Main extends React.Component {
         </div>
 
         <button
-          className="back"
+          className="back pink desktop"
           onClick={() => {
             this.handleClick();
           }}
         >
-          <img src={Back} alt="" />В меню
+          В меню
         </button>
       </section>
     );
@@ -117,7 +125,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    startGame: () => dispatch(startGame()),
+    startGame: (action) => dispatch(startGame(action)),
     showRules: () => dispatch(showRules()),
     showRes: () => dispatch(showRes()),
     showSelected: (action) => dispatch(showSelected(action)),

@@ -39,12 +39,10 @@ class SelectQwest extends React.Component {
   };
 
   checkPopup = (index) => {
-    console.log(this.props.quests[index]);
     if (this.props.quests[index].continue) {
       this.setState({
         popup: index + 1,
       });
-      console.log(this.state.popup);
     } else {
       this.setReady(index + 1, false);
     }
@@ -58,7 +56,7 @@ class SelectQwest extends React.Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    const { quests, getQuestList, questsReady } = this.props;
+    const { quests, startGame, questsReady } = this.props;
     const remainedQuests = quests.length - questsReady;
     const { popup } = this.state;
     return (
@@ -230,6 +228,19 @@ class SelectQwest extends React.Component {
             </div>
           )}
         </div>
+        <button
+          style={{
+            'top': 'auto',
+            'bottom': '1.5rem',
+            'left': '1.5rem'
+          }}
+          className="back pinkTxt"
+          onClick={() => {
+            startGame(false);
+          }}
+        >
+          В меню
+        </button>
       </div>
     );
   }
@@ -246,7 +257,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    startGame: () => dispatch(startGame()),
+    startGame: (action) => dispatch(startGame(action)),
     showRules: () => dispatch(showRules()),
     showSelected: (action) => dispatch(showSelected(action)),
     setQuestReady: (quests) => dispatch(setQuestReady(quests)),

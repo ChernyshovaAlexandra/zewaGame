@@ -1,173 +1,172 @@
 .materials {
-    margin: -2.1rem auto 1rem;
+  margin: -2.1rem auto 1rem;
+  position: relative;
+  z-index: 10;
+
+  @media screen and (max-width: 629px) {
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .img-container {
     position: relative;
-    z-index: 10;
 
-    @media screen and (max-width: 629px) {
-        margin-bottom: .5rem;
+    @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+      padding: 0;
     }
 
-
-
-    h2 {
-        margin-bottom: 1rem;
+    // IPhone8+
+    @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+      padding: 0;
     }
 
-    .img-container {
-        position: relative;
-
-        @media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
-            padding: 0
-        }
-
-        // IPhone8+
-        @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
-            padding: 0;
-        }
-
-        // iPhone XR
-        @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
-            padding: 0
-        }
-
-        // iPhone XS iPhone X
-        @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-            padding: 0
-        }
-
-        // Iphone 5S
-        @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-            padding: 0
-        }
-
-        // iPhone 11 Pro Max
-
-        @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-            padding: 0
-        }
-
-        @media only screen and (min-width: 414px) and (max-width: 767px) {
-            padding: 0
-        }
-
-        a {
-            display: block;
-            height: 0;
-            padding-bottom: 68%;
-            width: 300px;
-            margin: auto;
-            max-width: 100%;
-
-            @media screen and (max-width: 429px) {
-                width: 250px;
-            }
-
-            @media screen and (max-width: 372px) {
-                width: 230px;
-            }
-
-            @media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
-                width: 320px;
-            }
-
-            // IPhone8+
-            @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
-                width: 360px;
-            }
-
-            // iPhone XR
-            @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 2) and (orientation : portrait) {
-                width: 360px;
-            }
-
-            // iPhone 11 Pro Max
-
-            @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-                width: 360px;
-            }
-
-            // iPhone XS
-            @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-                width: 320px;
-            }
-
-
-
-            // Iphone 5S
-            @media only screen and (max-width : 321px) {
-                width: 272px;
-            }
-
-            img {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                top: 0;
-                width: auto;
-                height: 100%;
-                display: block;
-                margin: 0 auto;
-                object-fit: contain;
-                border: 10px solid #fff;
-                box-shadow: 10px 10px 10px rgba(#000, .2);
-
-                @media screen and (max-width: 429px) {
-                    border: 8px solid #fff;
-                }
-
-                @media screen and (max-width: 372px) {
-                    border: 5px solid #fff;
-                }
-            }
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            right: 12%;
-            bottom: 1rem;
-            width: 2rem;
-            height: 2rem;
-            background: url(./109859.png) no-repeat center;
-            background-size: contain;
-            user-select: none;
-            user-select: none;
-            pointer-events: none;
-
-            // IPhone8
-            @media only screen and (device-width : 375px) and (device-height : 667px) and (-webkit-device-pixel-ratio : 2) {
-                right: 5%;
-            }
-
-            // iPhone XS
-            @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-                right: 5%;
-            }
-
-            // IPhone8+
-            @media only screen and (device-width : 414px) and (device-height : 736px) and (-webkit-device-pixel-ratio : 3) {
-                right: 5%;
-            }
-
-            // Iphone 5S
-            @media only screen and (min-device-width : 320px) and (max-device-width : 568px) {
-                right: 5%;
-            }
-
-            @media only screen and (device-width : 414px) and (device-height : 896px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-                right: 5%;
-            }
-        }
-
+    // iPhone XR
+    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+      padding: 0;
     }
 
-    @media screen and (max-width: 629px) {
-        margin-top: 1rem;
+    // iPhone XS iPhone X
+    @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+      padding: 0;
     }
 
-    // iPhone XS
-    @media only screen and (device-width : 375px) and (device-height : 812px) and (-webkit-device-pixel-ratio : 3) and (orientation : portrait) {
-        margin-top: 2.5rem;
+    // Iphone 5S
+    @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+      padding: 0;
     }
+
+    // iPhone 11 Pro Max
+
+    @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+      padding: 0;
+    }
+
+    @media only screen and (min-width: 414px) and (max-width: 767px) {
+      padding: 0;
+    }
+
+    @media screen and (max-width: 415px) {
+      padding: 0;
+    }
+
+    a {
+      display: block;
+      height: 0;
+      padding-bottom: 68%;
+      width: 300px;
+      margin: auto;
+      max-width: 100%;
+
+      @media screen and (max-width: 429px) {
+        width: 250px;
+      }
+
+      //   @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+      //     width: 320px;
+      //   }
+
+      //   // IPhone8+
+      //   @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+      //     width: 360px;
+      //   }
+
+      //   // iPhone XR
+      //   @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait) {
+      //     width: 360px;
+      //   }
+
+      //   // iPhone 11 Pro Max
+
+      //   @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+      //     width: 360px;
+      //   }
+
+      //   // iPhone XS
+      //   @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+      //     width: 320px;
+      //   }
+
+      @media screen and (max-width: 415px) {
+        width: 360px;
+      }
+
+
+      // Iphone 5S
+      @media only screen and (max-width: 321px) {
+        width: 272px;
+      }
+      img {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        width: auto;
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+        object-fit: contain;
+        border: 10px solid #fff;
+        box-shadow: 10px 10px 10px rgba(#000, 0.2);
+
+        @media screen and (max-width: 429px) {
+          border: 8px solid #fff;
+        }
+
+        @media screen and (max-width: 372px) {
+          border: 5px solid #fff;
+        }
+      }
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 12%;
+      bottom: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background: url(./109859.png) no-repeat center;
+      background-size: contain;
+      user-select: none;
+      user-select: none;
+      pointer-events: none;
+
+      // IPhone8
+      @media only screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) {
+        right: 5%;
+      }
+
+      // iPhone XS
+      @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+        right: 5%;
+      }
+
+      // IPhone8+
+      @media only screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) {
+        right: 5%;
+      }
+
+      // Iphone 5S
+      @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
+        right: 5%;
+      }
+
+      @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+        right: 5%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 629px) {
+    margin-top: 1rem;
+  }
+
+  // iPhone XS
+  @media only screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait) {
+    margin-top: 2.5rem;
+  }
 }

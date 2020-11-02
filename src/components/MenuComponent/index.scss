@@ -132,6 +132,7 @@
     @media screen and (max-width: 629px) {
       display: none;
     }
+    
   }
 
   &::before {
@@ -143,6 +144,10 @@
     width: 11rem;
     animation: 2.3s appearR linear 0.3s both;
   }
+
+
+
+  
 }
 .animate__fadeInTopLeft  {
   animation-duration: 0.3s !important;
@@ -180,5 +185,12 @@
   to {
     right: 0;
     opacity: 1;
+  }
+}
+
+.menu.no-after{
+  &::after, &::before{
+    display: none !important;
+    background: none;
   }
 }

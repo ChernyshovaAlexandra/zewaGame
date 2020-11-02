@@ -10,7 +10,8 @@ import {
     SET_USER_DATA,
     GET_COMICS,
     SET_HINT,
-    SET_DISCOUNT
+    SET_DISCOUNT,
+    DID_REPOST
 } from './actionTypes'
 import { combineReducers } from 'redux'
 import image1 from '../img/quest1.jpg'
@@ -22,7 +23,7 @@ import image5 from '../img/quest5.jpg'
 export const defaultState =
 {
     rules: false,
-    start: true,
+    start: false,
     selected: false,
     results: false,
     quests: [
@@ -69,13 +70,12 @@ export const defaultState =
         name: 'user',
         vk_id: 9801302
     },
-    questsReady: 0,
-    discount: '20'
+    questsReady: 5,
+    discount: '20',
 }
 
 
 export const mainReducer = (state = defaultState, action) => {
-    // eslint-disable-next-line default-case
     switch (action.type) {
         case START_GAME:
             return { ...state, start: action.payload }
@@ -101,6 +101,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, curHint: action.payload }
         case SET_DISCOUNT:
             return { ...state, discount: action.payload }
+        case DID_REPOST:
+            return { ...state, repost: action.payload }
 
     }
 
