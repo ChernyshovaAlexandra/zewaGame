@@ -57,7 +57,7 @@ class QuestInput extends React.Component {
         {this.state.hints ? (
           <Dialogs hints={[questData.hints[0]]} />
         ) : (
-          <Dialogs messages={questData.messages} />
+          <Dialogs messages={questData.messages} input={true} />
         )}
         <div className="row justify-content-center answerBlock">
           <div className="col-lg-auto">
@@ -110,9 +110,9 @@ class QuestInput extends React.Component {
                   ) : (
                     <div className="row">
                       <button
-                        className="btn selectionBtn pink"
+                        className="btn selectionBtn pink col-lg-6"
                         type="submit"
-                        style={{ margin: "auto" }}
+                        style={{ margin: "0 10px" }}
                         onClick={(e) => {
                           this.checkAnswer(e, this.value);
                         }}
