@@ -14,7 +14,7 @@ import vk from "../../img/vk-social-network-logo.png";
 import "./index.scss";
 import zewa from "../../img/zewa.png";
 import delo from "../../img/logoGame.png";
-import winRepost from '../../img/winRepost.jpg'
+import winRepost from "../../img/winRepost.jpg";
 
 class QuestWinModal extends React.Component {
   constructor(props) {
@@ -38,7 +38,7 @@ class QuestWinModal extends React.Component {
       link: "https://vk.com/app7573089_9801302",
       message:
         "Я разгадал все квесты Дела Z и получил скидку 70% на продукцию Zewa. Попробуй и ты!",
-      attachments: 'https://vk.com/app7573089_9801302',
+      attachments: "https://vk.com/app7573089_9801302",
     });
   };
   formCheck = (e) => {
@@ -322,21 +322,21 @@ class QuestWinModal extends React.Component {
                       <div className="col-md-12">
                         <input
                           type="radio"
+                          id="nextGame"
                           name="selectionWin"
-                          id="endGame"
                           checked
                         />
+                        <label htmlFor="selectionWin">
+                          Пройти все квесты и получить скидку{" "}
+                          <span className="special">до 70%</span>.
+                        </label>
+                      </div>
+                      <div className="col-md-12">
+                        <input type="radio" name="selectionWin" id="endGame" />
                         <label htmlFor="selectionWin">
                           Закончить игру и получить скидку{" "}
                           <span className="special">{discount}% </span>
                           сейчас.
-                        </label>
-                      </div>
-                      <div className="col-md-12">
-                        <input type="radio" id="nextGame" name="selectionWin" />
-                        <label htmlFor="selectionWin">
-                          Пройти все квесты и получить скидку{" "}
-                          <span className="special">до 70%</span>.
                         </label>
                       </div>
                       <button
