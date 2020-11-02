@@ -27,7 +27,7 @@ class App extends React.Component {
 					name: e.detail.data.first_name,
 					body_to_send: {
 						vk_id: e.detail.data.id,
-						name: e.detail.data.first_name + " " + e.detail.data.last_name
+						name: e.detail.data.first_name //+ " " + e.detail.data.last_name
 					}
 				})
 
