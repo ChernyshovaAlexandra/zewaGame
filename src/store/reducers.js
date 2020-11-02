@@ -70,7 +70,7 @@ export const defaultState =
         name: 'user',
         vk_id: 9801302
     },
-    questsReady: 5,
+    questsReady: 0,
     discount: '20',
 }
 
