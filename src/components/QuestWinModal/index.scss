@@ -280,3 +280,17 @@
   bottom: 0;
   margin: auto;
 }
+.logoB {
+  display: flex;
+  img {
+    display: block;
+    flex: 65%;
+    max-width: 65%;
+    margin-right: 5%;
+    object-fit: contain;
+    &:last-child {
+      flex: 25%;
+      max-width: 25%;
+    }
+  }
+}

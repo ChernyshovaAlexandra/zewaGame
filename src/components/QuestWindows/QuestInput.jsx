@@ -24,12 +24,8 @@ class QuestInput extends React.Component {
       .toString()
       .toLowerCase()
       .replace(/\s/g, "");
-    if (!this.state.formVal) {
-      document
-        .getElementsByName("answer")[0]
-        .setAttribute("placeholder", "Введите ответ");
-    }
-    if (this.state.formVal) {
+
+      
       if (this.state.formVal === realAnswer) {
         setNextMessage(userData.vk_id, questData.answered_node_id);
       } else {
@@ -37,8 +33,8 @@ class QuestInput extends React.Component {
           hints: true,
         });
       }
-    }
-    e.preventDefault();
+
+      e.preventDefault();
   };
   onChangeLogin = (e) => {
     e.preventDefault();

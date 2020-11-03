@@ -30,10 +30,10 @@ class App extends React.Component {
 						name: e.detail.data.first_name
 					}
 				})
-
 			}
-
-
+			else {
+				console.log(e.detail)
+			}
 		})
 
 		bridge.send("VKWebAppGetUserInfo")
@@ -60,7 +60,7 @@ class App extends React.Component {
 
 
 	login = async () => {
-		const { setUserData, getQuestList, userData } = this.props
+		const { setUserData } = this.props
 		let th = this
 
 		let response = await fetch('https://back.zewaquests.ru/api/login', {
@@ -81,7 +81,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3000)
+		}, 3)
 	}
 
 

@@ -37,7 +37,7 @@ class QuestWinModal extends React.Component {
     bridge.send("VKWebAppShowWallPostBox", {
       link: "https://vk.com/app7573089_9801302",
       message:
-        "Я разгадал все квесты Дела Z и получил скидку 70% на продукцию Zewa. Попробуй и ты!",
+        "Играй в новый текстовый квест Дело Z и получай скидки на продукцию Zewa! После прохождения всех квестов, поделись результатом у себя на странице, получи купон на скидку 70% и участвуй в розыгрыше купонов номиналом 3000 рублей на продукцию Zewa в Магнит!",
       attachments: "https://vk.com/app7573089_9801302",
     });
   };
@@ -145,6 +145,7 @@ class QuestWinModal extends React.Component {
                         <div className="saleWin">
                           <div className="logoB">
                             <img src={magnit} alt="" />
+                            <img src={Zewa} alt="" />
                           </div>
                           <div className="saleWinBox">
                             <p>Розыгрыш купона</p>
@@ -166,6 +167,7 @@ class QuestWinModal extends React.Component {
                         >
                           <div className="logoB">
                             <img src={magnit} alt="" />
+                            <img src={Zewa} alt="" />
                           </div>
                           <div className="saleWinBox">
                             <p>Розыгрыш купона</p>
@@ -240,6 +242,7 @@ class QuestWinModal extends React.Component {
                 >
                   <div className="logoB">
                     <img src={magnit} alt="" />
+                    <img src={Zewa} alt="" />
                   </div>
                   <div className="saleWinBox">
                     <p>Розыгрыш купона</p>
@@ -293,6 +296,7 @@ class QuestWinModal extends React.Component {
                   <div className="saleWin">
                     <div className="logoB">
                       <img src={magnit} alt="" />
+                      <img src={Zewa} alt="" />
                     </div>
                     <div className="saleWinBox">
                       <p>Скидка</p>
@@ -397,6 +401,7 @@ class QuestWinModal extends React.Component {
               <div className="saleWin">
                 <div className="logoB">
                   <img src={magnit} alt="" />
+                  <img src={Zewa} alt="" />
                 </div>
                 <div className="saleWinBox">
                   <p>Скидка</p>
