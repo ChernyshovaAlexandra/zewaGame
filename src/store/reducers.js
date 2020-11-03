@@ -64,7 +64,7 @@ export const defaultState =
         }
     ],
     curHint: 0,
-    questWin: true,
+    questWin: false,
     questData: [],
     userData: {
         name: 'user',

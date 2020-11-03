@@ -81,7 +81,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3)
+		}, 3000)
 	}
 
 
