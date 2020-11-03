@@ -85,6 +85,9 @@ class Menu extends React.Component {
                   <button
                     className="selectionBtn pink"
                     onClick={() => this.props.startGame(true)}
+                    style={{
+                      width: "-webkit-max-content",
+                    }}
                   >
                     Начать игру
                   </button>

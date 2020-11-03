@@ -38,12 +38,6 @@ class Rules extends React.Component {
             </div>
           </div>
           <div className="row justify-content-center nav-mob">
-            <div className="col-lg-3">
-              <img src={Zewa} alt="" />
-            </div>
-            <div className="col-lg-5">
-              <img src={magnit2} alt="" />
-            </div>
             <div className="col-lg-4">
               <button
                 style={{
@@ -59,6 +53,12 @@ class Rules extends React.Component {
                 В меню
               </button>
             </div>
+            <div className="col-lg-3">
+              <img src={Zewa} alt="" />
+            </div>
+            <div className="col-lg-5">
+              <img src={magnit2} alt="" />
+            </div>
           </div>
 
           <div className="row justify-content-center for-rules">
@@ -71,28 +71,29 @@ class Rules extends React.Component {
               <div className="rulesBox">
                 <ul>
                   <li>
-                    Проходи первый квест и получай купон на скидку{" "}
-                    <span className="pinkTxt">20%</span> на продукцию от Zewa в
-                    Магнит
+                    Проходи первый квест и получай купон на{" "}
+                    <span className="pinkTxt">скидку 20%</span> на продукцию от
+                    Zewa в сети магазинов Магнит
                   </li>
                   <li>
                     За каждый последующий пройденный квест увеличивай свою
-                    скидку на <span className="pinkTxt">10%</span>
+                    скидку <span className="pinkTxt">на 10%</span>
                   </li>
                   <li>
                     После прохождения всех пяти квестов, поделись результатами у
-                    себя на странице, получи дополнительные{" "}
-                    <span className="pinkTxt">10%</span> к скидке
+                    себя на странице, и увеличь свою скидку{" "}
+                    <span className="pinkTxt">до 70%</span>
                   </li>
                   <li>
                     Среди тех, кто прошел все 5 квестов и поделился результатами
                     у себя на странице еженедельно будут разыгрываться купоны
                     номиналом <span className="pinkTxt">3000 рублей</span> на
-                    продукцию от ZEWA в Магнит
+                    всю продукцию сети магазинов Магнит.
                   </li>
                   <li>
-                    Купоны действуют на всю продукцию Zewa в сети магазинов
-                    Магнит и не суммируются с другими скидками и акциями
+                    Купоны на скидку действуют на всю продукцию{" "}
+                    <span className="pinkTxt">Zewa</span> в сети магазинов
+                    «Магнит» и не суммируются с другими скидками и акциями.
                   </li>
                 </ul>
                 <div className="row justify-content-center">

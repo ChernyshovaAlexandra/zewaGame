@@ -218,6 +218,29 @@
       background-size: contain;
     }
   }
+  ul {
+    overflow: auto;
+    &::-webkit-scrollbar {
+      position: relative;
+      width: 5px;
+      right: 10px;
+    }
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-track,
+    &::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      -webkit-appearance: none;
+    }
+
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ce0b68;
+    }
+  }
 }
 .pinkTxt {
   color: #ce0b68;
@@ -256,32 +279,42 @@ a {
   }
   @media screen and (max-height: 900px) {
     .rulesBox {
-      height: 500px;
-      overflow: auto;
+      padding: 0;
+      padding: 1rem 0;
+      max-height: 66vh;
+      ul {
+        height: 500px;
+        padding: 0 1rem 0 0;
+        margin: 1rem;
+      }
     }
   }
   @media screen and (max-height: 750px) {
     .rulesBox {
-      height: 450px;
-      overflow: auto;
+      ul {
+        height: 407px;
+      }
     }
   }
   @media screen and (max-height: 676px) {
     .rulesBox {
-      height: 400px;
-      overflow: auto;
+      ul {
+        height: 358px;
+      }
     }
   }
   @media screen and (max-height: 625px) {
     .rulesBox {
-      height: 350px;
-      overflow: auto;
+      ul {
+        height: 324px;
+      }
     }
   }
   @media screen and (max-height: 571px) {
     .rulesBox {
-      height: 310px;
-      overflow: auto;
+      ul {
+        height: 285px;
+      }
     }
   }
 }

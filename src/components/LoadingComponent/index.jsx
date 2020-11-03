@@ -1,72 +1,69 @@
-import React from 'react'
-import './index.scss'
-import Zewa from '../../img/zewa.png'
-import logoGame from '../../img/logoGame.png'
-import magnit from '../../img/magnit-logo.svg'
-import { connect } from 'react-redux'
-import { startGame, showRules, showRes } from '../../store/actions'
+import React from "react";
+import "./index.scss";
+import Zewa from "../../img/zewa.png";
+import logoGame from "../../img/logoGame.png";
+import magnit from "../../img/magnit-logo.svg";
+import { connect } from "react-redux";
+import { startGame, showRules, showRes } from "../../store/actions";
 
 class LoadingComponent extends React.Component {
-    render() {
-        return (
-            <div className="loader">
-                <div className="container">
-                    <div className="row justify-content-center logoContainer">
-                        <div className="col-lg-3 logo">
-                            <img src={Zewa} alt="" />
-                        </div>
-                    </div>
-                    <div className="row justify-content-center logoContainer">
-                        <div className="col-lg-7 logoGame">
-                            <img src={logoGame} alt="" />
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-lg-auto loadingText">
-                            <h2>
-                                ЗАГРУЗКА...
-                            </h2>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center loading-content-inner">
-                        <div className="col-lg-12">
-                            <div className="rulonContainer">
-                                <div className="rollingLine">
-                                    <div className="overlay"></div>
-                                </div>
-                                <div className="rulonBox">
-                                    <div className="rulon">
-                                        <div className="roll"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-lg-auto magnit">
-                            <img src={magnit} alt="" />
-                        </div>
-                    </div>
-                </div>
+  render() {
+    return (
+      <div className="loader" style={{ paddingTop: "1rem" }}>
+        <div className="container">
+          <div className="row justify-content-center logoContainer">
+            <div className="col-lg-3 logo">
+              <img src={Zewa} alt="" />
             </div>
-        )
-    }
+          </div>
+          <div className="row justify-content-center logoContainer">
+            <div className="col-lg-7 logoGame">
+              <img src={logoGame} alt="" />
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-auto loadingText">
+              <h2>ЗАГРУЗКА...</h2>
+            </div>
+          </div>
+          <div className="row justify-content-center loading-content-inner">
+            <div className="col-lg-12">
+              <div className="rulonContainer">
+                <div className="rollingLine">
+                  <div className="overlay"></div>
+                </div>
+                <div className="rulonBox">
+                  <div className="rulon">
+                    <div className="roll"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="row justify-content-center">
+            <div className="col-lg-auto magnit">
+              <img src={magnit} alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
-const mapStateToProps = state => {
-    return {
-        rules: state.store.rules,
-        start: state.store.start,
-        results: state.store.results
-    }
-}
+const mapStateToProps = (state) => {
+  return {
+    rules: state.store.rules,
+    start: state.store.start,
+    results: state.store.results,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
-    return {
-        startGame: () => dispatch(startGame()),
-        showRules: () => dispatch(showRules()),
-        showRes: () => dispatch(showRes())
-    }
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    startGame: () => dispatch(startGame()),
+    showRules: () => dispatch(showRules()),
+    showRes: () => dispatch(showRes()),
+  };
+};
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(LoadingComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(LoadingComponent);

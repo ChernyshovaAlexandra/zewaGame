@@ -39,12 +39,15 @@ class SelectQwest extends React.Component {
   };
 
   checkPopup = (index) => {
-    if (this.props.quests[index].continue) {
+    const { quests } = this.props;
+    let q = quests.filter((item) => item.id === index);
+
+    if (q.continue) {
       this.setState({
-        popup: index + 1,
+        popup: index,
       });
     } else {
-      this.setReady(index + 1, false);
+      this.setReady(index, false);
     }
   };
 
@@ -150,7 +153,7 @@ class SelectQwest extends React.Component {
 
                 <button
                   className="playBtn selectionBtn"
-                  onClick={() => this.checkPopup(index)}
+                  onClick={() => this.checkPopup(item.id)}
                 >
                   Играть
                 </button>
@@ -183,7 +186,7 @@ class SelectQwest extends React.Component {
                   </div>
                   <button
                     className="playBtn selectionBtn "
-                    onClick={() => this.checkPopup(index)}
+                    onClick={() => this.checkPopup(item.id)}
                   >
                     Играть
                   </button>
@@ -230,9 +233,9 @@ class SelectQwest extends React.Component {
         </div>
         <button
           style={{
-            'top': 'auto',
-            'bottom': '1.5rem',
-            'left': '1.5rem'
+            top: "auto",
+            bottom: "1.5rem",
+            left: "1.5rem",
           }}
           className="back pinkTxt"
           onClick={() => {

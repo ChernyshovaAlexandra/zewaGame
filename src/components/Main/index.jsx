@@ -33,7 +33,7 @@ class Main extends React.Component {
       this.setState({
         loaded: true,
       });
-    }, 1000);
+    }, 3000);
   }
   render() {
     const { questData, comics } = this.props;

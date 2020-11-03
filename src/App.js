@@ -18,10 +18,20 @@ class App extends React.Component {
 			loaded: false,
 			body_to_send: null
 		}
-		this.init()
+		this.getUserInfo()
 	}
 	getUserInfo = () => {
+		const { getQuestList } = this.props
 		bridge.subscribe((e) => {
+			if (e.detail.data === undefined) {
+				this.setState({
+					body_to_send: {
+						name: 'user',
+						vk_id: 9801302
+					}
+				})
+				getQuestList(9801302)
+			}
 			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 				this.setState({
 					name: e.detail.data.first_name,
@@ -30,34 +40,17 @@ class App extends React.Component {
 						name: e.detail.data.first_name
 					}
 				})
-			}
-			else {
-				console.log(e.detail)
+				getQuestList(e.detail.data.id)
 			}
 		})
+
+
 
 		bridge.send("VKWebAppGetUserInfo")
-			.then(data => {
+			.then(() => {
 				this.login()
 			})
-
 	}
-
-
-
-	init = async () => {
-		let $this = this;
-
-		let promise = new Promise((resolve) => {
-			resolve($this.getUserInfo())
-		})
-		let res = await promise
-		promise.then(() => {
-			$this.props.getQuestList(this.props.userData.vk_id)
-		})
-	}
-
-
 
 	login = async () => {
 		const { setUserData } = this.props

@@ -1,6 +1,6 @@
 .selectionBtn {
   -webkit-appearance: none;
-  min-height: 3rem;
+  min-height: 2.8rem;
   background: #ce0b68;
   color: #fff;
   border-radius: 2rem;
@@ -106,6 +106,7 @@
   padding: 5px 10px;
   text-align: center;
   border-radius: 15px;
+  min-width: 5rem;
   cursor: pointer;
   &.desktop {
     @media screen and (max-width: 629px) {

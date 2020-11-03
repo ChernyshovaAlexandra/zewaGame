@@ -11,9 +11,10 @@ import {
     GET_COMICS,
     SET_HINT,
     SET_DISCOUNT,
-    DID_REPOST
+    DID_REPOST,
+    SET_CUR_REQDY_QUEST
 } from './actionTypes'
-import { defaultState } from './reducers'
+
 
 
 export const getComics = (comics) => ({
@@ -49,7 +50,7 @@ export const setQuestReady = (newListOfQuests) => ({
     payload: newListOfQuests
 })
 
-export const showWinQModal = (quest) => (console.log(quest), {
+export const showWinQModal = (quest) => ({
     type: SHOW_QUEST_WIN_MODAL,
     payload: quest
 })
@@ -87,12 +88,15 @@ export const getQuest = (vk_id, quest_id, isReady) => {
                     payload: jsR
                 })
             }
+            dispatch({
+                type: SET_CUR_REQDY_QUEST,
+                payload: quest_id
+            })
         }
     }
 }
 
 export const setNextMessage = (vk_id, quest_id) => {
-
     return async dispatch => {
         let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
             // let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
@@ -107,7 +111,6 @@ export const setNextMessage = (vk_id, quest_id) => {
                 })
             })
         let jsR = await response.json()
-
 
 
         if (!jsR.error) {
@@ -127,6 +130,12 @@ export const setNextMessage = (vk_id, quest_id) => {
                 dispatch({
                     type: SET_DISCOUNT,
                     payload: jsR.discount_amount
+                })
+            }
+            if (jsR.final) {
+                dispatch({
+                    type: SET_CUR_REQDY_QUEST,
+                    payload: quest_id
                 })
             }
             else {
@@ -162,7 +171,8 @@ export const getQuestList = (vk_id) => {
         let quests = jsR.questsList.map((item, index) => {
             return {
                 name: item.name,
-                isActive: true,
+                id: item.id,
+                isActive: index <= jsR.finished_quests_count ? true : false,
                 sale: 20 + 10 * index,
                 continue: item.continue ? item.continue : false,
                 img: item.image,

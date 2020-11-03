@@ -11,7 +11,8 @@ import {
     GET_COMICS,
     SET_HINT,
     SET_DISCOUNT,
-    DID_REPOST
+    DID_REPOST,
+    SET_CUR_REQDY_QUEST
 } from './actionTypes'
 import { combineReducers } from 'redux'
 import image1 from '../img/quest1.jpg'
@@ -72,6 +73,7 @@ export const defaultState =
     },
     questsReady: 0,
     discount: '20',
+    curReadyQuest: 1
 }
 
 
@@ -103,6 +105,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, discount: action.payload }
         case DID_REPOST:
             return { ...state, repost: action.payload }
+        case SET_CUR_REQDY_QUEST:
+            return { ...state, curReadyQuest: action.payload }
 
     }
 

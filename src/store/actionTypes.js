@@ -12,3 +12,4 @@ export const GET_COMICS = 'GET_COMICS';
 export const SET_HINT = 'SET_HINT'
 export const SET_DISCOUNT = 'SET_DISCOUNT';
 export const DID_REPOST = 'DID_REPOST'
+export const SET_CUR_REQDY_QUEST = 'SET_CUR_REQDY_QUEST'

@@ -42,7 +42,7 @@ class QuestInput extends React.Component {
     this.setState({
       formVal: answer,
     });
-    console.log(this.state.formVal);
+
   };
   render() {
     const { questData, userData, setNextMessage } = this.props;
@@ -86,7 +86,7 @@ class QuestInput extends React.Component {
                           this.checkAnswer(e, this.value);
                         }}
                       >
-                        попробовать ещё раз
+                        Попробовать ещё раз
                       </button>
                       <button
                         className="btn selectionBtn pink col-lg-6"
