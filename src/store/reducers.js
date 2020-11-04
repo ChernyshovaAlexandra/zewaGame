@@ -24,7 +24,7 @@ import image5 from '../img/quest5.jpg'
 export const defaultState =
 {
     rules: false,
-    start: false,
+    start: true,
     selected: false,
     results: false,
     quests: [

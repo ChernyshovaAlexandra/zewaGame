@@ -67,7 +67,7 @@ class Menu extends React.Component {
         <div className="row justify-content-center infoData">
           <div className="col-lg-9">
             <p className="ml3">
-              Привет, <span>{userData.name}</span>. Играй и получай скидки до{" "}
+              Привет, <span>{this.props.name}</span>. Играй и получай скидки до{" "}
               <span className="special">70%</span> на покупку продукции Zewa в
               магазинах Магнит. Пройди все квесты и участвуй в розыгрыше
               подарочного купона Магнит на{" "}

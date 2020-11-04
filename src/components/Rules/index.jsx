@@ -109,7 +109,7 @@ class Rules extends React.Component {
           <div className="row justify-content-center forBut">
             <div className="col-lg-4">
               <a
-                href="https://vk.com/im?sel=-192376172"
+                href="https://vk.com/im?sel=-137564571"
                 target="_blank"
                 style={{ textDecoration: "none" }}
               >

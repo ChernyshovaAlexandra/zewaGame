@@ -37,7 +37,7 @@
           max-width: 100%;
           &:not(:last-child) {
             &.btn {
-              margin-bottom: .5rem !important;
+              margin-bottom: 0.5rem !important;
             }
           }
         }
@@ -47,7 +47,9 @@
       width: auto;
       min-width: 15rem;
     }
-
+    input[type="radio"] {
+      width: 0;
+    }
     input {
       height: 3rem;
       -webkit-appearance: none;
@@ -98,7 +100,7 @@
           background-size: 60%;
           top: 0;
           @media screen and (max-width: 629px) {
-              right: 1rem;
+            right: 1rem;
           }
         }
       }

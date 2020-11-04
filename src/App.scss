@@ -183,7 +183,7 @@
   }
 }
 .for-rules {
-  margin-top: 2rem;
+  margin-top: 1rem;
   .wh-rules {
     color: #fff;
     font-style: normal;
@@ -201,13 +201,19 @@
   background: #f8f8f8;
   border-radius: 1rem;
   padding: 1.5rem;
+  max-height: -webkit-fill-available;
+  ul {
+    height: auto;
+  }
   li {
     position: relative;
     list-style: none;
     padding-left: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.6rem;
     font-size: 0.9rem;
-
+    &:last-child {
+      margin-bottom: 0;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -289,6 +295,7 @@ a {
       }
     }
   }
+
   @media screen and (max-height: 750px) {
     .rulesBox {
       ul {
@@ -314,6 +321,14 @@ a {
     .rulesBox {
       ul {
         height: 285px;
+      }
+    }
+  }
+  @media screen and (max-height: 900px) and (max-width: 630px) {
+    .rulesBox {
+      max-height: 100%;
+      ul {
+        height: auto;
       }
     }
   }

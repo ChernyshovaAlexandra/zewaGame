@@ -4,7 +4,6 @@ import Dialogs from "../Dialogs";
 import "./index.scss";
 import { connect } from "react-redux";
 import {
-  showWinQModal,
   showSelected,
   setNextMessage,
   setHint,
@@ -151,7 +150,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showWinQModal: (quest) => dispatch(showWinQModal(quest)),
     showSelected: (quest) => dispatch(showSelected(quest)),
     setHint: (quest) => dispatch(setHint(quest)),
     setNextMessage: (vk_id, quest_id) =>

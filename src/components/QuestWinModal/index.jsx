@@ -6,6 +6,7 @@ import {
   getKupon,
   startGame,
   didRepost,
+  getQuestList,
 } from "../../store/actions";
 import Zewa from "../../img/zewa.png";
 import magnit from "../../img/magnit-wh.png";
@@ -24,10 +25,10 @@ class QuestWinModal extends React.Component {
       innerTxt: false,
     };
   }
- 
-  formCheck = (e) => {
-    const { showWinQModal, getKupon, userData, questsReady } = this.props;
 
+  formCheck = (e) => {
+    const { showWinQModal, getKupon, userData, getQuestList } = this.props;
+    getQuestList(userData.vk_id);
     let elems = document.forms.formFin.elements;
     let inputId;
     for (let i = 0; i < elems.length; i++) {
@@ -41,12 +42,12 @@ class QuestWinModal extends React.Component {
         innerTxt:
           "Отличная работа! Мы отправили скидочный купон в личные сообщения. Перейти в диалоги?",
       });
-      // showWinQModal(false);
+
       bridge.subscribe((e) => {
         if (e.detail.type === "VKWebAppAllowMessagesFromGroupResult") {
           if (e.detail.data.result) {
             getKupon(userData.vk_id);
-            showWinQModal(false);
+            showWinQModal(userData.vk_id, false);
           }
         } else if (e.detail.type === "VKWebAppAllowMessagesFromGroupFailed") {
           this.setState({
@@ -64,7 +65,6 @@ class QuestWinModal extends React.Component {
   render() {
     const { questsReady } = this.props;
 
-    
     return (
       <section className="menu win">
         <div className="row justify-content-center nav">
@@ -107,10 +107,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showWinQModal: (quest) => dispatch(showWinQModal(quest)),
+    showWinQModal: (vk_id, quest) => dispatch(showWinQModal(vk_id, quest)),
     startGame: (quest) => dispatch(startGame(quest)),
     getKupon: (vk_id) => dispatch(getKupon(vk_id)),
     didRepost: (vk_id) => dispatch(didRepost(vk_id)),
+    getQuestList: (vk_id) => dispatch(getQuestList(vk_id)),
   };
 };
 

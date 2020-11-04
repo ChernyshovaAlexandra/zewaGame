@@ -26,6 +26,7 @@ class SelectQwest extends React.Component {
       quests: this.props.quests,
       popup: false,
     };
+    this.setQuests();
   }
   setQuests = () => {
     const { getQuestList, userData } = this.props;
@@ -264,7 +265,7 @@ const mapDispatchToProps = (dispatch) => {
     showRules: () => dispatch(showRules()),
     showSelected: (action) => dispatch(showSelected(action)),
     setQuestReady: (quests) => dispatch(setQuestReady(quests)),
-    showWinQModal: (quest) => dispatch(showWinQModal(quest)),
+    showWinQModal: (vk_id, quest) => dispatch(showWinQModal(vk_id, quest)),
     getQuest: (vk_id, quest_id, isReady) =>
       dispatch(getQuest(vk_id, quest_id, isReady)),
     getQuestList: (vk_id) => dispatch(getQuestList(vk_id)),

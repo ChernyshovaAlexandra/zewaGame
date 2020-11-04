@@ -52,7 +52,7 @@ class QuestsInProcess extends React.Component {
   };
 
   formCheck = (e) => {
-    const { showWinQModal } = this.props;
+    const { showWinQModal, userData } = this.props;
 
     let elems = document.forms.formFin.elements;
     let inputId;
@@ -67,7 +67,7 @@ class QuestsInProcess extends React.Component {
     }
 
     if (inputId === "nextGame") {
-      showWinQModal(false);
+      showWinQModal(userData.vk_id, false);
     }
     e.preventDefault();
   };
@@ -217,7 +217,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    showWinQModal: (quest) => dispatch(showWinQModal(quest)),
+    showWinQModal: (vk_id, quest) => dispatch(showWinQModal(vk_id, quest)),
     startGame: (quest) => dispatch(startGame(quest)),
     getKupon: (vk_id) => dispatch(getKupon(vk_id)),
     didRepost: (vk_id) => dispatch(didRepost(vk_id)),

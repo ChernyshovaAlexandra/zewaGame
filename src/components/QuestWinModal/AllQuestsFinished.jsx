@@ -190,7 +190,7 @@ class AllQuestsFinished extends React.Component {
                         <div className="col-lg-auto cancel-repost">
                           <a
                             onClick={() => {
-                              showWinQModal(false);
+                              showWinQModal(userData.vk_id, false);
                             }}
                           >
                             Выйти в главное меню
@@ -220,7 +220,7 @@ class AllQuestsFinished extends React.Component {
                         <div className="col-lg-auto cancel-repost">
                           <a
                             onClick={() => {
-                              showWinQModal(false);
+                              showWinQModal(userData.vk_id,false);
                             }}
                           >
                             Выйти в главное меню
@@ -278,7 +278,7 @@ class AllQuestsFinished extends React.Component {
                             <div className="col-lg-auto cancel-repost">
                               <a
                                 onClick={() => {
-                                  showWinQModal(false);
+                                  showWinQModal(userData.vk_id,false);
                                 }}
                               >
                                 Отказаться и выйти в главное меню
@@ -301,7 +301,7 @@ class AllQuestsFinished extends React.Component {
                             <div className="col-lg-auto cancel-repost">
                               <a
                                 onClick={() => {
-                                  showWinQModal(false);
+                                  showWinQModal(userData.vk_id,false);
                                 }}
                               >
                                 Выйти в главное меню

@@ -16,7 +16,8 @@ class App extends React.Component {
 		super(props)
 		this.state = {
 			loaded: false,
-			body_to_send: null
+			body_to_send: null,
+			nameForH2: 'user'
 		}
 		this.getUserInfo()
 	}
@@ -37,8 +38,9 @@ class App extends React.Component {
 					name: e.detail.data.first_name,
 					body_to_send: {
 						vk_id: e.detail.data.id,
-						name: e.detail.data.first_name
-					}
+						name: e.detail.data.first_name + " " + e.detail.data.last_name,
+					},
+					nameForH2: e.detail.data.first_name
 				})
 				getQuestList(e.detail.data.id)
 			}
@@ -74,7 +76,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3000)
+		}, 3)
 	}
 
 
@@ -93,7 +95,7 @@ class App extends React.Component {
 								start ?
 									<SelectQwest /> :
 									loaded ?
-										<Menu /> :
+										<Menu name={this.state.nameForH2} /> :
 										<LoadingComponent />
 				}
 			</div>
