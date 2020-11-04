@@ -16,6 +16,7 @@ class AllQuestsFinished extends React.Component {
     super(props);
     this.state = {};
   }
+
   getMyKupon = () => {
     const { userData, getKupon } = this.props;
     getKupon(userData.vk_id);
@@ -35,14 +36,11 @@ class AllQuestsFinished extends React.Component {
           wantToShare: true,
         });
       }
-      if (e.detail.type === "VKWebAppShowWallPostBoxFailed") {
-        this.setState({
-          failed: "Поделитесь записью. чтобы ",
-        });
-      }
+
       if (e.detail.type === "VKWebAppShowWallPostBoxResult") {
         if (e.detail.data.post_id) {
           didRepost(userData.vk_id);
+          this.getMyKupon();
           this.setState({
             message:
               "Поздравляем! Скидка 70% уже у вас. Вы сделали репост и участвуете в розыгрыше подарочного купона на 3000 рублей.",
@@ -82,7 +80,13 @@ class AllQuestsFinished extends React.Component {
   };
 
   render() {
-    const { quests, discount, curReadyQuest, showWinQModal } = this.props;
+    const {
+      quests,
+      discount,
+      curReadyQuest,
+      showWinQModal,
+      userData,
+    } = this.props;
     let questName = quests.filter((item) => item.id === curReadyQuest);
 
     return (
