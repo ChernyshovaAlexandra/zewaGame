@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "/zewaGame/static/css/main.c8f16f8c.chunk.css",
-    "main.js": "/zewaGame/static/js/main.5565ad3a.chunk.js",
-    "main.js.map": "/zewaGame/static/js/main.5565ad3a.chunk.js.map",
+    "main.js": "/zewaGame/static/js/main.9c0b783c.chunk.js",
+    "main.js.map": "/zewaGame/static/js/main.9c0b783c.chunk.js.map",
     "runtime-main.js": "/zewaGame/static/js/runtime-main.d8b6e021.js",
     "runtime-main.js.map": "/zewaGame/static/js/runtime-main.d8b6e021.js.map",
     "static/css/2.d163c240.chunk.css": "/zewaGame/static/css/2.d163c240.chunk.css",
-    "static/js/2.9f1645e1.chunk.js": "/zewaGame/static/js/2.9f1645e1.chunk.js",
-    "static/js/2.9f1645e1.chunk.js.map": "/zewaGame/static/js/2.9f1645e1.chunk.js.map",
+    "static/js/2.84287588.chunk.js": "/zewaGame/static/js/2.84287588.chunk.js",
+    "static/js/2.84287588.chunk.js.map": "/zewaGame/static/js/2.84287588.chunk.js.map",
     "index.html": "/zewaGame/index.html",
-    "precache-manifest.aa9e420c03e7cffe5b90ae613e86fc90.js": "/zewaGame/precache-manifest.aa9e420c03e7cffe5b90ae613e86fc90.js",
+    "precache-manifest.b392471f24ea9cb31576fb489dc532bf.js": "/zewaGame/precache-manifest.b392471f24ea9cb31576fb489dc532bf.js",
     "service-worker.js": "/zewaGame/service-worker.js",
     "static/css/2.d163c240.chunk.css.map": "/zewaGame/static/css/2.d163c240.chunk.css.map",
     "static/css/main.c8f16f8c.chunk.css.map": "/zewaGame/static/css/main.c8f16f8c.chunk.css.map",
-    "static/js/2.9f1645e1.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.9f1645e1.chunk.js.LICENSE.txt",
+    "static/js/2.84287588.chunk.js.LICENSE.txt": "/zewaGame/static/js/2.84287588.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/zewaGame/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/zewaGame/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/Rules.pdf": "/zewaGame/static/media/Rules.486a6281.pdf",
@@ -31,8 +31,8 @@
   "entrypoints": [
     "static/js/runtime-main.d8b6e021.js",
     "static/css/2.d163c240.chunk.css",
-    "static/js/2.9f1645e1.chunk.js",
+    "static/js/2.84287588.chunk.js",
     "static/css/main.c8f16f8c.chunk.css",
-    "static/js/main.5565ad3a.chunk.js"
+    "static/js/main.9c0b783c.chunk.js"
   ]
 }
