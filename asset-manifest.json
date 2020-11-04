@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/zewa/static/css/main.c511b06a.chunk.css",
+    "main.css": "/zewa/static/css/main.aecf7bc0.chunk.css",
     "main.js": "/zewa/static/js/main.1efa4a03.chunk.js",
     "main.js.map": "/zewa/static/js/main.1efa4a03.chunk.js.map",
     "runtime-main.js": "/zewa/static/js/runtime-main.65ae4788.js",
@@ -9,10 +9,10 @@
     "static/js/2.9f1645e1.chunk.js": "/zewa/static/js/2.9f1645e1.chunk.js",
     "static/js/2.9f1645e1.chunk.js.map": "/zewa/static/js/2.9f1645e1.chunk.js.map",
     "index.html": "/zewa/index.html",
-    "precache-manifest.a149ca60369fdab893c17de7a78a000d.js": "/zewa/precache-manifest.a149ca60369fdab893c17de7a78a000d.js",
+    "precache-manifest.d44c2cca93dfcb87a48caece45277f8e.js": "/zewa/precache-manifest.d44c2cca93dfcb87a48caece45277f8e.js",
     "service-worker.js": "/zewa/service-worker.js",
     "static/css/2.51afce58.chunk.css.map": "/zewa/static/css/2.51afce58.chunk.css.map",
-    "static/css/main.c511b06a.chunk.css.map": "/zewa/static/css/main.c511b06a.chunk.css.map",
+    "static/css/main.aecf7bc0.chunk.css.map": "/zewa/static/css/main.aecf7bc0.chunk.css.map",
     "static/js/2.9f1645e1.chunk.js.LICENSE.txt": "/zewa/static/js/2.9f1645e1.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/zewa/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/zewa/static/media/AcerFoco_Rg.9dd8c37c.ttf",
@@ -32,7 +32,7 @@
     "static/js/runtime-main.65ae4788.js",
     "static/css/2.51afce58.chunk.css",
     "static/js/2.9f1645e1.chunk.js",
-    "static/css/main.c511b06a.chunk.css",
+    "static/css/main.aecf7bc0.chunk.css",
     "static/js/main.1efa4a03.chunk.js"
   ]
 }
