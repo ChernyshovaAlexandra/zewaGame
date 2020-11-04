@@ -14,18 +14,48 @@ import vk from "../../img/vk-social-network-logo.png";
 class AllQuestsFinished extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      button: true,
+    };
   }
 
-  getMyKupon = () => {
-    const { userData, getKupon } = this.props;
-    getKupon(userData.vk_id);
-    this.setState({
-      message: "Поздравляем! Скидка 60% у вас в личных сообщениях",
-      wantToQuit: true,
-      buttonTxt: "Забрать скидку",
+  reSend_AllowMessages = () => {
+    const { getKupon, userData } = this.props;
+    bridge.subscribe((e) => {
+      if (e.detail.data === undefined) {
+        this.setState({
+          message:
+            "Мы не можем отправить скидку, потому что вы не залогинились в вк",
+          wantToShare: true,
+        });
+      }
+      if (e.detail.type === "VKWebAppAllowMessagesFromGroupResult") {
+        if (e.detail.data.result) {
+          getKupon(userData.vk_id);
+          this.setState({
+            message: "Поздравляем! Скидка 70% у вас в личных сообщениях",
+            wantToQuit: true,
+            buttonTxt: "Забрать скидку",
+            getKupon: true,
+            buttonTxt2: false,
+          });
+        }
+      } else if (e.detail.type === "VKWebAppAllowMessagesFromGroupFailed") {
+        this.setState({
+          message:
+            "Мы не смогли отправить вам сообщение. Вам необходимо разрешить сообщения от сообщества <a href='https://vk.com/public137564571'>Zewa</a>",
+          buttonTxt2: "Разрешить отправку сообщений",
+          wantToShare: true,
+        });
+      }
     });
+    bridge.send("VKWebAppAllowMessagesFromGroup", { group_id: 137564571 });
   };
+
+  getMyKupon = () => {
+    this.reSend_AllowMessages();
+  };
+
   share = () => {
     const { didRepost, userData } = this.props;
 
@@ -33,7 +63,8 @@ class AllQuestsFinished extends React.Component {
       if (e.detail.data === undefined) {
         this.setState({
           message: "Вы не прошли авторизацию в вк и не можете сделать репост.",
-          wantToShare: true,
+          wantToQuit: true,
+          button: false,
         });
       }
 
@@ -136,10 +167,25 @@ class AllQuestsFinished extends React.Component {
                     <div className="col-md-12">
                       <div className="row">
                         <div className="col-lg-12">
-                          <h4>{this.state.message}</h4>
+                          <h4
+                            dangerouslySetInnerHTML={{
+                              __html: this.state.message,
+                            }}
+                          ></h4>
                         </div>
                       </div>
-
+                      {this.state.buttonTxt2 && (
+                        <div className="col-md-12">
+                          <button
+                            className="btn pink selectionBtn"
+                            onClick={() => {
+                              this.getMyKupon();
+                            }}
+                          >
+                            {this.state.buttonTxt2}
+                          </button>
+                        </div>
+                      )}
                       <div className="row justify-content-center">
                         <div className="col-lg-auto cancel-repost">
                           <a
@@ -163,9 +209,11 @@ class AllQuestsFinished extends React.Component {
                           target="_blank"
                           style={{ textDecoration: "none" }}
                         >
-                          <button className="btn pink selectionBtn">
-                            Забрать скидку
-                          </button>
+                          {this.state.button && (
+                            <button className="btn pink selectionBtn">
+                              Забрать скидку
+                            </button>
+                          )}
                         </a>
                       </div>
                       <div className="row justify-content-center">
@@ -242,15 +290,12 @@ class AllQuestsFinished extends React.Component {
                       {discount === 70 && (
                         <>
                           <div className="col-md-12">
-                            <a
-                              href="https://vk.com/im?sel=-137564571"
-                              target="_blank"
-                              style={{ textDecoration: "none" }}
+                            <button
+                              className="btn pink selectionBtn"
+                              onClick={() => this.getMyKupon()}
                             >
-                              <button className="btn pink selectionBtn">
-                                Забрать скидку
-                              </button>
-                            </a>
+                              Забрать скидку
+                            </button>
                           </div>
                           <div className="row justify-content-center">
                             <div className="col-lg-auto cancel-repost">
