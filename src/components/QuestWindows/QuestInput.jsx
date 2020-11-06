@@ -76,7 +76,7 @@ class QuestInput extends React.Component {
                     </div>
                   </div>
                   {this.state.hints ? (
-                    <div className="row">
+                    <div className="row justify-content-center">
                       <button
                         className="btn selectionBtn pink col-lg-6"
                         type="submit"
@@ -87,23 +87,9 @@ class QuestInput extends React.Component {
                       >
                         Попробовать ещё раз
                       </button>
-                      <button
-                        className="btn selectionBtn pink col-lg-6"
-                        type="submit"
-                        style={{ margin: "0 10px", background: "#B9C4EA" }}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setNextMessage(
-                            userData.vk_id,
-                            questData.answered_node_id
-                          );
-                        }}
-                      >
-                        Пропустить
-                      </button>
                     </div>
                   ) : (
-                    <div className="row">
+                    <div className="row justify-content-center">
                       <button
                         className="btn selectionBtn pink col-lg-6"
                         type="submit"
@@ -113,20 +99,6 @@ class QuestInput extends React.Component {
                         }}
                       >
                         Готово
-                      </button>
-                      <button
-                        className="btn selectionBtn pink col-lg-6"
-                        type="submit"
-                        style={{ margin: "0 10px", background: "#B9C4EA" }}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setNextMessage(
-                            userData.vk_id,
-                            questData.answered_node_id
-                          );
-                        }}
-                      >
-                        Пропустить
                       </button>
                     </div>
                   )}

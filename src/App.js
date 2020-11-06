@@ -9,7 +9,7 @@ import './App.scss'
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes, setUserData, getQuestList } from './store/actions'
 import bridge from '@vkontakte/vk-bridge';
-import { resolve } from 'core-js/fn/promise'
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -76,7 +76,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3)
+		}, 3000)
 	}
 
 
