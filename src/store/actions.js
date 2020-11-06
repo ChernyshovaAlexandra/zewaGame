@@ -59,7 +59,7 @@ export const showWinQModal = (vk_id, quest) => (
 export const getQuest = (vk_id, quest_id, isReady) => {
 
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/quest/' + (quest_id) + '/start', {
+        let response = await fetch('https://newback.zewaquests.ru/api/quest/' + (quest_id) + '/start', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -99,8 +99,8 @@ export const getQuest = (vk_id, quest_id, isReady) => {
 
 export const setNextMessage = (vk_id, quest_id) => {
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/node/' + (quest_id) + '/click',
-            // let response = await fetch('https://back.zewaquests.ru/api/node/177/click',
+        let response = await fetch('https://newback.zewaquests.ru/api/node/' + (quest_id) + '/click',
+            // let response = await fetch('https://newback.zewaquests.ru/api/node/177/click',
             {
                 method: 'POST',
                 headers: {
@@ -156,7 +156,7 @@ export const setNextMessage = (vk_id, quest_id) => {
 
 export const getQuestList = (vk_id) => {
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/quests', {
+        let response = await fetch('https://newback.zewaquests.ru/api/quests', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -203,7 +203,7 @@ export const getQuestList = (vk_id) => {
 
 export const getKupon = (vk_id) => {
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/promocode',
+        let response = await fetch('https://newback.zewaquests.ru/api/promocode',
             {
                 method: 'POST',
                 headers: {
@@ -226,7 +226,7 @@ export const getKupon = (vk_id) => {
 }
 export const didRepost = (vk_id) => {
     return async dispatch => {
-        let response = await fetch('https://back.zewaquests.ru/api/repost',
+        let response = await fetch('https://newback.zewaquests.ru/api/repost',
             {
                 method: 'POST',
                 headers: {

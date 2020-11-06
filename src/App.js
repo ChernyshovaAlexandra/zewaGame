@@ -31,7 +31,7 @@ class App extends React.Component {
 						vk_id: 9801302
 					}
 				})
-				getQuestList(9801302)
+				// getQuestList(9801302)
 			}
 			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
 				this.setState({
@@ -42,7 +42,7 @@ class App extends React.Component {
 					},
 					nameForH2: e.detail.data.first_name
 				})
-				getQuestList(e.detail.data.id)
+				// getQuestList(e.detail.data.id)
 			}
 		})
 
@@ -58,7 +58,7 @@ class App extends React.Component {
 		const { setUserData } = this.props
 		let th = this
 
-		let response = await fetch('https://back.zewaquests.ru/api/login', {
+		let response = await fetch('https://newback.zewaquests.ru/api/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

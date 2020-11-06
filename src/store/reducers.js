@@ -27,43 +27,7 @@ export const defaultState =
     start: false,
     selected: false,
     results: false,
-    quests: [
-        {
-            name: 'Название первого<br/>квеста Зева',
-            isActive: true,
-            sale: '20',
-            img: image1,
-            isReady: false
-        },
-        {
-            name: 'Название второго<br/>квеста Зева',
-            isActive: true,
-            sale: '30',
-            img: image2,
-            isReady: true
-        },
-        {
-            name: 'Название третьего<br/>квеста Зева',
-            isActive: true,
-            sale: '40',
-            img: image3,
-            isReady: false
-        },
-        {
-            name: 'Название четвертого<br/>квеста Зева',
-            isActive: true,
-            sale: '50',
-            img: image4,
-            isReady: false
-        },
-        {
-            name: 'Название пятого<br/>квеста Зева',
-            isActive: false,
-            sale: '60',
-            img: image5,
-            isReady: false
-        }
-    ],
+    quests: false,
     curHint: 0,
     questWin: false,
     questData: [],

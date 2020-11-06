@@ -123,49 +123,19 @@ class SelectQwest extends React.Component {
           </div>
         </div>
 
-        <div className="row justify-content-center quest-content--inner desktop-only">
-          {quests.map((item, index) => (
-            <div
-              className={
-                "col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" +
-                (index + 1) +
-                "s"
-              }
-              style={{ position: "relative" }}
-              key={index}
-            >
-              {item.isActive && !item.isDone && (
-                <div className="sale">
-                  <img src={toiletPaper} alt="" />
-                  <p>{"Скидка " + item.sale + "%"}</p>
-                </div>
-              )}
+        {quests ? <>
+
+          <div className="row justify-content-center quest-content--inner desktop-only">
+            {quests.map((item, index) => (
               <div
                 className={
-                  item.isActive ? "quest-container" : "quest-container disabled"
+                  "col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" +
+                  (index + 1) +
+                  "s"
                 }
+                style={{ position: "relative" }}
+                key={index}
               >
-                <div className="imgContainer">
-                  <img src={item.img} alt="" />
-                </div>
-                <div className="header">
-                  <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
-                </div>
-
-                <button
-                  className="playBtn selectionBtn"
-                  onClick={() => this.checkPopup(item.id)}
-                >
-                  Играть
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="row mob-only">
-          <Slider {...settings}>
-            {quests.map((item, index) => (
-              <div className="col-lg-12" key={index}>
                 {item.isActive && !item.isDone && (
                   <div className="sale">
                     <img src={toiletPaper} alt="" />
@@ -174,9 +144,7 @@ class SelectQwest extends React.Component {
                 )}
                 <div
                   className={
-                    item.isActive
-                      ? "quest-container"
-                      : "quest-container disabled"
+                    item.isActive ? "quest-container" : "quest-container disabled"
                   }
                 >
                   <div className="imgContainer">
@@ -185,66 +153,101 @@ class SelectQwest extends React.Component {
                   <div className="header">
                     <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
                   </div>
+
                   <button
-                    className="playBtn selectionBtn "
+                    className="playBtn selectionBtn"
                     onClick={() => this.checkPopup(item.id)}
                   >
                     Играть
-                  </button>
+                </button>
                 </div>
               </div>
             ))}
-          </Slider>
-          {popup && (
-            <div className="modal-popup ">
-              <div className="row justify-content-center align-items-center">
-                <div className="col-lg-9 modal-Popup__content-inner">
+          </div>
+          <div className="row mob-only">
+            <Slider {...settings}>
+              {quests.map((item, index) => (
+                <div className="col-lg-12" key={index}>
+                  {item.isActive && !item.isDone && (
+                    <div className="sale">
+                      <img src={toiletPaper} alt="" />
+                      <p>{"Скидка " + item.sale + "%"}</p>
+                    </div>
+                  )}
                   <div
-                    className="cancelBut"
-                    onClick={() => this.setState({ popup: false })}
+                    className={
+                      item.isActive
+                        ? "quest-container"
+                        : "quest-container disabled"
+                    }
                   >
-                    <img src={cancel} alt="" />
+                    <div className="imgContainer">
+                      <img src={item.img} alt="" />
+                    </div>
+                    <div className="header">
+                      <h4 dangerouslySetInnerHTML={{ __html: item.name }}></h4>
+                    </div>
+                    <button
+                      className="playBtn selectionBtn "
+                      onClick={() => this.checkPopup(item.id)}
+                    >
+                      Играть
+                  </button>
                   </div>
-                  <div className="modal-container-popup">
-                    Кажется, вы уже начали проходить этот квест. Хотите
-                    продолжить?
+                </div>
+              ))}
+            </Slider>
+            {popup && (
+              <div className="modal-popup ">
+                <div className="row justify-content-center align-items-center">
+                  <div className="col-lg-9 modal-Popup__content-inner">
+                    <div
+                      className="cancelBut"
+                      onClick={() => this.setState({ popup: false })}
+                    >
+                      <img src={cancel} alt="" />
+                    </div>
+                    <div className="modal-container-popup">
+                      Кажется, вы уже начали проходить этот квест. Хотите
+                      продолжить?
                     <div className="row justify-content-center buttonsSet">
-                      <div className="col-lg-auto">
-                        <button
-                          className="playBtn selectionBtn againBut"
-                          onClick={() => this.setReady(popup, true)}
-                        >
-                          Продолжить
+                        <div className="col-lg-auto">
+                          <button
+                            className="playBtn selectionBtn againBut"
+                            onClick={() => this.setReady(popup, true)}
+                          >
+                            Продолжить
                         </button>
-                      </div>
-                      <div className="col-lg-auto">
-                        <button
-                          className="playBtn selectionBtn"
-                          onClick={() => this.setReady(popup, false)}
-                        >
-                          Заново
+                        </div>
+                        <div className="col-lg-auto">
+                          <button
+                            className="playBtn selectionBtn"
+                            onClick={() => this.setReady(popup, false)}
+                          >
+                            Заново
                         </button>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          )}
-        </div>
-        <button
-          style={{
-            top: "auto",
-            bottom: "1.5rem",
-            left: "1.5rem",
-          }}
-          className="back pinkTxt"
-          onClick={() => {
-            startGame(false);
-          }}
-        >
-          В меню
+            )}
+          </div>
+          <button
+            style={{
+              top: "auto",
+              bottom: "1.5rem",
+              left: "1.5rem",
+            }}
+            className="back pinkTxt"
+            onClick={() => {
+              startGame(false);
+            }}
+          >
+            В меню
         </button>
+        </> : <></>}
       </div>
     );
   }
