@@ -30,12 +30,13 @@ class QuestsInProcess extends React.Component {
       }
       if (e.detail.type === "VKWebAppAllowMessagesFromGroupResult") {
         if (e.detail.data.result) {
-          getKupon(userData.vk_id);
+
           this.setState({
             innerTxt:
               "Отличная работа! Мы отправили скидочный купон в личные сообщения. Перейти в диалоги?",
             buttonTxt: "Забрать купон",
           });
+          return getKupon(userData.vk_id);
         }
       } else if (e.detail.type === "VKWebAppAllowMessagesFromGroupFailed") {
         this.setState({
@@ -74,7 +75,7 @@ class QuestsInProcess extends React.Component {
 
   render() {
     const { quests, discount, curReadyQuest, showWinQModal } = this.props;
-    let questName = quests.filter((item) => item.id === curReadyQuest);
+    let questName = '' //quests.filter((item) => item.id === curReadyQuest);
 
     return (
       <>
@@ -99,7 +100,7 @@ class QuestsInProcess extends React.Component {
                     </div>
                     <div className="saleWinBox">
                       <p>Скидка</p>
-                      <p className="saleWinAmmount">{discount}%</p>
+                      <p className="saleWinAmmount">{discount > 60 ? 60 : discount}%</p>
                     </div>
                   </div>
                 </div>
@@ -139,8 +140,8 @@ class QuestsInProcess extends React.Component {
                           </button>
                         </div>
                       ) : (
-                        <></>
-                      )}
+                            <></>
+                          )}
                       <div className="col-md-12">
                         <button
                           className="btn pink selectionBtn"
@@ -154,45 +155,44 @@ class QuestsInProcess extends React.Component {
                     </div>
                   </>
                 ) : (
-                  <>
-                    <h4>
-                      Вы успешно разгадали квест. Ваша скидка - {discount}%! Вы
+                    <>
+                      <h4>
+                        Вы успешно разгадали квест. Ваша скидка - {discount > 60 ? 60 : discount}%! Вы
                       можете увеличить ее, если пройдете все квесты.
                     </h4>
-                    <form
-                      id="formFin"
-                      className="row"
-                      name="formFin"
-                      onSubmit={(e) => this.formCheck(e)}
-                    >
-                      <div className="col-md-12">
-                        <input
-                          type="radio"
-                          id="nextGame"
-                          name="selectionWin"
-                          checked
-                        />
-                        <label htmlFor="selectionWin">
-                          Пройти все квесты и получить скидку{" "}
-                          <span className="special">до&nbsp;70%</span>.
-                        </label>
-                      </div>
-                      <div className="col-md-12">
-                        <input type="radio" name="selectionWin" id="endGame" />
-                        <label htmlFor="selectionWin">
-                          Закончить игру и получить скидку{" "}
-                          <span className="special">{discount}%</span> сейчас.
-                        </label>
-                      </div>
-                      <button
-                        className="selectionBtn col-md-auto"
-                        type="submit"
+                      <form
+                        id="formFin"
+                        className="row"
+                        name="formFin"
+                        onSubmit={(e) => this.formCheck(e)}
                       >
-                        Готово
+                        <div className="col-md-12">
+                          <input
+                            type="radio"
+                            id="nextGame"
+                            name="selectionWin"
+                            checked
+                          />
+                          <label htmlFor="selectionWin">
+                            Пройти все квесты и увеличить скидку.
+                        </label>
+                        </div>
+                        <div className="col-md-12">
+                          <input type="radio" name="selectionWin" id="endGame" />
+                          <label htmlFor="selectionWin">
+                            Закончить игру и получить скидку{" "}
+                            <span className="special">{discount > 60 ? 60 : discount}%</span> сейчас.
+                        </label>
+                        </div>
+                        <button
+                          className="selectionBtn col-md-auto"
+                          type="submit"
+                        >
+                          Готово
                       </button>
-                    </form>
-                  </>
-                )}
+                      </form>
+                    </>
+                  )}
               </div>
             </div>
           </div>

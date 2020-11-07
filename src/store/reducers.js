@@ -15,11 +15,6 @@ import {
     SET_CUR_REQDY_QUEST
 } from './actionTypes'
 import { combineReducers } from 'redux'
-import image1 from '../img/quest1.jpg'
-import image2 from '../img/quest2.jpg'
-import image3 from '../img/quest3.jpg'
-import image4 from '../img/quest4.jpg'
-import image5 from '../img/quest5.jpg'
 
 export const defaultState =
 {
@@ -29,14 +24,14 @@ export const defaultState =
     results: false,
     quests: false,
     curHint: 0,
-    questWin: false,
+    questWin: true,
     questData: [],
     userData: {
         name: 'user',
         vk_id: 9801302
     },
     questsReady: 0,
-    discount: '20',
+    discount: '70',
     curReadyQuest: 1
 }
 
@@ -52,7 +47,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_SELECTED:
             return { ...state, selected: action.payload }
         case SET_QUEST_READY:
-            return { ...state, questsReady: action.payload }
+            return { ...state, questsReady: action.payload < 5 ? action.payload : 4 }
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:

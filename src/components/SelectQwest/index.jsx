@@ -40,14 +40,17 @@ class SelectQwest extends React.Component {
   };
 
   checkPopup = (index) => {
+
     const { quests } = this.props;
     let q = quests.filter((item) => item.id === index);
 
-    if (q.continue) {
+
+    if (q[0].continue) {
       this.setState({
         popup: index,
       });
-    } else {
+    }
+    else {
       this.setReady(index, false);
     }
   };
@@ -61,7 +64,8 @@ class SelectQwest extends React.Component {
       slidesToScroll: 1,
     };
     const { quests, startGame, questsReady } = this.props;
-    const remainedQuests = quests.length - questsReady;
+    let remainedQuests = 4 - questsReady;
+    if (remainedQuests == -1) { remainedQuests = 0 }
     const { popup } = this.state;
     return (
       <div className="selectQwest mainBG container">
@@ -129,7 +133,7 @@ class SelectQwest extends React.Component {
             {quests.map((item, index) => (
               <div
                 className={
-                  "col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" +
+                  "col-lg-6  animate__animated  animate__fadeInTopLeft animate__delay-" +
                   (index + 1) +
                   "s"
                 }

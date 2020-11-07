@@ -39,7 +39,7 @@ class Menu extends React.Component {
   }
 
   render() {
-    const { showRules, questWin, userData } = this.props;
+    const { showRules, questWin } = this.props;
     if (!this.state.loaded) {
       return <p>loading</p>;
     }
@@ -67,9 +67,8 @@ class Menu extends React.Component {
         <div className="row justify-content-center infoData">
           <div className="col-lg-9">
             <p className="ml3">
-              Привет, <span>{this.props.name}</span>. Играй и получай скидки до{" "}
-              <span className="special">70%</span> на покупку продукции Zewa в
-              магазинах Магнит. Пройди все квесты и участвуй в розыгрыше
+              Привет, <span>{this.props.name}</span>. Играй и получай скидки на покупку продукции Zewa в
+              магазинах Магнит.<br/>Пройди все квесты и участвуй в розыгрыше
               подарочного купона Магнит на{" "}
               <span className="special">3000&#160;рублей</span>.
             </p>

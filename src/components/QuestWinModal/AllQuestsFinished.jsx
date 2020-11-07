@@ -33,7 +33,7 @@ class AllQuestsFinished extends React.Component {
         if (e.detail.data.result) {
           getKupon(userData.vk_id);
           this.setState({
-            message: "Поздравляем! Скидка 70% у вас в личных сообщениях",
+            message: "Поздравляем! Скидка у вас в личных сообщениях",
             wantToQuit: true,
             buttonTxt: "Забрать скидку",
             getKupon: true,
@@ -58,6 +58,15 @@ class AllQuestsFinished extends React.Component {
 
   share = () => {
     const { didRepost, userData } = this.props;
+    let $this = this
+
+    let resolveFunc = async () => {
+      let promise = new Promise(res => res(didRepost(userData.vk_id)))
+      let res = await promise
+      promise.then(() => {
+        $this.getMyKupon();
+      })
+    }
 
     bridge.subscribe((e) => {
       if (e.detail.data === undefined) {
@@ -70,11 +79,11 @@ class AllQuestsFinished extends React.Component {
 
       if (e.detail.type === "VKWebAppShowWallPostBoxResult") {
         if (e.detail.data.post_id) {
-          didRepost(userData.vk_id);
-          this.getMyKupon();
+
+          resolveFunc()
           this.setState({
             message:
-              "Поздравляем! Скидка 70% уже у вас. Вы сделали репост и участвуете в розыгрыше подарочного купона на 3000 рублей.",
+              "Поздравляем! Скидка уже у вас. Вы сделали репост и участвуете в розыгрыше подарочного купона на 3000 рублей.",
             wantToShare: true,
           });
         }
@@ -83,7 +92,7 @@ class AllQuestsFinished extends React.Component {
     bridge.send("VKWebAppShowWallPostBox", {
       link: "https://vk.com/app7573089_9801302",
       message:
-        "Играй в новый текстовый квест Дело Z и получай скидки на продукцию Zewa! После прохождения всех квестов, поделись результатом у себя на странице, получи купон на скидку 70% и участвуй в розыгрыше купонов номиналом 3000 рублей на продукцию Zewa в Магнит!",
+        "Играй в новый текстовый квест Дело Z и получай скидки на продукцию Zewa! После прохождения всех квестов, поделись результатом у себя на странице, получи купон на скидку и участвуй в розыгрыше купонов номиналом 3000 рублей на продукцию Zewa в Магнит!",
       attachments: "https://vk.com/app7573089_9801302",
     });
   };
@@ -220,7 +229,7 @@ class AllQuestsFinished extends React.Component {
                         <div className="col-lg-auto cancel-repost">
                           <a
                             onClick={() => {
-                              showWinQModal(userData.vk_id,false);
+                              showWinQModal(userData.vk_id, false);
                             }}
                           >
                             Выйти в главное меню
@@ -229,89 +238,89 @@ class AllQuestsFinished extends React.Component {
                       </div>
                     </>
                   ) : (
-                    <div className="col-md-12">
-                      <h4>
-                        Поздравляем! Вы разгадали все квесты, и теперь ваша
-                        скидка - {discount}
+                        <div className="col-md-12">
+                          <h4>
+                            Поздравляем! Вы разгадали все квесты, и теперь ваша
+                        скидка - {discount === 60 ? discount : 60}
                         %!{" "}
-                        {discount === 60 && (
-                          <p>Сделайте репост, для того чтобы</p>
-                        )}
-                      </h4>
-                      {discount === 60 && (
-                        <div
-                          className="rulesBox"
-                          style={{ background: "none", padding: "0 1rem" }}
-                        >
-                          <ul>
-                            <li>Увеличить скидку до 70 %</li>
-                            <li>
-                              Участвовать в розыгрыше подарочного купона на 3000
-                              рублей.
+                            {discount === 60 && (
+                              <p>Сделайте репост, для того чтобы</p>
+                            )}
+                          </h4>
+                          {discount === 60 && (
+                            <div
+                              className="rulesBox"
+                              style={{ background: "none", padding: "0 1rem" }}
+                            >
+                              <ul>
+                                {/* <li>Увеличить скидку до 70 %</li> */}
+                                <li>
+                                  Участвовать в розыгрыше подарочного купона на 3000
+                                  рублей.
                             </li>
-                          </ul>
-                          <div className="row justify-content-center">
-                            <div className="col-lg-12">
-                              <button
-                                className="btn selectionBtn pink"
-                                onClick={() => {
-                                  this.share();
-                                }}
-                              >
-                                Поделиться <img src={vk} alt="" />
+                              </ul>
+                              <div className="row justify-content-center">
+                                <div className="col-lg-12">
+                                  <button
+                                    className="btn selectionBtn pink"
+                                    onClick={() => {
+                                      this.share();
+                                    }}
+                                  >
+                                    Поделиться <img src={vk} alt="" />
+                                  </button>
+                                </div>
+                              </div>
+                              <div className="row justify-content-center">
+                                <div className="col-lg-12">
+                                  <button
+                                    className="btn selectionBtn pink"
+                                    onClick={() => {
+                                      this.getMyKupon();
+                                    }}
+                                  >
+                                    Забрать скидку 60%
                               </button>
-                            </div>
-                          </div>
-                          <div className="row justify-content-center">
-                            <div className="col-lg-12">
-                              <button
-                                className="btn selectionBtn pink"
-                                onClick={() => {
-                                  this.getMyKupon();
-                                }}
-                              >
-                                Забрать скидку 60%
-                              </button>
-                            </div>
-                          </div>
-                          <div className="row justify-content-center">
-                            <div className="col-lg-auto cancel-repost">
-                              <a
-                                onClick={() => {
-                                  showWinQModal(userData.vk_id,false);
-                                }}
-                              >
-                                Отказаться и выйти в главное меню
+                                </div>
+                              </div>
+                              <div className="row justify-content-center">
+                                <div className="col-lg-auto cancel-repost">
+                                  <a
+                                    onClick={() => {
+                                      showWinQModal(userData.vk_id, false);
+                                    }}
+                                  >
+                                    Отказаться и выйти в главное меню
                               </a>
+                                </div>
+                              </div>
                             </div>
-                          </div>
+                          )}
+                          {discount === 70 && (
+                            <>
+                              <div className="col-md-12">
+                                <button
+                                  className="btn pink selectionBtn"
+                                  onClick={() => this.getMyKupon()}
+                                >
+                                  Забрать скидку
+                            </button>
+                              </div>
+                              <div className="row justify-content-center">
+                                <div className="col-lg-auto cancel-repost">
+                                  <a
+                                    onClick={() => {
+                                      showWinQModal(userData.vk_id, false);
+                                    }}
+                                  >
+                                    Выйти в главное меню
+                              </a>
+                                </div>
+                              </div>
+                            </>
+                          )}
                         </div>
                       )}
-                      {discount === 70 && (
-                        <>
-                          <div className="col-md-12">
-                            <button
-                              className="btn pink selectionBtn"
-                              onClick={() => this.getMyKupon()}
-                            >
-                              Забрать скидку
-                            </button>
-                          </div>
-                          <div className="row justify-content-center">
-                            <div className="col-lg-auto cancel-repost">
-                              <a
-                                onClick={() => {
-                                  showWinQModal(userData.vk_id,false);
-                                }}
-                              >
-                                Выйти в главное меню
-                              </a>
-                            </div>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  )}
                 </div>
               </div>
             </div>

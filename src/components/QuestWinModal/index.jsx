@@ -64,7 +64,7 @@ class QuestWinModal extends React.Component {
 
   render() {
     const { questsReady } = this.props;
-
+    console.log(questsReady)
     return (
       <section className="menu win">
         <div className="row justify-content-center nav">
@@ -87,7 +87,7 @@ class QuestWinModal extends React.Component {
             <img alt="" src={magnit} />
           </div>
         </div>
-        {questsReady < 5 ? <QuestsInProcess /> : <AllQuestsFinished />}
+        {questsReady < 4 ? <QuestsInProcess /> : <AllQuestsFinished />}
       </section>
     );
   }
