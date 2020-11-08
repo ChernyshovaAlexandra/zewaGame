@@ -1,33 +1,34 @@
 {
   "files": {
-    "main.css": "/static/css/main.1a8092d7.chunk.css",
-    "main.js": "/static/js/main.4b2ae7c4.chunk.js",
-    "main.js.map": "/static/js/main.4b2ae7c4.chunk.js.map",
+    "main.css": "/static/css/main.73bfe853.chunk.css",
+    "main.js": "/static/js/main.61fc4152.chunk.js",
+    "main.js.map": "/static/js/main.61fc4152.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
     "runtime-main.js.map": "/static/js/runtime-main.e95b8414.js.map",
     "static/css/2.1c9ef103.chunk.css": "/static/css/2.1c9ef103.chunk.css",
-    "static/js/2.c751eadf.chunk.js": "/static/js/2.c751eadf.chunk.js",
-    "static/js/2.c751eadf.chunk.js.map": "/static/js/2.c751eadf.chunk.js.map",
+    "static/js/2.b291facc.chunk.js": "/static/js/2.b291facc.chunk.js",
+    "static/js/2.b291facc.chunk.js.map": "/static/js/2.b291facc.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.1bcab16de47c562c410098b987eef39b.js": "/precache-manifest.1bcab16de47c562c410098b987eef39b.js",
+    "precache-manifest.4d712b4e869a20ff9e5a8f9b749a0372.js": "/precache-manifest.4d712b4e869a20ff9e5a8f9b749a0372.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
-    "static/css/main.1a8092d7.chunk.css.map": "/static/css/main.1a8092d7.chunk.css.map",
-    "static/js/2.c751eadf.chunk.js.LICENSE.txt": "/static/js/2.c751eadf.chunk.js.LICENSE.txt",
+    "static/css/main.73bfe853.chunk.css.map": "/static/css/main.73bfe853.chunk.css.map",
+    "static/js/2.b291facc.chunk.js.LICENSE.txt": "/static/js/2.b291facc.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/Rules.pdf": "/static/media/Rules.486a6281.pdf",
     "static/media/back.png": "/static/media/back.abb44cfb.png",
     "static/media/logoGame.png": "/static/media/logoGame.07c831ee.png",
     "static/media/magnit-logo.svg": "/static/media/magnit-logo.a052c0ad.svg",
+    "static/media/not-working.png": "/static/media/not-working.be79c72a.png",
     "static/media/slick-theme.css": "/static/media/slick.f97e3bbf.svg",
     "static/media/zewa.png": "/static/media/zewa.37e618f6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.e95b8414.js",
     "static/css/2.1c9ef103.chunk.css",
-    "static/js/2.c751eadf.chunk.js",
-    "static/css/main.1a8092d7.chunk.css",
-    "static/js/main.4b2ae7c4.chunk.js"
+    "static/js/2.b291facc.chunk.js",
+    "static/css/main.73bfe853.chunk.css",
+    "static/js/main.61fc4152.chunk.js"
   ]
 }
