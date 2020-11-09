@@ -76,7 +76,7 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 3)
+		}, 30)
 	}
 
 
@@ -95,9 +95,11 @@ class App extends React.Component {
 								start ?
 									<SelectQwest /> :
 									loaded ?
-										<Menu name={this.state.nameForH2} /> :
+										<Menu name={this.state.nameForH2} />
+										:
 										<LoadingComponent />
 				}
+				<small className="ligal">Количество купонов ограничено</small>
 			</div>
 		)
 

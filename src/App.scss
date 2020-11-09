@@ -141,8 +141,10 @@
         background-size: cover;
         border-radius: 0;
         padding: 1rem 1.5rem;
+
         .selectQwest {
           padding-top: 1rem;
+
           .nav-mob {
             img {
               max-height: 2rem;
@@ -182,8 +184,10 @@
     top: 10rem;
   }
 }
+
 .for-rules {
   margin-top: 1rem;
+
   .wh-rules {
     color: #fff;
     font-style: normal;
@@ -191,29 +195,35 @@
     font-size: 1.2rem;
   }
 }
+
 .in-btn {
   max-width: 25px;
   max-height: 25px;
   margin: 0 9px 0 0;
   object-fit: contain;
 }
+
 .rulesBox {
   background: #f8f8f8;
   border-radius: 1rem;
   padding: 1.5rem;
   max-height: -webkit-fill-available;
+
   ul {
     height: auto;
   }
+
   li {
     position: relative;
     list-style: none;
     padding-left: 3rem;
     margin-bottom: 0.6rem;
     font-size: 0.9rem;
+
     &:last-child {
       margin-bottom: 0;
     }
+
     &::before {
       content: "";
       position: absolute;
@@ -224,13 +234,16 @@
       background-size: contain;
     }
   }
+
   ul {
     overflow: auto;
+
     &::-webkit-scrollbar {
       position: relative;
       width: 5px;
       right: 10px;
     }
+
     &::-webkit-scrollbar,
     &::-webkit-scrollbar-track,
     &::-webkit-scrollbar-thumb {
@@ -248,46 +261,57 @@
     }
   }
 }
+
 .pinkTxt {
   color: #ce0b68;
 }
+
 a {
   color: inherit;
+
   &.pinkTxt {
     color: #ce0b68;
+
     &:hover {
       color: #ce0b68;
     }
   }
+
   &:hover {
     color: inherit;
   }
 }
+
 .rulesCont {
   .nav {
     img {
       max-height: 3rem;
     }
   }
+
   .forBut {
     margin-top: 1rem;
   }
+
   @media screen and (max-width: 629px) {
     .col-lg-10 {
       max-width: 95%;
       flex: 95% 1;
     }
+
     .col-lg-4 {
       flex: 100%;
       max-width: 100%;
       color: #fff;
     }
   }
+
   @media screen and (max-height: 900px) {
     .rulesBox {
       padding: 0;
       padding: 1rem 0;
       max-height: 66vh;
+
       ul {
         height: 500px;
         padding: 0 1rem 0 0;
@@ -303,6 +327,7 @@ a {
       }
     }
   }
+
   @media screen and (max-height: 676px) {
     .rulesBox {
       ul {
@@ -310,6 +335,7 @@ a {
       }
     }
   }
+
   @media screen and (max-height: 625px) {
     .rulesBox {
       ul {
@@ -317,6 +343,7 @@ a {
       }
     }
   }
+
   @media screen and (max-height: 571px) {
     .rulesBox {
       ul {
@@ -324,15 +351,34 @@ a {
       }
     }
   }
+
   @media screen and (max-height: 900px) and (max-width: 630px) {
     .rulesBox {
       max-height: 100%;
+
       ul {
         height: auto;
       }
     }
   }
 }
+
 .buttonSet {
   margin-top: 1rem;
+}
+
+.ligal {
+  position: absolute;
+  z-index: 99999999999;
+  bottom: 1rem;
+  display: block;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: fit-content;
+  font-size: .8rem;
+  @media screen and (max-width: 629px){
+    bottom: 10px;
+    font-size: .6rem;
+  }
 }

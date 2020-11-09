@@ -241,7 +241,7 @@ class AllQuestsFinished extends React.Component {
                         <div className="col-md-12">
                           <h4>
                             Поздравляем! Вы разгадали все квесты, и теперь ваша
-                        скидка - {discount === 60 ? discount : 60}
+                        скидка - {discount}
                         %!{" "}
                             {discount === 60 && (
                               <p>Сделайте репост, для того чтобы</p>

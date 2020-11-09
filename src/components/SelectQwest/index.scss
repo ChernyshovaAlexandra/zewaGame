@@ -52,6 +52,8 @@ $blue: #2bafec;
     }
 
     .descriptionContainer {
+      margin-bottom: 2rem;
+
       p.nav-mob {
         margin-bottom: 1rem;
       }
@@ -94,7 +96,7 @@ $blue: #2bafec;
           max-width: 100%;
         }
 
-        + .row {
+        +.row {
           display: none;
         }
       }
@@ -210,6 +212,7 @@ $blue: #2bafec;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 9px;
   margin-bottom: 1.6rem;
+
   button.selectionBtn {
     text-decoration: none;
     text-transform: uppercase;
@@ -233,6 +236,7 @@ $blue: #2bafec;
       background-color: #9f9f9f;
     }
   }
+
   .header {
     h4 {
       font-size: 0.8rem;
@@ -248,6 +252,7 @@ $blue: #2bafec;
       height: 100%;
       width: 100%;
       object-fit: cover;
+      object-position:top;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
@@ -342,6 +347,7 @@ $blue: #2bafec;
       @media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
         font-size: 0.9rem;
       }
+
       // iPhone 11 pro  Max
       @media only screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) {
         font-size: 1.1rem;
@@ -411,8 +417,10 @@ $blue: #2bafec;
   display: flex;
   justify-content: center;
   align-items: center;
+
   .modal-Popup__content-inner {
     position: relative;
+
     .cancelBut {
       position: absolute;
       width: 2rem;
@@ -425,6 +433,7 @@ $blue: #2bafec;
       justify-content: center;
       align-items: center;
       cursor: pointer;
+
       img {
         max-width: 60%;
         object-fit: contain;
@@ -438,8 +447,10 @@ $blue: #2bafec;
     color: #000;
     padding: 1.5rem;
     border-radius: 1rem;
+
     .buttonsSet {
       margin-top: 1rem;
+
       button.selectionBtn {
         text-decoration: none;
         text-transform: uppercase;
@@ -465,13 +476,16 @@ $blue: #2bafec;
       }
     }
   }
+
   @media screen and (max-width: 629px) {
     width: 100vw;
     height: 100vh;
+
     .row {
       .modal-Popup__content-inner {
         flex: 90%;
         max-width: 90%;
+
         @media screen and (max-width: 340px) {
           flex: 95%;
           max-width: 95%;

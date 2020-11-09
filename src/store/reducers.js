@@ -22,9 +22,9 @@ export const defaultState =
     start: false,
     selected: false,
     results: false,
-    quests: false,
+    quests: [],
     curHint: 0,
-    questWin: true,
+    questWin: 1,
     questData: [],
     userData: {
         name: 'user',
@@ -32,7 +32,7 @@ export const defaultState =
     },
     questsReady: 0,
     discount: '70',
-    curReadyQuest: 1
+    curReadyQuest: 2
 }
 
 

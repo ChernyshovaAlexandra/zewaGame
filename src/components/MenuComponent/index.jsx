@@ -9,6 +9,7 @@ import bridge from "@vkontakte/vk-bridge";
 import { connect } from "react-redux";
 import { startGame, showRules, showRes } from "../../store/actions";
 import anime from "animejs/lib/anime.es.js";
+import cancel from "../../img/cancel.png";
 
 class Menu extends React.Component {
   constructor(props) {
@@ -16,6 +17,7 @@ class Menu extends React.Component {
     this.state = {
       name: "user",
       loaded: false,
+      popup: true
     };
     bridge.subscribe((e) => {
       if (e.detail.type === "VKWebAppGetUserInfoResult") {
@@ -40,6 +42,7 @@ class Menu extends React.Component {
 
   render() {
     const { showRules, questWin } = this.props;
+    const { popup } = this.state
     if (!this.state.loaded) {
       return <p>loading</p>;
     }
@@ -67,55 +70,89 @@ class Menu extends React.Component {
         <div className="row justify-content-center infoData">
           <div className="col-lg-9">
             <p className="ml3">
-              Привет, <span>{this.props.name}</span>. Играй и получай скидки на покупку продукции Zewa в
-              магазинах Магнит.<br/>Пройди все квесты и участвуй в розыгрыше
-              подарочного купона Магнит на{" "}
-              <span className="special">3000&#160;рублей</span>.
+              Привет, <span>{this.props.name}</span>. Играй и получай скидочные купоны на продукцию{' '}
+              Zewa в сети магазинов Магнит. Пройди все квесты и участвуй в розыгрыше купона номиналом{' '}
+              <span className="special">3000&#160;рублей</span> на продукцию сети магазинов Магнит
             </p>
           </div>
         </div>
         {questWin ? (
           <QuestWinModal />
         ) : (
-          <div className="row justify-content-center navigation">
-            <div className="col-lg-6">
-              <div className="row justify-content-center">
-                <div className="col-md-auto animate__animated animate__bounceIn first">
-                  <button
-                    className="selectionBtn pink"
-                    onClick={() => this.props.startGame(true)}
-                    style={{
-                      width: "-webkit-max-content",
-                    }}
-                  >
-                    Начать игру
+            <div className="row justify-content-center navigation">
+              <div className="col-lg-6">
+                <div className="row justify-content-center">
+                  <div className="col-md-auto animate__animated animate__bounceIn first">
+                    <button
+                      className="selectionBtn pink"
+                      onClick={() => this.props.startGame(true)}
+                      style={{
+                        width: "-webkit-max-content",
+                      }}
+                    >
+                      Начать игру
                   </button>
+                  </div>
                 </div>
-              </div>
 
-              <div className="row justify-content-center">
-                <div className="col-md-auto animate__animated animate__bounceIn sec">
-                  <button
-                    className="selectionBtn"
-                    onClick={() => showRules(true)}
-                  >
-                    Правила
+                <div className="row justify-content-center">
+                  <div className="col-md-auto animate__animated animate__bounceIn sec">
+                    <button
+                      className="selectionBtn"
+                      onClick={() => showRules(true)}
+                    >
+                      Правила
                   </button>
+                  </div>
+                </div>
+                <div className="row justify-content-center animate__bounceIn">
+                  <div className="col-md-auto animate__animated animate__bounceIn thrd">
+                    <button
+                      className="selectionBtn"
+                      onClick={() => this.closeApp()}
+                    >
+                      Выход
+                  </button>
+                  </div>
                 </div>
               </div>
-              <div className="row justify-content-center animate__bounceIn">
-                <div className="col-md-auto animate__animated animate__bounceIn thrd">
-                  <button
-                    className="selectionBtn"
-                    onClick={() => this.closeApp()}
-                  >
-                    Выход
-                  </button>
+            </div>
+          )}
+
+        {popup && (
+          <div className="modal-popup ">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-lg-9 modal-Popup__content-inner">
+                <div
+                  className="cancelBut"
+                  onClick={() => this.setState({ popup: false })}
+                >
+                  <img src={cancel} alt="" />
+                </div>
+                <div className="modal-container-popup">
+                  К сожалению, некоторые купоны уже закончились. Если купона,{' '}
+                  с тем номиналом, который вы выиграли, не осталось,{' '}
+                  то мы отправим вам купон с максимально доступной скидкой меньшего номинала.
+                  <br />
+                  <br />
+                  Если вы пройдете все квесты и сделаете репост на своей странице,{' '}
+                  то можете принять участие в розыгрыше подарочного купона на <span className="pinkTxt">3000 рублей</span>.
+                    <div className="row justify-content-center buttonsSet">
+                    <div className="col-lg-auto">
+                      <button
+                        className="playBtn selectionBtn "
+                        onClick={() => this.setState({ popup: false })}
+                      >
+                        Понятно
+                        </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         )}
+
 
         <div className="row justify-content-center">
           <div className="col-lg-auto magnit  animate__animated animate__bounceIn  fourth">

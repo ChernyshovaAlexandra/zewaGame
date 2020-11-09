@@ -182,7 +182,7 @@ export const getQuestList = (vk_id) => {
         if (jsR.finished_quests_count) {
             dispatch({
                 type: SET_QUEST_READY,
-                payload: jsR.finished_quests_count 
+                payload: jsR.finished_quests_count
             })
         }
         if (jsR.discount_amount) {
@@ -194,7 +194,7 @@ export const getQuestList = (vk_id) => {
         if (!jsR.error) {
             dispatch({
                 type: SET_QUEST_LIST,
-                payload: quests.slice(0, 4)
+                payload: quests
             })
         }
     }

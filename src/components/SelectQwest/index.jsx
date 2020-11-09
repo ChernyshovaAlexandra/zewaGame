@@ -117,15 +117,7 @@ class SelectQwest extends React.Component {
             </div>
           </div>
         </div>
-        <div className="row">
-          <div className="col-lg-auto" style={{ marginTop: "-.8rem" }}>
-            <p>
-              С каждым пройденным квестом
-              <br />
-              твоя скидка увеличивается
-            </p>
-          </div>
-        </div>
+
 
         {quests ? <>
 
@@ -133,7 +125,7 @@ class SelectQwest extends React.Component {
             {quests.map((item, index) => (
               <div
                 className={
-                  "col-lg-6  animate__animated  animate__fadeInTopLeft animate__delay-" +
+                  "col-lg-4  animate__animated  animate__fadeInTopLeft animate__delay-" +
                   (index + 1) +
                   "s"
                 }
@@ -143,7 +135,7 @@ class SelectQwest extends React.Component {
                 {item.isActive && !item.isDone && (
                   <div className="sale">
                     <img src={toiletPaper} alt="" />
-                    <p>{"Скидка " + item.sale + "%"}</p>
+                    <p>{"Дело №" + (index + 1)}</p>
                   </div>
                 )}
                 <div
