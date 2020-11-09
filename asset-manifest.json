@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/zewa/static/css/main.48a31365.chunk.css",
-    "main.js": "/zewa/static/js/main.518acee7.chunk.js",
-    "main.js.map": "/zewa/static/js/main.518acee7.chunk.js.map",
+    "main.js": "/zewa/static/js/main.20b666c3.chunk.js",
+    "main.js.map": "/zewa/static/js/main.20b666c3.chunk.js.map",
     "runtime-main.js": "/zewa/static/js/runtime-main.65ae4788.js",
     "runtime-main.js.map": "/zewa/static/js/runtime-main.65ae4788.js.map",
     "static/css/2.51afce58.chunk.css": "/zewa/static/css/2.51afce58.chunk.css",
     "static/js/2.1ab5cef6.chunk.js": "/zewa/static/js/2.1ab5cef6.chunk.js",
     "static/js/2.1ab5cef6.chunk.js.map": "/zewa/static/js/2.1ab5cef6.chunk.js.map",
     "index.html": "/zewa/index.html",
-    "precache-manifest.63f6944119fc4fb2fafb7484cb02edbd.js": "/zewa/precache-manifest.63f6944119fc4fb2fafb7484cb02edbd.js",
+    "precache-manifest.2a9a1521b17b9d0007d3fdc3cc12a6a6.js": "/zewa/precache-manifest.2a9a1521b17b9d0007d3fdc3cc12a6a6.js",
     "service-worker.js": "/zewa/service-worker.js",
     "static/css/2.51afce58.chunk.css.map": "/zewa/static/css/2.51afce58.chunk.css.map",
     "static/css/main.48a31365.chunk.css.map": "/zewa/static/css/main.48a31365.chunk.css.map",
@@ -28,6 +28,6 @@
     "static/css/2.51afce58.chunk.css",
     "static/js/2.1ab5cef6.chunk.js",
     "static/css/main.48a31365.chunk.css",
-    "static/js/main.518acee7.chunk.js"
+    "static/js/main.20b666c3.chunk.js"
   ]
 }
