@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c6ba54bdbba42c5775c56adfceb40b17",
+    "revision": "f9e37ff9d91bc77ec84260ddee93547d",
     "url": "/zewa/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zewa/static/css/2.51afce58.chunk.css"
   },
   {
-    "revision": "b915767e882fc03f5bea",
+    "revision": "2799bacd1114257b784e",
     "url": "/zewa/static/css/main.48a31365.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/zewa/static/js/2.e16ff907.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b915767e882fc03f5bea",
-    "url": "/zewa/static/js/main.1b72be6b.chunk.js"
+    "revision": "2799bacd1114257b784e",
+    "url": "/zewa/static/js/main.d66954b3.chunk.js"
   },
   {
     "revision": "8e303f08b5659fa5bcf7",
