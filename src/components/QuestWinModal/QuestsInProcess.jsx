@@ -68,7 +68,7 @@ class QuestsInProcess extends React.Component {
     }
 
     if (inputId === "nextGame") {
-      showWinQModal(userData.vk_id, false);
+      showWinQModal(false);
     }
     e.preventDefault();
   };
@@ -80,8 +80,8 @@ class QuestsInProcess extends React.Component {
     return (
       <>
         <div className="container">
-          <div className="row mainWinPart">
-            <div className="col-lg-5">
+          <div className="row mainWinPart justify-content-center">
+            {/* <div className="col-lg-5">
               <div className="row justify-content-between">
                 <div className="col-md-12">
                   {questName[0] && (
@@ -100,13 +100,14 @@ class QuestsInProcess extends React.Component {
                     </div>
                     <div className="saleWinBox">
                       <p>Скидка</p>
-                      <p className="saleWinAmmount">{discount > 60 ? 60 : discount}%</p>
+                      <p className="saleWinAmmount">???%</p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-lg-7">
+            */}
+            <div className="col-lg-10">
               <div className="winBox">
                 {this.state.innerTxt ? (
                   <>
@@ -157,8 +158,7 @@ class QuestsInProcess extends React.Component {
                 ) : (
                     <>
                       <h4>
-                        Вы успешно разгадали квест. Ваша скидка - {discount > 60 ? 60 : discount}%! Вы
-                      можете увеличить ее, если пройдете все квесты.
+                        Вы успешно разгадали квест и заслужили скидку!
                     </h4>
                       <form
                         id="formFin"
@@ -174,14 +174,15 @@ class QuestsInProcess extends React.Component {
                             checked
                           />
                           <label htmlFor="selectionWin">
-                            Пройти все квесты и увеличить скидку.
+                            Пройти все квесты, побороться за скидку большего номинала{' '}
+                          (при наличии свободных купонов) и получить шанс выиграть{' '}
+                          подарочный купон на <span className="special">3000&nbsp;рублей</span> в сети магазинов Магнит.
                         </label>
                         </div>
                         <div className="col-md-12">
                           <input type="radio" name="selectionWin" id="endGame" />
                           <label htmlFor="selectionWin">
-                            Закончить игру и получить скидку{" "}
-                            <span className="special">{discount > 60 ? 60 : discount}%</span> сейчас.
+                            Закончить игру и забрать скидку сейчас.
                         </label>
                         </div>
                         <button
@@ -191,6 +192,8 @@ class QuestsInProcess extends React.Component {
                           Готово
                       </button>
                       </form>
+                      <br />
+                      <p>К сожалению, купоны быстро заканчиваются. Максимальный номинал оставшихся купонов - <span className="special"> 50%</span>.</p>
                     </>
                   )}
               </div>

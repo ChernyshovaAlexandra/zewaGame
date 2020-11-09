@@ -194,7 +194,7 @@ export const getQuestList = (vk_id) => {
         if (!jsR.error) {
             dispatch({
                 type: SET_QUEST_LIST,
-                payload: quests.slice(0, 4)
+                payload: quests
             })
         }
     }

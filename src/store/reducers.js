@@ -24,14 +24,14 @@ export const defaultState =
     results: false,
     quests: false,
     curHint: 0,
-    questWin: true,
+    questWin: false,
     questData: [],
     userData: {
         name: 'user',
-        vk_id: 9801302
+        vk_id: false
     },
     questsReady: 0,
-    discount: '70',
+    discount: '',
     curReadyQuest: 1
 }
 
@@ -47,7 +47,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_SELECTED:
             return { ...state, selected: action.payload }
         case SET_QUEST_READY:
-            return { ...state, questsReady: action.payload < 5 ? action.payload : 4 }
+            return { ...state, questsReady: action.payload }
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:
