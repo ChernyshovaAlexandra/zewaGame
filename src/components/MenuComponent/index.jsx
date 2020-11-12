@@ -136,7 +136,7 @@ class Menu extends React.Component {
                       <img src={cancel} alt="" />
                     </div>
                     <div className="modal-container-popup">
-                      <div className="content-inner"> Друзья, спасибо за высокий интерес, проявленный к рекламной акции<span className="pinkTxt"> «Дело Z»</span>!
+                      <div className="content-inner"> Друзья, спасибо за высокий интерес, проявленный к рекламной акции<span className="pinkTxt"> «Дело&#160;Z»</span>!
                       К сожалению, на данный момент, купоны номиналом 50, 60 и 70% закончились.
                       Согласно пункту правил <b> 9.2.1.1</b> В случае, если скидки большего номинала закончились Участник получает скидку предыдущего номинала, имеющуюся в наличии.
                       С полным текстом правил акции можно ознакомиться в приложении или по <a className="pinkTxt" href={rules}>ссылке</a>
