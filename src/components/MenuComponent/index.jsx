@@ -8,7 +8,7 @@ import "./index.scss";
 import bridge from "@vkontakte/vk-bridge";
 import { connect } from "react-redux";
 import { startGame, showRules, showRes } from "../../store/actions";
-import anime from "animejs/lib/anime.es.js";
+import rules from '../Rules/Rules.pdf'
 import cancel from "../../img/cancel.png";
 
 class Menu extends React.Component {
@@ -33,7 +33,7 @@ class Menu extends React.Component {
     const { popup } = this.state
 
     console.log('userData', userData)
-    
+
     return (
       <section className="menu">
         <div className="row justify-content-center nav">
@@ -136,14 +136,29 @@ class Menu extends React.Component {
                       <img src={cancel} alt="" />
                     </div>
                     <div className="modal-container-popup">
-                      К сожалению, некоторые купоны уже закончились. Если купона,{' '}
-                  с тем номиналом, который вы выиграли, не осталось,{' '}
-                  то мы отправим вам купон с максимально доступной скидкой меньшего номинала.
-                  <br />
+                      <div className="content-inner"> Друзья, спасибо за высокий интерес, проявленный к рекламной акции<span className="pinkTxt"> «Дело Z»</span>!
+                      К сожалению, на данный момент, купоны номиналом 50, 60 и 70% закончились.
+                      Согласно пункту правил <b> 9.2.1.1</b> В случае, если скидки большего номинала закончились Участник получает скидку предыдущего номинала, имеющуюся в наличии.
+                      С полным текстом правил акции можно ознакомиться в приложении или по <a className="pinkTxt" href={rules}>ссылке</a>
+                        <br />
+                        <br />
+                      Если вы еще не успели поиграть в наш новый текстовый квест, то ниже кратко расскажем о правилах:
+                      <br /> - Проходи первый квест и получай купон <span className="pinkTxt">на скидку 20%</span> на продукцию от Zewa в сети магазинов Магнит
+                      <br /> - За каждый последующий пройденный квест увеличивай свою скидку <span className="pinkTxt">на 10%</span>
+                        <br /> - После прохождения всех пяти квестов, поделись результатами у себя на странице, и увеличь свою скидку <span className="pinkTxt">еще на 10%</span>
+                        <br /> - Среди тех, кто прошел все 5 квестов и поделился результатами у себя на странице еженедельно будут разыгрываться купоны номиналом <span className="pinkTxt">3000 рублей</span> на всю продукцию сети магазинов Магнит.
+                      Спасибо за проявленный интерес в нашей акции.
                       <br />
-                  Если вы пройдете все квесты и сделаете репост на своей странице,{' '}
-                  то можете принять участие в розыгрыше подарочного купона на <span className="pinkTxt">3000 рублей</span>.
-                    <div className="row justify-content-center buttonsSet">
+                        <br />
+                        <i> *Купоны на скидку действуют на всю продукцию Zewa в сети магазинов «Магнит» и не суммируются с другими скидками и акциями.</i>
+                        <br />
+                        <br />
+                      Сейчас вы можете пройти все квесты, получить купон меньшего номинала, сделать репост на своей странице и участвовать в розыгрыше купонов на 3000 рублей!
+                      Розыгрыш первых 5 подарочных купонов состоится уже завтра!
+                      <br />
+                        <br />
+                      Если у вас возникли вопросы по прохождению квеста, правилам акции или применению купона - пишите в сообщения сообщества Zewa по <a className="pinkTxt" href="https://vk.com/im?sel=-137564571">ссылке</a>  и мы максимально быстро поможем решить ваш вопрос.</div>
+                      <div className="row justify-content-center buttonsSet">
                         <div className="col-lg-auto">
                           <button
                             className="playBtn selectionBtn "

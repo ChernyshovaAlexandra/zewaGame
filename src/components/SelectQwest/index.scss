@@ -252,7 +252,7 @@ $blue: #2bafec;
       height: 100%;
       width: 100%;
       object-fit: cover;
-      object-position:top;
+      object-position: top;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     }
   }
@@ -447,6 +447,41 @@ $blue: #2bafec;
     color: #000;
     padding: 1.5rem;
     border-radius: 1rem;
+    max-height: 50vh;
+    overflow: hidden;
+    @media screen and (max-width: 629px){
+      max-height: 90vh;
+    }
+    .content-inner {
+      max-height: calc(40vh - 3rem);
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding-right: 1rem;
+      @media screen and (max-width: 629px){
+        max-height: calc(80vh - 3rem);
+      }
+      &::-webkit-scrollbar {
+        position: relative;
+        width: 5px;
+        right: 10px;
+      }
+
+      &::-webkit-scrollbar,
+      &::-webkit-scrollbar-track,
+      &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #ce0b68;
+      }
+    }
 
     .buttonsSet {
       margin-top: 1rem;

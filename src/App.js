@@ -19,31 +19,7 @@ class App extends React.Component {
 			body_to_send: null,
 			nameForH2: 'user'
 		}
-
 	}
-	// getUserInfo = () => {
-	// 	const { setUserData } = this.props
-	// 	bridge.subscribe((e) => {
-	// 		if (e.detail.type === 'VKWebAppGetUserInfoResult') {
-	// 			this.setState({
-	// 				name: e.detail.data.first_name,
-	// 				body_to_send: {
-	// 					vk_id: e.detail.data.id,
-	// 					name: e.detail.data.first_name + " " + e.detail.data.last_name,
-	// 				},
-	// 				loaded: true,
-	// 				nameForH2: e.detail.data.first_name,
-	// 				modalTxt: false
-	// 			})
-	// 			setUserData(this.state.body_to_send)
-	// 		}
-	// 	})
-	// 	bridge.send("VKWebAppGetUserInfo")
-
-	// }
-
-
-
 
 	componentDidMount() {
 		setTimeout(() => {
