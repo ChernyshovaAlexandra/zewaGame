@@ -12,7 +12,8 @@ import {
     SET_HINT,
     SET_DISCOUNT,
     DID_REPOST,
-    SET_CUR_REQDY_QUEST
+    SET_CUR_REQDY_QUEST,
+    USER_DATA_FAILED
 } from './actionTypes'
 
 
@@ -25,9 +26,27 @@ export const setHint = (hint) => ({
     type: SET_HINT,
     payload: hint
 })
-export const setUserData = (data) => ({
-    type: SET_USER_DATA,
-    payload: data
+export const setUserData = (data) => {
+    return async dispatch => {
+        let response = await fetch('https://newback.zewaquests.ru/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ vk_id: data.vk_id, name: data.name })
+        })
+        let jsR = await response.json()
+        if (!jsR.error) {
+            dispatch({
+                type: SET_USER_DATA,
+                payload: data
+            })
+        }
+    }
+}
+export const userLoadingFailed = () => ({
+    type: USER_DATA_FAILED,
 })
 export const startGame = (action) => ({
     type: START_GAME,
@@ -223,6 +242,7 @@ export const getKupon = (vk_id) => {
         }
     }
 }
+
 export const didRepost = (vk_id) => {
     return async dispatch => {
         let response = await fetch('https://newback.zewaquests.ru/api/repost',

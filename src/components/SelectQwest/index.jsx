@@ -167,7 +167,7 @@ class SelectQwest extends React.Component {
                   {item.isActive && !item.isDone && (
                     <div className="sale">
                       <img src={toiletPaper} alt="" />
-                      <p>{"Скидка " + item.sale + "%"}</p>
+                      <p>{"Дело №" + (index + 1)}</p>
                     </div>
                   )}
                   <div

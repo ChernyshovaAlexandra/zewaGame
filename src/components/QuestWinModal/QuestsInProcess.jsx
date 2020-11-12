@@ -68,7 +68,7 @@ class QuestsInProcess extends React.Component {
     }
 
     if (inputId === "nextGame") {
-      showWinQModal(userData.vk_id, false);
+      showWinQModal(false);
     }
     e.preventDefault();
   };
@@ -81,15 +81,121 @@ class QuestsInProcess extends React.Component {
       <>
         <div className="container">
           <div className="row mainWinPart justify-content-center">
-            <div className="col-lg-7 ">
-              <div className="winBox" style={{ 'marginTop': '2rem' }}>
-                <h4>
-                  Вы успешно раскрыли дело. Разгадайте все квесты, чтобы получить скидочный купон,
-                  а также принять участие в розыгрыше серитификата на 3000 рублей на покупки в сети Магнит!
-                    </h4>
-                <div className="row justify-content-center">
-                  <button className="selectionBtn col-md-7">Продолжить</button>
+            {/* <div className="col-lg-5">
+              <div className="row justify-content-between">
+                <div className="col-md-12">
+                  {questName[0] && (
+                    <h2
+                      dangerouslySetInnerHTML={{
+                        __html: questName[0].name,
+                      }}
+                    ></h2>
+                  )}
                 </div>
+                <div className="col-md-12">
+                  <div className="saleWin">
+                    <div className="logoB">
+                      <img src={magnit} alt="" />
+                      <img src={Zewa} alt="" />
+                    </div>
+                    <div className="saleWinBox">
+                      <p>Скидка</p>
+                      <p className="saleWinAmmount">???%</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            */}
+            <div className="col-lg-9">
+              <div className="winBox">
+                {this.state.innerTxt ? (
+                  <>
+                    <h4
+                      dangerouslySetInnerHTML={{
+                        __html: this.state.innerTxt,
+                      }}
+                    ></h4>
+                    <div className="row justify-content-center buttonSet">
+                      {this.state.buttonTxt ? (
+                        <div className="col-md-12">
+                          <a
+                            href="https://vk.com/im?sel=-137564571"
+                            target="_blank"
+                            style={{ textDecoration: "none" }}
+                          >
+                            <button className="btn pink selectionBtn">
+                              {this.state.buttonTxt}
+                            </button>
+                          </a>
+                        </div>
+                      ) : this.state.buttonTxt2 ? (
+                        <div className="col-md-12">
+                          <button
+                            className="btn pink selectionBtn"
+                            onClick={() => {
+                              this.reSend_AllowMessages();
+                            }}
+                          >
+                            {this.state.buttonTxt2}
+                          </button>
+                        </div>
+                      ) : (
+                            <></>
+                          )}
+                      <div className="col-md-12">
+                        <button
+                          className="btn pink selectionBtn"
+                          onClick={() => {
+                            showWinQModal(false);
+                          }}
+                        >
+                          В меню
+                        </button>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                    <>
+                      <h4>
+                        Вы успешно разгадали квест и заслужили скидку!
+                    </h4>
+                      <form
+                        id="formFin"
+                        className="row"
+                        name="formFin"
+                        onSubmit={(e) => this.formCheck(e)}
+                      >
+                        <div className="col-md-12">
+                          <input
+                            type="radio"
+                            id="nextGame"
+                            name="selectionWin"
+                            checked
+                          />
+                          <label htmlFor="selectionWin">
+                            Пройти все квесты, побороться за скидку большего номинала{' '}
+                          (при наличии свободных купонов) и получить шанс выиграть{' '}
+                          подарочный купон на <span className="special">3000&nbsp;рублей</span> в сети магазинов Магнит.
+                        </label>
+                        </div>
+                        <div className="col-md-12">
+                          <input type="radio" name="selectionWin" id="endGame" />
+                          <label htmlFor="selectionWin">
+                            Закончить игру и забрать скидку 20% сейчас.
+                        </label>
+                        </div>
+                        <button
+                          className="selectionBtn col-md-auto"
+                          type="submit"
+                        >
+                          Готово
+                      </button>
+                      </form>
+                      <br />
+                      <p>К сожалению, купоны быстро заканчиваются. Максимальный номинал оставшихся купонов - <span className="special"> 40%</span>.</p>
+                    </>
+                  )}
               </div>
             </div>
           </div>

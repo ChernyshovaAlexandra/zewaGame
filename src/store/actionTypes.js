@@ -13,3 +13,4 @@ export const SET_HINT = 'SET_HINT'
 export const SET_DISCOUNT = 'SET_DISCOUNT';
 export const DID_REPOST = 'DID_REPOST'
 export const SET_CUR_REQDY_QUEST = 'SET_CUR_REQDY_QUEST'
+export const USER_DATA_FAILED = ' USER_DATA_FAILED'

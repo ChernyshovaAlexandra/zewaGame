@@ -10,10 +10,8 @@ import { store } from './store/configureStore'
 bridge.send("VKWebAppInit");
 
 ReactDOM.render(
-    <React.StrictMode>
-        <Provider store={store}>
-            <App />
-        </Provider>
-    </React.StrictMode>
+    <Provider store={store}>
+        <App />
+    </Provider>
     , document.getElementById("root"));
 

@@ -4,9 +4,29 @@ import Zewa from "../../img/zewa.png";
 import logoGame from "../../img/logoGame.png";
 import magnit from "../../img/magnit-logo.svg";
 import { connect } from "react-redux";
-import { startGame, showRules, showRes } from "../../store/actions";
+import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFailed } from '../../store/actions'
+import bridge from '@vkontakte/vk-bridge';
+
+
+
+
 
 class LoadingComponent extends React.Component {
+
+  componentDidMount() {
+    const { setUserData } = this.props
+    bridge.subscribe((e) => {
+      if (e.detail.type === 'VKWebAppGetUserInfoResult') {
+        setUserData({
+          vk_id: e.detail.data.id,
+          name: e.detail.data.first_name + " " + e.detail.data.last_name,
+          nameHeader: e.detail.data.first_name
+        })
+      }
+    })
+    bridge.send("VKWebAppGetUserInfo")
+  }
+
   render() {
     return (
       <div className="loader" style={{ paddingTop: "1rem" }}>
@@ -50,20 +70,28 @@ class LoadingComponent extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     rules: state.store.rules,
     start: state.store.start,
     results: state.store.results,
-  };
-};
+    selected: state.store.selected,
+    questWin: state.store.questWin,
+    userData: state.store.userData,
+    userDataFailed: state.store.userDataFailed
+  }
+}
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     startGame: () => dispatch(startGame()),
     showRules: () => dispatch(showRules()),
     showRes: () => dispatch(showRes()),
-  };
-};
+    setUserData: (data) => dispatch(setUserData(data)),
+    getQuestList: (data) => dispatch(getQuestList(data)),
+    userLoadingFailed: () => dispatch(userLoadingFailed())
+  }
+}
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoadingComponent);

@@ -7,7 +7,7 @@ import LoadingComponent from './components/LoadingComponent'
 import Rules from './components/Rules'
 import './App.scss'
 import { connect } from 'react-redux'
-import { startGame, showRules, showRes, setUserData, getQuestList } from './store/actions'
+import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFailed } from './store/actions'
 import bridge from '@vkontakte/vk-bridge';
 
 
@@ -19,56 +19,30 @@ class App extends React.Component {
 			body_to_send: null,
 			nameForH2: 'user'
 		}
-		this.getUserInfo()
+
 	}
-	getUserInfo = () => {
-		const { getQuestList } = this.props
-		bridge.subscribe((e) => {
-			if (e.detail.data === undefined) {
-				this.setState({
-					body_to_send: {
-						name: 'user',
-						vk_id: 9801302
-					}
-				})
-				// getQuestList(9801302)
-			}
-			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
-				this.setState({
-					name: e.detail.data.first_name,
-					body_to_send: {
-						vk_id: e.detail.data.id,
-						name: e.detail.data.first_name + " " + e.detail.data.last_name,
-					},
-					nameForH2: e.detail.data.first_name
-				})
-				// getQuestList(e.detail.data.id)
-			}
-		})
+	// getUserInfo = () => {
+	// 	const { setUserData } = this.props
+	// 	bridge.subscribe((e) => {
+	// 		if (e.detail.type === 'VKWebAppGetUserInfoResult') {
+	// 			this.setState({
+	// 				name: e.detail.data.first_name,
+	// 				body_to_send: {
+	// 					vk_id: e.detail.data.id,
+	// 					name: e.detail.data.first_name + " " + e.detail.data.last_name,
+	// 				},
+	// 				loaded: true,
+	// 				nameForH2: e.detail.data.first_name,
+	// 				modalTxt: false
+	// 			})
+	// 			setUserData(this.state.body_to_send)
+	// 		}
+	// 	})
+	// 	bridge.send("VKWebAppGetUserInfo")
+
+	// }
 
 
-
-		bridge.send("VKWebAppGetUserInfo")
-			.then(() => {
-				this.login()
-			})
-	}
-
-	login = async () => {
-		const { setUserData } = this.props
-		let th = this
-
-		let response = await fetch('https://newback.zewaquests.ru/api/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-				'X-Requested-With': 'XMLHttpRequest'
-			},
-			body: JSON.stringify(th.state.body_to_send)
-		})
-		let jsR = await response.json()
-		setUserData(this.state.body_to_send)
-	}
 
 
 	componentDidMount() {
@@ -76,7 +50,8 @@ class App extends React.Component {
 			this.setState({
 				loaded: true
 			})
-		}, 30)
+
+		}, 3000)
 	}
 
 
@@ -85,6 +60,7 @@ class App extends React.Component {
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
+
 				{
 					rules ?
 						<Rules /> :
@@ -95,8 +71,7 @@ class App extends React.Component {
 								start ?
 									<SelectQwest /> :
 									loaded ?
-										<Menu name={this.state.nameForH2} />
-										:
+										<Menu name={this.state.nameForH2} /> :
 										<LoadingComponent />
 				}
 				<small className="ligal">Количество купонов ограничено</small>
@@ -112,7 +87,8 @@ const mapStateToProps = state => {
 		results: state.store.results,
 		selected: state.store.selected,
 		questWin: state.store.questWin,
-		userData: state.store.userData
+		userData: state.store.userData,
+		userDataFailed: state.store.userDataFailed
 	}
 }
 
@@ -122,7 +98,8 @@ const mapDispatchToProps = dispatch => {
 		showRules: () => dispatch(showRules()),
 		showRes: () => dispatch(showRes()),
 		setUserData: (data) => dispatch(setUserData(data)),
-		getQuestList: (data) => dispatch(getQuestList(data))
+		getQuestList: (data) => dispatch(getQuestList(data)),
+		userLoadingFailed: () => dispatch(userLoadingFailed())
 	}
 }
 

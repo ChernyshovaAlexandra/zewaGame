@@ -87,7 +87,7 @@ class QuestWinModal extends React.Component {
             <img alt="" src={magnit} />
           </div>
         </div>
-        {questsReady < 4 ? <QuestsInProcess /> : <AllQuestsFinished />}
+        {questsReady < 5 ? <QuestsInProcess /> : <AllQuestsFinished />}
       </section>
     );
   }

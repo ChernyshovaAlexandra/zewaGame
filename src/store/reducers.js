@@ -12,7 +12,8 @@ import {
     SET_HINT,
     SET_DISCOUNT,
     DID_REPOST,
-    SET_CUR_REQDY_QUEST
+    SET_CUR_REQDY_QUEST,
+    USER_DATA_FAILED
 } from './actionTypes'
 import { combineReducers } from 'redux'
 
@@ -24,15 +25,13 @@ export const defaultState =
     results: false,
     quests: [],
     curHint: 0,
-    questWin: 1,
+    questWin: false,
     questData: [],
-    userData: {
-        name: 'user',
-        vk_id: 9801302
-    },
+    userData: false,
     questsReady: 0,
-    discount: '70',
-    curReadyQuest: 2
+    discount: '',
+    curReadyQuest: 1,
+    userDataFailed: false
 }
 
 
@@ -47,7 +46,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_SELECTED:
             return { ...state, selected: action.payload }
         case SET_QUEST_READY:
-            return { ...state, questsReady: action.payload < 5 ? action.payload : 4 }
+            return { ...state, questsReady: action.payload }
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:
@@ -66,6 +65,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, repost: action.payload }
         case SET_CUR_REQDY_QUEST:
             return { ...state, curReadyQuest: action.payload }
+        case USER_DATA_FAILED:
+            return { ...state, userDataFailed: true }
 
     }
 
