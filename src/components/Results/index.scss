@@ -1,0 +1,35 @@
+.resBox {
+    .resultsContainer {
+        max-width: 90%;
+        margin: auto;
+
+        .col-lg-auto {
+            text-align: left;
+        }
+    }
+}
+
+.results {
+    @media screen and (max-width: 629px) {
+        .col-lg-10 {
+            max-width: 100% !important;
+            flex: 100% !important;
+            font-size: .8rem !important;
+
+            .col-lg-2 {
+                max-width: 10%;
+                flex: auto;
+            }
+
+            .col-lg-auto {
+                max-width: 55%;
+            }
+
+            .col-lg-4 {
+                color: #000 !important;
+                max-width: 32%;
+                flex: auto;
+            }
+        }
+    }
+}

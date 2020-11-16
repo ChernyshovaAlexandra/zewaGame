@@ -5,10 +5,11 @@ import Main from './components/Main'
 import QuestWinModal from './components/QuestWinModal'
 import LoadingComponent from './components/LoadingComponent'
 import Rules from './components/Rules'
+import Results from './components/Results'
 import './App.scss'
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFailed } from './store/actions'
-import bridge from '@vkontakte/vk-bridge';
+
 
 
 class App extends React.Component {
@@ -32,7 +33,7 @@ class App extends React.Component {
 
 
 	render() {
-		const { start, selected, questWin, rules } = this.props
+		const { start, selected, questWin, rules, results } = this.props
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
@@ -40,15 +41,17 @@ class App extends React.Component {
 				{
 					rules ?
 						<Rules /> :
-						questWin ?
-							<QuestWinModal /> :
-							selected ?
-								<Main /> :
-								start ?
-									<SelectQwest /> :
-									loaded ?
-										<Menu name={this.state.nameForH2} /> :
-										<LoadingComponent />
+						results ?
+							<Results /> :
+							questWin ?
+								<QuestWinModal /> :
+								selected ?
+									<Main /> :
+									start ?
+										<SelectQwest /> :
+										loaded ?
+											<Menu name={this.state.nameForH2} /> :
+											<LoadingComponent />
 				}
 				<small className="ligal">Количество купонов ограничено</small>
 			</div>

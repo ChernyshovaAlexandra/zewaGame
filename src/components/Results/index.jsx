@@ -1,0 +1,147 @@
+import React from "react";
+import Zewa from "../../img/zewa.png";
+import logoGame from "../../img/logoGame.png";
+import magnit from "../../img/magnit-logo.svg";
+import magnit2 from "../../img/magnit-wh.png";
+import './index.scss'
+import { connect } from "react-redux";
+import { showRes } from "../../store/actions";
+
+class Results extends React.Component {
+    render() {
+        const { showRes } = this.props;
+        return (
+            <>
+                <section className="menu no-after rulesCont">
+                    <div className="row justify-content-center nav">
+                        <div className="col-lg-3 animate__animated animate__fadeIn sec">
+                            <img src={Zewa} alt="" />
+                        </div>
+                        <div className="col-lg-6 animate__animated animate__fadeIn thrd">
+                            <img src={logoGame} alt="" />
+                        </div>
+                        <div className="col-lg-3">
+                            <button
+                                style={{
+                                    position: "static",
+                                    margin: "0 auto",
+                                    display: "block",
+                                }}
+                                className="back pinkTxt"
+                                onClick={() => {
+                                    showRes(false);
+                                }}
+                            >
+                                В меню
+              </button>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center nav-mob">
+                        <div className="col-lg-4">
+                            <button
+                                style={{
+                                    position: "static",
+                                    margin: "0 auto",
+                                    display: "block",
+                                }}
+                                className="back pinkTxt"
+                                onClick={() => {
+                                    showRes(false);
+                                }}
+                            >
+                                В меню
+              </button>
+                        </div>
+                        <div className="col-lg-3">
+                            <img src={Zewa} alt="" />
+                        </div>
+                        <div className="col-lg-5">
+                            <img src={magnit2} alt="" />
+                        </div>
+                    </div>
+
+                    <div className="row justify-content-center for-rules ">
+                        <div className="col-lg-auto">
+                            <h2 className="wh-rules">Результаты розыгрыша</h2>
+
+                        </div>
+                    </div>
+                    <div className="row justify-content-center for-rules">
+                        <div className="col-lg-auto">
+                            <p>Поздравляем победителей первой недели!</p>
+                        </div>
+                    </div>
+                    <div className="row justify-content-center results">
+                        <div className="col-lg-10">
+                            <div className="rulesBox resBox">
+                                <div className="row justify-content-between resultsContainer">
+                                    <div className="col-lg-2">1</div>
+                                    <div className="col-lg-auto">
+                                        <a href="https://vk.com/id429114025" target="_blank">
+                                            <span className="pinkTxt">Наташа Егорова</span>
+                                        </a>
+                                    </div>
+                                    <div className="col-lg-4">3000 руб.</div>
+                                </div>
+                                <div className="row justify-content-between resultsContainer">
+                                    <div className="col-lg-2">2</div>
+                                    <div className="col-lg-auto">
+                                        <a href="https://vk.com/id612346282" target="_blank">
+                                            <span className="pinkTxt">Мамука Мамардашвили</span>
+                                        </a>
+                                    </div>
+                                    <div className="col-lg-4">3000 руб.</div>
+                                </div>
+                                <div className="row justify-content-between resultsContainer">
+                                    <div className="col-lg-2">3</div>
+                                    <div className="col-lg-auto">
+                                        <a href="https://vk.com/id259115944" target="_blank">
+                                            <span className="pinkTxt">Женя Терехова</span>
+                                        </a>
+                                    </div>
+                                    <div className="col-lg-4">3000 руб.</div>
+                                </div>
+                                <div className="row justify-content-between resultsContainer">
+                                    <div className="col-lg-2">4</div>
+                                    <div className="col-lg-auto">
+                                        <a href="https://vk.com/id20415285" target="_blank">
+                                            <span className="pinkTxt">Юлия Игумнова</span>
+                                        </a>
+                                    </div>
+                                    <div className="col-lg-4">3000 руб.</div>
+                                </div>
+                                <div className="row justify-content-between resultsContainer">
+                                    <div className="col-lg-2">5</div>
+                                    <div className="col-lg-auto">
+                                        <a href="https://vk.com/id115545387" target="_blank">
+                                            <span className="pinkTxt">Николай Медведев</span>
+                                        </a>
+                                    </div>
+                                    <div className="col-lg-4">3000 руб.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </>
+        );
+    }
+}
+const mapStateToProps = (state) => {
+    return {
+        rules: state.store.rules,
+        start: state.store.start,
+        results: state.store.results,
+        questWin: state.store.questWin,
+        userData: state.store.userData,
+        comics: state.store.comics,
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        showRes: (action) => dispatch(showRes(action)),
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Results);

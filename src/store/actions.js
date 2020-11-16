@@ -38,6 +38,7 @@ export const setUserData = (data) => {
         })
         let jsR = await response.json()
         if (!jsR.error) {
+            console.log(jsR)
             dispatch({
                 type: SET_USER_DATA,
                 payload: data
@@ -56,9 +57,9 @@ export const showRules = (action) => ({
     type: SHOW_RULES,
     payload: action
 })
-export const showRes = () => ({
+export const showRes = (action) => ({
     type: SHOW_RESULTS,
-    payload: true
+    payload: action
 })
 export const showSelected = (action) => ({
     type: SHOW_SELECTED,

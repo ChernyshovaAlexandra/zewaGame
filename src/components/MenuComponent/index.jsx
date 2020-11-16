@@ -29,10 +29,9 @@ class Menu extends React.Component {
 
 
   render() {
-    const { showRules, questWin, userData } = this.props;
+    const { showRules, questWin, userData, showRes } = this.props;
     const { popup } = this.state
 
-    console.log('userData', userData)
 
     return (
       <section className="menu">
@@ -100,7 +99,16 @@ class Menu extends React.Component {
                   </button>
                       </div>
                     </div>
-
+                    <div className="row justify-content-center">
+                      <div className="col-md-auto animate__animated animate__bounceIn sec">
+                        <button
+                          className="selectionBtn"
+                          onClick={() => showRes(true)}
+                        >
+                          Победители
+                        </button>
+                      </div>
+                    </div>
                     <div className="row justify-content-center">
                       <div className="col-md-auto animate__animated animate__bounceIn sec">
                         <button
@@ -111,6 +119,7 @@ class Menu extends React.Component {
                   </button>
                       </div>
                     </div>
+
                     <div className="row justify-content-center animate__bounceIn">
                       <div className="col-md-auto animate__animated animate__bounceIn thrd">
                         <button
@@ -136,9 +145,16 @@ class Menu extends React.Component {
                       <img src={cancel} alt="" />
                     </div>
                     <div className="modal-container-popup">
-                      <div className="content-inner"> Друзья, спасибо за высокий интерес, проявленный к рекламной акции<span className="pinkTxt"> «Дело&#160;Z»</span>!
-                      К сожалению, на данный момент, купоны номиналом 50, 60 и 70% закончились.
-                      Согласно пункту правил <b> 9.2.1.1</b> В случае, если скидки большего номинала закончились Участник получает скидку предыдущего номинала, имеющуюся в наличии.
+                      <div className="content-inner"> Друзья, спасибо за высокий интерес,{' '}
+                      проявленный к рекламной акции<span className="pinkTxt"> «Дело&#160;Z»</span>!
+                      <br /><br />
+                      У нас есть радостная новсть для тех, кто ещё не успел пройти наш квест! 
+                      Мы увеличили количество купонов и добавили их в приложение.<br />
+                      Поспешите забрать свой купон на продукцию Zewa в сети магазинов Магнит.
+                      <br /><br />
+
+                      Напоминаем, что согласно пункту пункту правил <b> 9.2.1.1</b> В случае, если скидки большего номинала закончились{' '}
+                      Участник получает скидку предыдущего номинала, имеющуюся в наличии.
                       С полным текстом правил акции можно ознакомиться в приложении или по <a className="pinkTxt" href={rules}>ссылке</a>
                         <br />
                         <br />
@@ -147,17 +163,17 @@ class Menu extends React.Component {
                       <br /> - За каждый последующий пройденный квест увеличивай свою скидку <span className="pinkTxt">на 10%</span>
                         <br /> - После прохождения всех пяти квестов, поделись результатами у себя на странице, и увеличь свою скидку <span className="pinkTxt">еще на 10%</span>
                         <br /> - Среди тех, кто прошел все 5 квестов и поделился результатами у себя на странице еженедельно будут разыгрываться купоны номиналом <span className="pinkTxt">3000 рублей</span> на всю продукцию сети магазинов Магнит.
-                      Спасибо за проявленный интерес в нашей акции.
+                      Спасибо за проявленный интерес к нашей акции.
                       <br />
                         <br />
-                        <i> *Купоны на скидку действуют на всю продукцию Zewa в сети магазинов «Магнит» и не суммируются с другими скидками и акциями.</i>
+                        <i> *Купоны на скидку действуют на всю продукцию Zewa в сети магазинов «Магнит»{' '}
+                        и не суммируются с другими скидками и акциями.</i>
                         <br />
                         <br />
-                      Сейчас вы можете пройти все квесты, получить купон меньшего номинала, сделать репост на своей странице и участвовать в розыгрыше купонов на 3000 рублей!
-                      Розыгрыш первых 5 подарочных купонов состоится уже завтра!
-                      <br />
                         <br />
-                      Если у вас возникли вопросы по прохождению квеста, правилам акции или применению купона - пишите в сообщения сообщества Zewa по <a className="pinkTxt" href="https://vk.com/im?sel=-137564571">ссылке</a>  и мы максимально быстро поможем решить ваш вопрос.</div>
+                      Если у вас возникли вопросы по прохождению квеста, правилам акции или применению купона{' '}
+                      - пишите в сообщения сообщества Zewa по <a className="pinkTxt"
+                      href="https://vk.com/im?sel=-137564571">ссылке</a> и мы максимально быстро поможем решить ваш вопрос.</div>
                       <div className="row justify-content-center buttonsSet">
                         <div className="col-lg-auto">
                           <button
@@ -199,7 +215,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     startGame: (action) => dispatch(startGame(action)),
     showRules: (action) => dispatch(showRules(action)),
-    showRes: () => dispatch(showRes()),
+    showRes: (action) => dispatch(showRes(action)),
   };
 };
 
