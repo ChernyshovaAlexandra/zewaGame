@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/static/css/main.229cf061.chunk.css",
-    "main.js": "/static/js/main.0aacfc66.chunk.js",
-    "main.js.map": "/static/js/main.0aacfc66.chunk.js.map",
+    "main.js": "/static/js/main.34c8202b.chunk.js",
+    "main.js.map": "/static/js/main.34c8202b.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.e95b8414.js",
     "runtime-main.js.map": "/static/js/runtime-main.e95b8414.js.map",
     "static/css/2.1c9ef103.chunk.css": "/static/css/2.1c9ef103.chunk.css",
     "static/js/2.b9f5fb50.chunk.js": "/static/js/2.b9f5fb50.chunk.js",
     "static/js/2.b9f5fb50.chunk.js.map": "/static/js/2.b9f5fb50.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.76ebe6f07ed35e15edcdb89d034dffa7.js": "/precache-manifest.76ebe6f07ed35e15edcdb89d034dffa7.js",
+    "precache-manifest.e0752fdcfaa0ccb9c9dbba89ef2f6186.js": "/precache-manifest.e0752fdcfaa0ccb9c9dbba89ef2f6186.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.1c9ef103.chunk.css.map": "/static/css/2.1c9ef103.chunk.css.map",
     "static/css/main.229cf061.chunk.css.map": "/static/css/main.229cf061.chunk.css.map",
     "static/js/2.b9f5fb50.chunk.js.LICENSE.txt": "/static/js/2.b9f5fb50.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/static/media/pattern.d65c9003.png",
     "static/media/App.scss": "/static/media/AcerFoco_Rg.9dd8c37c.ttf",
-    "static/media/Rules.pdf": "/static/media/Rules.486a6281.pdf",
+    "static/media/Rules.pdf": "/static/media/Rules.a3dbccde.pdf",
     "static/media/back.png": "/static/media/back.abb44cfb.png",
     "static/media/logoGame.png": "/static/media/logoGame.07c831ee.png",
     "static/media/magnit-logo.svg": "/static/media/magnit-logo.a052c0ad.svg",
@@ -28,6 +28,6 @@
     "static/css/2.1c9ef103.chunk.css",
     "static/js/2.b9f5fb50.chunk.js",
     "static/css/main.229cf061.chunk.css",
-    "static/js/main.0aacfc66.chunk.js"
+    "static/js/main.34c8202b.chunk.js"
   ]
 }
