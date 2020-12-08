@@ -74,11 +74,7 @@ class Menu extends React.Component {
           (<>
             <div className="row justify-content-center infoData">
               <div className="col-lg-9">
-                <p className="ml3">
-                  Привет, <span>{userData.nameHeader ? userData.nameHeader : 'user'}</span>. Играй и получай скидочные купоны на продукцию{' '}
-              Zewa в сети магазинов Магнит. Пройди все квесты и участвуй в розыгрыше купона номиналом{' '}
-                  <span className="special">3000&#160;рублей</span> на продукцию сети магазинов Магнит
-            </p>
+            <p>Акция уже закончилась</p>
               </div>
             </div>
             {questWin ? (
@@ -86,19 +82,6 @@ class Menu extends React.Component {
             ) : (
                 <div className="row justify-content-center navigation">
                   <div className="col-lg-6">
-                    <div className="row justify-content-center">
-                      <div className="col-md-auto animate__animated animate__bounceIn first">
-                        <button
-                          className="selectionBtn pink"
-                          onClick={() => this.props.startGame(true)}
-                          style={{
-                            width: "-webkit-max-content",
-                          }}
-                        >
-                          Начать игру
-                  </button>
-                      </div>
-                    </div>
                     <div className="row justify-content-center">
                       <div className="col-md-auto animate__animated animate__bounceIn sec">
                         <button
@@ -134,61 +117,7 @@ class Menu extends React.Component {
                 </div>
               )}
 
-            {popup && (
-              <div className="modal-popup ">
-                <div className="row justify-content-center align-items-center">
-                  <div className="col-lg-9 modal-Popup__content-inner">
-                    <div
-                      className="cancelBut"
-                      onClick={() => this.setState({ popup: false })}
-                    >
-                      <img src={cancel} alt="" />
-                    </div>
-                    <div className="modal-container-popup">
-                      <div className="content-inner"> Друзья, спасибо за высокий интерес,{' '}
-                      проявленный к рекламной акции<span className="pinkTxt"> «Дело&#160;Z»</span>!
-                      <br /><br />
-                      У нас есть радостная новсть для тех, кто ещё не успел пройти наш квест! 
-                      Мы увеличили количество купонов и добавили их в приложение.<br />
-                      Поспешите забрать свой купон на продукцию Zewa в сети магазинов Магнит.
-                      <br /><br />
-
-                      Напоминаем, что согласно пункту пункту правил <b> 9.2.1.1</b> В случае, если скидки большего номинала закончились{' '}
-                      Участник получает скидку предыдущего номинала, имеющуюся в наличии.
-                      С полным текстом правил акции можно ознакомиться в приложении или по <a className="pinkTxt" href={rules}>ссылке</a>
-                        <br />
-                        <br />
-                      Если вы еще не успели поиграть в наш новый текстовый квест, то ниже кратко расскажем о правилах:
-                      <br /> - Проходи первый квест и получай купон <span className="pinkTxt">на скидку 20%</span> на продукцию от Zewa в сети магазинов Магнит
-                      <br /> - За каждый последующий пройденный квест увеличивай свою скидку <span className="pinkTxt">на 10%</span>
-                        <br /> - После прохождения всех пяти квестов, поделись результатами у себя на странице, и увеличь свою скидку <span className="pinkTxt">еще на 10%</span>
-                        <br /> - Среди тех, кто прошел все 5 квестов и поделился результатами у себя на странице еженедельно будут разыгрываться купоны номиналом <span className="pinkTxt">3000 рублей</span> на всю продукцию сети магазинов Магнит.
-                      Спасибо за проявленный интерес к нашей акции.
-                      <br />
-                        <br />
-                        <i> *Купоны на скидку действуют на всю продукцию Zewa в сети магазинов «Магнит»{' '}
-                        и не суммируются с другими скидками и акциями.</i>
-                        <br />
-                        <br />
-                        <br />
-                      Если у вас возникли вопросы по прохождению квеста, правилам акции или применению купона{' '}
-                      - пишите в сообщения сообщества Zewa по <a className="pinkTxt"
-                      href="https://vk.com/im?sel=-137564571">ссылке</a> и мы максимально быстро поможем решить ваш вопрос.</div>
-                      <div className="row justify-content-center buttonsSet">
-                        <div className="col-lg-auto">
-                          <button
-                            className="playBtn selectionBtn "
-                            onClick={() => this.setState({ popup: false })}
-                          >
-                            Понятно
-                        </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )}
+        
 
             <div className="row justify-content-center">
               <div className="col-lg-auto magnit  animate__animated animate__bounceIn  fourth">
