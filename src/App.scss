@@ -377,7 +377,12 @@ a {
   margin: auto;
   width: fit-content;
   font-size: .8rem;
-  @media screen and (max-width: 629px){
+  background: #fff;
+  color: #ce0b68;
+  padding: 2px 10px;
+  border-radius: 10px;
+
+  @media screen and (max-width: 629px) {
     bottom: 10px;
     font-size: .6rem;
   }

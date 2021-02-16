@@ -98,7 +98,7 @@ class SelectQwest extends React.Component {
               С каждым пройденным квестом твоя скидка увеличивается
             </p>
           </div>
-          <div className="col-lg-5 description">
+          {/* <div className="col-lg-5 description">
             <div className="explanationBox  ">
               <div className="row blue align-items-center">
                 <div className="col-md-3 numeric">
@@ -115,7 +115,7 @@ class SelectQwest extends React.Component {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
 

@@ -29,12 +29,19 @@ class Menu extends React.Component {
 
 
   render() {
-    const { showRules, questWin, userData, showRes } = this.props;
+    const { showRules, questWin, userData, showRes, winners } = this.props;
     const { popup } = this.state
 
 
     return (
       <section className="menu">
+        <div className="photoBlock">
+          <div className="ph-1"></div>
+          <div className="ph-2"></div>
+          <div className="ph-3"></div>
+          <div className="ph-4"></div>
+
+        </div>
         <div className="row justify-content-center nav">
           <div className="col-lg-3 animate__animated animate__fadeIn sec">
             <img src={Zewa} alt="" />
@@ -55,7 +62,7 @@ class Menu extends React.Component {
           </div>
         </div>
 
-        {!userData ? (
+        {userData ? (
           <div className="modal-popup ">
             <div className="row justify-content-center align-items-center">
               <div className="col-lg-9 modal-Popup__content-inner">
@@ -74,7 +81,12 @@ class Menu extends React.Component {
           (<>
             <div className="row justify-content-center infoData">
               <div className="col-lg-9">
-            <p>Акция уже закончилась</p>
+                {/* <p>Акция уже закончилась</p> */}
+                <p className="ml3">
+                  Привет, <span>{userData.nameHeader ? userData.nameHeader : 'user'}</span>. Играй и получай скидочные купоны на продукцию{' '}
+              Zewa в сети магазинов Магнит. Пройди все квесты и участвуй в розыгрыше купона номиналом{' '}
+                  <span className="special">3000&#160;рублей</span> на продукцию сети магазинов Магнит
+            </p>
               </div>
             </div>
             {questWin ? (
@@ -83,6 +95,19 @@ class Menu extends React.Component {
                 <div className="row justify-content-center navigation">
                   <div className="col-lg-6">
                     <div className="row justify-content-center">
+                      <div className="col-md-auto animate__animated animate__bounceIn first">
+                        <button
+                          className="selectionBtn pink"
+                          onClick={() => this.props.startGame(true)}
+                          style={{
+                            width: "-webkit-max-content",
+                          }}
+                        >
+                          Начать игру
+                          </button>
+                      </div>
+                    </div>
+                    {winners && <div className="row justify-content-center">
                       <div className="col-md-auto animate__animated animate__bounceIn sec">
                         <button
                           className="selectionBtn"
@@ -91,7 +116,7 @@ class Menu extends React.Component {
                           Победители
                         </button>
                       </div>
-                    </div>
+                    </div>}
                     <div className="row justify-content-center">
                       <div className="col-md-auto animate__animated animate__bounceIn sec">
                         <button
@@ -117,7 +142,7 @@ class Menu extends React.Component {
                 </div>
               )}
 
-        
+
 
             <div className="row justify-content-center">
               <div className="col-lg-auto magnit  animate__animated animate__bounceIn  fourth">

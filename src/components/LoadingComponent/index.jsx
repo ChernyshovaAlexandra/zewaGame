@@ -60,11 +60,11 @@ class LoadingComponent extends React.Component {
               </div>
             </div>
           </div>
-          <div className="row justify-content-center">
+          {/* <div className="row justify-content-center">
             <div className="col-lg-auto magnit">
               <img src={magnit} alt="" />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     );
