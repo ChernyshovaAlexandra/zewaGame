@@ -25,7 +25,7 @@ $blue: #2bafec;
     }
 
     .nav {
-      margin-bottom: 0.7rem;
+      margin-bottom: 0rem;
       position: relative;
       z-index: 20;
 
@@ -52,7 +52,7 @@ $blue: #2bafec;
     }
 
     .descriptionContainer {
-      margin-bottom: 2rem;
+      margin-bottom: .6rem;
 
       p.nav-mob {
         margin-bottom: 1rem;
@@ -180,7 +180,6 @@ $blue: #2bafec;
   @media screen and (max-width: 629px) {
     top: 1rem;
     max-width: 50%;
-    // justify-content: flex-end;
     z-index: 100;
     height: 2.7rem;
 
@@ -238,9 +237,12 @@ $blue: #2bafec;
   }
 
   .header {
+    color: #000;
+
     h4 {
       font-size: 0.8rem;
       margin: 0.5rem 0;
+
       text-align: center;
     }
   }
@@ -449,17 +451,21 @@ $blue: #2bafec;
     border-radius: 1rem;
     max-height: 50vh;
     overflow: hidden;
-    @media screen and (max-width: 629px){
+
+    @media screen and (max-width: 629px) {
       max-height: 90vh;
     }
+
     .content-inner {
       max-height: calc(40vh - 3rem);
       overflow-y: auto;
       overflow-x: hidden;
       padding-right: 1rem;
-      @media screen and (max-width: 629px){
+
+      @media screen and (max-width: 629px) {
         max-height: calc(80vh - 3rem);
       }
+
       &::-webkit-scrollbar {
         position: relative;
         width: 5px;
@@ -526,6 +532,76 @@ $blue: #2bafec;
           max-width: 95%;
         }
       }
+    }
+  }
+}
+
+.quest-content--inner {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  max-height: 70%;
+  grid-gap: 15px;
+  width: 100%;
+
+  .quest-inner-content {
+    position: relative;
+    background: #fff;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -3px;
+      top: -3px;
+      width: calc(100% + 6px);
+      height: calc(100% + 6px);
+      background: linear-gradient(#ECC440, #FFFA8A, #DDAC17, #FFFF95);
+    }
+  }
+
+  .quest-inner {
+    background: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: .85rem;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    max-height: 100%;
+    grid-gap: 10px;
+    position: relative;
+
+    h4 {
+      color: #000 !important;
+      font-size: 1.2rem;
+      margin-bottom: .25rem;
+    }
+
+    .descriptionText {
+      color: #808080 !important;
+      font-size: .65rem;
+      margin-bottom: 0 !important;
+    }
+
+    .imgContainer {
+      max-height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+
+
+    .playBtn {
+      max-width: 50%;
+      width: fit-content;
+      text-transform: uppercase;
+      padding: 3px 2rem;
+      min-height: unset;
+      margin-bottom: 0;
+      margin-top: 10px;
+      letter-spacing: 1px;
     }
   }
 }

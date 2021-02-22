@@ -20,7 +20,7 @@ import { combineReducers } from 'redux'
 export const defaultState =
 {
     rules: false,
-    start: false,
+    start: true,
     selected: false,
     results: false,
     quests: [],
