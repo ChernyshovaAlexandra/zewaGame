@@ -604,4 +604,8 @@ $blue: #2bafec;
       letter-spacing: 1px;
     }
   }
+
+  @media screen and (max-width:600px) {
+    grid-template-columns: 1fr;
+  }
 }
