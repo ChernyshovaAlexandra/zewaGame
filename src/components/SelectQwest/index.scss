@@ -19,6 +19,20 @@ $blue: #2bafec;
     height: 100%;
     padding: 1.5rem;
     color: #ffffff;
+    position: relative;
+
+
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background: url(../../img/after-quests-bg.png) no-repeat left bottom;
+      background-size: contain;
+      width: 80%;
+      height: 100%;
+    }
 
     @media screen and(max-width: 629px) {
       height: 100vh;

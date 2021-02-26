@@ -100,7 +100,7 @@ class SelectQwest extends React.Component {
               <div className="dataConainer">
                 <h4>Загадка старого поместья</h4>
                 <p className="descriptionText">При поддержке онлайн-гипермаркета Утконос</p>
-                <button className="playBtn selectionBtn" >Играть</button>
+                <button className="playBtn selectionBtn" onClick={() => this.checkPopup('item.id')}>Играть</button>
               </div>
             </div>
           </div>
@@ -135,6 +135,42 @@ class SelectQwest extends React.Component {
             </div>
           </div>
         </div>
+        {popup && (
+          <div className="modal-popup ">
+            <div className="row justify-content-center align-items-center">
+              <div className="col-lg-9 modal-Popup__content-inner">
+                <div
+                  className="cancelBut"
+                  onClick={() => this.setState({ popup: false })}
+                >
+                  <img src={cancel} alt="" />
+                </div>
+                <div className="modal-container-popup">
+                  Кажется, вы уже начали проходить этот квест. Хотите
+                  продолжить?
+                    <div className="row justify-content-center buttonsSet">
+                    <div className="col-lg-auto">
+                      <button
+                        className="playBtn selectionBtn againBut"
+                        onClick={() => this.setReady(popup, true)}
+                      >
+                        Продолжить
+                        </button>
+                    </div>
+                    <div className="col-lg-auto">
+                      <button
+                        className="playBtn selectionBtn"
+                        onClick={() => this.setReady(popup, false)}
+                      >
+                        Заново
+                        </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

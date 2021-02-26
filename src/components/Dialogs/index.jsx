@@ -21,23 +21,23 @@ export default class Dialogs extends React.Component {
       butL = 4;
     }
     return (
-      <>
+      <div className='dialogs-container-main'>
         <div className="dialogs container__inner">
           <div
             className={
               butL === 2
                 ? " row twoAns"
                 : butL === 3
-                ? " row threeAns"
-                : butL === 4
-                ? " row fourAns"
-                : "row"
+                  ? " row threeAns"
+                  : butL === 4
+                    ? " row fourAns"
+                    : "row"
             }
           >
             <div className="col-lg-12">
               <div className="row justify-content-center">
                 <div className="col-md-12 dialogs-container">
-                  {messages &&
+                  {messages ?
                     messages.map((item, index) => (
                       <Dialog
                         key={index}
@@ -45,7 +45,7 @@ export default class Dialogs extends React.Component {
                         index={index}
                         buttons={buttons ? buttons : []}
                       />
-                    ))}
+                    )) : 'Вы вырыли большую яму и вот он! Сундук! Пора вскрывать!'}
                   {hints &&
                     hints.map((item, index) => (
                       <Dialog
@@ -62,7 +62,7 @@ export default class Dialogs extends React.Component {
             </div>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 }

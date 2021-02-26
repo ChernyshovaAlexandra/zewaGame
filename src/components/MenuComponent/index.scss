@@ -243,34 +243,5 @@
   // margin: 0;
   position: relative;
 
-  &::after,
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-    height: 600px;
-    width: 9rem;
-    background: url(../../img/menuComp.png) no-repeat left bottom;
-    background-size: contain;
-    z-index: 100;
-    animation: 2s appear linear 0.3s both;
-
-    @media screen and (max-width: 629px) {
-      display: none;
-    }
-
-  }
-
-  &::before {
-    left: auto;
-    right: 0;
-    background: url(../../img/menuComp2.png) no-repeat right bottom;
-    background-size: contain;
-    width: 8rem;
-    animation: 2.3s appearR linear 0.3s both;
-  }
-
+  
 }

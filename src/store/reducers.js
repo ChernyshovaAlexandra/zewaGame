@@ -20,12 +20,12 @@ import { combineReducers } from 'redux'
 export const defaultState =
 {
     rules: false,
-    start: true,
+    start: false,
     selected: false,
     results: false,
     quests: [],
     curHint: 0,
-    questWin: false,
+    questWin: true,
     questData: [],
     userData: false,
     questsReady: 0,

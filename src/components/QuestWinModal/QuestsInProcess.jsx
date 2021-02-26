@@ -81,32 +81,7 @@ class QuestsInProcess extends React.Component {
       <>
         <div className="container">
           <div className="row mainWinPart justify-content-center">
-            {/* <div className="col-lg-5">
-              <div className="row justify-content-between">
-                <div className="col-md-12">
-                  {questName[0] && (
-                    <h2
-                      dangerouslySetInnerHTML={{
-                        __html: questName[0].name,
-                      }}
-                    ></h2>
-                  )}
-                </div>
-                <div className="col-md-12">
-                  <div className="saleWin">
-                    <div className="logoB">
-                      <img src={magnit} alt="" />
-                      <img src={Zewa} alt="" />
-                    </div>
-                    <div className="saleWinBox">
-                      <p>Скидка</p>
-                      <p className="saleWinAmmount">???%</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            */}
+            
             <div className="col-lg-9">
               <div className="winBox">
                 {this.state.innerTxt ? (
