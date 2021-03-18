@@ -16,22 +16,25 @@ import {
     USER_DATA_FAILED
 } from './actionTypes'
 import { combineReducers } from 'redux'
+import { hashData } from './hashData'
+
 
 export const defaultState =
 {
     rules: false,
-    start: false,
+    start: true,
     selected: false,
     results: false,
     quests: [],
     curHint: 0,
-    questWin: true,
+    questWin: false,
     questData: [],
     userData: false,
     questsReady: 0,
     discount: '',
     curReadyQuest: 1,
-    userDataFailed: false
+    userDataFailed: false,
+    hashData: hashData
 }
 
 

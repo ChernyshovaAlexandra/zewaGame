@@ -1,8 +1,5 @@
 import React from "react";
 import "./index.scss";
-import zewa from "../../img/zewa.png";
-import delo from "../../img/logoGame.png";
-import magnit from "../../img/magnit-wh.png";
 import { connect } from "react-redux";
 import {
   startGame,
@@ -13,12 +10,12 @@ import {
   getQuest,
   getQuestList,
 } from "../../store/actions";
-import toiletPaper from "../../img/toilet-p-before.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import cancel from "../../img/cancel.png";
-import qI from '../../img/quest-1.jpg'
+import { QuestContainer } from './QuestContainer'
+import { Popup } from './Popup'
+import { Nav } from './Nav'
+
 
 class SelectQwest extends React.Component {
   constructor(props) {
@@ -41,12 +38,10 @@ class SelectQwest extends React.Component {
   };
 
   checkPopup = (index) => {
-
     const { quests } = this.props;
-    let q = quests.filter((item) => item.id === index);
+    let q = quests[0]; //.filter((item) => item.id === cur)
 
-
-    if (q[0].continue) {
+    if (q.continue) {
       this.setState({
         popup: index,
       });
@@ -57,120 +52,51 @@ class SelectQwest extends React.Component {
   };
 
   render() {
-    const settings = {
-      dots: true,
-      infinite: true,
-      speed: 500,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-    };
-    const { quests, startGame, questsReady } = this.props;
-    let remainedQuests = 4 - questsReady;
-    if (remainedQuests == -1) { remainedQuests = 0 }
+
+    const { quests, hash, hashData } = this.props;
+    let currentQuestId = hashData.filter(item => item.name == hash)[0].id
+    let currentQuestLogo = hashData.filter(item => item.name == hash)[0].logo
+    let currentQuestData = quests && quests.filter(item => item.id == currentQuestId)[0]
+
     const { popup } = this.state;
     return (
       <div className="selectQwest mainBG container">
-        <div className="row justify-content-between nav">
-          <div className="col-lg-2   animate__animated animate__fadeIn ">
-            <img src={zewa} alt="" />
-          </div>
-          <div className="col-lg-3   animate__animated animate__fadeIn sec">
-            <img src={delo} alt="" />
-          </div>
-
-        </div>
-        <div className="row justify-content-center nav-mob">
-          <div className="col-lg-5">
-            <img src={delo} alt="" />
-          </div>
-          <div className="col-lg-3">
-            <img src={zewa} alt="" />
-          </div>
-        </div>
+        <Nav
+          logo={hash ? currentQuestLogo : ''}
+        />
         <div className="row justify-content-center descriptionContainer">
           <div className="col-lg-5 header">
-            <h2 style={{ 'color': '#000' }}>Выбери квест </h2>
+            <h2 style={{ 'color': '#000' }}>{hash ? currentQuestData && currentQuestData.name : `Выбери квест`} </h2>
           </div>
         </div>
+        <div className={`${hash ? 'personal-quest' : ''} quest-content--inner`}>
+          {
+            hash ?
+              <>
+                {currentQuestData &&
+                  <QuestContainer
+                    personalQuest={true}
+                    item={currentQuestData}
+                    onClick={this.checkPopup}
+                  />}
+              </>
+              :
+              quests.map((item, id) => (
+                <QuestContainer
+                  item={item}
+                  onClick={this.checkPopup}
+                />
 
-        <div className="quest-content--inner">
-          <div className="quest-inner-content">
-            <div className="quest-inner">
-              <div className="imgContainer"><img src={qI} alt='' /></div>
-              <div className="dataConainer">
-                <h4>Загадка старого поместья</h4>
-                <p className="descriptionText">При поддержке онлайн-гипермаркета Утконос</p>
-                <button className="playBtn selectionBtn" onClick={() => this.checkPopup('item.id')}>Играть</button>
-              </div>
-            </div>
-          </div>
-          <div className="quest-inner-content">
-            <div className="quest-inner">
-              <div className="imgContainer"><img src={qI} alt='' /></div>
-              <div className="dataConainer">
-                <h4>Загадка старого поместья</h4>
-                <p className="descriptionText">При поддержке онлайн-гипермаркета Утконос</p>
-                <button className="playBtn selectionBtn" >Играть</button>
-              </div>
-            </div>
-          </div>
-          <div className="quest-inner-content">
-            <div className="quest-inner">
-              <div className="imgContainer"><img src={qI} alt='' /></div>
-              <div className="dataConainer">
-                <h4>Загадка старого поместья</h4>
-                <p className="descriptionText">При поддержке онлайн-гипермаркета Утконос</p>
-                <button className="playBtn selectionBtn" >Играть</button>
-              </div>
-            </div>
-          </div>
-          <div className="quest-inner-content">
-            <div className="quest-inner">
-              <div className="imgContainer"><img src={qI} alt='' /></div>
-              <div className="dataConainer">
-                <h4>Загадка старого поместья</h4>
-                <p className="descriptionText">При поддержке онлайн-гипермаркета Утконос</p>
-                <button className="playBtn selectionBtn" >Играть</button>
-              </div>
-            </div>
-          </div>
+              ))}
+
         </div>
-        {popup && (
-          <div className="modal-popup ">
-            <div className="row justify-content-center align-items-center">
-              <div className="col-lg-9 modal-Popup__content-inner">
-                <div
-                  className="cancelBut"
-                  onClick={() => this.setState({ popup: false })}
-                >
-                  <img src={cancel} alt="" />
-                </div>
-                <div className="modal-container-popup">
-                  Кажется, вы уже начали проходить этот квест. Хотите
-                  продолжить?
-                    <div className="row justify-content-center buttonsSet">
-                    <div className="col-lg-auto">
-                      <button
-                        className="playBtn selectionBtn againBut"
-                        onClick={() => this.setReady(popup, true)}
-                      >
-                        Продолжить
-                        </button>
-                    </div>
-                    <div className="col-lg-auto">
-                      <button
-                        className="playBtn selectionBtn"
-                        onClick={() => this.setReady(popup, false)}
-                      >
-                        Заново
-                        </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        { popup &&
+          <Popup
+            setReady={this.setReady}
+            cancelClick={() => this.setState({ popup: false })}
+            popup={popup}
+          />
+        }
       </div>
     );
   }
@@ -182,6 +108,7 @@ const mapStateToProps = (state) => {
     questData: state.store.questData,
     userData: state.store.userData,
     questsReady: state.store.questsReady,
+    hashData: state.store.hashData,
   };
 };
 

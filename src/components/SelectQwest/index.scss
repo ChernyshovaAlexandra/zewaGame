@@ -21,10 +21,8 @@ $blue: #2bafec;
     color: #ffffff;
     position: relative;
 
-
-
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
@@ -66,7 +64,7 @@ $blue: #2bafec;
     }
 
     .descriptionContainer {
-      margin-bottom: .6rem;
+      margin-bottom: 0.6rem;
 
       p.nav-mob {
         margin-bottom: 1rem;
@@ -110,7 +108,7 @@ $blue: #2bafec;
           max-width: 100%;
         }
 
-        +.row {
+        + .row {
           display: none;
         }
       }
@@ -557,26 +555,33 @@ $blue: #2bafec;
   max-height: 70%;
   grid-gap: 15px;
   width: 100%;
-
+  position: relative;
+  z-index: 100;
+  &.personal-quest {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    place-items: center;
+    height: 100%;
+  }
   .quest-inner-content {
     position: relative;
     background: #fff;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       left: -3px;
       top: -3px;
       width: calc(100% + 6px);
       height: calc(100% + 6px);
-      background: linear-gradient(#ECC440, #FFFA8A, #DDAC17, #FFFF95);
+      background: linear-gradient(#ecc440, #fffa8a, #ddac17, #ffff95);
     }
   }
 
   .quest-inner {
     background: #fff;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: .85rem;
+    padding: 0.85rem;
     display: grid;
     grid-template-rows: 50% 50%;
     max-height: 100%;
@@ -586,12 +591,12 @@ $blue: #2bafec;
     h4 {
       color: #000 !important;
       font-size: 1.2rem;
-      margin-bottom: .25rem;
+      margin-bottom: 0.25rem;
     }
 
     .descriptionText {
       color: #808080 !important;
-      font-size: .65rem;
+      font-size: 0.65rem;
       margin-bottom: 0 !important;
     }
 
@@ -603,9 +608,9 @@ $blue: #2bafec;
         height: 100%;
         object-fit: cover;
         object-position: center;
+        min-height: 6rem;
       }
     }
-
 
     .playBtn {
       max-width: 50%;
@@ -619,7 +624,34 @@ $blue: #2bafec;
     }
   }
 
-  @media screen and (max-width:600px) {
+  @media screen and (max-width: 600px) {
     grid-template-columns: 1fr;
+  }
+}
+
+.navigation {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  margin-bottom: 2rem;
+
+  .logotipy {
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: auto auto;
+    place-content: center;
+    place-items: center;
+    place-self: center start;
+    .logo-1 {
+      border-right: 3px solid #fff;
+      padding-right: 1rem;
+    }
+  }
+  .gameName {
+    place-self: center end;
+  }
+  img {
+    max-height: 3rem;
+    max-width: 8rem;
   }
 }

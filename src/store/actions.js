@@ -199,6 +199,7 @@ export const getQuestList = (vk_id) => {
                 isReady: item.isFinished ? item.isFinished : false
             }
         })
+        console.log(quests)
         if (jsR.finished_quests_count) {
             dispatch({
                 type: SET_QUEST_READY,

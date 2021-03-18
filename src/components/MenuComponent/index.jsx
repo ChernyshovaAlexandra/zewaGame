@@ -29,7 +29,7 @@ class Menu extends React.Component {
 
 
   render() {
-    const { showRules, questWin, userData, showRes, winners } = this.props;
+    const { showRules, questWin, userData, showRes, winners, hash } = this.props;
     const { popup } = this.state
 
 
@@ -62,7 +62,7 @@ class Menu extends React.Component {
           </div>
         </div>
 
-        {userData ? (
+        {!userData ? (
           <div className="modal-popup ">
             <div className="row justify-content-center align-items-center">
               <div className="col-lg-9 modal-Popup__content-inner">
@@ -92,55 +92,55 @@ class Menu extends React.Component {
             {questWin ? (
               <QuestWinModal />
             ) : (
-                <div className="row justify-content-center navigation">
-                  <div className="col-lg-6">
-                    <div className="row justify-content-center">
-                      <div className="col-md-auto animate__animated animate__bounceIn first">
-                        <button
-                          className="selectionBtn pink"
-                          onClick={() => this.props.startGame(true)}
-                          style={{
-                            width: "-webkit-max-content",
-                          }}
-                        >
-                          Начать игру
+              <div className="row justify-content-center navigation">
+                <div className="col-lg-6">
+                  <div className="row justify-content-center">
+                    <div className="col-md-auto animate__animated animate__bounceIn first">
+                      <button
+                        className="selectionBtn pink"
+                        onClick={() => this.props.startGame(true)}
+                        style={{
+                          width: "-webkit-max-content",
+                        }}
+                      >
+                        Начать игру
                           </button>
-                      </div>
                     </div>
-                    {winners && <div className="row justify-content-center">
-                      <div className="col-md-auto animate__animated animate__bounceIn sec">
-                        <button
-                          className="selectionBtn"
-                          onClick={() => showRes(true)}
-                        >
-                          Победители
+                  </div>
+                  {winners && <div className="row justify-content-center">
+                    <div className="col-md-auto animate__animated animate__bounceIn sec">
+                      <button
+                        className="selectionBtn"
+                        onClick={() => showRes(true)}
+                      >
+                        Победители
                         </button>
-                      </div>
-                    </div>}
-                    <div className="row justify-content-center">
-                      <div className="col-md-auto animate__animated animate__bounceIn sec">
-                        <button
-                          className="selectionBtn"
-                          onClick={() => showRules(true)}
-                        >
-                          Правила
-                  </button>
-                      </div>
                     </div>
-
-                    <div className="row justify-content-center animate__bounceIn">
-                      <div className="col-md-auto animate__animated animate__bounceIn thrd">
-                        <button
-                          className="selectionBtn"
-                          onClick={() => this.closeApp()}
-                        >
-                          Выход
+                  </div>}
+                  <div className="row justify-content-center">
+                    <div className="col-md-auto animate__animated animate__bounceIn sec">
+                      <button
+                        className="selectionBtn"
+                        onClick={() => showRules(true)}
+                      >
+                        Правила
                   </button>
-                      </div>
+                    </div>
+                  </div>
+
+                  <div className="row justify-content-center animate__bounceIn">
+                    <div className="col-md-auto animate__animated animate__bounceIn thrd">
+                      <button
+                        className="selectionBtn"
+                        onClick={() => this.closeApp()}
+                      >
+                        Выход
+                  </button>
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
+            )}
 
 
 

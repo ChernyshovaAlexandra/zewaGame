@@ -29,11 +29,12 @@ class App extends React.Component {
 			})
 
 		}, 3000)
+
 	}
 
 
 	render() {
-		const { start, selected, questWin, rules, results } = this.props
+		const { start, selected, questWin, rules, results, hash } = this.props
 		const { loaded } = this.state
 		return (
 			<div className="gameContainer">
@@ -48,7 +49,7 @@ class App extends React.Component {
 								selected ?
 									<Main /> :
 									start ?
-										<SelectQwest /> :
+										<SelectQwest hash={hash} /> :
 										loaded ?
 											<Menu name={this.state.nameForH2} /> :
 											<LoadingComponent />

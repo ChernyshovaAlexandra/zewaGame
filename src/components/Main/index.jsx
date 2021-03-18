@@ -36,7 +36,7 @@ class Main extends React.Component {
     }, 3000);
   }
   render() {
-    const { questData, comics } = this.props;
+    const { questData, comics, hash } = this.props;
 
     return (
       <section className="selectQwest mainBG container">
