@@ -9,21 +9,25 @@ export const hashData = [
     {
         name: 'ozon',
         id: 1,
-        logo: ozon
+        logo: ozon,
+        company: 'в онлайн-гипермаркете Ozon'
     },
     {
         name: 'sbermarket',
         id: 2,
-        logo: sbermarket
+        logo: sbermarket,
+        company: 'в сервисе онлайн-доставки СберМаркет'
     },
     {
         name: 'yandex',
         id: 3,
-        logo: yandex
+        logo: yandex,
+        company: 'на сервисе Яндекс.Маркет'
     },
     {
         name: 'utkonos',
         id: 4,
-        logo: utkonos
+        logo: utkonos,
+        company: 'в Утконос ОНЛАЙН'
     }
 ]

@@ -8,7 +8,7 @@ import img from '../../img/img.jpg'
 export default class QuestSelect extends React.Component {
     render() {
         const { questData, comics } = this.props
-
+        console.log('questSelect', questData, comics)
         return (
             <>
                 { questData &&

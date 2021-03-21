@@ -25,10 +25,9 @@ class QuestsInProcess extends React.Component {
     };
   }
   componentDidMount = async () => {
-    let quest = 2;
-    let vk_id = 9801302
+    const { userData, currentQuest } = this.props
     let th = this
-    axios.post(`https://newback.zewaquests.ru/api/promocode/${quest}`, { vk_id: vk_id })
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`, { vk_id: userData.vk_id })
       .then((response) => {
         console.log(response.data)
         th.setState({
@@ -47,6 +46,14 @@ class QuestsInProcess extends React.Component {
         selected: true
       })
     }, 200)
+
+
+    const { userData, currentQuest } = this.props
+    let th = this
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
+      .then((response) => {
+        console.log(response.data)
+      })
   }
 
   reSend_AllowMessages = () => {
@@ -104,7 +111,7 @@ class QuestsInProcess extends React.Component {
   };
 
   render() {
-    const { quests, logotip, curReadyQuest, showWinQModal } = this.props;
+    const { quests, curQuest, curReadyQuest, showWinQModal } = this.props;
     const { flipped, canClick, selected, amount } = this.state
     let questName = quests.filter((item) => item.id === curReadyQuest);
 
@@ -170,7 +177,7 @@ class QuestsInProcess extends React.Component {
                       и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
                     </h4>}
                     <WinBlocks
-                      logo={logotip}
+                      logo={curQuest}
                       flipped={flipped}
                       canClick={canClick}
                       toggleCard={this.toggleCard}
@@ -198,6 +205,7 @@ const mapStateToProps = (state) => {
     questsReady: state.store.questsReady,
     repost: state.store.repost,
     curReadyQuest: state.store.curReadyQuest,
+    currentQuest: state.store.currentQuest,
   };
 };
 

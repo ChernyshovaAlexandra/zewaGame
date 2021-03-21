@@ -65,7 +65,7 @@ class QuestWinModal extends React.Component {
 
   render() {
     const { questsReady, currentQuest, hashData } = this.props;
-    let logotip = hashData.filter(item => item.id === currentQuest)[0].logo
+    let curQuest = hashData.filter(item => item.id === currentQuest)[0]
 
     return (
       <section className="menu win">
@@ -89,7 +89,7 @@ class QuestWinModal extends React.Component {
             <img alt="" src={magnit} />
           </div>
         </div>
-        {questsReady < 4 ? <QuestsInProcess logotip={logotip} /> : <AllQuestsFinished />}
+        {questsReady < 4 ? <QuestsInProcess curQuest={curQuest} /> : <AllQuestsFinished />}
       </section>
     );
   }

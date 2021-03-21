@@ -16,7 +16,7 @@ const cards = [
 
 
 
-const Back = ({ amount, logo }) => {
+const Back = ({ amount, logo, company }) => {
     return (
         <div>
             <div className="navRow">
@@ -24,12 +24,14 @@ const Back = ({ amount, logo }) => {
                 <img src={zewa} />
             </div>
             <div className="contentText">Вы получили подарочный
-промокод на покупку продукции Zewa в онлайн-гипермаркете Ozon</div>
+                    промокод на покупку продукции Zewa {company}</div>
             <div className="promocode">Промокод {amount + '%'}</div>
             <div className="icon">
                 <img src={present} alt="" />
             </div>
-            <div className="btn selectionBtn">Забрать подарок</div>
+            <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
+                <div className="btn selectionBtn">Забрать подарок</div>
+            </a>
         </div>
     )
 }
@@ -50,7 +52,7 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
                     key={item.id}>
                     <div className="front">
                         <div className="logo-company">
-                            <img src={logo} />
+                            <img src={logo.logo} />
                         </div>
                     </div>
                     <div className="back">
@@ -58,7 +60,8 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
                             <div className="content-inner">
                                 <Back
                                     amount={amount}
-                                    logo={logo}
+                                    logo={logo.logo}
+                                    company={logo.company}
                                 />
                             </div>
                         </div>
