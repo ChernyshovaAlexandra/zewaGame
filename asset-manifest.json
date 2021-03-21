@@ -1,19 +1,19 @@
 {
   "files": {
     "main.css": "./static/css/main.be8b5191.chunk.css",
-    "main.js": "./static/js/main.abe27194.chunk.js",
-    "main.js.map": "./static/js/main.abe27194.chunk.js.map",
+    "main.js": "./static/js/main.a218bff1.chunk.js",
+    "main.js.map": "./static/js/main.a218bff1.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.785f45fe.js",
     "runtime-main.js.map": "./static/js/runtime-main.785f45fe.js.map",
     "static/css/2.c7dcdf94.chunk.css": "./static/css/2.c7dcdf94.chunk.css",
-    "static/js/2.98d112b7.chunk.js": "./static/js/2.98d112b7.chunk.js",
-    "static/js/2.98d112b7.chunk.js.map": "./static/js/2.98d112b7.chunk.js.map",
+    "static/js/2.c05641af.chunk.js": "./static/js/2.c05641af.chunk.js",
+    "static/js/2.c05641af.chunk.js.map": "./static/js/2.c05641af.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.64547db69786aa27cff681bd3e8da8dc.js": "./precache-manifest.64547db69786aa27cff681bd3e8da8dc.js",
+    "precache-manifest.eae8e0899fb911435160da49565d1a56.js": "./precache-manifest.eae8e0899fb911435160da49565d1a56.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.c7dcdf94.chunk.css.map": "./static/css/2.c7dcdf94.chunk.css.map",
     "static/css/main.be8b5191.chunk.css.map": "./static/css/main.be8b5191.chunk.css.map",
-    "static/js/2.98d112b7.chunk.js.LICENSE.txt": "./static/js/2.98d112b7.chunk.js.LICENSE.txt",
+    "static/js/2.c05641af.chunk.js.LICENSE.txt": "./static/js/2.c05641af.chunk.js.LICENSE.txt",
     "static/media/index.scss": "./static/media/winCard-bg.f57c9f4d.png",
     "static/media/App.scss": "./static/media/AcerFoco_Rg.9dd8c37c.ttf",
     "static/media/Rules.pdf": "./static/media/Rules.a3dbccde.pdf",
@@ -26,8 +26,8 @@
   "entrypoints": [
     "static/js/runtime-main.785f45fe.js",
     "static/css/2.c7dcdf94.chunk.css",
-    "static/js/2.98d112b7.chunk.js",
+    "static/js/2.c05641af.chunk.js",
     "static/css/main.be8b5191.chunk.css",
-    "static/js/main.abe27194.chunk.js"
+    "static/js/main.a218bff1.chunk.js"
   ]
 }
