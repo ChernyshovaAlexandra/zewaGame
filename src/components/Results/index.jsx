@@ -45,30 +45,6 @@ class Results extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-center nav-mob">
-                        <div className="col-lg-4">
-                            <div className="backContainer">   <button
-                                style={{
-                                    position: "static",
-                                    margin: "0 auto",
-                                    display: "block",
-                                }}
-                                className="back pinkTxt"
-                                onClick={() => {
-                                    showRes(false);
-                                }}
-                            >
-                                В меню  </button>
-                            </div>
-
-                        </div>
-                        <div className="col-lg-3">
-                            <img src={Zewa} alt="" />
-                        </div>
-                        <div className="col-lg-5">
-                            <img src={magnit2} alt="" />
-                        </div>
-                    </div>
 
                     <div className="row justify-content-center for-rules ">
                         <div className="col-lg-auto">

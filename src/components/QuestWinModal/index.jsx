@@ -78,17 +78,6 @@ class QuestWinModal extends React.Component {
           </div>
         </div>
 
-        <div className="row justify-content-center nav-mob">
-          <div className="col-lg-4">
-            <img alt="" src={delo} />
-          </div>
-          <div className="col-lg-3">
-            <img alt="" src={zewa} />
-          </div>
-          <div className="col-lg-4">
-            <img alt="" src={magnit} />
-          </div>
-        </div>
         {questsReady < 4 ? <QuestsInProcess curQuest={curQuest} /> : <AllQuestsFinished />}
       </section>
     );

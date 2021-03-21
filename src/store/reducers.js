@@ -36,7 +36,7 @@ export const defaultState =
     curReadyQuest: 1,
     userDataFailed: false,
     hashData: hashData,
-    currentQuest: null
+    currentQuest: 1
 }
 
 

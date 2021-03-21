@@ -23,15 +23,15 @@ const Back = ({ amount, logo, company }) => {
                 <img src={logo} />
                 <img src={zewa} />
             </div>
-            <div className="contentText">Вы получили подарочный
-                    промокод на покупку продукции Zewa {company}</div>
-            <div className="promocode">Промокод {amount + '%'}</div>
+            {company && <div className="contentText">Вы {!amount && 'уже'} получили подарочный
+                    промокод на покупку продукции Zewa {company}</div>}
+            {amount && <div className="promocode">Промокод {amount + '%'}</div>}
             <div className="icon">
                 <img src={present} alt="" />
             </div>
-            <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
+            {amount && <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
                 <div className="btn selectionBtn">Забрать подарок</div>
-            </a>
+            </a>}
         </div>
     )
 }

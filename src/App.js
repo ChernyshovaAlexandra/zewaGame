@@ -42,7 +42,7 @@ class App extends React.Component {
 						loaded: true
 					})
 
-				}, 300)
+				}, 30)
 			})
 
 	}

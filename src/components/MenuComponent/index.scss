@@ -71,6 +71,9 @@
       height: 20.3%;
       transform: rotate(-38.72deg);
     }
+    @media screen and (max-width: 629px) {
+      display: none;
+    }
   }
 
   @media screen and (max-width: 629px) {

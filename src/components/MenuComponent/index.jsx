@@ -50,17 +50,7 @@ class Menu extends React.Component {
             <img src={logoGame} alt="" />
           </div>
         </div>
-        <div className="row justify-content-center nav-mob">
-          <div className="col-lg-5">
-            <img src={logoGame} alt="" />
-          </div>
-          <div className="col-lg-3">
-            <img src={Zewa} alt="" />
-          </div>
-          <div className="col-lg-4">
-            <img src={magnit2} alt="" />
-          </div>
-        </div>
+        
 
         {!userData ? (
           <div className="modal-popup ">
@@ -83,10 +73,10 @@ class Menu extends React.Component {
               <div className="col-lg-9">
                 {/* <p>Акция уже закончилась</p> */}
                 <p className="ml3">
-                  Привет, <span>{userData.nameHeader ? userData.nameHeader : 'user'}</span>. Играй и получай скидочные купоны на продукцию{' '}
-              Zewa в сети магазинов Магнит. Пройди все квесты и участвуй в розыгрыше купона номиналом{' '}
-                  <span className="special">3000&#160;рублей</span> на продукцию сети магазинов Магнит
-            </p>
+                  Привет, <span>{userData.nameHeader ? userData.nameHeader : 'user'}</span>. Играй и получай скидки до 60% на покупку продукции{' '}
+              Zewa. Пройди все квесты и участвуй в еженедельном розыгрыше подарочных купонов на{' '}
+                  <span className="special">3000&#160;рублей</span>.
+                </p>
               </div>
             </div>
             {questWin ? (

@@ -45,28 +45,6 @@ class Main extends React.Component {
         <Nav
           logo={logo && logo}
         />
-
-        <div className="row justify-content-center nav-mob">
-          <div className="col-lg-4">
-            <div className="backContainer">
-              <button
-                style={{ display: "block", position: "static", margin: "auto" }}
-                className="back pinkTxt"
-                onClick={() => {
-                  this.handleClick();
-                }}
-              >
-                В меню
-            </button>
-            </div>
-          </div>
-          <div className="col-lg-3">
-            <img alt="" src={zewa} />
-          </div>
-          <div className="col-lg-5">
-            <img alt="" src={magnit} />
-          </div>
-        </div>
         {!this.state.loaded && (
           <div className="loadingComp">
             <div className="row justify-content-center">

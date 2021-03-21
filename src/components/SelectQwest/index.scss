@@ -33,7 +33,9 @@ $blue: #2bafec;
     }
 
     @media screen and(max-width: 629px) {
-      height: 100vh;
+      min-height: 100vh;
+      width: 100%;
+      height: fit-content;
     }
 
     .nav {
