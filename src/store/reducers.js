@@ -23,7 +23,7 @@ import { hashData } from './hashData'
 export const defaultState =
 {
     rules: false,
-    start: true,
+    start: false,
     selected: false,
     results: false,
     quests: [],

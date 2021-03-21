@@ -10,7 +10,6 @@ import {
 import { WinBlocks } from './WinBlocks'
 import "./index.scss";
 import bridge from "@vkontakte/vk-bridge";
-import ozon from '../../img/logos/ozon.png'
 import axios from 'axios'
 
 class QuestsInProcess extends React.Component {
@@ -21,19 +20,27 @@ class QuestsInProcess extends React.Component {
       flipped: false,
       selected: false,
       canClick: true,
-      amount: false
+      amount: false,
+      no_prize: true
     };
   }
   componentDidMount = async () => {
-    const { userData, currentQuest } = this.props
+    // const { userData, currentQuest } = this.props
     let th = this
+    let currentQuest = 2
+    let userData = { vk_id: 9801302 }
     axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`, { vk_id: userData.vk_id })
       .then((response) => {
-        console.log(response.data)
-        th.setState({
-          amount: response.data.amount
-        })
-        // }
+        if (response.data.message) {
+          this.setState({
+            no_prize: true
+          })
+        } else {
+          th.setState({
+            amount: response.data.amount,
+            no_prize: false
+          })
+        }
       })
   }
   toggleCard = (index) => {
@@ -50,9 +57,8 @@ class QuestsInProcess extends React.Component {
 
     const { userData, currentQuest } = this.props
     let th = this
-    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest ? currentQuest : 4}/execute`, { vk_id: userData.vk_id })
       .then((response) => {
-        console.log(response.data)
       })
   }
 
@@ -112,16 +118,18 @@ class QuestsInProcess extends React.Component {
 
   render() {
     const { quests, curQuest, curReadyQuest, showWinQModal } = this.props;
-    const { flipped, canClick, selected, amount } = this.state
+    const { flipped, canClick, selected, amount, no_prize } = this.state
     let questName = quests.filter((item) => item.id === curReadyQuest);
 
     return (
       <>
         <div className="container">
+
           <div className="row mainWinPart justify-content-center">
 
             <div className="col">
               <div className="winBox">
+
                 {this.state.innerTxt ? (
                   <>
                     <h4
@@ -172,18 +180,21 @@ class QuestsInProcess extends React.Component {
                   </>
                 ) : (
                   <>
+
                     {!selected && <h4>
-                      Вы успешно разгадали квест
-                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
+                      {no_prize === false ? `Вы успешно разгадали квест
+                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!` :
+                        `Вы уже забрали приз за прохождение этого квеста.`}
                     </h4>}
-                    <WinBlocks
-                      logo={curQuest}
-                      flipped={flipped}
-                      canClick={canClick}
-                      toggleCard={this.toggleCard}
-                      selected={selected}
-                      amount={amount}
-                    />
+                    {no_prize === false &&
+                      <WinBlocks
+                        logo={curQuest}
+                        flipped={flipped}
+                        canClick={canClick}
+                        toggleCard={this.toggleCard}
+                        selected={selected}
+                        amount={amount}
+                      />}
                   </>
                 )}
               </div>

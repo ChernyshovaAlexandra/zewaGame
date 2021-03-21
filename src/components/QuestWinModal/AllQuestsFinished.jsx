@@ -8,6 +8,9 @@ import {
   didRepost,
 } from "../../store/actions";
 import vk from "../../img/vk-social-network-logo.png";
+import present from '../../img/present-icon-2.png';
+
+
 
 class AllQuestsFinished extends React.Component {
   constructor(props) {
@@ -129,129 +132,59 @@ class AllQuestsFinished extends React.Component {
 
     return (
       <>
+        <div className="photoBlock">
+          <div className="ph-1"></div>
+          <div className="ph-2"></div>
+          <div className="ph-3"></div>
+          <div className="ph-4"></div>
+
+        </div>
         <div className="container">
           <div className="row mainWinPart justify-content-center">
 
             <div className="col">
               <div className="winBox">
                 <div className="row justify-content-center buttonSet">
-                  {this.state.wantToShare ? (
-                    <div className="col-md-12">
-                      <div className="row">
-                        <div className="col-lg-12">
-                          <h4
-                            dangerouslySetInnerHTML={{
-                              __html: this.state.message,
-                            }}
-                          ></h4>
-                        </div>
-                      </div>
-                      {this.state.buttonTxt2 && (
-                        <div className="col-md-12">
-                          <button
-                            className="btn pink selectionBtn"
-                            onClick={() => {
-                              this.getMyKupon();
-                            }}
-                          >
-                            {this.state.buttonTxt2}
-                          </button>
-                        </div>
-                      )}
-                      <div className="row justify-content-center">
-                        <div className="col-lg-auto cancel-repost">
-                          <a
-                            onClick={() => {
-                              showWinQModal(userData.vk_id, false);
-                            }}
-                          >
-                            Выйти в главное меню
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  ) : this.state.wantToQuit ? (
-                    <>
-                      <div className="col-md-12">
-                        <h4>{this.state.message}</h4>
-                      </div>
-                      <div className="col-md-12">
-                        <a
-                          href="https://vk.com/im?sel=-137564571"
-                          target="_blank"
-                          style={{ textDecoration: "none" }}
-                        >
-                          {this.state.button && (
-                            <button className="btn pink selectionBtn">
-                              Забрать скидку
-                            </button>
-                          )}
-                        </a>
-                      </div>
-                      <div className="row justify-content-center">
-                        <div className="col-lg-auto cancel-repost">
-                          <a
-                            onClick={() => {
-                              showWinQModal(userData.vk_id, false);
-                            }}
-                          >
-                            Выйти в главное меню
-                          </a>
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="col-md-12">
-                      <h4>
-                        Поздравляем! Вы разгадали все квесты, и заслужили скидку! Мы пришлем вам ее в личные сообщения
-                              <p>Сделайте репост, для того чтобы</p>
-                      </h4>
-                      <div
-                        className="rulesBox"
-                        style={{ background: "none", padding: "0 1rem" }}
-                      >
-                        <ul>
-                          <li>
-                            Участвовать в розыгрыше подарочного купона на 3000
-                            рублей.
-                            </li>
-                        </ul>
-                        <div className="row justify-content-center">
-                          <div className="col-lg-12">
-                            <button
-                              className="btn selectionBtn pink"
-                              onClick={() => {
-                                this.share();
-                              }}
-                            >
-                              Поделиться <img src={vk} alt="" />
-                            </button>
+                  {!this.state.wantToQuit && (
+                    <div className="col-md-12 win-blocks-container selected">
+
+                      <div className="backContainer win-block">
+                        <div className="content-inner">
+                          <h4>Это еще не все! Сделайте репост и участвуйте в розыгрыше</h4>
+                          <div className="icon">
+                            <img src={present} />
                           </div>
-                        </div>
-                        <div className="row justify-content-center">
-                          <div className="col-lg-12">
-                            <button
-                              className="btn selectionBtn pink"
-                              onClick={() => {
-                                this.getMyKupon();
-                              }}
-                            >
-                              Забрать скидку</button>
-                          </div>
-                        </div>
-                        <div className="row justify-content-center">
-                          <div className="col-lg-auto cancel-repost">
-                            <a
-                              onClick={() => {
-                                showWinQModal(userData.vk_id, false);
-                              }}
-                            >
-                              Отказаться и выйти в главное меню
+                          <div
+                            className="rulesBox"
+                            style={{ background: "none", padding: "0 1rem" }}
+                          >
+                            <div className="row justify-content-center">
+                              <div className="col-lg-12">
+                                <button
+                                  className="btn selectionBtn pink"
+                                  onClick={() => {
+                                    this.share();
+                                  }}
+                                >
+                                  Поделиться <img src={vk} alt="" />
+                                </button>
+                              </div>
+                            </div>
+                            <div className="row justify-content-center">
+                              <div className="col-lg-auto cancel-repost">
+                                <a
+                                  onClick={() => {
+                                    showWinQModal(userData.vk_id, false);
+                                  }}
+                                >
+                                  Отказаться и выйти в главное меню
                               </a>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+
+                      </div></div>
                   )}
                 </div>
               </div>

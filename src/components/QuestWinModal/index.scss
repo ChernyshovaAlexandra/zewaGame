@@ -1,5 +1,13 @@
 .menu {
   &.win {
+    &:not(.in-process) {
+      background: url(../../img/Overlay.jpg) no-repeat center;
+      background-size: cover;
+    }
+    .container {
+      position: relative;
+      z-index: 300;
+    }
     .btn {
       padding: 0 3rem;
       font-size: 1rem;
@@ -485,9 +493,18 @@
   }
   @media screen and (max-width: 629px) {
     grid-template-columns: 1fr 1fr;
-    .block-win {
-      &:last-child {
-        // place-self: center;
+  }
+}
+.win:not(.in-process) {
+  .winBox {
+    .backContainer {
+      position: static;
+      max-width: 60%;
+      margin: auto;
+      padding: 4px;
+      .content-inner {
+        background: #fff;
+        padding: 1rem;
       }
     }
   }

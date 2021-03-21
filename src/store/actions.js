@@ -136,7 +136,6 @@ export const setNextMessage = (vk_id, quest_id) => {
                 })
             })
         let jsR = await response.json()
-        console.log(jsR.final)
         if (!jsR.error) {
             if (jsR.desktop) {
                 dispatch({

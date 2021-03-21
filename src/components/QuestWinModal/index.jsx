@@ -64,11 +64,13 @@ class QuestWinModal extends React.Component {
   };
 
   render() {
-    const { questsReady, currentQuest, hashData } = this.props;
+    const { questsReady, currentQuest, hashData, userData } = this.props;
     let curQuest = hashData.filter(item => item.id === currentQuest)[0]
 
     return (
-      <section className="menu win">
+      <section
+        className={`menu win ${questsReady < 4 ? "in-process" : ''}`}
+      >
         <div className="row justify-content-center nav">
           <div className="col-lg-3">
             <img src={Zewa} alt="" />
@@ -77,7 +79,32 @@ class QuestWinModal extends React.Component {
             <img src={logoGame} alt="" />
           </div>
         </div>
+        <div className="row">
 
+          <div className="col-lg-3">
+            <div className="backContainer"
+              style={{
+                position: 'relative',
+                top: 0,
+                padding: '3px',
+                width: 'fit-content',
+              }}>
+              <button
+                style={{
+                  position: "static",
+                  margin: "0 auto",
+                  display: "block",
+                }}
+                className="back pinkTxt"
+                onClick={() => {
+                  showWinQModal(userData.vk_id, false);
+                }}
+              >
+                В меню
+              </button>
+            </div>
+          </div>
+        </div>
         {questsReady < 4 ? <QuestsInProcess curQuest={curQuest} /> : <AllQuestsFinished />}
       </section>
     );
