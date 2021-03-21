@@ -64,7 +64,8 @@ class QuestWinModal extends React.Component {
   };
 
   render() {
-    const { questsReady } = this.props;
+    const { questsReady, currentQuest, hashData } = this.props;
+    let logotip = hashData.filter(item => item.id === currentQuest)[0].logo
 
     return (
       <section className="menu win">
@@ -88,7 +89,7 @@ class QuestWinModal extends React.Component {
             <img alt="" src={magnit} />
           </div>
         </div>
-        {questsReady < 5 ? <QuestsInProcess /> : <AllQuestsFinished />}
+        {questsReady < 4 ? <QuestsInProcess logotip={logotip} /> : <AllQuestsFinished />}
       </section>
     );
   }
@@ -103,6 +104,8 @@ const mapStateToProps = (state) => {
     discount: state.store.discount,
     questsReady: state.store.questsReady,
     repost: state.store.repost,
+    currentQuest: state.store.currentQuest,
+    hashData: state.store.hashData
   };
 };
 

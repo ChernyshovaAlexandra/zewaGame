@@ -1,5 +1,7 @@
 import React from 'react';
-
+import present from '../../img/present-icon.png'
+import ozon from '../../img/logos/ozon.png'
+import zewa from '../../img/zewa.png'
 
 const cards = [
     {
@@ -13,14 +15,37 @@ const cards = [
 ]
 
 
-export const WinBlocks = ({ logo, flipped, toggleCard }) => {
 
-
+const Back = ({ amount, logo }) => {
     return (
-        <div className='win-blocks-container'>
-            {cards.map(item => (
+        <div>
+            <div className="navRow">
+                <img src={logo} />
+                <img src={zewa} />
+            </div>
+            <div className="contentText">Вы получили подарочный
+промокод на покупку продукции Zewa в онлайн-гипермаркете Ozon</div>
+            <div className="promocode">Промокод {amount + '%'}</div>
+            <div className="icon">
+                <img src={present} alt="" />
+            </div>
+            <div className="btn selectionBtn">Забрать подарок</div>
+        </div>
+    )
+}
+
+
+export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount }) => {
+
+
+    if (selected) {
+        let item = cards[flipped]
+        return (
+            <div
+                className={`${selected ? 'selected ' : ''}win-blocks-container`}
+            >
                 <div
-                    onClick={() => toggleCard(item.id)}
+                    onClick={canClick && (() => toggleCard(item.id))}
                     className={`block-win ${flipped === item.id ? 'flipped' : ''}`}
                     key={item.id}>
                     <div className="front">
@@ -29,7 +54,38 @@ export const WinBlocks = ({ logo, flipped, toggleCard }) => {
                         </div>
                     </div>
                     <div className="back">
-                        ВЫ выиграли 
+                        <div className="backContainer">
+                            <div className="content-inner">
+                                <Back
+                                    amount={amount}
+                                    logo={logo}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+
+    return (
+        <div className='win-blocks-container'>
+            {cards.map(item => (
+                <div
+                    onClick={canClick && (() => toggleCard(item.id))}
+                    className={`block-win ${flipped === item.id ? 'flipped' : ''}`}
+                    key={item.id}>
+                    <div className="front">
+                        <div className="logo-company">
+                            <img src={logo} />
+                        </div>
+                    </div>
+                    <div className="back">
+                        <div className="backContainer">
+                            <div className="content-inner">
+                                <Back />
+                            </div>
+                        </div>
                     </div>
                 </div>))}
         </div>

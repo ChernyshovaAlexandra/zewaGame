@@ -302,13 +302,62 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 1rem;
-  perspective: 200px;
+  perspective: 800px;
   transition: all 0.3s ease;
+
+  &.selected {
+    grid-template-columns: 1fr;
+    place-content: center;
+    max-width: 62%;
+    margin: auto;
+    position: relative;
+    top: -1.5rem;
+    .navRow {
+      display: grid;
+      grid-template-columns: auto auto;
+      place-items: center;
+      grid-gap: 1rem;
+      margin-bottom: 1rem;
+
+      img {
+        max-height: 3rem;
+        max-width: 7rem;
+        &:first-child {
+          place-self: center end;
+          padding-right: 1rem;
+          border-right: 1px solid gray;
+        }
+        &:last-child {
+          place-self: center start;
+        }
+      }
+    }
+    .promocode {
+      margin: 0.5rem auto;
+      max-width: 80%;
+      width: fit-content;
+      background: #67b564;
+      color: #fff;
+      padding: 3px 10px;
+      border-radius: 15px;
+    }
+    .icon {
+      max-width: 7rem;
+      display: block;
+      margin: 0.5rem auto;
+    }
+    .selectionBtn {
+      width: fit-content;
+      min-height: 2.3rem;
+      line-height: 2.3rem;
+      margin: 0.5rem auto;
+    }
+  }
+
   .block-win {
     padding-bottom: 135%;
-    background: url(../../img/winCard-bg.png) no-repeat center;
-    background-size: cover;
-    transition: transform 0.6s;
+    transition: all 0.6s;
+    transform-style: preserve-3d;
     position: relative;
     cursor: pointer;
     &::after {
@@ -340,18 +389,15 @@
     &.flipped {
       transform: rotateY(180deg);
       z-index: 1000;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      bottom: 0;
-      margin: auto;
 
       &::after {
         display: none;
       }
+      .front {
+        opacity: 0;
+      }
       .back {
-        transform: none;
+        // transform: none;
       }
     }
     .back,
@@ -364,14 +410,34 @@
       backface-visibility: hidden;
     }
     .front {
-      transform: rotateY(180deg);
+      transform: none;
+      background: url(../../img/winCard-bg.png) no-repeat center;
+      background-size: cover;
     }
     .back {
-      background: #fff;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
+      background: url(../../img/winCard-bg.png) no-repeat center;
+      background-size: cover;
+      padding: 1rem;
+      cursor: default;
+
+      .backContainer {
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        top: 1rem;
+        left: 1rem;
+        border-radius: 15px;
+        padding: 3px;
+        border: 15px solid #fff;
+        .content-inner {
+          width: 100%;
+          height: 100%;
+          background: #fff;
+          border-radius: 10px;
+          > div {
+            padding: 1rem;
+          }
+        }
+      }
     }
     .logo-company {
       position: absolute;
@@ -384,7 +450,7 @@
       padding: 5px 10px;
       width: fit-content;
       img {
-        max-height: 10px;
+        max-height: 1.5rem;
         width: auto;
         display: block;
         margin: auto;

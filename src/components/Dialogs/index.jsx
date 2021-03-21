@@ -45,7 +45,7 @@ export default class Dialogs extends React.Component {
                         index={index}
                         buttons={buttons ? buttons : []}
                       />
-                    )) : 'Вы вырыли большую яму и вот он! Сундук! Пора вскрывать!'}
+                    )) : 'нет данных'}
                   {hints &&
                     hints.map((item, index) => (
                       <Dialog

@@ -13,7 +13,8 @@ import {
     SET_DISCOUNT,
     DID_REPOST,
     SET_CUR_REQDY_QUEST,
-    USER_DATA_FAILED
+    USER_DATA_FAILED,
+    SET_CURRENT_QUEST
 } from './actionTypes'
 
 
@@ -89,6 +90,10 @@ export const getQuest = (vk_id, quest_id, isReady) => {
                 isContinue: isReady
             })
         })
+        dispatch({
+            type: SET_CURRENT_QUEST,
+            payload: quest_id
+        })
         let jsR = await response.json()
         if (!jsR.error) {
             if (jsR.desktop) {
@@ -118,8 +123,8 @@ export const getQuest = (vk_id, quest_id, isReady) => {
 
 export const setNextMessage = (vk_id, quest_id) => {
     return async dispatch => {
-        let response = await fetch('https://newback.zewaquests.ru/api/node/' + (quest_id) + '/click',
-            // let response = await fetch('https://newback.zewaquests.ru/api/node/177/click',
+        // let response = await fetch('https://newback.zewaquests.ru/api/node/' + (quest_id) + '/click',
+        let response = await fetch('https://newback.zewaquests.ru/api/node/22/click',
             {
                 method: 'POST',
                 headers: {
@@ -131,7 +136,7 @@ export const setNextMessage = (vk_id, quest_id) => {
                 })
             })
         let jsR = await response.json()
-
+        // jsR.final = true
         if (!jsR.error) {
             if (jsR.desktop) {
                 dispatch({
@@ -170,7 +175,6 @@ export const setNextMessage = (vk_id, quest_id) => {
         }
     }
 }
-
 
 export const getQuestList = (vk_id) => {
     return async dispatch => {

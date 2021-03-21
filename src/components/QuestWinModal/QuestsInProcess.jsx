@@ -11,21 +11,42 @@ import { WinBlocks } from './WinBlocks'
 import "./index.scss";
 import bridge from "@vkontakte/vk-bridge";
 import ozon from '../../img/logos/ozon.png'
-import $ from 'jquery'
+import axios from 'axios'
 
 class QuestsInProcess extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       innerTxt: false,
-      flipped: false
+      flipped: false,
+      selected: false,
+      canClick: true,
+      amount: false
     };
   }
-
+  componentDidMount = async () => {
+    let quest = 2;
+    let vk_id = 9801302
+    let th = this
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${quest}`, { vk_id: vk_id })
+      .then((response) => {
+        console.log(response.data)
+        th.setState({
+          amount: response.data.amount
+        })
+        // }
+      })
+  }
   toggleCard = (index) => {
     this.setState({
-      flipped: index
+      flipped: index,
+      canClick: false
     })
+    setTimeout(() => {
+      this.setState({
+        selected: true
+      })
+    }, 200)
   }
 
   reSend_AllowMessages = () => {
@@ -83,8 +104,8 @@ class QuestsInProcess extends React.Component {
   };
 
   render() {
-    const { quests, discount, curReadyQuest, showWinQModal } = this.props;
-    const { flipped } = this.state
+    const { quests, logotip, curReadyQuest, showWinQModal } = this.props;
+    const { flipped, canClick, selected, amount } = this.state
     let questName = quests.filter((item) => item.id === curReadyQuest);
 
     return (
@@ -144,14 +165,17 @@ class QuestsInProcess extends React.Component {
                   </>
                 ) : (
                   <>
-                    <h4>
+                    {!selected && <h4>
                       Вы успешно разгадали квест
                       и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
-                    </h4>
+                    </h4>}
                     <WinBlocks
-                      logo={ozon}
+                      logo={logotip}
                       flipped={flipped}
+                      canClick={canClick}
                       toggleCard={this.toggleCard}
+                      selected={selected}
+                      amount={amount}
                     />
                   </>
                 )}

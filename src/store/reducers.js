@@ -7,6 +7,7 @@ import {
     SET_QUEST_LIST,
     SHOW_QUEST_WIN_MODAL,
     GET_QUEST,
+    SET_CURRENT_QUEST,
     SET_USER_DATA,
     GET_COMICS,
     SET_HINT,
@@ -22,19 +23,20 @@ import { hashData } from './hashData'
 export const defaultState =
 {
     rules: false,
-    start: false,
+    start: true,
     selected: false,
     results: false,
     quests: [],
     curHint: 0,
-    questWin: true,
+    questWin: false,
     questData: [],
     userData: false,
     questsReady: 0,
     discount: '',
     curReadyQuest: 1,
     userDataFailed: false,
-    hashData: hashData
+    hashData: hashData,
+    currentQuest: null
 }
 
 
@@ -70,6 +72,8 @@ export const mainReducer = (state = defaultState, action) => {
             return { ...state, curReadyQuest: action.payload }
         case USER_DATA_FAILED:
             return { ...state, userDataFailed: true }
+        case SET_CURRENT_QUEST:
+            return { ...state, currentQuest: action.payload }
 
     }
 

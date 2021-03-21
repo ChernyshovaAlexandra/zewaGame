@@ -59,7 +59,7 @@ export default class Dialog extends React.Component {
     // }
     return (
       <>
-        {this.state.shown && (
+        {this.state.shown && data && (
           <div className={hints ? "hint dialog row" : "dialog row"}>
             {data.avatar !== "" && (
               <>
