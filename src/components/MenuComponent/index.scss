@@ -23,21 +23,21 @@
     top: 0;
     z-index: 40;
 
-    >div {
-      border: .5rem solid #fff;
+    > div {
+      border: 0.5rem solid #fff;
       position: absolute;
       box-shadow: 2px 5px 10px #00000066;
-
     }
 
     .ph-1 {
       background: url(../../img/cover1.png) no-repeat center;
       background-size: cover;
-      bottom: 30%;
-      left: -13.5%;
-      width: 30%;
-      height: 20%;
+      bottom: 24%;
+      left: -12.5%;
+      width: 33%;
+      height: 23%;
       transform: rotate(28.84deg);
+      z-index: 17;
     }
 
     .ph-2 {
@@ -54,10 +54,10 @@
     .ph-3 {
       background: url(../../img/cover3.png) no-repeat center;
       background-size: cover;
-      bottom: -12%;
-      left: 28.5%;
-      width: 36.3%;
-      height: 24.89%;
+      bottom: -9%;
+      left: 30.5%;
+      width: 39.3%;
+      height: 28.89%;
       transform: rotate(-16.13deg);
       z-index: 15;
     }
@@ -70,7 +70,6 @@
       width: 19.52%;
       height: 20.3%;
       transform: rotate(-38.72deg);
-
     }
   }
 
@@ -182,8 +181,6 @@
       }
     }
   }
-
-
 }
 
 .animate__fadeInTopLeft {
@@ -231,7 +228,6 @@
 }
 
 .menu.no-after {
-
   &::after,
   &::before {
     display: none !important;
@@ -242,6 +238,4 @@
 .mainWinPart {
   // margin: 0;
   position: relative;
-
-  
 }

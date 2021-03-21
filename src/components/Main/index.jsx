@@ -33,7 +33,7 @@ class Main extends React.Component {
       this.setState({
         loaded: true,
       });
-    }, 3000);
+    }, 300);
   }
   render() {
     const { questData, comics, hash } = this.props;
@@ -53,15 +53,17 @@ class Main extends React.Component {
         </div>
         <div className="row justify-content-center nav-mob">
           <div className="col-lg-4">
-            <button
-              style={{ display: "block", position: "static", margin: "auto" }}
-              className="back pinkTxt"
-              onClick={() => {
-                this.handleClick();
-              }}
-            >
-              В меню
+            <div className="backContainer">
+              <button
+                style={{ display: "block", position: "static", margin: "auto" }}
+                className="back pinkTxt"
+                onClick={() => {
+                  this.handleClick();
+                }}
+              >
+                В меню
             </button>
+            </div>
           </div>
           <div className="col-lg-3">
             <img alt="" src={zewa} />
@@ -102,15 +104,16 @@ class Main extends React.Component {
             <QuestSelect questData={questData} />
           )}
         </div>
-
-        <button
-          className="back pink desktop"
-          onClick={() => {
-            this.handleClick();
-          }}
-        >
-          В меню
+        <div className="backContainer">
+          <button
+            className="back pink desktop"
+            onClick={() => {
+              this.handleClick();
+            }}
+          >
+            В меню
         </button>
+        </div>
       </section>
     );
   }

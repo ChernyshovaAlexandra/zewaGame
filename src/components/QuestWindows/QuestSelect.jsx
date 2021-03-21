@@ -2,7 +2,7 @@ import React from 'react'
 import Materials from '../Materials'
 import Dialogs from '../Dialogs'
 import Selection from '../SelectionComponent'
-
+import img from '../../img/img.jpg'
 
 
 export default class QuestSelect extends React.Component {
@@ -13,7 +13,7 @@ export default class QuestSelect extends React.Component {
             <>
                 { questData &&
                     <>
-                        <Materials image={questData.image} />
+                        <Materials image={questData.image ? questData.image : img} />
                         <Dialogs messages={questData.messages} buttons={questData.buttons} />
                         <Selection buttons={questData.buttons} />
                     </>
@@ -21,7 +21,7 @@ export default class QuestSelect extends React.Component {
                 { comics &&
                     <>
                         <Materials image={comics.desktop[0]} />
-                       
+
                     </>
                 }
             </>

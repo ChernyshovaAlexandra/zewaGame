@@ -29,7 +29,7 @@ class Results extends React.Component {
                             <img src={logoGame} alt="" />
                         </div>
                         <div className="col-lg-3">
-                            <button
+                            <div className="backContainer"><button
                                 style={{
                                     position: "static",
                                     margin: "0 auto",
@@ -41,12 +41,13 @@ class Results extends React.Component {
                                 }}
                             >
                                 В меню
-              </button>
+                            </button>
+                            </div>
                         </div>
                     </div>
                     <div className="row justify-content-center nav-mob">
                         <div className="col-lg-4">
-                            <button
+                            <div className="backContainer">   <button
                                 style={{
                                     position: "static",
                                     margin: "0 auto",
@@ -58,6 +59,8 @@ class Results extends React.Component {
                                 }}
                             >
                                 В меню  </button>
+                            </div>
+
                         </div>
                         <div className="col-lg-3">
                             <img src={Zewa} alt="" />

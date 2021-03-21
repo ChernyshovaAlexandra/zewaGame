@@ -93,7 +93,7 @@ class Menu extends React.Component {
               <QuestWinModal />
             ) : (
               <div className="row justify-content-center navigation">
-                <div className="col-lg-6">
+                <div className="col">
                   <div className="row justify-content-center">
                     <div className="col-md-auto animate__animated animate__bounceIn first">
                       <button
@@ -141,14 +141,6 @@ class Menu extends React.Component {
                 </div>
               </div>
             )}
-
-
-
-            <div className="row justify-content-center">
-              <div className="col-lg-auto magnit  animate__animated animate__bounceIn  fourth">
-                <img src={magnit} alt="" />
-              </div>
-            </div>
           </>)}
       </section>
     );

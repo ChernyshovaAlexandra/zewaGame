@@ -133,7 +133,7 @@ export const setNextMessage = (vk_id, quest_id) => {
             })
         let jsR = await response.json()
 
-
+        console.log(jsR)
         if (!jsR.error) {
             if (jsR.desktop) {
                 dispatch({
@@ -196,7 +196,8 @@ export const getQuestList = (vk_id) => {
                 sale: 20 + 10 * index,
                 continue: item.continue ? item.continue : false,
                 img: item.image,
-                isReady: item.isFinished ? item.isFinished : false
+                isReady: item.isFinished ? item.isFinished : false,
+                company_text: item.company_text
             }
         })
         console.log(quests)

@@ -81,7 +81,7 @@ class QuestsInProcess extends React.Component {
       <>
         <div className="container">
           <div className="row mainWinPart justify-content-center">
-            
+
             <div className="col-lg-9">
               <div className="winBox">
                 {this.state.innerTxt ? (
@@ -116,61 +116,63 @@ class QuestsInProcess extends React.Component {
                           </button>
                         </div>
                       ) : (
-                            <></>
-                          )}
+                        <></>
+                      )}
                       <div className="col-md-12">
-                        <button
-                          className="btn pink selectionBtn"
-                          onClick={() => {
-                            showWinQModal(false);
-                          }}
-                        >
-                          В меню
+                        <div className="backContainer">
+                          <button
+                            className="btn pink selectionBtn"
+                            onClick={() => {
+                              showWinQModal(false);
+                            }}
+                          >
+                            В меню
                         </button>
+                        </div>
                       </div>
                     </div>
                   </>
                 ) : (
-                    <>
-                      <h4>
-                        Вы успешно разгадали квест и заслужили скидку!
+                  <>
+                    <h4>
+                      Вы успешно разгадали квест и заслужили скидку!
                     </h4>
-                      <form
-                        id="formFin"
-                        className="row"
-                        name="formFin"
-                        onSubmit={(e) => this.formCheck(e)}
-                      >
-                        <div className="col-md-12">
-                          <input
-                            type="radio"
-                            id="nextGame"
-                            name="selectionWin"
-                            checked
-                          />
-                          <label htmlFor="selectionWin">
-                            Пройти все квесты, побороться за скидку большего номинала{' '}
+                    <form
+                      id="formFin"
+                      className="row"
+                      name="formFin"
+                      onSubmit={(e) => this.formCheck(e)}
+                    >
+                      <div className="col-md-12">
+                        <input
+                          type="radio"
+                          id="nextGame"
+                          name="selectionWin"
+                          checked
+                        />
+                        <label htmlFor="selectionWin">
+                          Пройти все квесты, побороться за скидку большего номинала{' '}
                           (при наличии свободных купонов) и получить шанс выиграть{' '}
                           подарочный купон на <span className="special">3000&nbsp;рублей</span> в сети магазинов Магнит.
                         </label>
-                        </div>
-                        <div className="col-md-12">
-                          <input type="radio" name="selectionWin" id="endGame" />
-                          <label htmlFor="selectionWin">
-                            Закончить игру и забрать скидку 20% сейчас.
+                      </div>
+                      <div className="col-md-12">
+                        <input type="radio" name="selectionWin" id="endGame" />
+                        <label htmlFor="selectionWin">
+                          Закончить игру и забрать скидку 20% сейчас.
                         </label>
-                        </div>
-                        <button
-                          className="selectionBtn col-md-auto"
-                          type="submit"
-                        >
-                          Готово
+                      </div>
+                      <button
+                        className="selectionBtn col-md-auto"
+                        type="submit"
+                      >
+                        Готово
                       </button>
-                      </form>
-                      <br />
-                      <p>К сожалению, купоны быстро заканчиваются. Максимальный номинал оставшихся купонов - <span className="special"> 40%</span>.</p>
-                    </>
-                  )}
+                    </form>
+                    <br />
+                    <p>К сожалению, купоны быстро заканчиваются. Максимальный номинал оставшихся купонов - <span className="special"> 40%</span>.</p>
+                  </>
+                )}
               </div>
             </div>
           </div>

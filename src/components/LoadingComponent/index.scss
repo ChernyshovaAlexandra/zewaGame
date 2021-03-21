@@ -8,7 +8,7 @@
     width: 100%;
     height: 100%;
 
-    background: linear-gradient(180deg, #67B365 0%, rgba(103, 179, 101, 0) 100%);
+    background: linear-gradient(180deg, #67b365 0%, rgba(103, 179, 101, 0) 100%);
     background-size: cover;
 
     .container {
@@ -17,7 +17,7 @@
     }
 
     &::before {
-        content: '';
+        content: "";
         position: absolute;
         left: 0;
         top: 0;
@@ -28,11 +28,9 @@
         z-index: 10;
     }
 
-
     .logoContainer {
         flex-wrap: nowrap;
         padding-top: 2.5rem;
-
 
         .logo {
             img {
@@ -54,7 +52,7 @@
         margin-top: 3rem;
 
         h2 {
-            font-family: 'Foco';
+            font-family: "Foco";
             font-style: normal;
             font-weight: 800;
             font-size: 1.3rem;
@@ -77,7 +75,6 @@
         margin: auto;
 
         .rulonBox {
-
             .rulon {
                 position: absolute;
                 left: 0;
@@ -85,6 +82,7 @@
                 height: 5rem;
                 background: url(../../img/Rulon.png) no-repeat center;
                 background-size: contain;
+                filter: drop-shadow(-4px 7px 5px rgba(0,0,0,.1));
                 animation: swiping 3s ease-in-out infinite both;
 
                 .roll {
@@ -94,7 +92,7 @@
                     height: 1.5rem;
                     position: absolute;
                     bottom: 1.1rem;
-                    background: linear-gradient(135deg, #10306B -23.17%, #EDEFFB 69.06%);
+                    background: linear-gradient(135deg, #10306b -23.17%, #edeffb 69.06%);
                     border: 1px solid #385893;
                     left: 1rem;
                     right: 0;
@@ -107,7 +105,7 @@
             position: absolute;
             width: 100%;
             height: 2.5rem;
-            background: #fff url('../../img/pattern.png') repeat-x center;
+            background: #fff url("../../img/pattern.png") repeat-x center;
             bottom: -5rem;
             transform: skewX(35deg);
             border-radius: 6px;
@@ -115,7 +113,7 @@
             background-position: 0% 68%;
 
             .overlay {
-                background: linear-gradient(90.95deg, #ECC440 16.55%, #FFFA8A 54.39%, #DDAC17 85.19%, #FFFF95 117.46%);
+                background: linear-gradient(90.95deg, #ecc440 16.55%, #fffa8a 54.39%, #ddac17 85.19%, #ffff95 117.46%);
                 position: absolute;
                 right: 0;
                 height: 100%;
@@ -126,12 +124,12 @@
         }
 
         @media screen and (max-width: 465px) {
-            transform: scale(.8);
+            transform: scale(0.8);
             max-width: 100%;
         }
 
         @media screen and (max-width: 355px) {
-            transform: scale(.7)
+            transform: scale(0.7);
         }
     }
 
@@ -148,14 +146,14 @@
             height: 90%;
 
             .magnit {
-                margin-top: .4.5rem;
+                margin-top: 0.4.5rem;
             }
         }
     }
 }
 
 .loading-content-inner {
-    margin-top: 2rem;
+    // margin-top: 2rem;
     min-height: 10rem;
 }
 
@@ -172,7 +170,6 @@
 
     100% {
         transform: rotate(360deg);
-
     }
 }
 
@@ -200,7 +197,7 @@
     margin-top: 3rem;
 
     h2 {
-        font-family: 'Foco';
+        font-family: "Foco";
         font-style: normal;
         font-weight: 800;
         font-size: 1.3rem;
@@ -212,7 +209,6 @@
 
         @media screen and (max-width: 630px) {
             color: #fff;
-            text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
         }
     }
 }
@@ -224,7 +220,6 @@
     margin: auto;
 
     .rulonBox {
-
         .rulon {
             position: absolute;
             left: 0;
@@ -241,7 +236,7 @@
                 height: 1.5rem;
                 position: absolute;
                 bottom: 1.1rem;
-                background: linear-gradient(135deg, #10306B -23.17%, #EDEFFB 69.06%);
+                background: linear-gradient(135deg, #10306b -23.17%, #edeffb 69.06%);
                 border: 1px solid #385893;
                 left: 1rem;
                 right: 0;
@@ -254,7 +249,7 @@
         position: absolute;
         width: 100%;
         height: 2.5rem;
-        background: #fff url('../../img/pattern.png') repeat-x center;
+        background: #fff url("../../img/pattern.png") repeat-x center;
         bottom: -5rem;
         transform: skewX(35deg);
         border-radius: 6px;
@@ -262,7 +257,13 @@
         background-position: 0% 68%;
 
         .overlay {
-            background-color: linear-gradient(90.95deg, #ECC440 16.55%, #FFFA8A 54.39%, #DDAC17 85.19%, #FFFF95 117.46%);
+            background-color: linear-gradient(
+                90.95deg,
+                #ecc440 16.55%,
+                #fffa8a 54.39%,
+                #ddac17 85.19%,
+                #ffff95 117.46%
+            );
             position: absolute;
             right: 0;
             height: 100%;
@@ -272,11 +273,11 @@
     }
 
     @media screen and (max-width: 465px) {
-        transform: scale(.8);
+        transform: scale(0.8);
         max-width: 100%;
     }
 
     @media screen and (max-width: 355px) {
-        transform: scale(.7)
+        transform: scale(0.7);
     }
 }

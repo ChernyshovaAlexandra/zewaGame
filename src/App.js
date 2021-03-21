@@ -28,7 +28,7 @@ class App extends React.Component {
 				loaded: true
 			})
 
-		}, 3000)
+		}, 300)
 
 	}
 
@@ -54,7 +54,7 @@ class App extends React.Component {
 											<Menu name={this.state.nameForH2} /> :
 											<LoadingComponent />
 				}
-				<small className="ligal">Количество купонов ограничено</small>
+				{/* <small className="ligal">Количество купонов ограничено</small> */}
 			</div>
 		)
 

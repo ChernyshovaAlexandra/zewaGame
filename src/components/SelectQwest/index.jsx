@@ -54,9 +54,14 @@ class SelectQwest extends React.Component {
   render() {
 
     const { quests, hash, hashData } = this.props;
-    let currentQuestId = hashData.filter(item => item.name == hash)[0].id
-    let currentQuestLogo = hashData.filter(item => item.name == hash)[0].logo
-    let currentQuestData = quests && quests.filter(item => item.id == currentQuestId)[0]
+    let currentQuestId,
+      currentQuestLogo,
+      currentQuestData
+    if (hash) {
+      currentQuestId = hashData.filter(item => item.name == hash)[0].id
+      currentQuestLogo = hashData.filter(item => item.name == hash)[0].logo
+      currentQuestData = quests && quests.filter(item => item.id == currentQuestId)[0]
+    }
 
     const { popup } = this.state;
     return (

@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://chernyshovaalexandra.github.io/zewaGame/",
+  "homepage": "./",
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "predeploy": "npm run build",

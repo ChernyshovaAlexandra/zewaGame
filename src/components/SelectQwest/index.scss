@@ -558,10 +558,11 @@ $blue: #2bafec;
   position: relative;
   z-index: 100;
   &.personal-quest {
-    grid-template-columns: 1fr;
+    grid-template-columns: 0.5fr;
     grid-template-rows: 1fr;
     place-items: center;
     height: 100%;
+    place-content: center;
   }
   .quest-inner-content {
     position: relative;
@@ -584,7 +585,7 @@ $blue: #2bafec;
     padding: 0.85rem;
     display: grid;
     grid-template-rows: 50% 50%;
-    max-height: 100%;
+    height: 100%;
     grid-gap: 10px;
     position: relative;
 
@@ -629,12 +630,14 @@ $blue: #2bafec;
   }
 }
 
-.navigation {
+.navigation-content {
   display: grid;
   width: 100%;
   grid-template-columns: auto auto;
   margin-bottom: 2rem;
-
+  &.no-logo-left {
+    place-content: end;
+  }
   .logotipy {
     display: grid;
     grid-gap: 1rem;
