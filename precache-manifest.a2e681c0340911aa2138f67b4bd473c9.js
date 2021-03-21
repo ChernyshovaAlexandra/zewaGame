@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cd1b09ba12d529bfd2b5fc038d50446b",
+    "revision": "982cd239f0a22b8252786e9853556405",
     "url": "./index.html"
   },
   {
-    "revision": "56015546a5fed92e7404",
+    "revision": "951aa982d984ef6fc07b",
     "url": "./static/css/2.c7dcdf94.chunk.css"
   },
   {
-    "revision": "5f14335317a74b86fbfe",
-    "url": "./static/css/main.cc180d44.chunk.css"
+    "revision": "e1607a1f7160bb180523",
+    "url": "./static/css/main.c93d4071.chunk.css"
   },
   {
-    "revision": "56015546a5fed92e7404",
-    "url": "./static/js/2.1c1e2744.chunk.js"
+    "revision": "951aa982d984ef6fc07b",
+    "url": "./static/js/2.e287abc5.chunk.js"
   },
   {
-    "revision": "7aeb96c4878d224a55adce546624b684",
-    "url": "./static/js/2.1c1e2744.chunk.js.LICENSE.txt"
+    "revision": "5aa0ce7685f38c51ef6bc4fd3fbdd877",
+    "url": "./static/js/2.e287abc5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5f14335317a74b86fbfe",
-    "url": "./static/js/main.4fe538c6.chunk.js"
+    "revision": "e1607a1f7160bb180523",
+    "url": "./static/js/main.b60d2b7f.chunk.js"
   },
   {
     "revision": "fabd55e9208bf8f5534f",
@@ -106,6 +106,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f97e3bbf73254b0112091d0192f17aec",
     "url": "./static/media/slick.f97e3bbf.svg"
+  },
+  {
+    "revision": "f57c9f4db4c09be490c46b970fcc4821",
+    "url": "./static/media/winCard-bg.f57c9f4d.png"
   },
   {
     "revision": "37e618f6a5635be860ed9e3bf95b609c",
