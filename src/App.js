@@ -9,7 +9,7 @@ import Results from './components/Results'
 import './App.scss'
 import { connect } from 'react-redux'
 import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFailed } from './store/actions'
-
+import bridge from '@vkontakte/vk-bridge';
 
 
 class App extends React.Component {
@@ -21,14 +21,29 @@ class App extends React.Component {
 			nameForH2: 'user'
 		}
 	}
-
+	setUserInfo = async () => {
+		const { setUserData } = this.props
+		bridge.subscribe((e) => {
+			if (e.detail.type === 'VKWebAppGetUserInfoResult') {
+				setUserData({
+					vk_id: e.detail.data.id,
+					name: e.detail.data.first_name + " " + e.detail.data.last_name,
+					nameHeader: e.detail.data.first_name
+				})
+			}
+		})
+		bridge.send("VKWebAppGetUserInfo")
+	}
 	componentDidMount() {
-		setTimeout(() => {
-			this.setState({
-				loaded: true
-			})
+		Promise.all([this.setUserInfo()])
+			.then(() => {
+				setTimeout(() => {
+					this.setState({
+						loaded: true
+					})
 
-		}, 300)
+				}, 300)
+			})
 
 	}
 

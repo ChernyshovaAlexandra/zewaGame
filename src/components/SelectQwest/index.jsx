@@ -38,16 +38,17 @@ class SelectQwest extends React.Component {
   };
 
   checkPopup = (index) => {
+    let ind = index + 1
     const { quests } = this.props;
-    let q = quests[0]; //.filter((item) => item.id === cur)
+    let q = quests.filter((item) => item.id === ind) //[0]; //
 
     if (q.continue) {
       this.setState({
-        popup: index,
+        popup: ind,
       });
     }
     else {
-      this.setReady(index, false);
+      this.setReady(ind, false);
     }
   };
 

@@ -5,7 +5,7 @@ import logoGame from "../../img/logoGame.png";
 import magnit from "../../img/magnit-logo.svg";
 import { connect } from "react-redux";
 import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFailed } from '../../store/actions'
-import bridge from '@vkontakte/vk-bridge';
+
 
 
 
@@ -14,17 +14,7 @@ import bridge from '@vkontakte/vk-bridge';
 class LoadingComponent extends React.Component {
 
   componentDidMount() {
-    const { setUserData } = this.props
-    bridge.subscribe((e) => {
-      if (e.detail.type === 'VKWebAppGetUserInfoResult') {
-        setUserData({
-          vk_id: e.detail.data.id,
-          name: e.detail.data.first_name + " " + e.detail.data.last_name,
-          nameHeader: e.detail.data.first_name
-        })
-      }
-    })
-    bridge.send("VKWebAppGetUserInfo")
+  
   }
 
   render() {

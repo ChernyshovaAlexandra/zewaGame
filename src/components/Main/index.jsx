@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.scss";
 import zewa from "../../img/zewa.png";
-import delo from "../../img/logoGame.png";
+import { Nav } from '../SelectQwest/Nav'
 import magnit from "../../img/magnit-wh.png";
 import QuestSelect from "../QuestWindows/QuestSelect";
 import QuestInput from "../QuestWindows/QuestInput";
@@ -36,21 +36,16 @@ class Main extends React.Component {
     }, 300);
   }
   render() {
-    const { questData, comics, hash } = this.props;
-
+    const { questData, comics, hashData } = this.props;
+    console.log(hashData, questData.quest_company)
+    let logo = false
+    if (questData.quest_company) { logo = hashData.filter(item => item.name === questData.quest_company)[0].logo }
     return (
       <section className="selectQwest mainBG container">
-        <div className="row justify-content-between nav">
-          <div className="col-lg-2  animate__animated animate__fadeIn ">
-            <img alt="" src={zewa} />
-          </div>
-          <div className="col-lg-3  animate__animated animate__fadeIn sec">
-            {/* <img alt="" src={delo} /> */}
-          </div>
-          <div className="col-lg-3  animate__animated animate__fadeIn thrd">
-            <img alt="" src={magnit} />
-          </div>
-        </div>
+        <Nav
+          logo={logo && logo}
+        />
+
         <div className="row justify-content-center nav-mob">
           <div className="col-lg-4">
             <div className="backContainer">
@@ -123,6 +118,7 @@ const mapStateToProps = (state) => {
     questData: state.store.questData,
     comics: state.store.comics,
     curHint: state.store.curHint,
+    hashData: state.store.hashData,
   };
 };
 

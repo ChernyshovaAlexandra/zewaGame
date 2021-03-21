@@ -635,6 +635,7 @@ $blue: #2bafec;
   width: 100%;
   grid-template-columns: auto auto;
   margin-bottom: 2rem;
+
   &.no-logo-left {
     place-content: end;
   }
@@ -645,6 +646,7 @@ $blue: #2bafec;
     place-content: center;
     place-items: center;
     place-self: center start;
+    margin-bottom: 1rem;
     .logo-1 {
       border-right: 3px solid #fff;
       padding-right: 1rem;

@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const QuestContainer = ({ item, onClick, personalQuest }) => {
-    console.log(item)
     return (
         <div
             className={`${personalQuest ? 'personalQuest' : ''} quest-inner-content`}

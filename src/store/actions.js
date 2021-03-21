@@ -38,7 +38,6 @@ export const setUserData = (data) => {
         })
         let jsR = await response.json()
         if (!jsR.error) {
-            console.log(jsR)
             dispatch({
                 type: SET_USER_DATA,
                 payload: data
@@ -133,7 +132,6 @@ export const setNextMessage = (vk_id, quest_id) => {
             })
         let jsR = await response.json()
 
-        console.log(jsR)
         if (!jsR.error) {
             if (jsR.desktop) {
                 dispatch({
@@ -200,7 +198,6 @@ export const getQuestList = (vk_id) => {
                 company_text: item.company_text
             }
         })
-        console.log(quests)
         if (jsR.finished_quests_count) {
             dispatch({
                 type: SET_QUEST_READY,

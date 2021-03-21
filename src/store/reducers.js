@@ -53,7 +53,9 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:
-            return { ...state, questData: action.payload }
+            let questDataIncoming = action.payload
+            questDataIncoming.quest_company = 'ozon' //'sbermaarket'/'yandex'/'utkonos'
+            return { ...state, questData: questDataIncoming }
         case SET_QUEST_LIST:
             return { ...state, quests: action.payload }
         case SET_USER_DATA:
