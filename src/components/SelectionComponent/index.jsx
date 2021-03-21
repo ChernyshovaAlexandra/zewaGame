@@ -24,7 +24,7 @@ class Selection extends React.Component {
                 type="button"
                 className="btn selectionBtn pink"
                 onClick={
-                  !final
+                  final
                     ? () => {
                         showSelected(false);
                         showWinQModal(userData.vk_id,true);
