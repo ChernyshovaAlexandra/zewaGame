@@ -7,8 +7,6 @@ import {
   startGame,
   didRepost,
 } from "../../store/actions";
-import Zewa from "../../img/zewa.png";
-import magnit from "../../img/magnit-wh.png";
 import vk from "../../img/vk-social-network-logo.png";
 
 class AllQuestsFinished extends React.Component {
@@ -133,43 +131,8 @@ class AllQuestsFinished extends React.Component {
       <>
         <div className="container">
           <div className="row mainWinPart justify-content-center">
-            {/* <div className="col-lg-5">
-              <div className="row justify-content-between">
-                {!this.state.wantToShare && (
-                  <div className="col-md-12">
-                    {questName[0] && (
-                      <h2
-                        dangerouslySetInnerHTML={{
-                          __html: questName[0].name,
-                        }}
-                      ></h2>
-                    )}
-                  </div>
-                )}
-                <div className="col-md-12">
-                  <div className="saleWin">
-                    <div className="logoB">
-                      <img src={magnit} alt="" />
-                      <img src={Zewa} alt="" />
-                    </div>
-                    <div className="saleWinBox">
-                      <p>
-                        {this.state.wantToShare ? "Розыгрыш купона" : "Скидка"}
-                      </p>
-                      <p className="saleWinAmmount">
-                        {this.state.wantToShare ? "3000" : discount + "%"}
-                      </p>
-                      {this.state.wantToShare && (
-                        <p style={{ marginTop: "-2rem", marginLeft: "4rem" }}>
-                          рублей
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>*/}
-            <div className="col-lg-8">
+
+            <div className="col">
               <div className="winBox">
                 <div className="row justify-content-center buttonSet">
                   {this.state.wantToShare ? (
@@ -238,58 +201,58 @@ class AllQuestsFinished extends React.Component {
                       </div>
                     </>
                   ) : (
-                        <div className="col-md-12">
-                          <h4>
-                            Поздравляем! Вы разгадали все квесты, и заслужили скидку! Мы пришлем вам ее в личные сообщения
+                    <div className="col-md-12">
+                      <h4>
+                        Поздравляем! Вы разгадали все квесты, и заслужили скидку! Мы пришлем вам ее в личные сообщения
                               <p>Сделайте репост, для того чтобы</p>
-                          </h4>
-                          <div
-                            className="rulesBox"
-                            style={{ background: "none", padding: "0 1rem" }}
-                          >
-                            <ul>
-                              <li>
-                                Участвовать в розыгрыше подарочного купона на 3000
-                                рублей.
+                      </h4>
+                      <div
+                        className="rulesBox"
+                        style={{ background: "none", padding: "0 1rem" }}
+                      >
+                        <ul>
+                          <li>
+                            Участвовать в розыгрыше подарочного купона на 3000
+                            рублей.
                             </li>
-                            </ul>
-                            <div className="row justify-content-center">
-                              <div className="col-lg-12">
-                                <button
-                                  className="btn selectionBtn pink"
-                                  onClick={() => {
-                                    this.share();
-                                  }}
-                                >
-                                  Поделиться <img src={vk} alt="" />
-                                </button>
-                              </div>
-                            </div>
-                            <div className="row justify-content-center">
-                              <div className="col-lg-12">
-                                <button
-                                  className="btn selectionBtn pink"
-                                  onClick={() => {
-                                    this.getMyKupon();
-                                  }}
-                                >
-                                  Забрать скидку</button>
-                              </div>
-                            </div>
-                            <div className="row justify-content-center">
-                              <div className="col-lg-auto cancel-repost">
-                                <a
-                                  onClick={() => {
-                                    showWinQModal(userData.vk_id, false);
-                                  }}
-                                >
-                                  Отказаться и выйти в главное меню
-                              </a>
-                              </div>
-                            </div>
+                        </ul>
+                        <div className="row justify-content-center">
+                          <div className="col-lg-12">
+                            <button
+                              className="btn selectionBtn pink"
+                              onClick={() => {
+                                this.share();
+                              }}
+                            >
+                              Поделиться <img src={vk} alt="" />
+                            </button>
                           </div>
                         </div>
-                      )}
+                        <div className="row justify-content-center">
+                          <div className="col-lg-12">
+                            <button
+                              className="btn selectionBtn pink"
+                              onClick={() => {
+                                this.getMyKupon();
+                              }}
+                            >
+                              Забрать скидку</button>
+                          </div>
+                        </div>
+                        <div className="row justify-content-center">
+                          <div className="col-lg-auto cancel-repost">
+                            <a
+                              onClick={() => {
+                                showWinQModal(userData.vk_id, false);
+                              }}
+                            >
+                              Отказаться и выйти в главное меню
+                              </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

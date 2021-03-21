@@ -6,17 +6,26 @@ import {
   startGame,
   didRepost,
 } from "../../store/actions";
-import Zewa from "../../img/zewa.png";
-import magnit from "../../img/magnit-wh.png";
+
+import { WinBlocks } from './WinBlocks'
 import "./index.scss";
 import bridge from "@vkontakte/vk-bridge";
+import ozon from '../../img/logos/ozon.png'
+import $ from 'jquery'
 
 class QuestsInProcess extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       innerTxt: false,
+      flipped: false
     };
+  }
+
+  toggleCard = (index) => {
+    this.setState({
+      flipped: index
+    })
   }
 
   reSend_AllowMessages = () => {
@@ -75,6 +84,7 @@ class QuestsInProcess extends React.Component {
 
   render() {
     const { quests, discount, curReadyQuest, showWinQModal } = this.props;
+    const { flipped } = this.state
     let questName = quests.filter((item) => item.id === curReadyQuest);
 
     return (
@@ -82,7 +92,7 @@ class QuestsInProcess extends React.Component {
         <div className="container">
           <div className="row mainWinPart justify-content-center">
 
-            <div className="col-lg-9">
+            <div className="col">
               <div className="winBox">
                 {this.state.innerTxt ? (
                   <>
@@ -135,42 +145,14 @@ class QuestsInProcess extends React.Component {
                 ) : (
                   <>
                     <h4>
-                      Вы успешно разгадали квест и заслужили скидку!
+                      Вы успешно разгадали квест
+                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
                     </h4>
-                    <form
-                      id="formFin"
-                      className="row"
-                      name="formFin"
-                      onSubmit={(e) => this.formCheck(e)}
-                    >
-                      <div className="col-md-12">
-                        <input
-                          type="radio"
-                          id="nextGame"
-                          name="selectionWin"
-                          checked
-                        />
-                        <label htmlFor="selectionWin">
-                          Пройти все квесты, побороться за скидку большего номинала{' '}
-                          (при наличии свободных купонов) и получить шанс выиграть{' '}
-                          подарочный купон на <span className="special">3000&nbsp;рублей</span> в сети магазинов Магнит.
-                        </label>
-                      </div>
-                      <div className="col-md-12">
-                        <input type="radio" name="selectionWin" id="endGame" />
-                        <label htmlFor="selectionWin">
-                          Закончить игру и забрать скидку 20% сейчас.
-                        </label>
-                      </div>
-                      <button
-                        className="selectionBtn col-md-auto"
-                        type="submit"
-                      >
-                        Готово
-                      </button>
-                    </form>
-                    <br />
-                    <p>К сожалению, купоны быстро заканчиваются. Максимальный номинал оставшихся купонов - <span className="special"> 40%</span>.</p>
+                    <WinBlocks
+                      logo={ozon}
+                      flipped={flipped}
+                      toggleCard={this.toggleCard}
+                    />
                   </>
                 )}
               </div>

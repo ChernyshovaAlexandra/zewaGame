@@ -22,12 +22,12 @@ import { hashData } from './hashData'
 export const defaultState =
 {
     rules: false,
-    start: true,
+    start: false,
     selected: false,
     results: false,
     quests: [],
     curHint: 0,
-    questWin: false,
+    questWin: true,
     questData: [],
     userData: false,
     questsReady: 0,
@@ -53,9 +53,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
         case GET_QUEST:
-            let questDataIncoming = action.payload
-            questDataIncoming.quest_company = 'ozon' //'sbermaarket'/'yandex'/'utkonos'
-            return { ...state, questData: questDataIncoming }
+            return { ...state, questData: action.payload }
         case SET_QUEST_LIST:
             return { ...state, quests: action.payload }
         case SET_USER_DATA:

@@ -37,9 +37,9 @@ class Main extends React.Component {
   }
   render() {
     const { questData, comics, hashData } = this.props;
-    console.log(hashData, questData.quest_company)
     let logo = false
-    if (questData.quest_company) { logo = hashData.filter(item => item.name === questData.quest_company)[0].logo }
+    console.log(questData)
+    if (questData.name) { logo = hashData.filter(item => item.name === questData.name)[0].logo }
     return (
       <section className="selectQwest mainBG container">
         <Nav

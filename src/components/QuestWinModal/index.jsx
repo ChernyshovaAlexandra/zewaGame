@@ -17,6 +17,7 @@ import delo from "../../img/logoGame.png";
 import QuestsInProcess from "./QuestsInProcess.jsx";
 import AllQuestsFinished from "./AllQuestsFinished.jsx";
 
+
 class QuestWinModal extends React.Component {
   constructor(props) {
     super(props);
