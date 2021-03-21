@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "29b3aa63dce6a0a43c980869a3db2242",
+    "revision": "a2fdc33b6b8925a16e533c058e6a2060",
     "url": "./index.html"
   },
   {
-    "revision": "4c81372ad9e67fe85d64",
+    "revision": "b0d84c3464f373c5dfe2",
     "url": "./static/css/2.c7dcdf94.chunk.css"
   },
   {
-    "revision": "93234ec20c32f527c4d7",
-    "url": "./static/css/main.f5e7d623.chunk.css"
+    "revision": "a18be81f692bc32c7416",
+    "url": "./static/css/main.216c0012.chunk.css"
   },
   {
-    "revision": "4c81372ad9e67fe85d64",
-    "url": "./static/js/2.b48930aa.chunk.js"
+    "revision": "b0d84c3464f373c5dfe2",
+    "url": "./static/js/2.b1a25827.chunk.js"
   },
   {
     "revision": "7aeb96c4878d224a55adce546624b684",
-    "url": "./static/js/2.b48930aa.chunk.js.LICENSE.txt"
+    "url": "./static/js/2.b1a25827.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "93234ec20c32f527c4d7",
-    "url": "./static/js/main.288bdee9.chunk.js"
+    "revision": "a18be81f692bc32c7416",
+    "url": "./static/js/main.47f581f2.chunk.js"
   },
   {
     "revision": "fabd55e9208bf8f5534f",
@@ -38,6 +38,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "9dd8c37c470dcb0a87f997ce15ffb133",
     "url": "./static/media/AcerFoco_Rg.9dd8c37c.ttf"
+  },
+  {
+    "revision": "6a9986f55ba68ad3c43fdbcd377af05d",
+    "url": "./static/media/Overlay.6a9986f5.jpg"
   },
   {
     "revision": "a3dbccde7743df46c48ffb8e864a67bc",
