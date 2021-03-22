@@ -38,7 +38,7 @@ class Rules extends React.Component {
               </div>
             </div>
           </div>
-          
+
           <div className="row justify-content-center for-rules">
             <div className="col-lg-auto">
               <h2 className="wh-rules">Правила</h2>
@@ -49,18 +49,17 @@ class Rules extends React.Component {
               <div className="rulesBox">
                 <ul>
                   <li>
-                    Проходи первый квест и получай купон на{" "}
-                    <span className="pinkTxt">скидку 20%</span> на продукцию от
-                    Zewa в сети магазинов Магнит
+                    Проходи квесты и получай купоны на
+                    <span className="pinkTxt">скидки до 60% </span> на продукцию
+                    Zewa от партнеров
                   </li>
                   <li>
-                    За каждый последующий пройденный квест увеличивай свою
-                    скидку <span className="pinkTxt">на 10%</span>
-                  </li>
+                    Каждый пройденный квест - шанс получить промо-код на скидку у определенного партнера акции
+                    </li>
+
                   <li>
-                    После прохождения всех пяти квестов, поделись результатами у
-                    себя на странице, и увеличь свою скидку{" "}
-                    <span className="pinkTxt">до 70%</span>
+                    После прохождения квестов поделись приложением «Дело Z» у себя на странице и участвуй
+                     в еженедельном розыгрыше купонов на <span className="pinkTxt">3 000 рублей</span> от партнеров
                   </li>
                   <li>
                     Среди тех, кто прошел все 5 квестов и поделился результатами
@@ -69,9 +68,7 @@ class Rules extends React.Component {
                     всю продукцию сети магазинов Магнит.
                   </li>
                   <li>
-                    Купоны на скидку действуют на всю продукцию{" "}
-                    <span className="pinkTxt">Zewa</span> в сети магазинов
-                    «Магнит» и не суммируются с другими скидками и акциями.
+                    С перечнем продукции и полными правилами акции можно ознакомиться в разделе «Полные правила акции»
                   </li>
                 </ul>
                 <div className="row justify-content-center">
