@@ -34,6 +34,7 @@ class QuestsInProcess extends React.Component {
   }
   componentDidMount = async () => {
     const { userData, currentQuest } = this.props
+    console.log(currentQuest)
     let th = this
     axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`, { vk_id: userData.vk_id })
       .then((response) => {
@@ -51,19 +52,20 @@ class QuestsInProcess extends React.Component {
       })
   }
   toggleCard = (index) => {
+    const { userData, currentQuest } = this.props
+    let th = this
     this.reSend_AllowMessages()
-    if (this.state.apply) {
-      this.setState({
+    if (th.state.apply) {
+      th.setState({
         flipped: index,
         canClick: false
       })
       setTimeout(() => {
-        this.setState({
+        th.setState({
           selected: true
         })
       }, 200)
-      const { userData, currentQuest } = this.props
-      let th = this
+
       axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
     }
   }
