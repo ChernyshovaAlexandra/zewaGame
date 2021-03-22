@@ -25,10 +25,10 @@ class QuestsInProcess extends React.Component {
     };
   }
   componentDidMount = async () => {
-    // const { userData, currentQuest } = this.props
+    const { userData, currentQuest } = this.props
     let th = this
-    let currentQuest = 2
-    let userData = { vk_id: 9801302 }
+    // let currentQuest = 2
+    // let userData = { vk_id: 9801302 }
     axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`, { vk_id: userData.vk_id })
       .then((response) => {
         if (response.data.message) {
