@@ -4,6 +4,11 @@
       background: url(../../img/Overlay.jpg) no-repeat center;
       background-size: cover;
     }
+    &.in-process {
+      .photoBlock {
+        display: none;
+      }
+    }
     .container {
       position: relative;
       z-index: 300;

@@ -133,7 +133,7 @@ const mapDispatchToProps = (dispatch) => {
     showWinQModal: (vk_id, quest) => dispatch(showWinQModal(vk_id, quest)),
     startGame: (quest) => dispatch(startGame(quest)),
     getKupon: (vk_id) => dispatch(getKupon(vk_id)),
-    didRepost: (vk_id) => dispatch(didRepost(vk_id)),
+    didRepost: (vk_id, quest) => dispatch(didRepost(vk_id, quest)),
     getQuestList: (vk_id) => dispatch(getQuestList(vk_id)),
   };
 };

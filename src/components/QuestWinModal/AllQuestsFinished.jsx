@@ -58,11 +58,11 @@ class AllQuestsFinished extends React.Component {
   };
 
   share = () => {
-    const { didRepost, userData } = this.props;
+    const { didRepost, userData, currentQuest } = this.props;
     let $this = this
 
     let resolveFunc = async () => {
-      let promise = new Promise(res => res(didRepost(userData.vk_id)))
+      let promise = new Promise(res => res(didRepost(userData.vk_id, currentQuest)))
       let res = await promise
       promise.then(() => {
         $this.getMyKupon();
@@ -123,7 +123,7 @@ class AllQuestsFinished extends React.Component {
   render() {
     const {
       quests,
-      discount,
+      message,
       curReadyQuest,
       showWinQModal,
       userData,
@@ -148,7 +148,7 @@ class AllQuestsFinished extends React.Component {
                   {!this.state.wantToQuit && (
                     <div className="col-md-12 win-blocks-container selected">
 
-                      <div className="backContainer win-block">
+                      {!message ? <div className="backContainer win-block">
                         <div className="content-inner">
                           <h4>Это еще не все! Сделайте репост и участвуйте в розыгрыше</h4>
                           <div className="icon">
@@ -184,7 +184,10 @@ class AllQuestsFinished extends React.Component {
                           </div>
                         </div>
 
-                      </div></div>
+                      </div>
+                        :
+                        <p>{message}</p>}
+                    </div>
                   )}
                 </div>
               </div>
@@ -205,6 +208,7 @@ const mapStateToProps = (state) => {
     questsReady: state.store.questsReady,
     repost: state.store.repost,
     curReadyQuest: state.store.curReadyQuest,
+    currentQuest: state.store.currentQuest,
   };
 };
 
@@ -213,7 +217,7 @@ const mapDispatchToProps = (dispatch) => {
     showWinQModal: (quest) => dispatch(showWinQModal(quest)),
     startGame: (quest) => dispatch(startGame(quest)),
     getKupon: (vk_id) => dispatch(getKupon(vk_id)),
-    didRepost: (vk_id) => dispatch(didRepost(vk_id)),
+    didRepost: (vk_id, quest) => dispatch(didRepost(vk_id, quest)),
   };
 };
 

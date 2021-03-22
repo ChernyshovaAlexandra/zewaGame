@@ -16,7 +16,7 @@ const cards = [
 
 
 
-const Back = ({ amount, logo, company }) => {
+const Back = ({ amount, logo, company, clickToShowRepost }) => {
     return (
         <>
             <div>
@@ -30,16 +30,19 @@ const Back = ({ amount, logo, company }) => {
                 <div className="icon">
                     <img src={present} alt="" />
                 </div>
-                {amount && <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
-                    <div className="btn selectionBtn">Забрать подарок</div>
-                </a>}
+                {amount &&
+                    <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
+                        <div className="btn selectionBtn"
+                            onClick={clickToShowRepost && (() => clickToShowRepost())}
+                        >Забрать подарок</div>
+                    </a>}
             </div>
         </>
     )
 }
 
 
-export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount }) => {
+export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount, showRepost, clickToShowRepost }) => {
 
 
     if (selected) {
@@ -72,30 +75,34 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
             </div>
         )
     }
-
+    if (showRepost) {
+        return <AllQuestsFinished />
+    }
     return (
-        <>{amount ? <div className='win-blocks-container'>
-            {cards.map(item => (
-                <div
-                    onClick={canClick && (() => toggleCard(item.id))}
-                    className={`block-win ${flipped === item.id ? 'flipped' : ''}`}
-                    key={item.id}>
-                    <div className="front">
-                        <div className="logo-company">
-                            <img src={logo} />
-                        </div>
-                    </div>
-                    <div className="back">
-                        <div className="backContainer">
-                            <div className="content-inner">
-                                <Back />
+        <>
+            {amount ?
+                <div className='win-blocks-container'>
+                    {cards.map(item => (
+                        <div
+                            onClick={canClick && (() => toggleCard(item.id))}
+                            className={`block-win ${flipped === item.id ? 'flipped' : ''}`}
+                            key={item.id}>
+                            <div className="front">
+                                <div className="logo-company">
+                                    <img src={logo} />
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>))}
-        </div>
-            :
-            <AllQuestsFinished />}
+                            <div className="back">
+                                <div className="backContainer">
+                                    <div className="content-inner">
+                                        <Back clickToShowRepost={clickToShowRepost} />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>))}
+                </div>
+                :
+                <AllQuestsFinished />}
         </>
     )
 }

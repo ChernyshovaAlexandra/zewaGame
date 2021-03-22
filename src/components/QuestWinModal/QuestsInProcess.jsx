@@ -21,8 +21,16 @@ class QuestsInProcess extends React.Component {
       selected: false,
       canClick: true,
       amount: false,
-      no_prize: true
+      no_prize: true,
+      showRepost: false
     };
+  }
+
+
+  clickToShowRepost = () => {
+    this.setState({
+      showRepost: true
+    })
   }
   componentDidMount = async () => {
     const { userData, currentQuest } = this.props
@@ -117,7 +125,7 @@ class QuestsInProcess extends React.Component {
 
   render() {
     const { quests, curQuest, curReadyQuest, showWinQModal } = this.props;
-    const { flipped, canClick, selected, amount, no_prize, message } = this.state
+    const { flipped, canClick, selected, amount, no_prize, message, showRepost } = this.state
 
     return (
       <>
@@ -132,12 +140,14 @@ class QuestsInProcess extends React.Component {
                     и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
                 </h4>}
                 <WinBlocks
+                  showRepost={showRepost}
                   logo={curQuest}
                   flipped={flipped}
                   canClick={canClick}
                   toggleCard={this.toggleCard}
                   selected={selected}
                   amount={amount}
+                  clickToShowRepost={this.clickToShowRepost}
                 />
               </div>
             </div>
@@ -168,7 +178,7 @@ const mapDispatchToProps = (dispatch) => {
     showWinQModal: (vk_id, quest) => dispatch(showWinQModal(vk_id, quest)),
     startGame: (quest) => dispatch(startGame(quest)),
     getKupon: (vk_id) => dispatch(getKupon(vk_id)),
-    didRepost: (vk_id) => dispatch(didRepost(vk_id)),
+    didRepost: (vk_id, quest) => dispatch(didRepost(vk_id, quest)),
   };
 };
 

@@ -124,7 +124,7 @@ export const getQuest = (vk_id, quest_id, isReady) => {
 export const setNextMessage = (vk_id, quest_id) => {
     return async dispatch => {
         let response = await fetch('https://newback.zewaquests.ru/api/node/' + (quest_id) + '/click',
-        // let response = await fetch('https://newback.zewaquests.ru/api/node/21/click',
+            // let response = await fetch('https://newback.zewaquests.ru/api/node/21/click',
             {
                 method: 'POST',
                 headers: {
@@ -247,9 +247,9 @@ export const getKupon = (vk_id) => {
     }
 }
 
-export const didRepost = (vk_id) => {
+export const didRepost = (vk_id, quest) => {
     return async dispatch => {
-        let response = await fetch('https://newback.zewaquests.ru/api/repost',
+        let response = await fetch(`https://newback.zewaquests.ru/api/repost/${quest}`,
             {
                 method: 'POST',
                 headers: {
