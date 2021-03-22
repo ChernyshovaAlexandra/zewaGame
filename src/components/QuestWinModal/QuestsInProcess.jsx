@@ -31,7 +31,8 @@ class QuestsInProcess extends React.Component {
       .then((response) => {
         if (response.data.message) {
           this.setState({
-            no_prize: true
+            no_prize: true,
+            message: response.data.message
           })
         } else {
           th.setState({
@@ -55,7 +56,7 @@ class QuestsInProcess extends React.Component {
 
     const { userData, currentQuest } = this.props
     let th = this
-    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest ? currentQuest : 4}/execute`, { vk_id: userData.vk_id })
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
       .then((response) => {
       })
   }
@@ -116,7 +117,7 @@ class QuestsInProcess extends React.Component {
 
   render() {
     const { quests, curQuest, curReadyQuest, showWinQModal } = this.props;
-    const { flipped, canClick, selected, amount, no_prize } = this.state
+    const { flipped, canClick, selected, amount, no_prize, message } = this.state
 
     return (
       <>

@@ -28,7 +28,7 @@ export const defaultState =
     results: false,
     quests: [],
     curHint: 0,
-    questWin: false,
+    questWin: true,
     questData: [],
     userData: false,
     questsReady: 0,
@@ -51,6 +51,7 @@ export const mainReducer = (state = defaultState, action) => {
         case SHOW_SELECTED:
             return { ...state, selected: action.payload }
         case SET_QUEST_READY:
+            
             return { ...state, questsReady: action.payload }
         case SHOW_QUEST_WIN_MODAL:
             return { ...state, questWin: action.payload }
