@@ -495,17 +495,15 @@
     grid-template-columns: 1fr 1fr;
   }
 }
-.win:not(.in-process) {
-  .winBox {
-    .backContainer {
-      position: static;
-      max-width: 60%;
-      margin: auto;
-      padding: 4px;
-      .content-inner {
-        background: #fff;
-        padding: 1rem;
-      }
+.winBox.last {
+  .backContainer {
+    position: static;
+    max-width: 60%;
+    margin: auto;
+    padding: 4px;
+    .content-inner {
+      background: #fff;
+      padding: 1rem;
     }
   }
 }

@@ -143,7 +143,7 @@ class AllQuestsFinished extends React.Component {
           <div className="row mainWinPart justify-content-center">
 
             <div className="col">
-              <div className="winBox">
+              <div className="winBox last">
                 <div className="row justify-content-center buttonSet">
                   {!this.state.wantToQuit && (
                     <div className="col-md-12 win-blocks-container selected">
