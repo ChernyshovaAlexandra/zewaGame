@@ -69,7 +69,7 @@ class QuestWinModal extends React.Component {
 
     return (
       <section
-        className={`menu win ${questsReady < 4 ? "in-process" : ''}`}
+        className={`menu win ${questsReady < 5 ? "in-process" : ''}`}
       >
         <div className="row justify-content-center nav">
           <div className="col-lg-3">
