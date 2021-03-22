@@ -2,7 +2,7 @@ import React from 'react';
 import present from '../../img/present-icon.png'
 import ozon from '../../img/logos/ozon.png'
 import zewa from '../../img/zewa.png'
-
+import AllQuestsFinished from './AllQuestsFinished'
 const cards = [
     {
         id: 0,
@@ -18,21 +18,23 @@ const cards = [
 
 const Back = ({ amount, logo, company }) => {
     return (
-        <div>
-            <div className="navRow">
-                <img src={logo} />
-                <img src={zewa} />
-            </div>
-            {company && <div className="contentText">Вы {!amount && 'уже'} получили подарочный
+        <>
+            <div>
+                <div className="navRow">
+                    <img src={logo} />
+                    <img src={zewa} />
+                </div>
+                {company && <div className="contentText">Вы {!amount && 'уже'} получили подарочный
                     промокод на покупку продукции Zewa {company}</div>}
-            {amount && <div className="promocode">Промокод {amount + '%'}</div>}
-            <div className="icon">
-                <img src={present} alt="" />
+                {amount && <div className="promocode">Промокод {amount + '%'}</div>}
+                <div className="icon">
+                    <img src={present} alt="" />
+                </div>
+                {amount && <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
+                    <div className="btn selectionBtn">Забрать подарок</div>
+                </a>}
             </div>
-            {amount && <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
-                <div className="btn selectionBtn">Забрать подарок</div>
-            </a>}
-        </div>
+        </>
     )
 }
 
@@ -72,7 +74,7 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
     }
 
     return (
-        <div className='win-blocks-container'>
+        <>{amount ? <div className='win-blocks-container'>
             {cards.map(item => (
                 <div
                     onClick={canClick && (() => toggleCard(item.id))}
@@ -92,5 +94,8 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
                     </div>
                 </div>))}
         </div>
+            :
+            <AllQuestsFinished />}
+        </>
     )
 }

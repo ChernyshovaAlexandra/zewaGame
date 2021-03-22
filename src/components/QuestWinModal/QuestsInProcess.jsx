@@ -121,29 +121,30 @@ class QuestsInProcess extends React.Component {
 
     return (
       <>
-        {no_prize === false ?
-          <div className="container">
-            <div className="row mainWinPart justify-content-center">
-              <div className="col">
-                <div className="winBox">
-                  {!selected &&
-                    <h4>
-                      Вы успешно разгадали квест
-                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
+        {/* {no_prize === false ? */}
+        <div className="container">
+          <div className="row mainWinPart justify-content-center">
+            <div className="col">
+              <div className="winBox">
+                {!selected && amount &&
+                  <h4>
+                    Вы успешно разгадали квест
+                    и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
                 </h4>}
-                  <WinBlocks
-                    logo={curQuest}
-                    flipped={flipped}
-                    canClick={canClick}
-                    toggleCard={this.toggleCard}
-                    selected={selected}
-                    amount={amount}
-                  />
-                </div>
+                <WinBlocks
+                  logo={curQuest}
+                  flipped={flipped}
+                  canClick={canClick}
+                  toggleCard={this.toggleCard}
+                  selected={selected}
+                  amount={amount}
+                />
               </div>
             </div>
-          </div> :
-          <AllQuestsFinished />}
+          </div>
+        </div>
+        {/* : */}
+        {/* <AllQuestsFinished />} */}
       </>
     );
   }

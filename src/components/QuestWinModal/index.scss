@@ -20,7 +20,7 @@
       }
     }
     .mainWinPart {
-      margin-top: 1.5rem;
+      // margin-top: 1.5rem;
       .special {
         background-color: #28a7eb;
         border-radius: 1rem;
@@ -423,7 +423,7 @@
     &.flipped {
       transform: rotateY(180deg);
       z-index: 1000;
-
+      top: -2rem;
       &::after {
         display: none;
       }
