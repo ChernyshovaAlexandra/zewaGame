@@ -160,7 +160,7 @@ export const setNextMessage = (vk_id, quest_id) => {
                     type: SET_CUR_REQDY_QUEST,
                     payload: quest_id
                 })
-                dispatch(showWinQModal(vk_id, true))
+                // dispatch(showWinQModal(vk_id, true))
             }
             else {
                 dispatch({
