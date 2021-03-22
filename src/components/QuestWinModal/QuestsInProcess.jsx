@@ -34,7 +34,6 @@ class QuestsInProcess extends React.Component {
   }
   componentDidMount = async () => {
     const { userData, currentQuest } = this.props
-    console.log(currentQuest)
     let th = this
     axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`, { vk_id: userData.vk_id })
       .then((response) => {
@@ -54,24 +53,24 @@ class QuestsInProcess extends React.Component {
   toggleCard = (index) => {
     const { userData, currentQuest } = this.props
     let th = this
-    this.reSend_AllowMessages()
-    if (th.state.apply) {
-      th.setState({
-        flipped: index,
-        canClick: false
-      })
-      setTimeout(() => {
-        th.setState({
-          selected: true
-        })
-      }, 200)
 
-      axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
-    }
+
+    setTimeout(() => {
+      th.setState({
+        selected: true
+      })
+    }, 200)
+
+    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
+
   }
 
-  reSend_AllowMessages = () => {
+  reSend_AllowMessages = (index) => {
     const { getKupon, userData } = this.props;
+    this.setState({
+      flipped: index,
+      canClick: false
+    })
     bridge.subscribe((e) => {
       if (e.detail.data === undefined) {
         this.setState({
@@ -87,7 +86,7 @@ class QuestsInProcess extends React.Component {
               "Отличная работа! Мы отправили скидочный купон в личные сообщения. Перейти в диалоги?",
             buttonTxt: "Забрать купон",
           });
-          return getKupon(userData.vk_id);
+          return this.toggleCard(index);
         }
       } else if (e.detail.type === "VKWebAppAllowMessagesFromGroupFailed") {
         this.setState({
@@ -145,7 +144,7 @@ class QuestsInProcess extends React.Component {
                   logo={curQuest}
                   flipped={flipped}
                   canClick={canClick}
-                  toggleCard={this.toggleCard}
+                  toggleCard={this.reSend_AllowMessages}
                   selected={selected}
                   amount={amount}
                   clickToShowRepost={this.clickToShowRepost}

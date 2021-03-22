@@ -21,7 +21,7 @@ class AllQuestsFinished extends React.Component {
   }
 
   reSend_AllowMessages = () => {
-    const { getKupon, userData } = this.props;
+    const { getKupon, userData, currentQuest } = this.props;
     bridge.subscribe((e) => {
       if (e.detail.data === undefined) {
         this.setState({
@@ -32,7 +32,7 @@ class AllQuestsFinished extends React.Component {
       }
       if (e.detail.type === "VKWebAppAllowMessagesFromGroupResult") {
         if (e.detail.data.result) {
-          getKupon(userData.vk_id);
+          getKupon(userData.vk_id,currentQuest);
           this.setState({
             message: "Поздравляем! Скидка у вас в личных сообщениях",
             wantToQuit: true,
@@ -53,7 +53,7 @@ class AllQuestsFinished extends React.Component {
     bridge.send("VKWebAppAllowMessagesFromGroup", { group_id: 137564571 });
   };
 
-  getMyKupon = () => {
+  getMyKupon = (currentQuest) => {
     this.reSend_AllowMessages();
   };
 
@@ -65,7 +65,7 @@ class AllQuestsFinished extends React.Component {
       let promise = new Promise(res => res(didRepost(userData.vk_id, currentQuest)))
       let res = await promise
       promise.then(() => {
-        $this.getMyKupon();
+        $this.getMyKupon(currentQuest);
       })
     }
 
@@ -99,7 +99,7 @@ class AllQuestsFinished extends React.Component {
   };
 
   formCheck = (e) => {
-    const { userData, getKupon } = this.props;
+    const { userData, getKupon, currentQuest } = this.props;
 
     let elems = document.forms.formFin.elements;
     let inputId;
@@ -110,12 +110,12 @@ class AllQuestsFinished extends React.Component {
     }
 
     if (inputId === "endGame") {
-      getKupon(userData.vk_id);
+      getKupon(userData.vk_id, currentQuest);
     }
 
     if (inputId === "share") {
       this.setState({ wantToShare: true });
-      getKupon(userData.vk_id);
+      getKupon(userData.vk_id, currentQuest);
     }
     e.preventDefault();
   };
@@ -216,7 +216,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     showWinQModal: (quest) => dispatch(showWinQModal(quest)),
     startGame: (quest) => dispatch(startGame(quest)),
-    getKupon: (vk_id) => dispatch(getKupon(vk_id)),
+    getKupon: (vk_id, currentQuest) => dispatch(getKupon(vk_id, currentQuest)),
     didRepost: (vk_id, quest) => dispatch(didRepost(vk_id, quest)),
   };
 };

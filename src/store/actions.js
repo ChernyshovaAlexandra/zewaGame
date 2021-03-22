@@ -223,9 +223,9 @@ export const getQuestList = (vk_id) => {
     }
 }
 
-export const getKupon = (vk_id) => {
+export const getKupon = (vk_id, currentQuest) => {
     return async dispatch => {
-        let response = await fetch('https://newback.zewaquests.ru/api/promocode',
+        let response = await fetch(`https://newback.zewaquests.ru/api/promocode/${currentQuest}`,
             {
                 method: 'POST',
                 headers: {
