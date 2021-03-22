@@ -64,7 +64,7 @@ class QuestWinModal extends React.Component {
   };
 
   render() {
-    const { questsReady, currentQuest, hashData, userData } = this.props;
+    const { questsReady, currentQuest, hashData, userData, showWinQModal } = this.props;
     let curQuest = hashData.filter(item => item.id === currentQuest)[0]
 
     return (
