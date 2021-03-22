@@ -43,7 +43,7 @@ const Back = ({ amount, logo, company, clickToShowRepost }) => {
 
 
 export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount, showRepost, clickToShowRepost }) => {
-    console.log(logo, flipped, canClick, selected, amount, showRepost)
+
 
     if (selected) {
         let item = cards[flipped]
