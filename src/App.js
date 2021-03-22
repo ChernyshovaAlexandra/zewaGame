@@ -18,9 +18,12 @@ class App extends React.Component {
 		this.state = {
 			loaded: false,
 			body_to_send: null,
-			nameForH2: 'user'
+			nameForH2: 'user',
+			errorMessage: false
 		}
 	}
+
+
 	setUserInfo = async () => {
 		const { setUserData } = this.props
 		bridge.subscribe((e) => {
@@ -34,11 +37,14 @@ class App extends React.Component {
 		})
 		bridge.send("VKWebAppGetUserInfo")
 	}
+
 	componentDidMount() {
-		Promise.all([this.setUserInfo()])
+		let th = this
+		Promise.all(
+			[this.setUserInfo()])
 			.then(() => {
 				setTimeout(() => {
-					this.setState({
+					th.setState({
 						loaded: true
 					})
 				}, 3000)
@@ -49,9 +55,9 @@ class App extends React.Component {
 
 	render() {
 		const { start, selected, questWin, rules, results, hash } = this.props
-		const { loaded } = this.state
+		const { loaded, errorMessage } = this.state
 		return (
-			<div className="gameContainer">
+			<div className="gameContainer" >
 
 				{
 					rules ?
@@ -64,12 +70,14 @@ class App extends React.Component {
 									<Main /> :
 									start ?
 										<SelectQwest hash={hash} /> :
-										loaded ?
+										loaded && !errorMessage ?
 											<Menu name={this.state.nameForH2} /> :
-											<LoadingComponent />
+											errorMessage ?
+												<LoadingComponent errorMessage={errorMessage} /> :
+												<LoadingComponent errorMessage={errorMessage} />
 				}
 				{/* <small className="ligal">Количество купонов ограничено</small> */}
-			</div>
+			</div >
 		)
 
 	}

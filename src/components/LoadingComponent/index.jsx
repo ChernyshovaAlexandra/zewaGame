@@ -14,7 +14,7 @@ import { startGame, showRules, showRes, setUserData, getQuestList, userLoadingFa
 class LoadingComponent extends React.Component {
 
   componentDidMount() {
-  
+
   }
 
   render() {
@@ -50,11 +50,7 @@ class LoadingComponent extends React.Component {
               </div>
             </div>
           </div>
-          {/* <div className="row justify-content-center">
-            <div className="col-lg-auto magnit">
-              <img src={magnit} alt="" />
-            </div>
-          </div> */}
+
         </div>
       </div>
     );

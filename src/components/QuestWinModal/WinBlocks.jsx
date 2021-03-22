@@ -43,7 +43,7 @@ const Back = ({ amount, logo, company, clickToShowRepost }) => {
 
 
 export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount, showRepost, clickToShowRepost }) => {
-
+    console.log(logo, flipped, canClick, selected, amount, showRepost)
 
     if (selected) {
         let item = cards[flipped]
@@ -89,7 +89,7 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
                             key={item.id}>
                             <div className="front">
                                 <div className="logo-company">
-                                    <img src={logo} />
+                                    <img src={logo.logo} />
                                 </div>
                             </div>
                             <div className="back">

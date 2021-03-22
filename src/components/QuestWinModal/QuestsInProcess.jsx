@@ -51,22 +51,21 @@ class QuestsInProcess extends React.Component {
       })
   }
   toggleCard = (index) => {
-    this.setState({
-      flipped: index,
-      canClick: false
-    })
-    setTimeout(() => {
+    this.reSend_AllowMessages()
+    if (this.state.apply) {
       this.setState({
-        selected: true
+        flipped: index,
+        canClick: false
       })
-    }, 200)
-
-
-    const { userData, currentQuest } = this.props
-    let th = this
-    axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
-      .then((response) => {
-      })
+      setTimeout(() => {
+        this.setState({
+          selected: true
+        })
+      }, 200)
+      const { userData, currentQuest } = this.props
+      let th = this
+      axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
+    }
   }
 
   reSend_AllowMessages = () => {
@@ -129,7 +128,6 @@ class QuestsInProcess extends React.Component {
 
     return (
       <>
-        {/* {no_prize === false ? */}
         <div className="container">
           <div className="row mainWinPart justify-content-center">
             <div className="col">
@@ -137,7 +135,8 @@ class QuestsInProcess extends React.Component {
                 {!selected && amount &&
                   <h4>
                     Вы успешно разгадали квест
-                    и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
+                    и можете забрать приз. Для этого неободимо разрешить сообществу отправлять вам сообщения.
+                    Переверните одну карту и узнайте, что вас ждет!
                 </h4>}
                 <WinBlocks
                   showRepost={showRepost}
@@ -153,8 +152,6 @@ class QuestsInProcess extends React.Component {
             </div>
           </div>
         </div>
-        {/* : */}
-        {/* <AllQuestsFinished />} */}
       </>
     );
   }

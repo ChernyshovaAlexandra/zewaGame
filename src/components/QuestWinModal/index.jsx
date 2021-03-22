@@ -105,10 +105,7 @@ class QuestWinModal extends React.Component {
             </div>
           </div>
         </div>
-        {/* <p>Пройдено квестов: {questsReady}</p> */}
-        {/* {questsReady < 4 ? */}
         <QuestsInProcess curQuest={curQuest} />
-        {/* <AllQuestsFinished /> */}
       </section>
     );
   }
