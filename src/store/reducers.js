@@ -28,7 +28,7 @@ export const defaultState =
     results: false,
     quests: [],
     curHint: 0,
-    questWin: false,
+    questWin: true,
     questData: [],
     userData: false,
     questsReady: 0,

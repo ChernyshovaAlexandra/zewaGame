@@ -6,7 +6,7 @@ import {
   startGame,
   didRepost,
 } from "../../store/actions";
-
+import AllQuestsFinished from './AllQuestsFinished'
 import { WinBlocks } from './WinBlocks'
 import "./index.scss";
 import bridge from "@vkontakte/vk-bridge";
@@ -117,89 +117,32 @@ class QuestsInProcess extends React.Component {
   render() {
     const { quests, curQuest, curReadyQuest, showWinQModal } = this.props;
     const { flipped, canClick, selected, amount, no_prize } = this.state
-    let questName = quests.filter((item) => item.id === curReadyQuest);
 
     return (
       <>
-        <div className="container">
-
-          <div className="row mainWinPart justify-content-center">
-
-            <div className="col">
-              <div className="winBox">
-
-                {this.state.innerTxt ? (
-                  <>
-                    <h4
-                      dangerouslySetInnerHTML={{
-                        __html: this.state.innerTxt,
-                      }}
-                    ></h4>
-                    <div className="row justify-content-center buttonSet">
-                      {this.state.buttonTxt ? (
-                        <div className="col-md-12">
-                          <a
-                            href="https://vk.com/im?sel=-137564571"
-                            target="_blank"
-                            style={{ textDecoration: "none" }}
-                          >
-                            <button className="btn pink selectionBtn">
-                              {this.state.buttonTxt}
-                            </button>
-                          </a>
-                        </div>
-                      ) : this.state.buttonTxt2 ? (
-                        <div className="col-md-12">
-                          <button
-                            className="btn pink selectionBtn"
-                            onClick={() => {
-                              this.reSend_AllowMessages();
-                            }}
-                          >
-                            {this.state.buttonTxt2}
-                          </button>
-                        </div>
-                      ) : (
-                        <></>
-                      )}
-                      <div className="col-md-12">
-                        <div className="backContainer">
-                          <button
-                            className="btn pink selectionBtn"
-                            onClick={() => {
-                              showWinQModal(false);
-                            }}
-                          >
-                            В меню
-                        </button>
-                        </div>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-
-                    {!selected && <h4>
-                      {no_prize === false ? `Вы успешно разгадали квест
-                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!` :
-                        `Вы уже забрали приз за прохождение этого квеста.`}
-                    </h4>}
-                    {no_prize === false &&
-                      <WinBlocks
-                        logo={curQuest}
-                        flipped={flipped}
-                        canClick={canClick}
-                        toggleCard={this.toggleCard}
-                        selected={selected}
-                        amount={amount}
-                      />}
-                  </>
-                )}
+        {no_prize === false ?
+          <div className="container">
+            <div className="row mainWinPart justify-content-center">
+              <div className="col">
+                <div className="winBox">
+                  {!selected &&
+                    <h4>
+                      Вы успешно разгадали квест
+                      и можете забрать приз. Переверните одну карту и узнайте, что вас ждет!
+                </h4>}
+                  <WinBlocks
+                    logo={curQuest}
+                    flipped={flipped}
+                    canClick={canClick}
+                    toggleCard={this.toggleCard}
+                    selected={selected}
+                    amount={amount}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <></>
+          </div> :
+          <AllQuestsFinished />}
       </>
     );
   }
