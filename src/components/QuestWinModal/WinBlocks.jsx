@@ -45,9 +45,9 @@ const Back = ({ amount, logo, company, clickToShowRepost }) => {
 }
 
 
-export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, showRepost, clickToShowRepost }) => { //amount
+export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount, showRepost, clickToShowRepost }) => { //amount
 
-    let amount = 50
+    // let amount = 50
     if (selected) {
         let item = cards[flipped]
         return (
