@@ -1,4 +1,4 @@
-.comixContainer{
+.comixContainer {
   position: relative;
   z-index: 1000;
   top: 4rem;
@@ -169,7 +169,7 @@
   @media screen and (max-width: 629px) {
     width: 100%;
     height: auto;
-
+    top: 0;
     a {
       width: 320px;
     }
@@ -180,6 +180,8 @@
 
     &.mobile {
       display: block;
+      position: relative;
+      // top: -2rem;
     }
   }
 
@@ -341,4 +343,8 @@
     }
   }
 }
-
+@media screen and (max-width: 629px) {
+  .comixContainer {
+    top: 0;
+  }
+}
