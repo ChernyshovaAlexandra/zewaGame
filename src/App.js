@@ -72,9 +72,7 @@ class App extends React.Component {
 										<SelectQwest hash={hash} /> :
 										loaded && !errorMessage ?
 											<Menu name={this.state.nameForH2} /> :
-											errorMessage ?
-												<LoadingComponent errorMessage={errorMessage} /> :
-												<LoadingComponent errorMessage={errorMessage} />
+											<LoadingComponent />
 				}
 				{/* <small className="ligal">Количество купонов ограничено</small> */}
 			</div >

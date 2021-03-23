@@ -62,7 +62,7 @@ class QuestsInProcess extends React.Component {
     }, 200)
 
     axios.post(`https://newback.zewaquests.ru/api/promocode/${currentQuest}/execute`, { vk_id: userData.vk_id })
-
+    
   }
 
   reSend_AllowMessages = (index) => {

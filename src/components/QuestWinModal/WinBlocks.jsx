@@ -31,9 +31,12 @@ const Back = ({ amount, logo, company, clickToShowRepost }) => {
                     <img src={present} alt="" />
                 </div>
                 {amount &&
-                    <a href='https://vk.com/im?sel=-137564571' target="_blank" style={{ 'textDecoration': 'none' }}>
+                    <a
+                        href='https://vk.com/im?sel=-137564571'
+                        target="_blank" style={{ 'textDecoration': 'none' }}
+                        onClick={() => clickToShowRepost()}>
                         <div className="btn selectionBtn"
-                            onClick={clickToShowRepost && (() => clickToShowRepost())}
+
                         >Забрать подарок</div>
                     </a>}
             </div>
@@ -42,9 +45,9 @@ const Back = ({ amount, logo, company, clickToShowRepost }) => {
 }
 
 
-export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amount, showRepost, clickToShowRepost }) => {
+export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, showRepost, clickToShowRepost }) => { //amount
 
-
+    let amount = 50
     if (selected) {
         let item = cards[flipped]
         return (
@@ -67,6 +70,7 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
                                     amount={amount}
                                     logo={logo.logo}
                                     company={logo.company}
+                                    clickToShowRepost={clickToShowRepost}
                                 />
                             </div>
                         </div>
@@ -75,9 +79,9 @@ export const WinBlocks = ({ logo, flipped, toggleCard, canClick, selected, amoun
             </div>
         )
     }
-    if (showRepost) {
-        return <AllQuestsFinished />
-    }
+    // if (showRepost) {
+    //     return <AllQuestsFinished />
+    // }
     return (
         <>
             {amount ?
