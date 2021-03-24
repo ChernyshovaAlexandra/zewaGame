@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.00f913c0.chunk.css",
-    "main.js": "./static/js/main.81698c1e.chunk.js",
-    "main.js.map": "./static/js/main.81698c1e.chunk.js.map",
+    "main.css": "./static/css/main.33dc8810.chunk.css",
+    "main.js": "./static/js/main.5eef95ee.chunk.js",
+    "main.js.map": "./static/js/main.5eef95ee.chunk.js.map",
     "runtime-main.js": "./static/js/runtime-main.785f45fe.js",
     "runtime-main.js.map": "./static/js/runtime-main.785f45fe.js.map",
     "static/css/2.c7dcdf94.chunk.css": "./static/css/2.c7dcdf94.chunk.css",
     "static/js/2.b1a25827.chunk.js": "./static/js/2.b1a25827.chunk.js",
     "static/js/2.b1a25827.chunk.js.map": "./static/js/2.b1a25827.chunk.js.map",
     "index.html": "./index.html",
-    "precache-manifest.bede80cb3594fa447f6f31afb05fc700.js": "./precache-manifest.bede80cb3594fa447f6f31afb05fc700.js",
+    "precache-manifest.cf8c03f6129d37959cada30fbbec1207.js": "./precache-manifest.cf8c03f6129d37959cada30fbbec1207.js",
     "service-worker.js": "./service-worker.js",
     "static/css/2.c7dcdf94.chunk.css.map": "./static/css/2.c7dcdf94.chunk.css.map",
-    "static/css/main.00f913c0.chunk.css.map": "./static/css/main.00f913c0.chunk.css.map",
+    "static/css/main.33dc8810.chunk.css.map": "./static/css/main.33dc8810.chunk.css.map",
     "static/js/2.b1a25827.chunk.js.LICENSE.txt": "./static/js/2.b1a25827.chunk.js.LICENSE.txt",
     "static/media/index.scss": "./static/media/winCard-bg.f57c9f4d.png",
     "static/media/App.scss": "./static/media/AcerFoco_Rg.9dd8c37c.ttf",
-    "static/media/Rules.pdf": "./static/media/Rules.a8a2c472.pdf",
+    "static/media/Rules.pdf": "./static/media/Rules.d36b67c4.pdf",
     "static/media/back.png": "./static/media/back.abb44cfb.png",
     "static/media/logoGame.png": "./static/media/logoGame.d32f89f2.png",
     "static/media/magnit-logo.svg": "./static/media/magnit-logo.a052c0ad.svg",
@@ -27,7 +27,7 @@
     "static/js/runtime-main.785f45fe.js",
     "static/css/2.c7dcdf94.chunk.css",
     "static/js/2.b1a25827.chunk.js",
-    "static/css/main.00f913c0.chunk.css",
-    "static/js/main.81698c1e.chunk.js"
+    "static/css/main.33dc8810.chunk.css",
+    "static/js/main.5eef95ee.chunk.js"
   ]
 }
