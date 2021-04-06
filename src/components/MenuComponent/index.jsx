@@ -29,8 +29,9 @@ class Menu extends React.Component {
 
 
   render() {
-    const { showRules, questWin, userData, showRes, winners, hash } = this.props;
+    const { showRules, questWin, userData, showRes, hash } = this.props;
     const { popup } = this.state
+    let winners = true
 
 
     return (
@@ -50,7 +51,7 @@ class Menu extends React.Component {
             <img src={logoGame} alt="" />
           </div>
         </div>
-        
+
 
         {!userData ? (
           <div className="modal-popup ">

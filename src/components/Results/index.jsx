@@ -7,6 +7,10 @@ import "slick-carousel/slick/slick-theme.css"; import magnit2 from "../../img/ma
 import './index.scss'
 import { connect } from "react-redux";
 import { showRes } from "../../store/actions";
+import Ozon from '../../img/logos/ozon.png'
+import Yandex from '../../img/logos/yandex.png'
+import sbermarket from '../../img/logos/sbermarket.png'
+import utkonos from '../../img/logos/utkonos.png'
 
 class Results extends React.Component {
     render() {
@@ -48,7 +52,7 @@ class Results extends React.Component {
 
                     <div className="row justify-content-center for-rules ">
                         <div className="col-lg-auto">
-                            <h2 className="wh-rules">Результаты розыгрыша</h2>
+                            <h2 className="wh-rules" style={{ 'color': 'black' }}>Результаты розыгрыша</h2>
 
                         </div>
                     </div>
@@ -60,58 +64,212 @@ class Results extends React.Component {
                                 </div>
                             </div>
                             <div className="row justify-content-center results">
-                                <div className="col-lg-10">
+                                <div className="col-lg-5">
+
                                     <div className="rulesBox resBox">
-                                        <div className="row justify-content-between resultsContainer">
+                                        <div className="col">
+                                            <img src={Ozon} alt="Ozon" style={{ width: '5rem', 'margin': '0 auto 1rem' }} />
+                                        </div>
+                                        <div className="row  resultsContainer">
                                             <div className="col-lg-2">1</div>
                                             <div className="col-lg-auto">
-                                                <a href="https://vk.com/id115545387" target="_blank">
-                                                    <span className="pinkTxt">Николай Медведев</span>
+                                                <a href="https://vk.com/id265217588" target="_blank">
+                                                    <span className="pinkTxt">Аня Ерофеева</span>
                                                 </a>
-                                            </div>
-                                            <div className="col-lg-4">3000 руб.</div>
+                                            </div><div className="col-lg-4"></div>
                                         </div>
-                                        <div className="row justify-content-between resultsContainer">
+                                        <div className="row  resultsContainer">
                                             <div className="col-lg-2">2</div>
                                             <div className="col-lg-auto">
-                                                <a href="https://vk.com/id20415285" target="_blank">
-                                                    <span className="pinkTxt">Юлия Игумнова</span>
+                                                <a href="https://vk.com/id170407021" target="_blank">
+                                                    <span className="pinkTxt">Екатерина Рублева</span>
                                                 </a>
-                                            </div>
-                                            <div className="col-lg-4">3000 руб.</div>
+                                            </div><div className="col-lg-4"></div>
                                         </div>
-                                        <div className="row justify-content-between resultsContainer">
+                                        <div className="row  resultsContainer">
                                             <div className="col-lg-2">3</div>
                                             <div className="col-lg-auto">
-                                                <a href="https://vk.com/id259115944" target="_blank">
-                                                    <span className="pinkTxt">Женя Терехова</span>
+                                                <a href="https://vk.com/id508480539" target="_blank">
+                                                    <span className="pinkTxt">Диана Духу</span>
                                                 </a>
-                                            </div>
-                                            <div className="col-lg-4">3000 руб.</div>
+                                            </div><div className="col-lg-4"></div>
                                         </div>
-                                        <div className="row justify-content-between resultsContainer">
+                                        <div className="row  resultsContainer">
                                             <div className="col-lg-2">4</div>
                                             <div className="col-lg-auto">
-                                                <a href="https://vk.com/id612346282" target="_blank">
-                                                    <span className="pinkTxt">Мамука Мамардашвили</span>
+                                                <a href="https://vk.com/id174095221" target="_blank">
+                                                    <span className="pinkTxt">Ольга Андронова</span>
                                                 </a>
                                             </div>
-                                            <div className="col-lg-4">3000 руб.</div>
+                                            <div className="col-lg-4"></div>
                                         </div>
-                                        <div className="row justify-content-between resultsContainer">
+                                        <div className="row  resultsContainer">
                                             <div className="col-lg-2">5</div>
                                             <div className="col-lg-auto">
-                                                <a href="https://vk.com/id429114025" target="_blank">
-                                                    <span className="pinkTxt">Наташа Егорова</span>
+                                                <a href="https://vk.com/id66855797" target="_blank">
+                                                    <span className="pinkTxt">Михаил Потапов</span>
                                                 </a>
                                             </div>
-                                            <div className="col-lg-4">3000 руб.</div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-5">
+
+                                    <div className="rulesBox resBox">
+                                        <div className="col">
+                                            <img src={Yandex} alt="Yandex" style={{ width: '7rem', 'margin': '0 auto 1rem' }} />
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">1</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id642345811" target="_blank">
+                                                    <span className="pinkTxt">Катя Иванова</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">2</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id245203514" target="_blank">
+                                                    <span className="pinkTxt">Юлия Петрова</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">3</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id282200109" target="_blank">
+                                                    <span className="pinkTxt">Василий Тимохин</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">4</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id540415412" target="_blank">
+                                                    <span className="pinkTxt">Коля Ким</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">5</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id187009589" target="_blank">
+                                                    <span className="pinkTxt">Лиза Силаева</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="row justify-content-center results">
+                                <div className="col-lg-5">
+
+                                    <div className="rulesBox resBox">
+                                        <div className="col">
+                                            <img src={sbermarket} alt="sbermarket" style={{ width: '8rem', 'margin': '0 auto 1rem' }} />
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">1</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id392434851" target="_blank">
+                                                    <span className="pinkTxt">Василий Хованский</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">2</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id20318950" target="_blank">
+                                                    <span className="pinkTxt">Ирина Аверьянова</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">3</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id50334808" target="_blank">
+                                                    <span className="pinkTxt">Марина Шишова</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">4</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id523908178" target="_blank">
+                                                    <span className="pinkTxt">Артём Зориков</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">5</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id406422364" target="_blank">
+                                                    <span className="pinkTxt">Evgenii Lok</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-lg-5">
+
+                                    <div className="rulesBox resBox">
+                                        <div className="col">
+                                            <img src={utkonos} alt="utkonos" style={{ width: '6rem', 'margin': '0 auto 1rem' }} />
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">1</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id642345811" target="_blank">
+                                                    <span className="pinkTxt">Антон Лесков  </span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">2</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id626834577" target="_blank">
+                                                    <span className="pinkTxt">Илья Кошик</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">3</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id159229044" target="_blank">
+                                                    <span className="pinkTxt">Камилла Волкова</span>
+                                                </a>
+                                            </div><div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">4</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id267273410" target="_blank">
+                                                    <span className="pinkTxt">Надежда Масленникова</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
+                                        </div>
+                                        <div className="row  resultsContainer">
+                                            <div className="col-lg-2">5</div>
+                                            <div className="col-lg-auto">
+                                                <a href="https://vk.com/id84617334" target="_blank">
+                                                    <span className="pinkTxt">Екатерина Григорьева</span>
+                                                </a>
+                                            </div>
+                                            <div className="col-lg-4"></div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </>
-                        <>
+
+                        {/* <>
                             <div className="row justify-content-center for-rules">
                                 <div className="col-lg-auto">
                                     <p>Поздравляем победителей второй недели!</p>
@@ -283,8 +441,8 @@ class Results extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </>
+                            </div> */}
+                        {/* </> */}
                     </Slider>
                 </section>
             </>

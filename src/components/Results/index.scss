@@ -2,6 +2,14 @@
     .resultsContainer {
         max-width: 90%;
         margin: auto;
+        .pinkTxt {
+            @media screen and(max-width: 500px) {
+                font-size: 0.8rem;
+            }
+            @media screen and (max-width: 329px) {
+                font-size: 0.6rem;
+            }
+        }
 
         .col-lg-auto {
             text-align: left;
@@ -11,10 +19,13 @@
 
 .results {
     @media screen and (max-width: 629px) {
+        width: 130%;
+        position: relative;
+        left: -10%;
         .col-lg-10 {
             max-width: 100% !important;
             flex: 100% !important;
-            font-size: .8rem !important;
+            font-size: 0.8rem !important;
 
             .col-lg-2 {
                 max-width: 10%;
@@ -30,6 +41,15 @@
                 max-width: 32%;
                 flex: auto;
             }
+            .col-lg-5 {
+                margin: 0 -1.5rem;
+            }
         }
+    }
+}
+.rulesCont {
+    @media screen and (max-width: 629px) {
+        padding: 2rem 1rem;
+        overflow-y: auto;
     }
 }
